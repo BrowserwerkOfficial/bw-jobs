@@ -1,0 +1,35 @@
+TYPO3:
+  CMS:
+    Form:
+      persistenceManager:
+        allowedExtensionPaths:
+          1648104637: 'EXT:bw_jobs/Resources/Private/Forms/'
+      prototypes:
+        bw_jobs:
+          __inheritances:
+            10: 'TYPO3.CMS.Form.prototypes.standard'
+          formElementsDefinition:
+            Form:
+              renderingOptions:
+                templateRootPaths:
+                  1648104637: 'EXT:bw_jobs/Resources/Private/Templates/Form/'
+                partialRootPaths:
+                  1648104637: 'EXT:bw_jobs/Resources/Private/Partials/Form/'
+                layoutRootPaths:
+                  1648104637: 'EXT:bw_jobs/Resources/Private/Layouts/Form/'
+                translation:
+                  translationFiles:
+                    1648104637: 'EXT:bw_jobs/Resources/Private/Language/locallang_form.xlf'
+          finishersDefinition:
+            EmailToContactPerson:
+              implementationClassName: Browserwerk\BwJobs\Domain\Finishers\EmailToContactPersonFinisher
+              options:
+                templateName: 'Default.html'
+                templateRootPaths:
+                  10: 'EXT:form/Resources/Private/Frontend/Templates/Finishers/Email/'
+            EmailToApplicant:
+              implementationClassName: Browserwerk\BwJobs\Domain\Finishers\EmailToApplicantFinisher
+              options:
+                templateName: 'Default.html'
+                templateRootPaths:
+                  10: 'EXT:form/Resources/Private/Frontend/Templates/Finishers/Email/'

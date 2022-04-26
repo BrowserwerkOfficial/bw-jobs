@@ -1,0 +1,60 @@
+<html data-namespace-typo3-fluid="true" xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
+
+<f:layout name="Default"/>
+
+<f:section name="Content">
+
+    <section class="bw-jobs-section">
+        <formvh:render
+            overrideConfiguration="{
+                renderingOptions: {
+                    additionalParams: {
+                        'tx_bwjobs_detail[jobPosition]': jobPosition
+                    }
+                },
+                finishers: {
+                    0: {
+                        options: {
+                            senderName: settings.senderName,
+                            senderAddress: settings.senderAddress,
+                            layoutRootPaths: {
+                                100: settings.emailLayoutRootPath
+                            },
+                            templateRootPaths: {
+                                100: settings.emailTemplateRootPath
+                            }
+                        }
+                    },
+                    1: {
+                        options: {
+                            senderName: settings.senderName,
+                            senderAddress: settings.senderAddress,
+                            recipientAddress: firstContactPerson.email,
+                            recipientName: firstContactPerson.name,
+                            layoutRootPaths: {
+                                100: settings.emailLayoutRootPath
+                            },
+                            templateRootPaths: {
+                                100: settings.emailTemplateRootPath
+                            }
+                        }
+                    },
+                    2: {
+                        options: {
+                            pageUid: settings.successPid
+                        }
+                    }
+                },
+                renderables: {
+                    0: {
+                        label: jobPosition.title
+                    }
+                }
+            }"
+            persistenceIdentifier="{settings.formPersistenceIdentifier}"
+        />
+    </section>
+
+</f:section>
+
+</html>

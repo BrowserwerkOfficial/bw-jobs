@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3DataStructure>
+    <sheets>
+        <additional>
+            <ROOT>
+                <TCEforms>
+                    <sheetTitle>
+                        LLL:EXT:bw_jobs/Resources/Private/Language/locallang_plugin_list.xlf:flexforms_sheet_title.settings
+                    </sheetTitle>
+                </TCEforms>
+                <type>array</type>
+                <el>
+                    <settings.detailPid>
+                        <TCEforms>
+                            <label>
+                                LLL:EXT:bw_jobs/Resources/Private/Language/locallang_plugin_list.xlf:flexforms_settings.detail_pid
+                            </label>
+                            <config>
+                                <type>group</type>
+                                <internal_type>db</internal_type>
+                                <allowed>pages</allowed>
+                                <size>1</size>
+                                <maxitems>1</maxitems>
+                                <minitems>1</minitems>
+                            </config>
+                        </TCEforms>
+                    </settings.detailPid>
+                    <settings.allowFiltering>
+                        <TCEforms>
+                            <label>
+                                LLL:EXT:bw_jobs/Resources/Private/Language/locallang_plugin_list.xlf:flexforms_settings.allow_filtering
+                            </label>
+                            <config>
+                                <type>check</type>
+                            </config>
+                        </TCEforms>
+                    </settings.allowFiltering>
+                </el>
+            </ROOT>
+        </additional>
+    </sheets>
+</T3DataStructure>

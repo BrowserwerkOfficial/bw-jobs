@@ -1,0 +1,26 @@
+<html data-namespace-typo3-fluid="true" xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
+
+<f:layout name="Default"/>
+
+<f:section name="Content">
+
+    <section class="bw-jobs-section">
+        <f:render partial="JobPosition/Filter" arguments="{
+            categories: categories,
+            locations: locations,
+            filter: filter
+        }"/>
+
+        <f:render partial="JobPosition/List" arguments="{
+            jobPositions: jobPositions,
+            shouldPaginate: shouldPaginate,
+            pagination: pagination,
+            paginator: paginator,
+            pages: pages,
+            filtered: filtered
+        }"/>
+    </section>
+
+</f:section>
+
+</html>

@@ -1,0 +1,50 @@
+<html data-namespace-typo3-fluid="true" xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
+
+<h2 class="bw-jobs-headline">
+    <f:translate arguments="{0: location.city}" key="location_headline"/>
+</h2>
+
+<f:if condition="{location.description}">
+    <div class="bw-jobs-body">
+        <f:format.html parseFuncTSPath="lib.parseFunc">{location.description}</f:format.html>
+    </div>
+</f:if>
+
+<f:if condition="{location.image}">
+    <f:image alt="{location.image.alternative}" class="bw-jobs-image" height="600c" image="{location.image}" title="{location.image.title}" width="1100"/>
+</f:if>
+
+<div class="bw-jobs-detail-boxes">
+    <f:if condition="{location.street}">
+        <div class="bw-jobs-detail-box">
+            <span class="bw-jobs-detail-box__label">
+                <f:translate key="street"/>
+            </span>
+            <span class="bw-jobs-detail-box__value">
+                {location.street}
+            </span>
+        </div>
+    </f:if>
+    <f:if condition="{location.city}">
+        <div class="bw-jobs-detail-box">
+            <span class="bw-jobs-detail-box__label">
+                <f:translate key="city"/>
+            </span>
+            <span class="bw-jobs-detail-box__value">
+                {location.city}
+            </span>
+        </div>
+    </f:if>
+    <f:if condition="{location.zip}">
+        <div class="bw-jobs-detail-box">
+            <span class="bw-jobs-detail-box__label">
+                <f:translate key="zip"/>
+            </span>
+            <span class="bw-jobs-detail-box__value">
+                {location.zip}
+            </span>
+        </div>
+    </f:if>
+</div>
+
+</html>

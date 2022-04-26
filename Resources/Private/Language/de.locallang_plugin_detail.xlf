@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" target-language="de" datatype="plaintext" original="EXT:bw_jobs/Resources/Private/Language/locallang_plugin_detail.xlf" date="2022-03-18T07:11:23Z" product-name="bw_jobs">
+		<header/>
+		<body>
+			<trans-unit id="title" resname="title">
+				<source>Jobs Detail View</source>
+				<target>Jobs Detailansicht</target>
+			</trans-unit>
+			<trans-unit id="description" resname="description">
+				<source>Detail view for showing a single job position.</source>
+				<target>Detailansicht zur Darstellung eines einzelnen Stellenangebotes.</target>
+			</trans-unit>
+			<trans-unit id="flexforms_sheet_title.settings" resname="flexforms_sheet_title.settings">
+				<source>Settings</source>
+				<target>Einstellungen</target>
+			</trans-unit>
+			<trans-unit id="flexforms_settings.list_pid" resname="flexforms_settings.list_pid">
+				<source>List View Pid</source>
+				<target>Pid Listenansicht</target>
+			</trans-unit>
+			<trans-unit id="flexforms_settings.use_application_form" resname="flexforms_settings.use_application_form">
+				<source>Use form for applications</source>
+				<target>Formular für Bewerbungen verwenden</target>
+			</trans-unit>
+			<trans-unit id="flexforms_settings.success_pid" resname="flexforms_settings.success_pid">
+				<source>Success Redirect Pid</source>
+				<target>Pid Erfolgsumleitung</target>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

@@ -1,0 +1,135 @@
+renderingOptions:
+  submitButtonLabel: 'Send Application'
+type: Form
+identifier: jobApplication
+label: 'Job Application'
+prototypeName: bw_jobs
+finishers:
+  - identifier: EmailToApplicant
+    options:
+      subject: 'Thank you for your application!'
+      recipientAddress: '{email}'
+      recipientName: '{first-name} {last-name}'
+      attachUploads: false
+      saveFiles: false
+      addHtmlPart: true
+      useFluidEmail: true
+      templateName: EmailToApplicant.html
+  - identifier: EmailToContactPerson
+    options:
+      subject: 'New application'
+      attachUploads: true
+      saveFiles: false
+      addHtmlPart: true
+      useFluidEmail: true
+      templateName: EmailToContactPerson.html
+  - identifier: Redirect
+    options:
+      pageUid: 1
+renderables:
+  - renderingOptions:
+      previousButtonLabel: 'Previous step'
+      nextButtonLabel: 'Next step'
+    type: Page
+    identifier: page-1
+    label: 'Application'
+    renderables:
+      - properties:
+          options:
+            mr: Mr.
+            mrs: Mrs.
+            other: Other
+          fluidAdditionalAttributes:
+            required: required
+          validators:
+            - identifier: NotEmpty
+        type: SingleSelect
+        identifier: salutation
+        label: 'Salutation'
+      - type: GridRow
+        identifier: name-row
+        label: Name
+        renderables:
+          - defaultValue: ''
+            type: Text
+            identifier: first-name
+            label: 'First Name'
+            properties:
+              fluidAdditionalAttributes:
+                required: required
+            validators:
+              - identifier: NotEmpty
+          - defaultValue: ''
+            type: Text
+            identifier: last-name
+            label: 'Last Name'
+            properties:
+              fluidAdditionalAttributes:
+                required: required
+            validators:
+              - identifier: NotEmpty
+      - defaultValue: ''
+        type: Telephone
+        identifier: phone
+        label: 'Phone'
+        properties:
+          fluidAdditionalAttributes:
+            required: required
+        validators:
+          - identifier: NotEmpty
+      - defaultValue: ''
+        type: Email
+        identifier: email
+        label: 'Email'
+        properties:
+          fluidAdditionalAttributes:
+            required: required
+        validators:
+          - identifier: EmailAddress
+          - identifier: NotEmpty
+      - defaultValue: ''
+        type: Textarea
+        identifier: message
+        label: 'Message'
+        properties:
+          fluidAdditionalAttributes:
+            required: required
+        validators:
+          - identifier: NotEmpty
+      - type: GridRow
+        identifier: uploads-row
+        label: Uploads
+        renderables:
+          - properties:
+              fluidAdditionalAttributes:
+                required: required
+              saveToFileMount: '1:/user_upload'
+              allowedMimeTypes:
+                - application/msword
+                - application/vnd.openxmlformats-officedocument.wordprocessingml.document
+                - application/pdf
+            validators:
+              - identifier: NotEmpty
+            type: FileUpload
+            identifier: curriculum-upload
+            label: 'Curriculum Vitae'
+          - properties:
+              fluidAdditionalAttributes:
+                required: required
+              saveToFileMount: '1:/user_upload'
+              allowedMimeTypes:
+                - application/msword
+                - application/vnd.openxmlformats-officedocument.wordprocessingml.document
+                - application/pdf
+            validators:
+              - identifier: NotEmpty
+            type: FileUpload
+            identifier: cover-letter-upload
+            label: 'Cover Letter'
+          - properties:
+              saveToFileMount: '1:/user_upload'
+              allowedMimeTypes:
+                - application/pdf
+            type: FileUpload
+            identifier: miscellaneous-upload
+            label: 'Miscellaneous'

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="EXT:bw_jobs/Resources/Private/Language/locallang_form.xlf" date="2022-03-18T09:15:03Z" product-name="bw_jobs">
+		<header/>
+		<body>
+			<!-- <trans-unit id="jobApplication.element.page-1.properties.label" resname="jobApplication.element.page-1.properties.label" >
+				<source>Application</source>
+			</trans-unit> -->
+			<trans-unit id="jobApplication.element.page-1.properties.previousButtonLabel" resname="jobApplication.element.page-1.properties.previousButtonLabel">
+				<source>Previous step</source>
+			</trans-unit>
+			<trans-unit id="jobApplication.element.page-1.properties.nextButtonLabel" resname="jobApplication.element.page-1.properties.nextButtonLabel">
+				<source>Next step</source>
+			</trans-unit>
+			<trans-unit id="jobApplication.element.salutation.properties.label" resname="jobApplication.element.salutation.properties.label">
+				<source>Salutation</source>
+			</trans-unit>
+			<trans-unit id="jobApplication.element.salutation.properties.options.mr" resname="jobApplication.element.salutation.properties.options.mr">
+				<source>Mr.</source>
+			</trans-unit>
+			<trans-unit id="jobApplication.element.salutation.properties.options.mrs" resname="jobApplication.element.salutation.properties.options.mrs">
+				<source>Mrs.</source>
+			</trans-unit>
+			<trans-unit id="jobApplication.element.salutation.properties.options.other" resname="jobApplication.element.salutation.properties.options.other">
+				<source>Other</source>
+			</trans-unit>
+			<trans-unit id="jobApplication.element.first-name.properties.label" resname="jobApplication.element.first-name.properties.label">
+				<source>First Name</source>
+			</trans-unit>
+			<trans-unit id="jobApplication.element.last-name.properties.label" resname="jobApplication.element.last-name.properties.label">
+				<source>Last Name</source>
+			</trans-unit>
+			<trans-unit id="jobApplication.element.phone.properties.label" resname="jobApplication.element.phone.properties.label">
+				<source>Phone</source>
+			</trans-unit>
+			<trans-unit id="jobApplication.element.email.properties.label" resname="jobApplication.element.email.properties.label">
+				<source>Email</source>
+			</trans-unit>
+			<trans-unit id="jobApplication.element.message.properties.label" resname="jobApplication.element.message.properties.label">
+				<source>Message</source>
+			</trans-unit>
+			<trans-unit id="jobApplication.element.curriculum-upload.properties.label" resname="jobApplication.element.curriculum-upload.properties.label">
+				<source>Curriculum Vitae</source>
+			</trans-unit>
+			<trans-unit id="jobApplication.element.cover-letter-upload.properties.label" resname="jobApplication.element.cover-letter-upload.properties.label">
+				<source>Cover Letter</source>
+			</trans-unit>
+			<trans-unit id="jobApplication.element.miscellaneous-upload.properties.label" resname="jobApplication.element.miscellaneous-upload.properties.label">
+				<source>Miscellaneous</source>
+			</trans-unit>
+
+			<!-- Submit Button -->
+			<trans-unit id="element.jobApplication.renderingOptions.submitButtonLabel" resname="element.jobApplication.renderingOptions.submitButtonLabel">
+				<source>Send Application</source>
+			</trans-unit>
+
+			<!-- Finishers -->
+			<trans-unit id="jobApplication.finisher.EmailToApplicant.subject" resname="jobApplication.finisher.EmailToApplicant.subject">
+				<source>Thank you for your application!</source>
+			</trans-unit>
+			<trans-unit id="jobApplication.finisher.EmailToContactPerson.subject" resname="jobApplication.finisher.EmailToContactPerson.subject">
+				<source>New application</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

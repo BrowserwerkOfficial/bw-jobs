@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" target-language="de" datatype="plaintext" original="EXT:bw_jobs/Resources/Private/Language/locallang_plugin_list.xlf" date="2022-03-18T07:11:23Z" product-name="bw_jobs">
+		<header/>
+		<body>
+			<trans-unit id="title" resname="title">
+				<source>Jobs List View</source>
+				<target>Jobs Listenansicht</target>
+			</trans-unit>
+			<trans-unit id="description" resname="description">
+				<source>List view for listing all job positions.</source>
+				<target>Listenansicht zum Auflisten aller Stellenangebote.</target>
+			</trans-unit>
+			<trans-unit id="flexforms_sheet_title.settings" resname="flexforms_sheet_title.settings">
+				<source>Settings</source>
+				<target>Einstellungen</target>
+			</trans-unit>
+			<trans-unit id="flexforms_settings.detail_pid" resname="flexforms_settings.detail_pid">
+				<source>Detail View Pid</source>
+				<target>Pid Detailansicht</target>
+			</trans-unit>
+			<trans-unit id="flexforms_settings.allow_filtering" resname="flexforms_settings.allow_filtering">
+				<source>Allow Filtering</source>
+				<target>Filterung erlauben</target>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="EXT:bw_jobs/Resources/Private/Language/locallang_tabs.xlf" date="2022-03-18T09:15:03Z" product-name="bw_jobs">
+		<header/>
+		<body>
+			<trans-unit id="requirements" resname="requirements">
+				<source>Requirements</source>
+			</trans-unit>
+			<trans-unit id="pay" resname="pay">
+				<source>Pay</source>
+			</trans-unit>
+			<trans-unit id="employment" resname="employment">
+				<source>Employment</source>
+			</trans-unit>
+			<trans-unit id="seo" resname="seo">
+				<source>SEO</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

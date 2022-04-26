@@ -1,0 +1,161 @@
+<html data-namespace-typo3-fluid="true" xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
+
+{namespace bw=Browserwerk\BwJobs\ViewHelpers}
+
+<f:layout name="Default"/>
+
+<f:section name="Content">
+    <section class="bw-jobs-section">
+        <h1 class="bw-jobs-headline">
+            {jobPosition.title}
+        </h1>
+        <f:if condition="{jobPosition.teaser}">
+            <div class="bw-jobs-body">
+                <f:format.html parseFuncTSPath="lib.parseFunc">{jobPosition.teaser}</f:format.html>
+            </div>
+        </f:if>
+    </section>
+
+    <hr class="bw-jobs-divider">
+
+    <f:if condition="{jobPosition.description}">
+        <section class="bw-jobs-section">
+            <h2 class="bw-jobs-headline">
+                <f:translate key="description_headline"/>
+            </h2>
+            <div class="bw-jobs-body">
+                <f:format.html parseFuncTSPath="lib.parseFunc">{jobPosition.description}</f:format.html>
+            </div>
+        </section>
+        <hr class="bw-jobs-divider">
+    </f:if>
+
+    <f:if condition="{jobPosition.requiredEducation}">
+        <section class="bw-jobs-section">
+            <h2 class="bw-jobs-headline">
+                <f:translate key="required_education_headline"/>
+            </h2>
+            <div class="bw-jobs-body">
+                <f:format.html parseFuncTSPath="lib.parseFunc">{jobPosition.requiredEducation}</f:format.html>
+            </div>
+        </section>
+        <hr class="bw-jobs-divider">
+    </f:if>
+
+    <f:if condition="{jobPosition.requiredExperience}">
+        <section class="bw-jobs-section">
+            <h2 class="bw-jobs-headline">
+                <f:translate key="required_experience_headline"/>
+            </h2>
+            <div class="bw-jobs-body">
+                <f:format.html parseFuncTSPath="lib.parseFunc">{jobPosition.requiredExperience}</f:format.html>
+            </div>
+        </section>
+        <hr class="bw-jobs-divider">
+    </f:if>
+
+    <f:if condition="{jobPosition.requiredQualifications}">
+        <section class="bw-jobs-section">
+            <h2 class="bw-jobs-headline">
+                <f:translate key="required_qualifications_headline"/>
+            </h2>
+            <div class="bw-jobs-body">
+                <f:format.html parseFuncTSPath="lib.parseFunc">{jobPosition.requiredQualifications}</f:format.html>
+            </div>
+        </section>
+        <hr class="bw-jobs-divider">
+    </f:if>
+
+    <f:if condition="{jobPosition.requiredResponsibilities}">
+        <section class="bw-jobs-section">
+            <h2 class="bw-jobs-headline">
+                <f:translate key="required_responsibilities_headline"/>
+            </h2>
+            <div class="bw-jobs-body">
+                <f:format.html parseFuncTSPath="lib.parseFunc">{jobPosition.requiredResponsibilities}</f:format.html>
+            </div>
+        </section>
+        <hr class="bw-jobs-divider">
+    </f:if>
+
+    <f:if condition="{jobPosition.requiredSkills}">
+        <section class="bw-jobs-section">
+            <h2 class="bw-jobs-headline">
+                <f:translate key="required_skills_headline"/>
+            </h2>
+            <div class="bw-jobs-body">
+                <f:format.html parseFuncTSPath="lib.parseFunc">{jobPosition.requiredSkills}</f:format.html>
+            </div>
+        </section>
+        <hr class="bw-jobs-divider">
+    </f:if>
+
+    <f:if condition="{jobPosition.requiredCommitments}">
+        <section class="bw-jobs-section">
+            <h2 class="bw-jobs-headline">
+                <f:translate key="required_commitments_headline"/>
+            </h2>
+            <div class="bw-jobs-body">
+                <f:format.html parseFuncTSPath="lib.parseFunc">{jobPosition.requiredCommitments}</f:format.html>
+            </div>
+        </section>
+        <hr class="bw-jobs-divider">
+    </f:if>
+
+    <section class="bw-jobs-section">
+        <f:render arguments="{jobPosition: jobPosition}" partial="JobPosition/Properties"/>
+    </section>
+
+    <hr class="bw-jobs-divider">
+
+    <f:for as="location" each="{jobPosition.locations}">
+        <section class="bw-jobs-section">
+            <f:render arguments="{location: location}" partial="JobPosition/Location"/>
+        </section>
+        <f:for as="contactPerson" each="{location.contactPersons}">
+            <section class="bw-jobs-section">
+                <f:render arguments="{contactPerson: contactPerson, location: location}" partial="JobPosition/Contact"/>
+            </section>
+        </f:for>
+    </f:for>
+
+    <f:if condition="{settings.useApplicationForm} || {firstContactPerson}">
+        <hr class="bw-jobs-divider">
+        <section class="bw-jobs-section">
+            <div class="bw-jobs-cta">
+                <svg class="bw-jobs-cta__icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <h3 class="bw-jobs-cta__title">
+                    <f:translate key="apply_cta_title"/>
+                </h3>
+                <f:if condition="{settings.useApplicationForm}">
+                    <f:then>
+                        <a
+                            class="bw-jobs-button btn btn-primary"
+                            class="button"
+                            href="{f:uri.action(action: 'apply', arguments: {jobPosition: jobPosition})}"
+                        >
+                            <f:translate key="apply_button_label"/>
+                        </a>
+                    </f:then>
+                    <f:else>
+                        <a
+                            class="bw-jobs-button btn btn-primary"
+                            class="button"
+                            href="mailto:{firstContactPerson.email}"
+                            target="_blank"
+                        >
+                            <f:translate key="apply_button_label"/>
+                        </a>
+                    </f:else>
+                </f:if>
+            </div>
+        </section>
+    </f:if>
+
+    <bw:structuredData jobPosition="{jobPosition}"/>
+
+</f:section>
+
+</html>

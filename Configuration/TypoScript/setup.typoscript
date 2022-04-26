@@ -1,0 +1,113 @@
+plugin.tx_bwjobs_detail {
+  view {
+    templateRootPaths.0 = EXT:bw_jobs/Resources/Private/Templates/
+    templateRootPaths.1 = {$plugin.tx_bwjobs_detail.view.templateRootPath}
+    partialRootPaths.0 = EXT:bw_jobs/Resources/Private/Partials/
+    partialRootPaths.1 = {$plugin.tx_bwjobs_detail.view.partialRootPath}
+    layoutRootPaths.0 = EXT:bw_jobs/Resources/Private/Layouts/
+    layoutRootPaths.1 = {$plugin.tx_bwjobs_detail.view.layoutRootPath}
+  }
+
+  persistence {
+    storagePid = {$module.tx_bwjobs_jobs.persistence.storagePid}
+  }
+
+  settings {
+    storagePid = {$module.tx_bwjobs_jobs.persistence.storagePid}
+    formPersistenceIdentifier = {$plugin.tx_bwjobs_detail.settings.formPersistenceIdentifier}
+    senderName = {$plugin.tx_bwjobs_detail.settings.senderName}
+    senderAddress = {$plugin.tx_bwjobs_detail.settings.senderAddress}
+    emailTemplateRootPath = {$plugin.tx_bwjobs_detail.settings.emailTemplateRootPath}
+    emailLayoutRootPath = {$plugin.tx_bwjobs_detail.settings.emailLayoutRootPath}
+  }
+
+  features {
+    # skipDefaultArguments = 1
+
+    # if set to 1, the enable fields are ignored in BE context
+    ignoreAllEnableFieldsInBe = 0
+  }
+
+  mvc {
+    # callDefaultActionIfActionCantBeResolved = 1
+  }
+}
+
+plugin.tx_bwjobs_list {
+  view {
+    templateRootPaths.0 = EXT:bw_jobs/Resources/Private/Templates/
+    templateRootPaths.1 = {$plugin.tx_bwjobs_list.view.templateRootPath}
+    partialRootPaths.0 = EXT:bw_jobs/Resources/Private/Partials/
+    partialRootPaths.1 = {$plugin.tx_bwjobs_list.view.partialRootPath}
+    layoutRootPaths.0 = EXT:bw_jobs/Resources/Private/Layouts/
+    layoutRootPaths.1 = {$plugin.tx_bwjobs_list.view.layoutRootPath}
+  }
+
+  persistence {
+    storagePid = {$module.tx_bwjobs_jobs.persistence.storagePid}
+  }
+
+  settings {
+    storagePid = {$module.tx_bwjobs_jobs.persistence.storagePid}
+    itemsPerPage = {$plugin.tx_bwjobs_list.settings.itemsPerPage}
+  }
+
+  features {
+    # skipDefaultArguments = 1
+
+    # if set to 1, the enable fields are ignored in BE context
+    ignoreAllEnableFieldsInBe = 0
+  }
+
+  mvc {
+    # callDefaultActionIfActionCantBeResolved = 1
+  }
+}
+
+# unset these to remove the default styles
+page.includeCSSLibs.bwJobsBootstrap = EXT:bw_jobs/Resources/Public/Css/bootstrap.min.css
+page.includeCSS.bwJobs = EXT:bw_jobs/Resources/Public/Css/jobs.css
+
+module.tx_bwjobs {
+  view {
+    templateRootPaths.0 = EXT:bw_jobs/Resources/Private/Backend/Templates/
+    templateRootPaths.1 = {$module.tx_bwjobs_jobs.view.templateRootPath}
+    partialRootPaths.0 = EXT:bw_jobs/Resources/Private/Backend/Partials/
+    partialRootPaths.1 = {$module.tx_bwjobs_jobs.view.partialRootPath}
+    layoutRootPaths.0 = EXT:bw_jobs/Resources/Private/Backend/Layouts/
+    layoutRootPaths.1 = {$module.tx_bwjobs_jobs.view.layoutRootPath}
+  }
+
+  persistence {
+    storagePid = {$module.tx_bwjobs_jobs.persistence.storagePid}
+  }
+
+  settings {
+    storagePid = {$module.tx_bwjobs_jobs.persistence.storagePid}
+  }
+}
+
+module.tx_form {
+  settings {
+    yamlConfigurations {
+      1647521698445 = EXT:bw_jobs/Configuration/Form/Setup.yaml
+    }
+  }
+}
+
+plugin.tx_form {
+  settings {
+    yamlConfigurations {
+      1647521698445 = EXT:bw_jobs/Configuration/Form/Setup.yaml
+    }
+  }
+}
+
+[traverse(request.getQueryParams(), 'tx_bwjobs_detail/jobPosition') > 0]
+  config.pageTitleProviders {
+    record {
+      provider = Browserwerk\BwJobs\PageTitle\JobsPageTitleProvider
+      after = seo
+    }
+  }
+[global]

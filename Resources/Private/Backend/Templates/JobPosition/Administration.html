@@ -1,0 +1,35 @@
+<html
+    data-namespace-typo3-fluid="true"
+    xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
+
+<f:layout name="Default"/>
+
+<f:section name="Content">
+    <h1>
+        <f:translate key="job_positions_title"/>
+    </h1>
+
+    <f:be.tableList
+        clickTitleMode="info"
+        enableClickMenu="true"
+        enableControlPanels="true"
+        fieldList="{
+            0: 'title',
+            1: 'date_posted',
+            2: 'work_hours',
+            3: 'employment_types',
+            4: 'location',
+            5: 'contact_person',
+            6: 'locations',
+            7: 'categories'
+        }"
+        recordsPerPage="10"
+        sortDescending="true"
+        sortField="date_posted"
+        tableName="tx_bwjobs_domain_model_jobposition"
+    />
+
+    <f:flashMessages/>
+</f:section>
+
+</html>

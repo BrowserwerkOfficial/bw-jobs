@@ -1,0 +1,2060 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" target-language="de" datatype="plaintext" original="EXT:bw_jobs/Resources/Private/Language/locallang_db.xlf" date="2022-03-18T07:11:23Z" product-name="bw_jobs">
+		<header/>
+		<body>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition" resname="tx_bwjobs_domain_model_jobposition">
+				<source>Job Position</source>
+				<target>Stellenangebot</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.title" resname="tx_bwjobs_domain_model_jobposition.title">
+				<source>Title</source>
+				<target>Titel</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.slug" resname="tx_bwjobs_domain_model_jobposition.slug">
+				<source>Slug</source>
+				<target>Pfad</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.teaser" resname="tx_bwjobs_domain_model_jobposition.teaser">
+				<source>Teaser</source>
+				<target>Teaser</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.description" resname="tx_bwjobs_domain_model_jobposition.description">
+				<source>Description</source>
+				<target>Beschreibung</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.required_education" resname="tx_bwjobs_domain_model_jobposition.required_education">
+				<source>Required Education</source>
+				<target>Erforderliche Ausbildung</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.education_categories" resname="tx_bwjobs_domain_model_jobposition.education_categories">
+				<source>Education Categories</source>
+				<target>Kategorie der Ausbildung</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.education_categories_high_school" resname="tx_bwjobs_domain_model_jobposition.education_categories_high_school">
+				<source>High School Diploma</source>
+				<target>Abitur</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.education_categories_associate" resname="tx_bwjobs_domain_model_jobposition.education_categories_associate">
+				<source>Completed Apprenticeship</source>
+				<target>Abgeschlossene Berufsausbildung</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.education_categories_bachelor" resname="tx_bwjobs_domain_model_jobposition.education_categories_bachelor">
+				<source>Bachelor's Degree</source>
+				<target>Bachelor Abschluss</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.education_categories_postgraduate" resname="tx_bwjobs_domain_model_jobposition.education_categories_postgraduate">
+				<source>Master Degree</source>
+				<target>Master Abschluss</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.required_experience" resname="tx_bwjobs_domain_model_jobposition.required_experience">
+				<source>Required Experience</source>
+				<target>Erforderliche Erfahrung</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.required_qualifications" resname="tx_bwjobs_domain_model_jobposition.required_qualifications">
+				<source>Required Qualifications</source>
+				<target>Benötigte Qualifikationen</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.required_responsibilities" resname="tx_bwjobs_domain_model_jobposition.required_responsibilities">
+				<source>Required Responsibilities</source>
+				<target>Erforderliche Verantwortlichkeiten</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.required_skills" resname="tx_bwjobs_domain_model_jobposition.required_skills">
+				<source>Required Skills</source>
+				<target>Benötigte Fähigkeiten</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.required_commitments" resname="tx_bwjobs_domain_model_jobposition.required_commitments">
+				<source>Required Commitments</source>
+				<target>Erforderliche Verpflichtungen</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.work_hours" resname="tx_bwjobs_domain_model_jobposition.work_hours">
+				<source>Work Hours (monthly)</source>
+				<target>Arbeitsstunden (monatlich)</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.start_date" resname="tx_bwjobs_domain_model_jobposition.start_date">
+				<source>Start Date</source>
+				<target>Startdatum</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.valid_through_date" resname="tx_bwjobs_domain_model_jobposition.valid_through_date">
+				<source>Valid Until</source>
+				<target>Gültig bis</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.salary" resname="tx_bwjobs_domain_model_jobposition.salary">
+				<source>Salary</source>
+				<target>Gehalt</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.homeoffice_possible" resname="tx_bwjobs_domain_model_jobposition.homeoffice_possible">
+				<source>Homeoffice Possible</source>
+				<target>Homeoffice möglich</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.salary_public" resname="tx_bwjobs_domain_model_jobposition.salary_public">
+				<source>Salary Public</source>
+				<target>Gehalt öffentlich</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.salary_public_yes" resname="tx_bwjobs_domain_model_jobposition.salary_public_yes">
+				<source>Yes</source>
+				<target>Ja</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.salary_public_no" resname="tx_bwjobs_domain_model_jobposition.salary_public_no">
+				<source>No</source>
+				<target>Nein</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency" resname="tx_bwjobs_domain_model_jobposition.currency">
+				<source>Currency</source>
+				<target>Währung</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_afa" resname="tx_bwjobs_domain_model_jobposition.currency_afa">
+				<source>Afghan Afghani</source>
+				<target>Afghan Afghani</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_all" resname="tx_bwjobs_domain_model_jobposition.currency_all">
+				<source>Albanian Lek</source>
+				<target>Albanian Lek</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_dzd" resname="tx_bwjobs_domain_model_jobposition.currency_dzd">
+				<source>Algerian Dinar</source>
+				<target>Algerian Dinar</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_aoa" resname="tx_bwjobs_domain_model_jobposition.currency_aoa">
+				<source>Angolan Kwanza</source>
+				<target>Angolan Kwanza</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_ars" resname="tx_bwjobs_domain_model_jobposition.currency_ars">
+				<source>Argentine Peso</source>
+				<target>Argentine Peso</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_amd" resname="tx_bwjobs_domain_model_jobposition.currency_amd">
+				<source>Armenian Dram</source>
+				<target>Armenian Dram</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_awg" resname="tx_bwjobs_domain_model_jobposition.currency_awg">
+				<source>Aruban Florin</source>
+				<target>Aruban Florin</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_aud" resname="tx_bwjobs_domain_model_jobposition.currency_aud">
+				<source>Australian Dollar</source>
+				<target>Australian Dollar</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_azn" resname="tx_bwjobs_domain_model_jobposition.currency_azn">
+				<source>Azerbaijani Manat</source>
+				<target>Azerbaijani Manat</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_bsd" resname="tx_bwjobs_domain_model_jobposition.currency_bsd">
+				<source>Bahamian Dollar</source>
+				<target>Bahamian Dollar</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_bhd" resname="tx_bwjobs_domain_model_jobposition.currency_bhd">
+				<source>Bahraini Dinar</source>
+				<target>Bahraini Dinar</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_bdt" resname="tx_bwjobs_domain_model_jobposition.currency_bdt">
+				<source>Bangladeshi Taka</source>
+				<target>Bangladeshi Taka</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_bbd" resname="tx_bwjobs_domain_model_jobposition.currency_bbd">
+				<source>Barbadian Dollar</source>
+				<target>Barbadian Dollar</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_byr" resname="tx_bwjobs_domain_model_jobposition.currency_byr">
+				<source>Belarusian Ruble</source>
+				<target>Belarusian Ruble</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_bef" resname="tx_bwjobs_domain_model_jobposition.currency_bef">
+				<source>Belgian Franc</source>
+				<target>Belgian Franc</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_bzd" resname="tx_bwjobs_domain_model_jobposition.currency_bzd">
+				<source>Belize Dollar</source>
+				<target>Belize Dollar</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_bmd" resname="tx_bwjobs_domain_model_jobposition.currency_bmd">
+				<source>Bermudan Dollar</source>
+				<target>Bermudan Dollar</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_btn" resname="tx_bwjobs_domain_model_jobposition.currency_btn">
+				<source>Bhutanese Ngultrum</source>
+				<target>Bhutanese Ngultrum</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_btc" resname="tx_bwjobs_domain_model_jobposition.currency_btc">
+				<source>Bitcoin</source>
+				<target>Bitcoin</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_bob" resname="tx_bwjobs_domain_model_jobposition.currency_bob">
+				<source>Bolivian Boliviano</source>
+				<target>Bolivian Boliviano</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_bam" resname="tx_bwjobs_domain_model_jobposition.currency_bam">
+				<source>Bosnia-Herzegovina Convertible Mark</source>
+				<target>Bosnia-Herzegovina Convertible Mark</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_bwp" resname="tx_bwjobs_domain_model_jobposition.currency_bwp">
+				<source>Botswanan Pula</source>
+				<target>Botswanan Pula</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_brl" resname="tx_bwjobs_domain_model_jobposition.currency_brl">
+				<source>Brazilian Real</source>
+				<target>Brazilian Real</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_gbp" resname="tx_bwjobs_domain_model_jobposition.currency_gbp">
+				<source>British Pound Sterling</source>
+				<target>British Pound Sterling</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_bnd" resname="tx_bwjobs_domain_model_jobposition.currency_bnd">
+				<source>Brunei Dollar</source>
+				<target>Brunei Dollar</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_bgn" resname="tx_bwjobs_domain_model_jobposition.currency_bgn">
+				<source>Bulgarian Lev</source>
+				<target>Bulgarian Lev</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_bif" resname="tx_bwjobs_domain_model_jobposition.currency_bif">
+				<source>Burundian Franc</source>
+				<target>Burundian Franc</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_khr" resname="tx_bwjobs_domain_model_jobposition.currency_khr">
+				<source>Cambodian Riel</source>
+				<target>Cambodian Riel</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_cad" resname="tx_bwjobs_domain_model_jobposition.currency_cad">
+				<source>Canadian Dollar</source>
+				<target>Canadian Dollar</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_cve" resname="tx_bwjobs_domain_model_jobposition.currency_cve">
+				<source>Cape Verdean Escudo</source>
+				<target>Cape Verdean Escudo</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_kyd" resname="tx_bwjobs_domain_model_jobposition.currency_kyd">
+				<source>Cayman Islands Dollar</source>
+				<target>Cayman Islands Dollar</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_xof" resname="tx_bwjobs_domain_model_jobposition.currency_xof">
+				<source>CFA Franc BCEAO</source>
+				<target>CFA Franc BCEAO</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_xaf" resname="tx_bwjobs_domain_model_jobposition.currency_xaf">
+				<source>CFA Franc BEAC</source>
+				<target>CFA Franc BEAC</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_xpf" resname="tx_bwjobs_domain_model_jobposition.currency_xpf">
+				<source>CFP Franc</source>
+				<target>CFP Franc</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_clp" resname="tx_bwjobs_domain_model_jobposition.currency_clp">
+				<source>Chilean Peso</source>
+				<target>Chilean Peso</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_cny" resname="tx_bwjobs_domain_model_jobposition.currency_cny">
+				<source>Chinese Yuan</source>
+				<target>Chinese Yuan</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_cop" resname="tx_bwjobs_domain_model_jobposition.currency_cop">
+				<source>Colombian Peso</source>
+				<target>Colombian Peso</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_kmf" resname="tx_bwjobs_domain_model_jobposition.currency_kmf">
+				<source>Comorian Franc</source>
+				<target>Comorian Franc</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_cdf" resname="tx_bwjobs_domain_model_jobposition.currency_cdf">
+				<source>Congolese Franc</source>
+				<target>Congolese Franc</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_crc" resname="tx_bwjobs_domain_model_jobposition.currency_crc">
+				<source>Costa Rican ColÃ³n</source>
+				<target>Costa Rican ColÃ³n</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_hrk" resname="tx_bwjobs_domain_model_jobposition.currency_hrk">
+				<source>Croatian Kuna</source>
+				<target>Croatian Kuna</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_cuc" resname="tx_bwjobs_domain_model_jobposition.currency_cuc">
+				<source>Cuban Convertible Peso</source>
+				<target>Cuban Convertible Peso</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_czk" resname="tx_bwjobs_domain_model_jobposition.currency_czk">
+				<source>Czech Republic Koruna</source>
+				<target>Czech Republic Koruna</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_dkk" resname="tx_bwjobs_domain_model_jobposition.currency_dkk">
+				<source>Danish Krone</source>
+				<target>Danish Krone</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_djf" resname="tx_bwjobs_domain_model_jobposition.currency_djf">
+				<source>Djiboutian Franc</source>
+				<target>Djiboutian Franc</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_dop" resname="tx_bwjobs_domain_model_jobposition.currency_dop">
+				<source>Dominican Peso</source>
+				<target>Dominican Peso</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_xcd" resname="tx_bwjobs_domain_model_jobposition.currency_xcd">
+				<source>East Caribbean Dollar</source>
+				<target>East Caribbean Dollar</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_egp" resname="tx_bwjobs_domain_model_jobposition.currency_egp">
+				<source>Egyptian Pound</source>
+				<target>Egyptian Pound</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_ern" resname="tx_bwjobs_domain_model_jobposition.currency_ern">
+				<source>Eritrean Nakfa</source>
+				<target>Eritrean Nakfa</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_eek" resname="tx_bwjobs_domain_model_jobposition.currency_eek">
+				<source>Estonian Kroon</source>
+				<target>Estonian Kroon</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_etb" resname="tx_bwjobs_domain_model_jobposition.currency_etb">
+				<source>Ethiopian Birr</source>
+				<target>Ethiopian Birr</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_eur" resname="tx_bwjobs_domain_model_jobposition.currency_eur">
+				<source>Euro</source>
+				<target>Euro</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_fkp" resname="tx_bwjobs_domain_model_jobposition.currency_fkp">
+				<source>Falkland Islands Pound</source>
+				<target>Falkland Islands Pound</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_fjd" resname="tx_bwjobs_domain_model_jobposition.currency_fjd">
+				<source>Fijian Dollar</source>
+				<target>Fijian Dollar</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_gmd" resname="tx_bwjobs_domain_model_jobposition.currency_gmd">
+				<source>Gambian Dalasi</source>
+				<target>Gambian Dalasi</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_gel" resname="tx_bwjobs_domain_model_jobposition.currency_gel">
+				<source>Georgian Lari</source>
+				<target>Georgian Lari</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_ghs" resname="tx_bwjobs_domain_model_jobposition.currency_ghs">
+				<source>Ghanaian Cedi</source>
+				<target>Ghanaian Cedi</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_gip" resname="tx_bwjobs_domain_model_jobposition.currency_gip">
+				<source>Gibraltar Pound</source>
+				<target>Gibraltar Pound</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_grd" resname="tx_bwjobs_domain_model_jobposition.currency_grd">
+				<source>Greek Drachma</source>
+				<target>Greek Drachma</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_gtq" resname="tx_bwjobs_domain_model_jobposition.currency_gtq">
+				<source>Guatemalan Quetzal</source>
+				<target>Guatemalan Quetzal</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_gnf" resname="tx_bwjobs_domain_model_jobposition.currency_gnf">
+				<source>Guinean Franc</source>
+				<target>Guinean Franc</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_gyd" resname="tx_bwjobs_domain_model_jobposition.currency_gyd">
+				<source>Guyanaese Dollar</source>
+				<target>Guyanaese Dollar</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_htg" resname="tx_bwjobs_domain_model_jobposition.currency_htg">
+				<source>Haitian Gourde</source>
+				<target>Haitian Gourde</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_hnl" resname="tx_bwjobs_domain_model_jobposition.currency_hnl">
+				<source>Honduran Lempira</source>
+				<target>Honduran Lempira</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_hkd" resname="tx_bwjobs_domain_model_jobposition.currency_hkd">
+				<source>Hong Kong Dollar</source>
+				<target>Hong Kong Dollar</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_huf" resname="tx_bwjobs_domain_model_jobposition.currency_huf">
+				<source>Hungarian Forint</source>
+				<target>Hungarian Forint</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_isk" resname="tx_bwjobs_domain_model_jobposition.currency_isk">
+				<source>Icelandic KrÃ³na</source>
+				<target>Icelandic KrÃ³na</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_inr" resname="tx_bwjobs_domain_model_jobposition.currency_inr">
+				<source>Indian Rupee</source>
+				<target>Indian Rupee</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_idr" resname="tx_bwjobs_domain_model_jobposition.currency_idr">
+				<source>Indonesian Rupiah</source>
+				<target>Indonesian Rupiah</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_irr" resname="tx_bwjobs_domain_model_jobposition.currency_irr">
+				<source>Iranian Rial</source>
+				<target>Iranian Rial</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_iqd" resname="tx_bwjobs_domain_model_jobposition.currency_iqd">
+				<source>Iraqi Dinar</source>
+				<target>Iraqi Dinar</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_ils" resname="tx_bwjobs_domain_model_jobposition.currency_ils">
+				<source>Israeli New Sheqel</source>
+				<target>Israeli New Sheqel</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_itl" resname="tx_bwjobs_domain_model_jobposition.currency_itl">
+				<source>Italian Lira</source>
+				<target>Italian Lira</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_jmd" resname="tx_bwjobs_domain_model_jobposition.currency_jmd">
+				<source>Jamaican Dollar</source>
+				<target>Jamaican Dollar</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_jpy" resname="tx_bwjobs_domain_model_jobposition.currency_jpy">
+				<source>Japanese Yen</source>
+				<target>Japanese Yen</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_jod" resname="tx_bwjobs_domain_model_jobposition.currency_jod">
+				<source>Jordanian Dinar</source>
+				<target>Jordanian Dinar</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_kzt" resname="tx_bwjobs_domain_model_jobposition.currency_kzt">
+				<source>Kazakhstani Tenge</source>
+				<target>Kazakhstani Tenge</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_kes" resname="tx_bwjobs_domain_model_jobposition.currency_kes">
+				<source>Kenyan Shilling</source>
+				<target>Kenyan Shilling</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_kwd" resname="tx_bwjobs_domain_model_jobposition.currency_kwd">
+				<source>Kuwaiti Dinar</source>
+				<target>Kuwaiti Dinar</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_kgs" resname="tx_bwjobs_domain_model_jobposition.currency_kgs">
+				<source>Kyrgystani Som</source>
+				<target>Kyrgystani Som</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_lak" resname="tx_bwjobs_domain_model_jobposition.currency_lak">
+				<source>Laotian Kip</source>
+				<target>Laotian Kip</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_lvl" resname="tx_bwjobs_domain_model_jobposition.currency_lvl">
+				<source>Latvian Lats</source>
+				<target>Latvian Lats</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_lbp" resname="tx_bwjobs_domain_model_jobposition.currency_lbp">
+				<source>Lebanese Pound</source>
+				<target>Lebanese Pound</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_lsl" resname="tx_bwjobs_domain_model_jobposition.currency_lsl">
+				<source>Lesotho Loti</source>
+				<target>Lesotho Loti</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_lrd" resname="tx_bwjobs_domain_model_jobposition.currency_lrd">
+				<source>Liberian Dollar</source>
+				<target>Liberian Dollar</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_lyd" resname="tx_bwjobs_domain_model_jobposition.currency_lyd">
+				<source>Libyan Dinar</source>
+				<target>Libyan Dinar</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_ltl" resname="tx_bwjobs_domain_model_jobposition.currency_ltl">
+				<source>Lithuanian Litas</source>
+				<target>Lithuanian Litas</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_mop" resname="tx_bwjobs_domain_model_jobposition.currency_mop">
+				<source>Macanese Pataca</source>
+				<target>Macanese Pataca</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_mkd" resname="tx_bwjobs_domain_model_jobposition.currency_mkd">
+				<source>Macedonian Denar</source>
+				<target>Macedonian Denar</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_mga" resname="tx_bwjobs_domain_model_jobposition.currency_mga">
+				<source>Malagasy Ariary</source>
+				<target>Malagasy Ariary</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_mwk" resname="tx_bwjobs_domain_model_jobposition.currency_mwk">
+				<source>Malawian Kwacha</source>
+				<target>Malawian Kwacha</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_myr" resname="tx_bwjobs_domain_model_jobposition.currency_myr">
+				<source>Malaysian Ringgit</source>
+				<target>Malaysian Ringgit</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_mvr" resname="tx_bwjobs_domain_model_jobposition.currency_mvr">
+				<source>Maldivian Rufiyaa</source>
+				<target>Maldivian Rufiyaa</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_mro" resname="tx_bwjobs_domain_model_jobposition.currency_mro">
+				<source>Mauritanian Ouguiya</source>
+				<target>Mauritanian Ouguiya</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_mur" resname="tx_bwjobs_domain_model_jobposition.currency_mur">
+				<source>Mauritian Rupee</source>
+				<target>Mauritian Rupee</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_mxn" resname="tx_bwjobs_domain_model_jobposition.currency_mxn">
+				<source>Mexican Peso</source>
+				<target>Mexican Peso</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_mdl" resname="tx_bwjobs_domain_model_jobposition.currency_mdl">
+				<source>Moldovan Leu</source>
+				<target>Moldovan Leu</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_mnt" resname="tx_bwjobs_domain_model_jobposition.currency_mnt">
+				<source>Mongolian Tugrik</source>
+				<target>Mongolian Tugrik</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_mad" resname="tx_bwjobs_domain_model_jobposition.currency_mad">
+				<source>Moroccan Dirham</source>
+				<target>Moroccan Dirham</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_mzm" resname="tx_bwjobs_domain_model_jobposition.currency_mzm">
+				<source>Mozambican Metical</source>
+				<target>Mozambican Metical</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_mmk" resname="tx_bwjobs_domain_model_jobposition.currency_mmk">
+				<source>Myanmar Kyat</source>
+				<target>Myanmar Kyat</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_nad" resname="tx_bwjobs_domain_model_jobposition.currency_nad">
+				<source>Namibian Dollar</source>
+				<target>Namibian Dollar</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_npr" resname="tx_bwjobs_domain_model_jobposition.currency_npr">
+				<source>Nepalese Rupee</source>
+				<target>Nepalese Rupee</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_ang" resname="tx_bwjobs_domain_model_jobposition.currency_ang">
+				<source>Netherlands Antillean Guilder</source>
+				<target>Netherlands Antillean Guilder</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_twd" resname="tx_bwjobs_domain_model_jobposition.currency_twd">
+				<source>New Taiwan Dollar</source>
+				<target>New Taiwan Dollar</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_nzd" resname="tx_bwjobs_domain_model_jobposition.currency_nzd">
+				<source>New Zealand Dollar</source>
+				<target>New Zealand Dollar</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_nio" resname="tx_bwjobs_domain_model_jobposition.currency_nio">
+				<source>Nicaraguan CÃ³rdoba</source>
+				<target>Nicaraguan CÃ³rdoba</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_ngn" resname="tx_bwjobs_domain_model_jobposition.currency_ngn">
+				<source>Nigerian Naira</source>
+				<target>Nigerian Naira</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_kpw" resname="tx_bwjobs_domain_model_jobposition.currency_kpw">
+				<source>North Korean Won</source>
+				<target>North Korean Won</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_nok" resname="tx_bwjobs_domain_model_jobposition.currency_nok">
+				<source>Norwegian Krone</source>
+				<target>Norwegian Krone</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_omr" resname="tx_bwjobs_domain_model_jobposition.currency_omr">
+				<source>Omani Rial</source>
+				<target>Omani Rial</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_pkr" resname="tx_bwjobs_domain_model_jobposition.currency_pkr">
+				<source>Pakistani Rupee</source>
+				<target>Pakistani Rupee</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_pab" resname="tx_bwjobs_domain_model_jobposition.currency_pab">
+				<source>Panamanian Balboa</source>
+				<target>Panamanian Balboa</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_pgk" resname="tx_bwjobs_domain_model_jobposition.currency_pgk">
+				<source>Papua New Guinean Kina</source>
+				<target>Papua New Guinean Kina</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_pyg" resname="tx_bwjobs_domain_model_jobposition.currency_pyg">
+				<source>Paraguayan Guarani</source>
+				<target>Paraguayan Guarani</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_pen" resname="tx_bwjobs_domain_model_jobposition.currency_pen">
+				<source>Peruvian Nuevo Sol</source>
+				<target>Peruvian Nuevo Sol</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_php" resname="tx_bwjobs_domain_model_jobposition.currency_php">
+				<source>Philippine Peso</source>
+				<target>Philippine Peso</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_pln" resname="tx_bwjobs_domain_model_jobposition.currency_pln">
+				<source>Polish Zloty</source>
+				<target>Polish Zloty</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_qar" resname="tx_bwjobs_domain_model_jobposition.currency_qar">
+				<source>Qatari Rial</source>
+				<target>Qatari Rial</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_ron" resname="tx_bwjobs_domain_model_jobposition.currency_ron">
+				<source>Romanian Leu</source>
+				<target>Romanian Leu</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_rub" resname="tx_bwjobs_domain_model_jobposition.currency_rub">
+				<source>Russian Ruble</source>
+				<target>Russian Ruble</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_rwf" resname="tx_bwjobs_domain_model_jobposition.currency_rwf">
+				<source>Rwandan Franc</source>
+				<target>Rwandan Franc</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_svc" resname="tx_bwjobs_domain_model_jobposition.currency_svc">
+				<source>Salvadoran ColÃ³n</source>
+				<target>Salvadoran ColÃ³n</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_wst" resname="tx_bwjobs_domain_model_jobposition.currency_wst">
+				<source>Samoan Tala</source>
+				<target>Samoan Tala</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_sar" resname="tx_bwjobs_domain_model_jobposition.currency_sar">
+				<source>Saudi Riyal</source>
+				<target>Saudi Riyal</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_rsd" resname="tx_bwjobs_domain_model_jobposition.currency_rsd">
+				<source>Serbian Dinar</source>
+				<target>Serbian Dinar</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_scr" resname="tx_bwjobs_domain_model_jobposition.currency_scr">
+				<source>Seychellois Rupee</source>
+				<target>Seychellois Rupee</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_sll" resname="tx_bwjobs_domain_model_jobposition.currency_sll">
+				<source>Sierra Leonean Leone</source>
+				<target>Sierra Leonean Leone</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_sgd" resname="tx_bwjobs_domain_model_jobposition.currency_sgd">
+				<source>Singapore Dollar</source>
+				<target>Singapore Dollar</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_skk" resname="tx_bwjobs_domain_model_jobposition.currency_skk">
+				<source>Slovak Koruna</source>
+				<target>Slovak Koruna</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_sbd" resname="tx_bwjobs_domain_model_jobposition.currency_sbd">
+				<source>Solomon Islands Dollar</source>
+				<target>Solomon Islands Dollar</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_sos" resname="tx_bwjobs_domain_model_jobposition.currency_sos">
+				<source>Somali Shilling</source>
+				<target>Somali Shilling</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_zar" resname="tx_bwjobs_domain_model_jobposition.currency_zar">
+				<source>South African Rand</source>
+				<target>South African Rand</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_krw" resname="tx_bwjobs_domain_model_jobposition.currency_krw">
+				<source>South Korean Won</source>
+				<target>South Korean Won</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_xdr" resname="tx_bwjobs_domain_model_jobposition.currency_xdr">
+				<source>Special Drawing Rights</source>
+				<target>Special Drawing Rights</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_lkr" resname="tx_bwjobs_domain_model_jobposition.currency_lkr">
+				<source>Sri Lankan Rupee</source>
+				<target>Sri Lankan Rupee</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_shp" resname="tx_bwjobs_domain_model_jobposition.currency_shp">
+				<source>St. Helena Pound</source>
+				<target>St. Helena Pound</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_sdg" resname="tx_bwjobs_domain_model_jobposition.currency_sdg">
+				<source>Sudanese Pound</source>
+				<target>Sudanese Pound</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_srd" resname="tx_bwjobs_domain_model_jobposition.currency_srd">
+				<source>Surinamese Dollar</source>
+				<target>Surinamese Dollar</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_szl" resname="tx_bwjobs_domain_model_jobposition.currency_szl">
+				<source>Swazi Lilangeni</source>
+				<target>Swazi Lilangeni</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_sek" resname="tx_bwjobs_domain_model_jobposition.currency_sek">
+				<source>Swedish Krona</source>
+				<target>Swedish Krona</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_chf" resname="tx_bwjobs_domain_model_jobposition.currency_chf">
+				<source>Swiss Franc</source>
+				<target>Swiss Franc</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_syp" resname="tx_bwjobs_domain_model_jobposition.currency_syp">
+				<source>Syrian Pound</source>
+				<target>Syrian Pound</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_std" resname="tx_bwjobs_domain_model_jobposition.currency_std">
+				<source>São Tomé and Príncipe Dobra</source>
+				<target>São Tomé and Príncipe Dobra</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_tjs" resname="tx_bwjobs_domain_model_jobposition.currency_tjs">
+				<source>Tajikistani Somoni</source>
+				<target>Tajikistani Somoni</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_tzs" resname="tx_bwjobs_domain_model_jobposition.currency_tzs">
+				<source>Tanzanian Shilling</source>
+				<target>Tanzanian Shilling</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_thb" resname="tx_bwjobs_domain_model_jobposition.currency_thb">
+				<source>Thai Baht</source>
+				<target>Thai Baht</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_top" resname="tx_bwjobs_domain_model_jobposition.currency_top">
+				<source>Tongan Pa'anga</source>
+				<target>Tongan Pa'anga</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_ttd" resname="tx_bwjobs_domain_model_jobposition.currency_ttd">
+				<source>Trinidad &amp; Tobago Dollar</source>
+				<target>Trinidad &amp; Tobago Dollar</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_tnd" resname="tx_bwjobs_domain_model_jobposition.currency_tnd">
+				<source>Tunisian Dinar</source>
+				<target>Tunisian Dinar</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_try" resname="tx_bwjobs_domain_model_jobposition.currency_try">
+				<source>Turkish Lira</source>
+				<target>Turkish Lira</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_tmt" resname="tx_bwjobs_domain_model_jobposition.currency_tmt">
+				<source>Turkmenistani Manat</source>
+				<target>Turkmenistani Manat</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_ugx" resname="tx_bwjobs_domain_model_jobposition.currency_ugx">
+				<source>Ugandan Shilling</source>
+				<target>Ugandan Shilling</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_uah" resname="tx_bwjobs_domain_model_jobposition.currency_uah">
+				<source>Ukrainian Hryvnia</source>
+				<target>Ukrainian Hryvnia</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_aed" resname="tx_bwjobs_domain_model_jobposition.currency_aed">
+				<source>United Arab Emirates Dirham</source>
+				<target>United Arab Emirates Dirham</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_uyu" resname="tx_bwjobs_domain_model_jobposition.currency_uyu">
+				<source>Uruguayan Peso</source>
+				<target>Uruguayan Peso</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_usd" resname="tx_bwjobs_domain_model_jobposition.currency_usd">
+				<source>US Dollar</source>
+				<target>US Dollar</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_uzs" resname="tx_bwjobs_domain_model_jobposition.currency_uzs">
+				<source>Uzbekistan Som</source>
+				<target>Uzbekistan Som</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_vuv" resname="tx_bwjobs_domain_model_jobposition.currency_vuv">
+				<source>Vanuatu Vatu</source>
+				<target>Vanuatu Vatu</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_vef" resname="tx_bwjobs_domain_model_jobposition.currency_vef">
+				<source>Venezuelan BolÃvar</source>
+				<target>Venezuelan BolÃvar</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_vnd" resname="tx_bwjobs_domain_model_jobposition.currency_vnd">
+				<source>Vietnamese Dong</source>
+				<target>Vietnamese Dong</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_yer" resname="tx_bwjobs_domain_model_jobposition.currency_yer">
+				<source>Yemeni Rial</source>
+				<target>Yemeni Rial</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency_zmk" resname="tx_bwjobs_domain_model_jobposition.currency_zmk">
+				<source>Zambian Kwacha</source>
+				<target>Zambian Kwacha</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.payment_cycle" resname="tx_bwjobs_domain_model_jobposition.payment_cycle">
+				<source>Payment Cycle</source>
+				<target>Zahlungszyklus</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.payment_cycle_hourly" resname="tx_bwjobs_domain_model_jobposition.payment_cycle_hourly">
+				<source>Hourly</source>
+				<target>Stündlich</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.payment_cycle_daily" resname="tx_bwjobs_domain_model_jobposition.payment_cycle_daily">
+				<source>Daily</source>
+				<target>Täglich</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.payment_cycle_monthly" resname="tx_bwjobs_domain_model_jobposition.payment_cycle_monthly">
+				<source>Monthly</source>
+				<target>Monatlich</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.payment_cycle_yearly" resname="tx_bwjobs_domain_model_jobposition.payment_cycle_yearly">
+				<source>Yearly</source>
+				<target>Jährlich</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.level" resname="tx_bwjobs_domain_model_jobposition.level">
+				<source>Level</source>
+				<target>Stufe</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.level_junior" resname="tx_bwjobs_domain_model_jobposition.level_junior">
+				<source>Junior</source>
+				<target>Junior</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.level_senior" resname="tx_bwjobs_domain_model_jobposition.level_senior">
+				<source>Senior</source>
+				<target>Senior</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.date_posted" resname="tx_bwjobs_domain_model_jobposition.date_posted">
+				<source>Date Posted</source>
+				<target>Veröffentlichungsdatum</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.seo_title" resname="tx_bwjobs_domain_model_jobposition.seo_title">
+				<source>Title for search engines</source>
+				<target>Titel für Suchmaschinen</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.seo_description" resname="tx_bwjobs_domain_model_jobposition.seo_description">
+				<source>Description for search engines</source>
+				<target>Beschreibung für Suchmaschinen</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.og_title" resname="tx_bwjobs_domain_model_jobposition.og_title">
+				<source>Title for Open Graph</source>
+				<target>Titel für Open Graph</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.og_description" resname="tx_bwjobs_domain_model_jobposition.og_description">
+				<source>Description for Open Graph</source>
+				<target>Beschreibung für Open Graph</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.og_image" resname="tx_bwjobs_domain_model_jobposition.og_image">
+				<source>Image for Open Graph</source>
+				<target>Bild für Open Graph</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.og_image_alt" resname="tx_bwjobs_domain_model_jobposition.og_image_alt">
+				<source>Image Alt for Open Graph</source>
+				<target>Bild Alt-Text für Open Graph</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.twitter_title" resname="tx_bwjobs_domain_model_jobposition.twitter_title">
+				<source>Title for Twitter</source>
+				<target>Titel für Twitter</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.twitter_description" resname="tx_bwjobs_domain_model_jobposition.twitter_description">
+				<source>Description for Twitter</source>
+				<target>Beschreibung für Twitter</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.twitter_image" resname="tx_bwjobs_domain_model_jobposition.twitter_image">
+				<source>Image for Twitter</source>
+				<target>Bild für Twitter</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.twitter_image_alt" resname="tx_bwjobs_domain_model_jobposition.twitter_image_alt">
+				<source>Image Alt for Twitter</source>
+				<target>Bild Alt-Text für Twitter</target>
+			</trans-unit>
+				<trans-unit id="tx_bwjobs_domain_model_jobposition.twitter_card" resname="tx_bwjobs_domain_model_jobposition.twitter_card">
+				<source>Choose style for Twitter Card</source>
+				<target>Style für Twitter Card</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.employment_types" resname="tx_bwjobs_domain_model_jobposition.employment_types">
+				<source>Employment Types</source>
+				<target>Beschäftigungsarten</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.locations" resname="tx_bwjobs_domain_model_jobposition.locations">
+				<source>Locations</source>
+				<target>Standorte</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.categories" resname="tx_bwjobs_domain_model_jobposition.categories">
+				<source>Categories</source>
+				<target>Kategorien</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_employmenttype" resname="tx_bwjobs_domain_model_employmenttype">
+				<source>Employment Type</source>
+				<target>Beschäftigungsart</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_employmenttype.title" resname="tx_bwjobs_domain_model_employmenttype.title">
+				<source>Title</source>
+				<target>Titel</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_employmenttype.description" resname="tx_bwjobs_domain_model_employmenttype.description">
+				<source>Description</source>
+				<target>Beschreibung</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_employmenttype.type" resname="tx_bwjobs_domain_model_employmenttype.type">
+				<source>Type</source>
+				<target>Typ</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_employmenttype.type_full_time" resname="tx_bwjobs_domain_model_employmenttype.type_full_time">
+				<source>Full-Time</source>
+				<target>Vollzeit</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_employmenttype.type_part_time" resname="tx_bwjobs_domain_model_employmenttype.type_part_time">
+				<source>Part-Time</source>
+				<target>Teilzeit</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_employmenttype.type_contractor" resname="tx_bwjobs_domain_model_employmenttype.type_contractor">
+				<source>Contractor</source>
+				<target>Auftragnehmer:in</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_employmenttype.type_intern" resname="tx_bwjobs_domain_model_employmenttype.type_intern">
+				<source>Intern</source>
+				<target>Praktikant:in</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_employmenttype.type_volunteer" resname="tx_bwjobs_domain_model_employmenttype.type_volunteer">
+				<source>Volunteer</source>
+				<target>Freiwillig</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_employmenttype.type_per_diem" resname="tx_bwjobs_domain_model_employmenttype.type_per_diem">
+				<source>Per Diem</source>
+				<target>Per Diem</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_employmenttype.type_temporary" resname="tx_bwjobs_domain_model_employmenttype.type_temporary">
+				<source>Temporary</source>
+				<target>Befristet</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_employmenttype.type_other" resname="tx_bwjobs_domain_model_employmenttype.type_other">
+				<source>Other</source>
+				<target>Anderes</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_contactperson" resname="tx_bwjobs_domain_model_contactperson">
+				<source>Contact Person</source>
+				<target>Ansprechpartner</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_contactperson.title" resname="tx_bwjobs_domain_model_contactperson.title">
+				<source>Title</source>
+				<target>Titel</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_contactperson.gender" resname="tx_bwjobs_domain_model_contactperson.gender">
+				<source>Gender</source>
+				<target>Geschlecht</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_contactperson.gender_male" resname="tx_bwjobs_domain_model_contactperson.gender_male">
+				<source>Male</source>
+				<target>Männlich</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_contactperson.gender_female" resname="tx_bwjobs_domain_model_contactperson.gender_female">
+				<source>Female</source>
+				<target>Weiblich</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_contactperson.gender_other" resname="tx_bwjobs_domain_model_contactperson.gender_other">
+				<source>Other</source>
+				<target>Anderes</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_contactperson.name" resname="tx_bwjobs_domain_model_contactperson.name">
+				<source>Name</source>
+				<target>Name</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_contactperson.email" resname="tx_bwjobs_domain_model_contactperson.email">
+				<source>Email</source>
+				<target>E-Mail</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_contactperson.phone" resname="tx_bwjobs_domain_model_contactperson.phone">
+				<source>Phone</source>
+				<target>Telefon</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_contactperson.fax" resname="tx_bwjobs_domain_model_contactperson.fax">
+				<source>Fax</source>
+				<target>Fax</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_contactperson.image" resname="tx_bwjobs_domain_model_contactperson.image">
+				<source>Image</source>
+				<target>Bild</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location" resname="tx_bwjobs_domain_model_location">
+				<source>Location</source>
+				<target>Standort</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.title" resname="tx_bwjobs_domain_model_location.title">
+				<source>Title</source>
+				<target>Titel</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.organization" resname="tx_bwjobs_domain_model_location.organization">
+				<source>Organization</source>
+				<target>Firma</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.description" resname="tx_bwjobs_domain_model_location.description">
+				<source>Description</source>
+				<target>Beschreibung</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.street" resname="tx_bwjobs_domain_model_location.street">
+				<source>Street</source>
+				<target>Straße</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.city" resname="tx_bwjobs_domain_model_location.city">
+				<source>City</source>
+				<target>Stadt</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.zip" resname="tx_bwjobs_domain_model_location.zip">
+				<source>Zip</source>
+				<target>Postleitzahl</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.region" resname="tx_bwjobs_domain_model_location.region">
+				<source>Region</source>
+				<target>Bundesland</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.region_bw" resname="tx_bwjobs_domain_model_location.region_bw">
+				<source>Baden-Württemberg</source>
+				<target>Baden-Württemberg</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.region_by" resname="tx_bwjobs_domain_model_location.region_by">
+				<source>Bavaria</source>
+				<target>Bayern</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.region_he" resname="tx_bwjobs_domain_model_location.region_he">
+				<source>Hesse</source>
+				<target>Hessen</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.region_nw" resname="tx_bwjobs_domain_model_location.region_nw">
+				<source>North Rhine-Westphalia</source>
+				<target>Nordrhein-Westfalen</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.region_bb" resname="tx_bwjobs_domain_model_location.region_bb">
+				<source>Brandenburg</source>
+				<target>Brandenburg</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.region_ni" resname="tx_bwjobs_domain_model_location.region_ni">
+				<source>Lower Saxony</source>
+				<target>Niedersachsen</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.region_mv" resname="tx_bwjobs_domain_model_location.region_mv">
+				<source>Mecklenburg-Vorpommern</source>
+				<target>Mecklenburg-Vorpommern</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.region_rp" resname="tx_bwjobs_domain_model_location.region_rp">
+				<source>Rhineland-Palatinate</source>
+				<target>Rheinland-Pfalz</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.region_sl" resname="tx_bwjobs_domain_model_location.region_sl">
+				<source>Saarland</source>
+				<target>Saarland</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.region_sn" resname="tx_bwjobs_domain_model_location.region_sn">
+				<source>Saxony</source>
+				<target>Sachsen</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.region_st" resname="tx_bwjobs_domain_model_location.region_st">
+				<source>Saxony-Anhalt</source>
+				<target>Sachsen-Anhalt</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.region_sh" resname="tx_bwjobs_domain_model_location.region_sh">
+				<source>Schleswig-Holstein</source>
+				<target>Schleswig-Holstein</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.region_hb" resname="tx_bwjobs_domain_model_location.region_hb">
+				<source>Bremen</source>
+				<target>Bremen</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.region_be" resname="tx_bwjobs_domain_model_location.region_be">
+				<source>Berlin</source>
+				<target>Berlin</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.region_hh" resname="tx_bwjobs_domain_model_location.region_hh">
+				<source>Hamburg</source>
+				<target>Hamburg</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.region_th" resname="tx_bwjobs_domain_model_location.region_th">
+				<source>Thuringia</source>
+				<target>Thüringen</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country" resname="tx_bwjobs_domain_model_location.country">
+				<source>Country</source>
+				<target>Land</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone" resname="tx_bwjobs_domain_model_location.country_zone">
+				<source>Country Zone</source>
+				<target>Länderzone</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_af" resname="tx_bwjobs_domain_model_location.country_zone_af">
+				<source>Afghanistan</source>
+				<target>Afghanistan</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_al" resname="tx_bwjobs_domain_model_location.country_zone_al">
+				<source>Albania</source>
+				<target>Albania</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_dz" resname="tx_bwjobs_domain_model_location.country_zone_dz">
+				<source>Algeria</source>
+				<target>Algeria</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_as" resname="tx_bwjobs_domain_model_location.country_zone_as">
+				<source>American Samoa</source>
+				<target>American Samoa</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_ad" resname="tx_bwjobs_domain_model_location.country_zone_ad">
+				<source>Andorra</source>
+				<target>Andorra</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_ao" resname="tx_bwjobs_domain_model_location.country_zone_ao">
+				<source>Angola</source>
+				<target>Angola</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_ai" resname="tx_bwjobs_domain_model_location.country_zone_ai">
+				<source>Anguilla</source>
+				<target>Anguilla</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_aq" resname="tx_bwjobs_domain_model_location.country_zone_aq">
+				<source>Antarctica</source>
+				<target>Antarctica</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_ag" resname="tx_bwjobs_domain_model_location.country_zone_ag">
+				<source>Antigua and Barbuda</source>
+				<target>Antigua and Barbuda</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_ar" resname="tx_bwjobs_domain_model_location.country_zone_ar">
+				<source>Argentina</source>
+				<target>Argentina</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_am" resname="tx_bwjobs_domain_model_location.country_zone_am">
+				<source>Armenia</source>
+				<target>Armenia</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_aw" resname="tx_bwjobs_domain_model_location.country_zone_aw">
+				<source>Aruba</source>
+				<target>Aruba</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_au" resname="tx_bwjobs_domain_model_location.country_zone_au">
+				<source>Australia</source>
+				<target>Australia</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_at" resname="tx_bwjobs_domain_model_location.country_zone_at">
+				<source>Austria</source>
+				<target>Austria</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_az" resname="tx_bwjobs_domain_model_location.country_zone_az">
+				<source>Azerbaijan</source>
+				<target>Azerbaijan</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_bs" resname="tx_bwjobs_domain_model_location.country_zone_bs">
+				<source>Bahamas (the)</source>
+				<target>Bahamas (the)</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_bh" resname="tx_bwjobs_domain_model_location.country_zone_bh">
+				<source>Bahrain</source>
+				<target>Bahrain</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_bd" resname="tx_bwjobs_domain_model_location.country_zone_bd">
+				<source>Bangladesh</source>
+				<target>Bangladesh</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_bb" resname="tx_bwjobs_domain_model_location.country_zone_bb">
+				<source>Barbados</source>
+				<target>Barbados</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_by" resname="tx_bwjobs_domain_model_location.country_zone_by">
+				<source>Belarus</source>
+				<target>Belarus</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_be" resname="tx_bwjobs_domain_model_location.country_zone_be">
+				<source>Belgium</source>
+				<target>Belgium</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_bz" resname="tx_bwjobs_domain_model_location.country_zone_bz">
+				<source>Belize</source>
+				<target>Belize</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_bj" resname="tx_bwjobs_domain_model_location.country_zone_bj">
+				<source>Benin</source>
+				<target>Benin</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_bm" resname="tx_bwjobs_domain_model_location.country_zone_bm">
+				<source>Bermuda</source>
+				<target>Bermuda</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_bt" resname="tx_bwjobs_domain_model_location.country_zone_bt">
+				<source>Bhutan</source>
+				<target>Bhutan</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_bo" resname="tx_bwjobs_domain_model_location.country_zone_bo">
+				<source>Bolivia (Plurinational State of)</source>
+				<target>Bolivia (Plurinational State of)</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_bq" resname="tx_bwjobs_domain_model_location.country_zone_bq">
+				<source>Bonaire, Sint Eustatius and Saba</source>
+				<target>Bonaire, Sint Eustatius and Saba</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_ba" resname="tx_bwjobs_domain_model_location.country_zone_ba">
+				<source>Bosnia and Herzegovina</source>
+				<target>Bosnia and Herzegovina</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_bw" resname="tx_bwjobs_domain_model_location.country_zone_bw">
+				<source>Botswana</source>
+				<target>Botswana</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_bv" resname="tx_bwjobs_domain_model_location.country_zone_bv">
+				<source>Bouvet Island</source>
+				<target>Bouvet Island</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_br" resname="tx_bwjobs_domain_model_location.country_zone_br">
+				<source>Brazil</source>
+				<target>Brazil</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_io" resname="tx_bwjobs_domain_model_location.country_zone_io">
+				<source>British Indian Ocean Territory (the)</source>
+				<target>British Indian Ocean Territory (the)</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_bn" resname="tx_bwjobs_domain_model_location.country_zone_bn">
+				<source>Brunei Darussalam</source>
+				<target>Brunei Darussalam</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_bg" resname="tx_bwjobs_domain_model_location.country_zone_bg">
+				<source>Bulgaria</source>
+				<target>Bulgaria</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_bf" resname="tx_bwjobs_domain_model_location.country_zone_bf">
+				<source>Burkina Faso</source>
+				<target>Burkina Faso</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_bi" resname="tx_bwjobs_domain_model_location.country_zone_bi">
+				<source>Burundi</source>
+				<target>Burundi</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_cv" resname="tx_bwjobs_domain_model_location.country_zone_cv">
+				<source>Cabo Verde</source>
+				<target>Cabo Verde</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_kh" resname="tx_bwjobs_domain_model_location.country_zone_kh">
+				<source>Cambodia</source>
+				<target>Cambodia</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_cm" resname="tx_bwjobs_domain_model_location.country_zone_cm">
+				<source>Cameroon</source>
+				<target>Cameroon</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_ca" resname="tx_bwjobs_domain_model_location.country_zone_ca">
+				<source>Canada</source>
+				<target>Canada</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_ky" resname="tx_bwjobs_domain_model_location.country_zone_ky">
+				<source>Cayman Islands (the)</source>
+				<target>Cayman Islands (the)</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_cf" resname="tx_bwjobs_domain_model_location.country_zone_cf">
+				<source>Central African Republic (the)</source>
+				<target>Central African Republic (the)</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_td" resname="tx_bwjobs_domain_model_location.country_zone_td">
+				<source>Chad</source>
+				<target>Chad</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_cl" resname="tx_bwjobs_domain_model_location.country_zone_cl">
+				<source>Chile</source>
+				<target>Chile</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_cn" resname="tx_bwjobs_domain_model_location.country_zone_cn">
+				<source>China</source>
+				<target>China</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_cx" resname="tx_bwjobs_domain_model_location.country_zone_cx">
+				<source>Christmas Island</source>
+				<target>Christmas Island</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_cc" resname="tx_bwjobs_domain_model_location.country_zone_cc">
+				<source>Cocos (Keeling) Islands (the)</source>
+				<target>Cocos (Keeling) Islands (the)</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_co" resname="tx_bwjobs_domain_model_location.country_zone_co">
+				<source>Colombia</source>
+				<target>Colombia</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_km" resname="tx_bwjobs_domain_model_location.country_zone_km">
+				<source>Comoros (the)</source>
+				<target>Comoros (the)</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_cd" resname="tx_bwjobs_domain_model_location.country_zone_cd">
+				<source>Congo (the Democratic Republic of the)</source>
+				<target>Congo (the Democratic Republic of the)</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_cg" resname="tx_bwjobs_domain_model_location.country_zone_cg">
+				<source>Congo (the)</source>
+				<target>Congo (the)</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_ck" resname="tx_bwjobs_domain_model_location.country_zone_ck">
+				<source>Cook Islands (the)</source>
+				<target>Cook Islands (the)</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_cr" resname="tx_bwjobs_domain_model_location.country_zone_cr">
+				<source>Costa Rica</source>
+				<target>Costa Rica</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_hr" resname="tx_bwjobs_domain_model_location.country_zone_hr">
+				<source>Croatia</source>
+				<target>Croatia</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_cu" resname="tx_bwjobs_domain_model_location.country_zone_cu">
+				<source>Cuba</source>
+				<target>Cuba</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_cw" resname="tx_bwjobs_domain_model_location.country_zone_cw">
+				<source>Curaçao</source>
+				<target>Curaçao</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_cy" resname="tx_bwjobs_domain_model_location.country_zone_cy">
+				<source>Cyprus</source>
+				<target>Cyprus</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_cz" resname="tx_bwjobs_domain_model_location.country_zone_cz">
+				<source>Czechia</source>
+				<target>Czechia</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_ci" resname="tx_bwjobs_domain_model_location.country_zone_ci">
+				<source>Côte d'Ivoire</source>
+				<target>Côte d'Ivoire</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_dk" resname="tx_bwjobs_domain_model_location.country_zone_dk">
+				<source>Denmark</source>
+				<target>Denmark</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_dj" resname="tx_bwjobs_domain_model_location.country_zone_dj">
+				<source>Djibouti</source>
+				<target>Djibouti</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_dm" resname="tx_bwjobs_domain_model_location.country_zone_dm">
+				<source>Dominica</source>
+				<target>Dominica</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_do" resname="tx_bwjobs_domain_model_location.country_zone_do">
+				<source>Dominican Republic (the)</source>
+				<target>Dominican Republic (the)</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_ec" resname="tx_bwjobs_domain_model_location.country_zone_ec">
+				<source>Ecuador</source>
+				<target>Ecuador</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_eg" resname="tx_bwjobs_domain_model_location.country_zone_eg">
+				<source>Egypt</source>
+				<target>Egypt</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_sv" resname="tx_bwjobs_domain_model_location.country_zone_sv">
+				<source>El Salvador</source>
+				<target>El Salvador</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_gq" resname="tx_bwjobs_domain_model_location.country_zone_gq">
+				<source>Equatorial Guinea</source>
+				<target>Equatorial Guinea</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_er" resname="tx_bwjobs_domain_model_location.country_zone_er">
+				<source>Eritrea</source>
+				<target>Eritrea</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_ee" resname="tx_bwjobs_domain_model_location.country_zone_ee">
+				<source>Estonia</source>
+				<target>Estonia</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_sz" resname="tx_bwjobs_domain_model_location.country_zone_sz">
+				<source>Eswatini</source>
+				<target>Eswatini</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_et" resname="tx_bwjobs_domain_model_location.country_zone_et">
+				<source>Ethiopia</source>
+				<target>Ethiopia</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_fk" resname="tx_bwjobs_domain_model_location.country_zone_fk">
+				<source>Falkland Islands (the) [Malvinas]</source>
+				<target>Falkland Islands (the) [Malvinas]</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_fo" resname="tx_bwjobs_domain_model_location.country_zone_fo">
+				<source>Faroe Islands (the)</source>
+				<target>Faroe Islands (the)</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_fj" resname="tx_bwjobs_domain_model_location.country_zone_fj">
+				<source>Fiji</source>
+				<target>Fiji</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_fi" resname="tx_bwjobs_domain_model_location.country_zone_fi">
+				<source>Finland</source>
+				<target>Finland</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_fr" resname="tx_bwjobs_domain_model_location.country_zone_fr">
+				<source>France</source>
+				<target>France</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_gf" resname="tx_bwjobs_domain_model_location.country_zone_gf">
+				<source>French Guiana</source>
+				<target>French Guiana</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_pf" resname="tx_bwjobs_domain_model_location.country_zone_pf">
+				<source>French Polynesia</source>
+				<target>French Polynesia</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_tf" resname="tx_bwjobs_domain_model_location.country_zone_tf">
+				<source>French Southern Territories (the)</source>
+				<target>French Southern Territories (the)</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_ga" resname="tx_bwjobs_domain_model_location.country_zone_ga">
+				<source>Gabon</source>
+				<target>Gabon</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_gm" resname="tx_bwjobs_domain_model_location.country_zone_gm">
+				<source>Gambia (the)</source>
+				<target>Gambia (the)</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_ge" resname="tx_bwjobs_domain_model_location.country_zone_ge">
+				<source>Georgia</source>
+				<target>Georgia</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_de" resname="tx_bwjobs_domain_model_location.country_zone_de">
+				<source>Germany</source>
+				<target>Germany</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_gh" resname="tx_bwjobs_domain_model_location.country_zone_gh">
+				<source>Ghana</source>
+				<target>Ghana</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_gi" resname="tx_bwjobs_domain_model_location.country_zone_gi">
+				<source>Gibraltar</source>
+				<target>Gibraltar</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_gr" resname="tx_bwjobs_domain_model_location.country_zone_gr">
+				<source>Greece</source>
+				<target>Greece</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_gl" resname="tx_bwjobs_domain_model_location.country_zone_gl">
+				<source>Greenland</source>
+				<target>Greenland</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_gd" resname="tx_bwjobs_domain_model_location.country_zone_gd">
+				<source>Grenada</source>
+				<target>Grenada</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_gp" resname="tx_bwjobs_domain_model_location.country_zone_gp">
+				<source>Guadeloupe</source>
+				<target>Guadeloupe</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_gu" resname="tx_bwjobs_domain_model_location.country_zone_gu">
+				<source>Guam</source>
+				<target>Guam</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_gt" resname="tx_bwjobs_domain_model_location.country_zone_gt">
+				<source>Guatemala</source>
+				<target>Guatemala</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_gg" resname="tx_bwjobs_domain_model_location.country_zone_gg">
+				<source>Guernsey</source>
+				<target>Guernsey</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_gn" resname="tx_bwjobs_domain_model_location.country_zone_gn">
+				<source>Guinea</source>
+				<target>Guinea</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_gw" resname="tx_bwjobs_domain_model_location.country_zone_gw">
+				<source>Guinea-Bissau</source>
+				<target>Guinea-Bissau</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_gy" resname="tx_bwjobs_domain_model_location.country_zone_gy">
+				<source>Guyana</source>
+				<target>Guyana</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_ht" resname="tx_bwjobs_domain_model_location.country_zone_ht">
+				<source>Haiti</source>
+				<target>Haiti</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_hm" resname="tx_bwjobs_domain_model_location.country_zone_hm">
+				<source>Heard Island and McDonald Islands</source>
+				<target>Heard Island and McDonald Islands</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_va" resname="tx_bwjobs_domain_model_location.country_zone_va">
+				<source>Holy See (the)</source>
+				<target>Holy See (the)</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_hn" resname="tx_bwjobs_domain_model_location.country_zone_hn">
+				<source>Honduras</source>
+				<target>Honduras</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_hk" resname="tx_bwjobs_domain_model_location.country_zone_hk">
+				<source>Hong Kong</source>
+				<target>Hong Kong</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_hu" resname="tx_bwjobs_domain_model_location.country_zone_hu">
+				<source>Hungary</source>
+				<target>Hungary</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_is" resname="tx_bwjobs_domain_model_location.country_zone_is">
+				<source>Iceland</source>
+				<target>Iceland</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_in" resname="tx_bwjobs_domain_model_location.country_zone_in">
+				<source>India</source>
+				<target>India</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_id" resname="tx_bwjobs_domain_model_location.country_zone_id">
+				<source>Indonesia</source>
+				<target>Indonesia</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_ir" resname="tx_bwjobs_domain_model_location.country_zone_ir">
+				<source>Iran (Islamic Republic of)</source>
+				<target>Iran (Islamic Republic of)</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_iq" resname="tx_bwjobs_domain_model_location.country_zone_iq">
+				<source>Iraq</source>
+				<target>Iraq</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_ie" resname="tx_bwjobs_domain_model_location.country_zone_ie">
+				<source>Ireland</source>
+				<target>Ireland</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_im" resname="tx_bwjobs_domain_model_location.country_zone_im">
+				<source>Isle of Man</source>
+				<target>Isle of Man</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_il" resname="tx_bwjobs_domain_model_location.country_zone_il">
+				<source>Israel</source>
+				<target>Israel</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_it" resname="tx_bwjobs_domain_model_location.country_zone_it">
+				<source>Italy</source>
+				<target>Italy</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_jm" resname="tx_bwjobs_domain_model_location.country_zone_jm">
+				<source>Jamaica</source>
+				<target>Jamaica</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_jp" resname="tx_bwjobs_domain_model_location.country_zone_jp">
+				<source>Japan</source>
+				<target>Japan</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_je" resname="tx_bwjobs_domain_model_location.country_zone_je">
+				<source>Jersey</source>
+				<target>Jersey</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_jo" resname="tx_bwjobs_domain_model_location.country_zone_jo">
+				<source>Jordan</source>
+				<target>Jordan</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_kz" resname="tx_bwjobs_domain_model_location.country_zone_kz">
+				<source>Kazakhstan</source>
+				<target>Kazakhstan</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_ke" resname="tx_bwjobs_domain_model_location.country_zone_ke">
+				<source>Kenya</source>
+				<target>Kenya</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_ki" resname="tx_bwjobs_domain_model_location.country_zone_ki">
+				<source>Kiribati</source>
+				<target>Kiribati</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_kp" resname="tx_bwjobs_domain_model_location.country_zone_kp">
+				<source>Korea (the Democratic People's Republic of)</source>
+				<target>Korea (the Democratic People's Republic of)</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_kr" resname="tx_bwjobs_domain_model_location.country_zone_kr">
+				<source>Korea (the Republic of)</source>
+				<target>Korea (the Republic of)</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_kw" resname="tx_bwjobs_domain_model_location.country_zone_kw">
+				<source>Kuwait</source>
+				<target>Kuwait</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_kg" resname="tx_bwjobs_domain_model_location.country_zone_kg">
+				<source>Kyrgyzstan</source>
+				<target>Kyrgyzstan</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_la" resname="tx_bwjobs_domain_model_location.country_zone_la">
+				<source>Lao People's Democratic Republic (the)</source>
+				<target>Lao People's Democratic Republic (the)</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_lv" resname="tx_bwjobs_domain_model_location.country_zone_lv">
+				<source>Latvia</source>
+				<target>Latvia</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_lb" resname="tx_bwjobs_domain_model_location.country_zone_lb">
+				<source>Lebanon</source>
+				<target>Lebanon</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_ls" resname="tx_bwjobs_domain_model_location.country_zone_ls">
+				<source>Lesotho</source>
+				<target>Lesotho</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_lr" resname="tx_bwjobs_domain_model_location.country_zone_lr">
+				<source>Liberia</source>
+				<target>Liberia</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_ly" resname="tx_bwjobs_domain_model_location.country_zone_ly">
+				<source>Libya</source>
+				<target>Libya</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_li" resname="tx_bwjobs_domain_model_location.country_zone_li">
+				<source>Liechtenstein</source>
+				<target>Liechtenstein</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_lt" resname="tx_bwjobs_domain_model_location.country_zone_lt">
+				<source>Lithuania</source>
+				<target>Lithuania</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_lu" resname="tx_bwjobs_domain_model_location.country_zone_lu">
+				<source>Luxembourg</source>
+				<target>Luxembourg</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_mo" resname="tx_bwjobs_domain_model_location.country_zone_mo">
+				<source>Macao</source>
+				<target>Macao</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_mg" resname="tx_bwjobs_domain_model_location.country_zone_mg">
+				<source>Madagascar</source>
+				<target>Madagascar</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_mw" resname="tx_bwjobs_domain_model_location.country_zone_mw">
+				<source>Malawi</source>
+				<target>Malawi</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_my" resname="tx_bwjobs_domain_model_location.country_zone_my">
+				<source>Malaysia</source>
+				<target>Malaysia</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_mv" resname="tx_bwjobs_domain_model_location.country_zone_mv">
+				<source>Maldives</source>
+				<target>Maldives</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_ml" resname="tx_bwjobs_domain_model_location.country_zone_ml">
+				<source>Mali</source>
+				<target>Mali</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_mt" resname="tx_bwjobs_domain_model_location.country_zone_mt">
+				<source>Malta</source>
+				<target>Malta</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_mh" resname="tx_bwjobs_domain_model_location.country_zone_mh">
+				<source>Marshall Islands (the)</source>
+				<target>Marshall Islands (the)</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_mq" resname="tx_bwjobs_domain_model_location.country_zone_mq">
+				<source>Martinique</source>
+				<target>Martinique</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_mr" resname="tx_bwjobs_domain_model_location.country_zone_mr">
+				<source>Mauritania</source>
+				<target>Mauritania</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_mu" resname="tx_bwjobs_domain_model_location.country_zone_mu">
+				<source>Mauritius</source>
+				<target>Mauritius</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_yt" resname="tx_bwjobs_domain_model_location.country_zone_yt">
+				<source>Mayotte</source>
+				<target>Mayotte</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_mx" resname="tx_bwjobs_domain_model_location.country_zone_mx">
+				<source>Mexico</source>
+				<target>Mexico</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_fm" resname="tx_bwjobs_domain_model_location.country_zone_fm">
+				<source>Micronesia (Federated States of)</source>
+				<target>Micronesia (Federated States of)</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_md" resname="tx_bwjobs_domain_model_location.country_zone_md">
+				<source>Moldova (the Republic of)</source>
+				<target>Moldova (the Republic of)</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_mc" resname="tx_bwjobs_domain_model_location.country_zone_mc">
+				<source>Monaco</source>
+				<target>Monaco</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_mn" resname="tx_bwjobs_domain_model_location.country_zone_mn">
+				<source>Mongolia</source>
+				<target>Mongolia</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_me" resname="tx_bwjobs_domain_model_location.country_zone_me">
+				<source>Montenegro</source>
+				<target>Montenegro</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_ms" resname="tx_bwjobs_domain_model_location.country_zone_ms">
+				<source>Montserrat</source>
+				<target>Montserrat</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_ma" resname="tx_bwjobs_domain_model_location.country_zone_ma">
+				<source>Morocco</source>
+				<target>Morocco</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_mz" resname="tx_bwjobs_domain_model_location.country_zone_mz">
+				<source>Mozambique</source>
+				<target>Mozambique</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_mm" resname="tx_bwjobs_domain_model_location.country_zone_mm">
+				<source>Myanmar</source>
+				<target>Myanmar</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_na" resname="tx_bwjobs_domain_model_location.country_zone_na">
+				<source>Namibia</source>
+				<target>Namibia</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_nr" resname="tx_bwjobs_domain_model_location.country_zone_nr">
+				<source>Nauru</source>
+				<target>Nauru</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_np" resname="tx_bwjobs_domain_model_location.country_zone_np">
+				<source>Nepal</source>
+				<target>Nepal</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_nl" resname="tx_bwjobs_domain_model_location.country_zone_nl">
+				<source>Netherlands (the)</source>
+				<target>Netherlands (the)</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_nc" resname="tx_bwjobs_domain_model_location.country_zone_nc">
+				<source>New Caledonia</source>
+				<target>New Caledonia</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_nz" resname="tx_bwjobs_domain_model_location.country_zone_nz">
+				<source>New Zealand</source>
+				<target>New Zealand</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_ni" resname="tx_bwjobs_domain_model_location.country_zone_ni">
+				<source>Nicaragua</source>
+				<target>Nicaragua</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_ne" resname="tx_bwjobs_domain_model_location.country_zone_ne">
+				<source>Niger (the)</source>
+				<target>Niger (the)</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_ng" resname="tx_bwjobs_domain_model_location.country_zone_ng">
+				<source>Nigeria</source>
+				<target>Nigeria</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_nu" resname="tx_bwjobs_domain_model_location.country_zone_nu">
+				<source>Niue</source>
+				<target>Niue</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_nf" resname="tx_bwjobs_domain_model_location.country_zone_nf">
+				<source>Norfolk Island</source>
+				<target>Norfolk Island</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_mp" resname="tx_bwjobs_domain_model_location.country_zone_mp">
+				<source>Northern Mariana Islands (the)</source>
+				<target>Northern Mariana Islands (the)</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_no" resname="tx_bwjobs_domain_model_location.country_zone_no">
+				<source>Norway</source>
+				<target>Norway</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_om" resname="tx_bwjobs_domain_model_location.country_zone_om">
+				<source>Oman</source>
+				<target>Oman</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_pk" resname="tx_bwjobs_domain_model_location.country_zone_pk">
+				<source>Pakistan</source>
+				<target>Pakistan</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_pw" resname="tx_bwjobs_domain_model_location.country_zone_pw">
+				<source>Palau</source>
+				<target>Palau</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_ps" resname="tx_bwjobs_domain_model_location.country_zone_ps">
+				<source>Palestine, State of</source>
+				<target>Palestine, State of</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_pa" resname="tx_bwjobs_domain_model_location.country_zone_pa">
+				<source>Panama</source>
+				<target>Panama</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_pg" resname="tx_bwjobs_domain_model_location.country_zone_pg">
+				<source>Papua New Guinea</source>
+				<target>Papua New Guinea</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_py" resname="tx_bwjobs_domain_model_location.country_zone_py">
+				<source>Paraguay</source>
+				<target>Paraguay</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_pe" resname="tx_bwjobs_domain_model_location.country_zone_pe">
+				<source>Peru</source>
+				<target>Peru</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_ph" resname="tx_bwjobs_domain_model_location.country_zone_ph">
+				<source>Philippines (the)</source>
+				<target>Philippines (the)</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_pn" resname="tx_bwjobs_domain_model_location.country_zone_pn">
+				<source>Pitcairn</source>
+				<target>Pitcairn</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_pl" resname="tx_bwjobs_domain_model_location.country_zone_pl">
+				<source>Poland</source>
+				<target>Poland</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_pt" resname="tx_bwjobs_domain_model_location.country_zone_pt">
+				<source>Portugal</source>
+				<target>Portugal</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_pr" resname="tx_bwjobs_domain_model_location.country_zone_pr">
+				<source>Puerto Rico</source>
+				<target>Puerto Rico</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_qa" resname="tx_bwjobs_domain_model_location.country_zone_qa">
+				<source>Qatar</source>
+				<target>Qatar</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_mk" resname="tx_bwjobs_domain_model_location.country_zone_mk">
+				<source>Republic of North Macedonia</source>
+				<target>Republic of North Macedonia</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_ro" resname="tx_bwjobs_domain_model_location.country_zone_ro">
+				<source>Romania</source>
+				<target>Romania</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_ru" resname="tx_bwjobs_domain_model_location.country_zone_ru">
+				<source>Russian Federation (the)</source>
+				<target>Russian Federation (the)</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_rw" resname="tx_bwjobs_domain_model_location.country_zone_rw">
+				<source>Rwanda</source>
+				<target>Rwanda</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_re" resname="tx_bwjobs_domain_model_location.country_zone_re">
+				<source>Réunion</source>
+				<target>Réunion</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_bl" resname="tx_bwjobs_domain_model_location.country_zone_bl">
+				<source>Saint Barthélemy</source>
+				<target>Saint Barthélemy</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_sh" resname="tx_bwjobs_domain_model_location.country_zone_sh">
+				<source>Saint Helena, Ascension and Tristan da Cunha</source>
+				<target>Saint Helena, Ascension and Tristan da Cunha</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_kn" resname="tx_bwjobs_domain_model_location.country_zone_kn">
+				<source>Saint Kitts and Nevis</source>
+				<target>Saint Kitts and Nevis</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_lc" resname="tx_bwjobs_domain_model_location.country_zone_lc">
+				<source>Saint Lucia</source>
+				<target>Saint Lucia</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_mf" resname="tx_bwjobs_domain_model_location.country_zone_mf">
+				<source>Saint Martin (French part)</source>
+				<target>Saint Martin (French part)</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_pm" resname="tx_bwjobs_domain_model_location.country_zone_pm">
+				<source>Saint Pierre and Miquelon</source>
+				<target>Saint Pierre and Miquelon</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_vc" resname="tx_bwjobs_domain_model_location.country_zone_vc">
+				<source>Saint Vincent and the Grenadines</source>
+				<target>Saint Vincent and the Grenadines</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_ws" resname="tx_bwjobs_domain_model_location.country_zone_ws">
+				<source>Samoa</source>
+				<target>Samoa</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_sm" resname="tx_bwjobs_domain_model_location.country_zone_sm">
+				<source>San Marino</source>
+				<target>San Marino</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_st" resname="tx_bwjobs_domain_model_location.country_zone_st">
+				<source>Sao Tome and Principe</source>
+				<target>Sao Tome and Principe</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_sa" resname="tx_bwjobs_domain_model_location.country_zone_sa">
+				<source>Saudi Arabia</source>
+				<target>Saudi Arabia</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_sn" resname="tx_bwjobs_domain_model_location.country_zone_sn">
+				<source>Senegal</source>
+				<target>Senegal</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_rs" resname="tx_bwjobs_domain_model_location.country_zone_rs">
+				<source>Serbia</source>
+				<target>Serbia</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_sc" resname="tx_bwjobs_domain_model_location.country_zone_sc">
+				<source>Seychelles</source>
+				<target>Seychelles</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_sl" resname="tx_bwjobs_domain_model_location.country_zone_sl">
+				<source>Sierra Leone</source>
+				<target>Sierra Leone</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_sg" resname="tx_bwjobs_domain_model_location.country_zone_sg">
+				<source>Singapore</source>
+				<target>Singapore</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_sx" resname="tx_bwjobs_domain_model_location.country_zone_sx">
+				<source>Sint Maarten (Dutch part)</source>
+				<target>Sint Maarten (Dutch part)</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_sk" resname="tx_bwjobs_domain_model_location.country_zone_sk">
+				<source>Slovakia</source>
+				<target>Slovakia</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_si" resname="tx_bwjobs_domain_model_location.country_zone_si">
+				<source>Slovenia</source>
+				<target>Slovenia</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_sb" resname="tx_bwjobs_domain_model_location.country_zone_sb">
+				<source>Solomon Islands</source>
+				<target>Solomon Islands</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_so" resname="tx_bwjobs_domain_model_location.country_zone_so">
+				<source>Somalia</source>
+				<target>Somalia</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_za" resname="tx_bwjobs_domain_model_location.country_zone_za">
+				<source>South Africa</source>
+				<target>South Africa</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_gs" resname="tx_bwjobs_domain_model_location.country_zone_gs">
+				<source>South Georgia and the South Sandwich Islands</source>
+				<target>South Georgia and the South Sandwich Islands</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_ss" resname="tx_bwjobs_domain_model_location.country_zone_ss">
+				<source>South Sudan</source>
+				<target>South Sudan</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_es" resname="tx_bwjobs_domain_model_location.country_zone_es">
+				<source>Spain</source>
+				<target>Spain</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_lk" resname="tx_bwjobs_domain_model_location.country_zone_lk">
+				<source>Sri Lanka</source>
+				<target>Sri Lanka</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_sd" resname="tx_bwjobs_domain_model_location.country_zone_sd">
+				<source>Sudan (the)</source>
+				<target>Sudan (the)</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_sr" resname="tx_bwjobs_domain_model_location.country_zone_sr">
+				<source>Suriname</source>
+				<target>Suriname</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_sj" resname="tx_bwjobs_domain_model_location.country_zone_sj">
+				<source>Svalbard and Jan Mayen</source>
+				<target>Svalbard and Jan Mayen</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_se" resname="tx_bwjobs_domain_model_location.country_zone_se">
+				<source>Sweden</source>
+				<target>Sweden</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_ch" resname="tx_bwjobs_domain_model_location.country_zone_ch">
+				<source>Switzerland</source>
+				<target>Switzerland</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_sy" resname="tx_bwjobs_domain_model_location.country_zone_sy">
+				<source>Syrian Arab Republic</source>
+				<target>Syrian Arab Republic</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_tw" resname="tx_bwjobs_domain_model_location.country_zone_tw">
+				<source>Taiwan</source>
+				<target>Taiwan</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_tj" resname="tx_bwjobs_domain_model_location.country_zone_tj">
+				<source>Tajikistan</source>
+				<target>Tajikistan</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_tz" resname="tx_bwjobs_domain_model_location.country_zone_tz">
+				<source>Tanzania, United Republic of</source>
+				<target>Tanzania, United Republic of</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_th" resname="tx_bwjobs_domain_model_location.country_zone_th">
+				<source>Thailand</source>
+				<target>Thailand</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_tl" resname="tx_bwjobs_domain_model_location.country_zone_tl">
+				<source>Timor-Leste</source>
+				<target>Timor-Leste</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_tg" resname="tx_bwjobs_domain_model_location.country_zone_tg">
+				<source>Togo</source>
+				<target>Togo</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_tk" resname="tx_bwjobs_domain_model_location.country_zone_tk">
+				<source>Tokelau</source>
+				<target>Tokelau</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_to" resname="tx_bwjobs_domain_model_location.country_zone_to">
+				<source>Tonga</source>
+				<target>Tonga</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_tt" resname="tx_bwjobs_domain_model_location.country_zone_tt">
+				<source>Trinidad and Tobago</source>
+				<target>Trinidad and Tobago</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_tn" resname="tx_bwjobs_domain_model_location.country_zone_tn">
+				<source>Tunisia</source>
+				<target>Tunisia</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_tr" resname="tx_bwjobs_domain_model_location.country_zone_tr">
+				<source>Turkey</source>
+				<target>Turkey</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_tm" resname="tx_bwjobs_domain_model_location.country_zone_tm">
+				<source>Turkmenistan</source>
+				<target>Turkmenistan</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_tc" resname="tx_bwjobs_domain_model_location.country_zone_tc">
+				<source>Turks and Caicos Islands (the)</source>
+				<target>Turks and Caicos Islands (the)</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_tv" resname="tx_bwjobs_domain_model_location.country_zone_tv">
+				<source>Tuvalu</source>
+				<target>Tuvalu</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_ug" resname="tx_bwjobs_domain_model_location.country_zone_ug">
+				<source>Uganda</source>
+				<target>Uganda</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_ua" resname="tx_bwjobs_domain_model_location.country_zone_ua">
+				<source>Ukraine</source>
+				<target>Ukraine</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_ae" resname="tx_bwjobs_domain_model_location.country_zone_ae">
+				<source>United Arab Emirates (the)</source>
+				<target>United Arab Emirates (the)</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_gb" resname="tx_bwjobs_domain_model_location.country_zone_gb">
+				<source>United Kingdom of Great Britain and Northern Ireland (the)</source>
+				<target>United Kingdom of Great Britain and Northern Ireland (the)</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_um" resname="tx_bwjobs_domain_model_location.country_zone_um">
+				<source>United States Minor Outlying Islands (the)</source>
+				<target>United States Minor Outlying Islands (the)</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_us" resname="tx_bwjobs_domain_model_location.country_zone_us">
+				<source>United States of America (the)</source>
+				<target>United States of America (the)</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_uy" resname="tx_bwjobs_domain_model_location.country_zone_uy">
+				<source>Uruguay</source>
+				<target>Uruguay</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_uz" resname="tx_bwjobs_domain_model_location.country_zone_uz">
+				<source>Uzbekistan</source>
+				<target>Uzbekistan</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_vu" resname="tx_bwjobs_domain_model_location.country_zone_vu">
+				<source>Vanuatu</source>
+				<target>Vanuatu</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_ve" resname="tx_bwjobs_domain_model_location.country_zone_ve">
+				<source>Venezuela (Bolivarian Republic of)</source>
+				<target>Venezuela (Bolivarian Republic of)</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_vn" resname="tx_bwjobs_domain_model_location.country_zone_vn">
+				<source>Viet Nam</source>
+				<target>Viet Nam</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_vg" resname="tx_bwjobs_domain_model_location.country_zone_vg">
+				<source>Virgin Islands (British)</source>
+				<target>Virgin Islands (British)</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_vi" resname="tx_bwjobs_domain_model_location.country_zone_vi">
+				<source>Virgin Islands (U.S.)</source>
+				<target>Virgin Islands (U.S.)</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_wf" resname="tx_bwjobs_domain_model_location.country_zone_wf">
+				<source>Wallis and Futuna</source>
+				<target>Wallis and Futuna</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_eh" resname="tx_bwjobs_domain_model_location.country_zone_eh">
+				<source>Western Sahara</source>
+				<target>Western Sahara</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_ye" resname="tx_bwjobs_domain_model_location.country_zone_ye">
+				<source>Yemen</source>
+				<target>Yemen</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_zm" resname="tx_bwjobs_domain_model_location.country_zone_zm">
+				<source>Zambia</source>
+				<target>Zambia</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_zw" resname="tx_bwjobs_domain_model_location.country_zone_zw">
+				<source>Zimbabwe</source>
+				<target>Zimbabwe</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.country_zone_ax" resname="tx_bwjobs_domain_model_location.country_zone_ax">
+				<source>Åland Islands</source>
+				<target>Åland Islands</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.image" resname="tx_bwjobs_domain_model_location.image">
+				<source>Image</source>
+				<target>Bild</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_location.contact_persons" resname="tx_bwjobs_domain_model_location.contact_persons">
+				<source>Contact Persons</source>
+				<target>Ansprechpartner</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_category" resname="tx_bwjobs_domain_model_category">
+				<source>Category</source>
+				<target>Kategorie</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_category.title" resname="tx_bwjobs_domain_model_category.title">
+				<source>Title</source>
+				<target>Titel</target>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

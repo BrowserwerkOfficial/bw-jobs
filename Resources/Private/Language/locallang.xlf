@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="EXT:bw_jobs/Resources/Private/Language/locallang.xlf" date="2022-03-18T09:15:03Z" product-name="bw_jobs">
+		<header/>
+		<body>
+			<!-- Frontend -->
+			<trans-unit id="location_filter_label" resname="location_filter_label">
+				<source>Location</source>
+			</trans-unit>
+			<trans-unit id="location_filter_prepend_option_label" resname="location_filter_prepend_option_label">
+				<source>Please select</source>
+			</trans-unit>
+			<trans-unit id="category_filter_label" resname="category_filter_label">
+				<source>Category</source>
+			</trans-unit>
+			<trans-unit id="category_filter_prepend_option_label" resname="category_filter_prepend_option_label">
+				<source>Please select</source>
+			</trans-unit>
+			<trans-unit id="nothing_posted" resname="nothing_posted">
+				<source>We have not yet posted any vacancies at this time.</source>
+			</trans-unit>
+			<trans-unit id="nothing_found" resname="nothing_found">
+				<source>Nothing could be found for your filter criteria.</source>
+			</trans-unit>
+			<trans-unit id="work_hours" resname="work_hours">
+				<source>Work hours per week</source>
+			</trans-unit>
+			<trans-unit id="homeoffice_possible" resname="homeoffice_possible">
+				<source>Homeoffice possible</source>
+			</trans-unit>
+			<trans-unit id="yes" resname="yes">
+				<source>Yes</source>
+			</trans-unit>
+			<trans-unit id="no" resname="no">
+				<source>No</source>
+			</trans-unit>
+			<trans-unit id="employment_types" resname="employment_types">
+				<source>Employment Types</source>
+			</trans-unit>
+			<trans-unit id="categories" resname="categories">
+				<source>Categories</source>
+			</trans-unit>
+			<trans-unit id="hourly" resname="hourly">
+				<source>Hourly</source>
+			</trans-unit>
+			<trans-unit id="daily" resname="daily">
+				<source>Daily</source>
+			</trans-unit>
+			<trans-unit id="monthly" resname="monthly">
+				<source>Monthly</source>
+			</trans-unit>
+			<trans-unit id="yearly" resname="yearly">
+				<source>Yearly</source>
+			</trans-unit>
+			<trans-unit id="salary" resname="salary">
+				<source>Salary</source>
+			</trans-unit>
+			<trans-unit id="start_date" resname="start_date">
+				<source>Start of employment on</source>
+			</trans-unit>
+			<trans-unit id="date_posted" resname="date_posted">
+				<source>Published on</source>
+			</trans-unit>
+			<trans-unit id="valid_through_date" resname="valid_through_date">
+				<source>Tender valid through</source>
+			</trans-unit>
+			<trans-unit id="street" resname="street">
+				<source>Street</source>
+			</trans-unit>
+			<trans-unit id="city" resname="city">
+				<source>City</source>
+			</trans-unit>
+			<trans-unit id="zip" resname="zip">
+				<source>ZIP Code</source>
+			</trans-unit>
+			<trans-unit id="job_information_headline" resname="job_information_headline">
+				<source>Job Information</source>
+			</trans-unit>
+			<trans-unit id="location_headline" resname="location_headline">
+				<source>The Location %s</source>
+			</trans-unit>
+			<trans-unit id="contact_person_headline" resname="contact_person_headline">
+				<source>Your Contact Person in %s:</source>
+			</trans-unit>
+			<trans-unit id="description_headline" resname="description_headline">
+				<source>Description</source>
+			</trans-unit>
+			<trans-unit id="required_education_headline" resname="required_education_headline">
+				<source>Required Education</source>
+			</trans-unit>
+			<trans-unit id="required_experience_headline" resname="required_experience_headline">
+				<source>Required Experience</source>
+			</trans-unit>
+			<trans-unit id="required_qualifications_headline" resname="required_qualifications_headline">
+				<source>Required Qualifications</source>
+			</trans-unit>
+			<trans-unit id="required_responsibilities_headline" resname="required_responsibilities_headline">
+				<source>Required Responsibilities</source>
+			</trans-unit>
+			<trans-unit id="required_skills_headline" resname="required_skills_headline">
+				<source>Required Skills</source>
+			</trans-unit>
+			<trans-unit id="required_commitments_headline" resname="required_commitments_headline">
+				<source>Required Commitments</source>
+			</trans-unit>
+			<trans-unit id="apply_cta_title" resname="apply_cta_title">
+				<source>We are looking forward to receiving your application!</source>
+			</trans-unit>
+			<trans-unit id="apply_button_label" resname="apply_button_label">
+				<source>Apply Now</source>
+			</trans-unit>
+
+			<!-- Backend -->
+			<trans-unit id="job_positions_title" resname="job_positions_title">
+				<source>Job Positions</source>
+			</trans-unit>
+			<trans-unit id="employment_types_title" resname="employment_types_title">
+				<source>Employment Types</source>
+			</trans-unit>
+			<trans-unit id="contact_persons_title" resname="contact_persons_title">
+				<source>Contact Persons</source>
+			</trans-unit>
+			<trans-unit id="locations_title" resname="locations_title">
+				<source>Locations</source>
+			</trans-unit>
+			<trans-unit id="categories_title" resname="categories_title">
+				<source>Categories</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

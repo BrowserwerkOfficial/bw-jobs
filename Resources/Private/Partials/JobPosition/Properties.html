@@ -1,0 +1,113 @@
+<html data-namespace-typo3-fluid="true" xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
+
+<h2 class="bw-jobs-headline">
+    <f:translate key="job_information_headline"/>
+</h2>
+
+<div class="bw-jobs-detail-boxes">
+    <f:if condition="{jobPosition.workHours}">
+        <div class="bw-jobs-detail-box">
+            <span class="bw-jobs-detail-box__value">
+                {jobPosition.workHours}
+            </span>
+            <span class="bw-jobs-detail-box__label">
+                <f:translate key="work_hours"/>
+            </span>
+        </div>
+    </f:if>
+
+    <div class="bw-jobs-detail-box">
+        <span class="bw-jobs-detail-box__label">
+            <f:translate key="homeoffice_possible"/>
+        </span>
+        <span class="bw-jobs-detail-box__value">
+            <f:translate key="{f:if(condition: jobPosition.homeofficePossible, then: 'yes', else: 'no')}"/>
+        </span>
+    </div>
+
+    <f:if condition="{jobPosition.employmentTypes}">
+        <div class="bw-jobs-detail-box">
+            <span class="bw-jobs-detail-box__label">
+                <f:translate key="employment_types"/>
+            </span>
+            <span class="bw-jobs-detail-box__value">
+                <f:for as="employmentType" each="{jobPosition.employmentTypes}" iteration="iterator">
+                    {employmentType.title}<f:if condition="!{iterator.isLast}">, </f:if>
+                </f:for>
+            </span>
+        </div>
+    </f:if>
+
+    <f:if condition="{jobPosition.salary} && {jobPosition.salaryPublic}">
+        <div class="bw-jobs-detail-box">
+            <span class="bw-jobs-detail-box__value">
+                {jobPosition.salary} {jobPosition.currency}
+            </span>
+            <span class="bw-jobs-detail-box__label">
+                <f:switch expression="{jobPosition.paymentCycle}">
+                    <f:case value="HOURLY">
+                        <f:translate key="hourly"/>
+                     </f:case>
+                    <f:case value="DAILY">
+                        <f:translate key="daily"/>
+                    </f:case>
+                    <f:case value="YEARLY">
+                        <f:translate key="yearly"/>
+                    </f:case>
+                    <f:defaultCase>
+                        <f:translate key="monthly"/>
+                    </f:defaultCase>
+                </f:switch>
+                <f:translate key="salary"/>
+            </span>
+        </div>
+    </f:if>
+
+    <f:if condition="{jobPosition.startDate}">
+        <div class="bw-jobs-detail-box">
+            <span class="bw-jobs-detail-box__label">
+                <f:translate key="start_date"/>
+            </span>
+            <span class="bw-jobs-detail-box__value">
+                <f:format.date format="%d. %B %Y">{jobPosition.startDate}</f:format.date>
+            </span>
+        </div>
+    </f:if>
+
+    <f:if condition="{jobPosition.datePosted}">
+        <div class="bw-jobs-detail-box">
+            <span class="bw-jobs-detail-box__label">
+                <f:translate key="date_posted"/>
+            </span>
+            <span class="bw-jobs-detail-box__value">
+                <f:format.date format="%d. %B %Y">{jobPosition.datePosted}</f:format.date>
+            </span>
+        </div>
+    </f:if>
+
+    <f:if condition="{jobPosition.validThroughDate}">
+        <div class="bw-jobs-detail-box">
+            <span class="bw-jobs-detail-box__label">
+                <f:translate key="valid_through_date"/>
+            </span>
+            <span class="bw-jobs-detail-box__value">
+                <f:format.date format="%d. %B %Y">{jobPosition.validThroughDate}</f:format.date>
+            </span>
+        </div>
+    </f:if>
+
+    <f:if condition="{jobPosition.categories}">
+        <div class="bw-jobs-detail-box">
+            <span class="bw-jobs-detail-box__label">
+                <f:translate key="categories"/>
+            </span>
+            <span class="bw-jobs-detail-box__value">
+                <f:for as="category" each="{jobPosition.categories}" iteration="iterator">
+                    {category.title}<f:if condition="!{iterator.isLast}">, </f:if>
+                </f:for>
+            </span>
+        </div>
+    </f:if>
+</div>
+
+</html>

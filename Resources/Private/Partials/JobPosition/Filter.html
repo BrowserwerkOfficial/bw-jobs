@@ -1,0 +1,57 @@
+<html data-namespace-typo3-fluid="true" xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
+
+<f:if condition="{settings.allowFiltering} && ({locations} || {categories})">
+    <f:form id="bw-jobs-filter-form" action="list" objectName="filter" object="{filter}" class="bw-jobs-filter">
+        <div class="row">
+            <f:if condition="{locations}">
+                <div class="col-12 col-md-4">
+                    <label for="bw-jobs-location-filter" class="form-label">
+                        <f:translate key="location_filter_label"/>
+                    </label>
+                    <f:form.select
+                        id="bw-jobs-location-filter"
+                        property="locationUid"
+                        options="{locations}"
+                        optionValueField="uid"
+                        optionLabelField="title"
+                        optionsAfterContent="true"
+                        prependOptionValue=""
+                        prependOptionLabel="{f:translate(key: 'location_filter_prepend_option_label')}"
+                        class="form-control"
+                    />
+                </div>
+            </f:if>
+            <f:if condition="{categories}">
+                <div class="col-12 col-md-4">
+                    <label for="bw-jobs-category-filter" class="form-label">
+                        <f:translate key="category_filter_label"/>
+                    </label>
+                    <f:form.select
+                        id="bw-jobs-category-filter"
+                        property="categoryUid"
+                        options="{categories}"
+                        optionValueField="uid"
+                        optionLabelField="title"
+                        optionsAfterContent="true"
+                        prependOptionValue=""
+                        prependOptionLabel="{f:translate(key: 'category_filter_prepend_option_label')}"
+                        class="form-control"
+                    />
+                </div>
+            </f:if>
+        </div>
+    </f:form>
+    <f:asset.script identifier="bw-jobs-filter">
+        const jobsFilterForm = document.getElementById('bw-jobs-filter-form');
+        const jobsLocationFilter = document.getElementById('bw-jobs-location-filter');
+        const jobsCategoryFilter = document.getElementById('bw-jobs-category-filter');
+
+        [jobsLocationFilter, jobsCategoryFilter].forEach(filter => {
+            filter?.addEventListener('change', () => {
+                jobsFilterForm.submit();
+            });
+        });
+    </f:asset.script>
+</f:if>
+
+</html>
