@@ -9,15 +9,13 @@ The BW Jobs extension for TYPO3 CMS allows you to manage your open job positions
 - Customizable, pre styled templates
 - Application form with upload for documents
 - Structured JSON-LD data
-- Ships with multiple languages (english and german)
-
----
+- Ships with multiple languages (English and German)
 
 ## Installation
 
 1. Install the extension with composer:
 
-```sh
+```console
   composer require browserwerk/bw-jobs
 ```
 
@@ -50,8 +48,6 @@ routeEnhancers:
         tableName: tx_bwjobs_domain_model_jobposition
         routeFieldName: slug
 ```
-
----
 
 ## Available TypoScript constants
 
@@ -86,8 +82,6 @@ routeEnhancers:
 | partialRootPath | EXT:bw_jobs/Resources/Private/Backend/Partials/ | The path fluid partials are stored in. |
 | layoutRootPath | EXT:bw_jobs/Resources/Private/Backend/Layouts/ | The path fluid layouts are stored in. |
 
----
-
 ## Introduction for editors
 
 This extension ships with five different record types:
@@ -101,8 +95,6 @@ This extension ships with five different record types:
 To create a **Job Position**, first create a **Location** and assign one or more **Contact Persons** to it. Then, create an **Employment Type**.
 Lastly, create a **Job Position** and assign the created **Location** as well as the **Employment Type** to it. You can optionally create a **Category** and assign it to the **Job Position** as well.
 
----
-
 ## Translations
 
 The following translations are available by default:
@@ -112,14 +104,10 @@ The following translations are available by default:
 
 Contributions for adding additional languages are always welcome.
 
----
-
 ## Structured data
 
 This extension outputs structured JSON-LD data for job positions.
 If you wish to disable it, override the **Show** template and remove the bw:structuredData ViewHelper at the very bottom of this template.
-
----
 
 ## Overriding fluid templates
 
@@ -144,8 +132,6 @@ module.tx_bwjobs_jobs.view.layoutRootPath = EXT:my_extension/Resources/Private/B
 
 > This will not completely disable the default templates, it just allows you to override them from your own extension. If you wish to add more than just one additional path, use the TypoScript setup for *plugin.tx_bwjobs_detail.view*, *plugin.tx_bwjobs_list.view* and *module.tx_bwjobs_jobs.view* instead.
 
----
-
 ## Customizing the default styles
 
 The following CSS Custom Properties are available for you to override from your own stylesheet:
@@ -163,8 +149,6 @@ The following CSS Custom Properties are available for you to override from your 
 
 > Please note: Because it is using modern CSS features, the default styling is not compatible with Internet Explorer 11. Supply your own styles if you really have to support this vintage browser.
 
----
-
 ## Disabling the default styles
 
 This extension ships with Bootstrap 5 and some additional custom styling.
@@ -174,8 +158,6 @@ To disable these styles, unset the includes via TypoScript:
 page.includeCSSLibs.bwJobsBootstrap >
 page.includeCSS.bwJobs >
 ```
-
----
 
 ## Customizing the emails
 
@@ -199,8 +181,6 @@ The new layout path can be kept empty, but you are free to add custom layouts th
 
 > The default application form is configured to use FluidEmail by default. If you want to change this, see below for instructions on how to customize the application form.
 
----
-
 ## Customizing the application form
 
 You can override the default YAML used for rendering the application form by setting the following TypoScript constant to point to your own form definition YAML:
@@ -211,13 +191,9 @@ You can override the default YAML used for rendering the application form by set
 
 > Make sure to take a look inside the default template in Resources/Private/Templates/JobPosition/Apply.html to see which values are set dynamically from inside fluid.
 
----
-
 ## Found a bug?
 
-If you found a bug, [create an issue](https://github.com/Browserwerk/bw_jobs/issues/new) with detailed steps for reproduction.
-
----
+If you found a bug, [create an issue](https://github.com/BrowserwerkOfficial/bw-jobs/issues) with detailed steps for reproduction.
 
 ## About us
 
@@ -227,5 +203,5 @@ More about us on [our website](https://www.browserwerk.de/).
 
 ---
 
-Icons by [heroicons](https://heroicons.com/).
+Icons by [Heroicons](https://heroicons.com/).
 
