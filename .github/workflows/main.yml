@@ -20,8 +20,8 @@ jobs:
           fi
   ter-release:
     name: Release to TYPO3 TER
-    needs: tag-valid
-    if: needs.tag-valid.outputs.status == 'true'
+    # needs: tag-valid
+    # if: needs.tag-valid.outputs.status == 'true'
     runs-on: ubuntu-latest
     strategy:
       matrix:
