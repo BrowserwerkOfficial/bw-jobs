@@ -31,7 +31,6 @@
 		}
 	},
 	"replace": {
-		"browserwerk/bw-jobs": "self.version",
 		"typo3-ter/bw-jobs": "self.version"
 	},
 	"config": {
