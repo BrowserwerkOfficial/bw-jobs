@@ -33,6 +33,9 @@ defined('TYPO3') || die();
         [
             JobPositionController::class => 'list',
         ],
+        [
+            JobPositionController::class => 'list',
+        ],
     );
 
     ExtensionManagementUtility::addPageTSConfig(
