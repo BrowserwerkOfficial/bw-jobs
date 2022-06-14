@@ -1,6 +1,7 @@
 <?php
 
-use Browserwerk\BwJobs\Controller\JobPositionController;
+use Browserwerk\BwJobs\Controller\FrontendController;
+use Browserwerk\BwJobs\Controller\ApiController;
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 use TYPO3\CMS\Extbase\Utility\ExtensionUtility;
 
@@ -20,10 +21,10 @@ defined('TYPO3') || die();
         'BwJobs',
         'Detail',
         [
-            JobPositionController::class => 'show, apply, perform',
+            FrontendController::class => 'show, apply, perform',
         ],
         [
-            JobPositionController::class => 'perform',
+            FrontendController::class => 'perform',
         ],
     );
 
@@ -31,10 +32,21 @@ defined('TYPO3') || die();
         'BwJobs',
         'List',
         [
-            JobPositionController::class => 'list',
+            FrontendController::class => 'list',
         ],
         [
-            JobPositionController::class => 'list',
+            FrontendController::class => 'list',
+        ],
+    );
+
+    ExtensionUtility::configurePlugin(
+        'BwJobs',
+        'Api',
+        [
+            ApiController::class => 'listJobPositions',
+        ],
+        [
+            ApiController::class => 'listJobPositions',
         ],
     );
 

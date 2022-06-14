@@ -34,7 +34,7 @@
 				<source>Bachelor's Degree</source>
 			</trans-unit>
 			<trans-unit id="tx_bwjobs_domain_model_jobposition.education_categories_postgraduate" resname="tx_bwjobs_domain_model_jobposition.education_categories_postgraduate">
-				<source>Master Degree</source>
+				<source>Master's Degree</source>
 			</trans-unit>
 			<trans-unit id="tx_bwjobs_domain_model_jobposition.required_experience" resname="tx_bwjobs_domain_model_jobposition.required_experience">
 				<source>Required Experience</source>
@@ -52,7 +52,7 @@
 				<source>Required Commitments</source>
 			</trans-unit>
 			<trans-unit id="tx_bwjobs_domain_model_jobposition.work_hours" resname="tx_bwjobs_domain_model_jobposition.work_hours">
-				<source>Work Hours (monthly)</source>
+				<source>Work Hours (weekly)</source>
 			</trans-unit>
 			<trans-unit id="tx_bwjobs_domain_model_jobposition.start_date" resname="tx_bwjobs_domain_model_jobposition.start_date">
 				<source>Start Date</source>
@@ -625,7 +625,7 @@
 				<source>Image Alt for Twitter</source>
 			</trans-unit>
 			<trans-unit id="tx_bwjobs_domain_model_jobposition.twitter_card" resname="tx_bwjobs_domain_model_jobposition.twitter_card">
-				<source>Choose style for Twitter Card</source>
+				<source>Twitter Card Style</source>
 			</trans-unit>
 			<trans-unit id="tx_bwjobs_domain_model_jobposition.employment_types" resname="tx_bwjobs_domain_model_jobposition.employment_types">
 				<source>Employment Types</source>

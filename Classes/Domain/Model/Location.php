@@ -89,7 +89,6 @@ class Location extends AbstractEntity
      * image
      *
      * @var FileReference
-     * @TYPO3\CMS\Extbase\Annotation\ORM\Cascade("remove")
      */
     protected $image;
 

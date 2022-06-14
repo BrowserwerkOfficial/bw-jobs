@@ -28,18 +28,18 @@ The BW Jobs extension for TYPO3 CMS allows you to manage your open job positions
 routeEnhancers:
   JobsDetail:
     type: Extbase
-    limitToPages: [ 000 ] # Change this to the page containing the detail view plugin
+    limitToPages: [ 000 ] # Change this to the pid containing the detail view plugin
     extension: BwJobs
     plugin: Detail
     routes:
       - routePath: '/'
-        _controller: 'JobPosition::show'
+        _controller: 'Frontend::show'
       - routePath: '/{job_position_title}'
-        _controller: 'JobPosition::show'
+        _controller: 'Frontend::show'
         _arguments:
           job_position_title: 'jobPosition'
       - routePath: '/{job_position_title}/apply'
-        _controller: 'JobPosition::apply'
+        _controller: 'Frontend::apply'
         _arguments:
           job_position_title: 'jobPosition'
     aspects:
@@ -103,6 +103,41 @@ The following translations are available by default:
 - German
 
 Contributions for adding additional languages are always welcome.
+
+## Sitemap
+
+Add the following TypoScript to output job positions in the TYPO3 sitemap:
+
+```
+plugin.tx_seo {
+    config {
+        xmlSitemap {
+            sitemaps {
+                jobs {
+                    provider = TYPO3\CMS\Seo\XmlSitemap\RecordsXmlSitemapDataProvider
+                    config {
+                        table = tx_bwjobs_domain_model_jobposition
+                        sortField = date_posted
+                        lastModifiedField = tstamp
+                        pid = 1 # Change this to the pid storing the job positions (same as storagePid)
+                        url {
+                            pageId = 000 # Change this to the pid containing the detail view plugin
+                            fieldToParameterMap {
+                                uid = tx_bwjobs_detail[jobPosition]
+                            }
+                            additionalGetParameters {
+                                tx_bwjobs_detail.controller = JobPosition
+                                tx_bwjobs_detail.action = show
+                            }
+                            useCacheHash = 1
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+```
 
 ## Structured data
 
@@ -189,7 +224,7 @@ You can override the default YAML used for rendering the application form by set
 | ------ | --- | ----------- |
 | formPersistenceIdentifier | EXT:bw_jobs/Resources/Private/Forms/jobApplication.form.yaml | The path to the form YAML used for rendering the frontend application form. |
 
-> Make sure to take a look inside the default template in Resources/Private/Templates/JobPosition/Apply.html to see which values are set dynamically from inside fluid.
+> Make sure to take a look inside the default template in Resources/Private/Templates/Frontend/Apply.html to see which values are set dynamically from inside fluid.
 
 ## Found a bug?
 

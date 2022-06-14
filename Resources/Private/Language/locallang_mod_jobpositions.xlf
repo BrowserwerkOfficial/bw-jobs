@@ -12,9 +12,6 @@
 			<trans-unit id="create_jobposition_record_label" resname="create_jobposition_record_label">
 				<source>Create new Job Position</source>
 			</trans-unit>
-			<trans-unit id="create_category_record_label" resname="create_category_record_label">
-				<source>Create new Category</source>
-			</trans-unit>
 		</body>
 	</file>
 </xliff>

@@ -15,10 +15,6 @@
 				<source>Create new Job Position</source>
 				<target>Neues Stellenangebot erstellen</target>
 			</trans-unit>
-			<trans-unit id="create_category_record_label" resname="create_category_record_label">
-				<source>Create new Category</source>
-				<target>Neue Kategorie erstellen</target>
-			</trans-unit>
 		</body>
 	</file>
 </xliff>

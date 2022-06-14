@@ -1,3 +1,4 @@
+# Detail Plugin
 plugin.tx_bwjobs_detail {
   view {
     templateRootPaths.0 = EXT:bw_jobs/Resources/Private/Templates/
@@ -24,7 +25,7 @@ plugin.tx_bwjobs_detail {
   features {
     # skipDefaultArguments = 1
 
-    # if set to 1, the enable fields are ignored in BE context
+    # If set to 1, the enable fields are ignored in BE context
     ignoreAllEnableFieldsInBe = 0
   }
 
@@ -33,6 +34,7 @@ plugin.tx_bwjobs_detail {
   }
 }
 
+# List Plugin
 plugin.tx_bwjobs_list {
   view {
     templateRootPaths.0 = EXT:bw_jobs/Resources/Private/Templates/
@@ -55,7 +57,7 @@ plugin.tx_bwjobs_list {
   features {
     # skipDefaultArguments = 1
 
-    # if set to 1, the enable fields are ignored in BE context
+    # If set to 1, the enable fields are ignored in BE context
     ignoreAllEnableFieldsInBe = 0
   }
 
@@ -64,10 +66,35 @@ plugin.tx_bwjobs_list {
   }
 }
 
-# unset these to remove the default styles
-page.includeCSSLibs.bwJobsBootstrap = EXT:bw_jobs/Resources/Public/Css/bootstrap.min.css
-page.includeCSS.bwJobs = EXT:bw_jobs/Resources/Public/Css/jobs.css
+# API Plugin
+plugin.tx_bwjobs_api {
+  persistence < plugin.tx_bwjobs_list.persistence
+  settings < plugin.tx_bwjobs_list.settings
+}
 
+# API Page
+bwjobs_api = PAGE
+bwjobs_api {
+  typeNum = 1655192624
+  config {
+    disableAllHeaderCode = 1
+    additionalHeaders = Content-type:application/json
+    xhtml_cleaning = 0
+    admPanel = 0
+    debug = 0
+    no_cache = 1
+    contentObjectExceptionHandler = 0
+  }
+  10 = USER
+  10 {
+    userFunc = TYPO3\CMS\Extbase\Core\Bootstrap->run
+    extensionName = BwJobs
+    pluginName = Api
+    vendorName = Browserwerk
+  }
+}
+
+# BwJobs Module
 module.tx_bwjobs {
   view {
     templateRootPaths.0 = EXT:bw_jobs/Resources/Private/Backend/Templates/
@@ -87,6 +114,7 @@ module.tx_bwjobs {
   }
 }
 
+# Form Module
 module.tx_form {
   settings {
     yamlConfigurations {
@@ -95,6 +123,7 @@ module.tx_form {
   }
 }
 
+# Form Plugin
 plugin.tx_form {
   settings {
     yamlConfigurations {
@@ -103,11 +132,16 @@ plugin.tx_form {
   }
 }
 
+# Page Title Provider
 [traverse(request.getQueryParams(), 'tx_bwjobs_detail/jobPosition') > 0]
   config.pageTitleProviders {
     record {
-      provider = Browserwerk\BwJobs\PageTitle\JobsPageTitleProvider
+      provider = Browserwerk\BwJobs\PageTitle\PageTitleProvider
       after = seo
     }
   }
 [global]
+
+# Unset these to remove the default styles
+page.includeCSSLibs.bwJobsBootstrap = EXT:bw_jobs/Resources/Public/Css/bootstrap.min.css
+page.includeCSS.bwJobs = EXT:bw_jobs/Resources/Public/Css/jobs.css

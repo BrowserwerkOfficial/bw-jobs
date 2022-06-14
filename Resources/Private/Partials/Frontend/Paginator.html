@@ -4,7 +4,7 @@
     <f:if condition="{pagination.previousPageNumber} && {pagination.previousPageNumber} >= {pagination.firstPageNumber}">
         <f:then>
             <li class="bw-jobs-paginator__item bw-jobs-paginator__item--prev">
-                <a class="bw-jobs-paginator__item-anchor" href="{f:uri.action(action: actionName, arguments: {currentPage: 1})}" title="{f:translate(key: 'pagination.first')}">
+                <a class="bw-jobs-paginator__item-anchor" href="{f:uri.action(action: actionName, arguments: {currentPageNumber: 1})}" title="{f:translate(key: 'pagination.first')}">
                     <svg class="bw-jobs-paginator__item-icon" fill="none" stroke="currentColor" stroke-width="2"
                          viewBox="0 0 24 24">
                         <path d="M11 19l-7-7 7-7m8 14l-7-7 7-7" stroke-linecap="round" stroke-linejoin="round"/>
@@ -12,7 +12,7 @@
                 </a>
             </li>
             <li class="bw-jobs-paginator__item bw-jobs-paginator__item--prev">
-                <a class="bw-jobs-paginator__item-anchor" href="{f:uri.action(action: actionName, arguments: {currentPage: pagination.previousPageNumber})}" title="{f:translate(key: 'pagination.previous')}">
+                <a class="bw-jobs-paginator__item-anchor" href="{f:uri.action(action: actionName, arguments: {currentPageNumber: pagination.previousPageNumber})}" title="{f:translate(key: 'pagination.previous')}">
                     <svg class="bw-jobs-paginator__item-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                         <path d="M15 19l-7-7 7-7" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
@@ -37,23 +37,23 @@
         </f:else>
     </f:if>
 
-    <f:for as="page" each="{pages}">
+    <f:for each="{pages}" as="page">
         <li class="bw-jobs-paginator__item {f:if(condition: '{page} == {paginator.currentPageNumber}', then: 'bw-jobs-paginator__item--current')}">
-            <a class="bw-jobs-paginator__item-anchor" href="{f:uri.action(action: actionName, arguments: {currentPage: page})}">{page}</a>
+            <a class="bw-jobs-paginator__item-anchor" href="{f:uri.action(action: actionName, arguments: {currentPageNumber: page})}">{page}</a>
         </li>
     </f:for>
 
     <f:if condition="{pagination.nextPageNumber} && {pagination.nextPageNumber} <= {pagination.lastPageNumber}">
         <f:then>
             <li class="bw-jobs-paginator__item bw-jobs-paginator__item--next">
-                <a class="bw-jobs-paginator__item-anchor" href="{f:uri.action(action: actionName, arguments: {currentPage: pagination.nextPageNumber})}" title="{f:translate(key: 'pagination.next')}">
+                <a class="bw-jobs-paginator__item-anchor" href="{f:uri.action(action: actionName, arguments: {currentPageNumber: pagination.nextPageNumber})}" title="{f:translate(key: 'pagination.next')}">
                     <svg class="bw-jobs-paginator__item-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                         <path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
                 </a>
             </li>
             <li class="bw-jobs-paginator__item bw-jobs-paginator__item--next">
-                <a class="bw-jobs-paginator__item-anchor" href="{f:uri.action(action: actionName, arguments: {currentPage: pagination.lastPageNumber})}" title="{f:translate(key: 'pagination.last')}">
+                <a class="bw-jobs-paginator__item-anchor" href="{f:uri.action(action: actionName, arguments: {currentPageNumber: pagination.lastPageNumber})}" title="{f:translate(key: 'pagination.last')}">
                     <svg class="bw-jobs-paginator__item-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                         <path d="M13 5l7 7-7 7M5 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>

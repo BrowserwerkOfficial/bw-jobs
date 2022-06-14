@@ -16,9 +16,9 @@ use TYPO3\CMS\Core\PageTitle\AbstractPageTitleProvider;
  */
 
 /**
- * JobsPageTitleProvider
+ * PageTitleProvider
  */
-class JobsPageTitleProvider extends AbstractPageTitleProvider
+class PageTitleProvider extends AbstractPageTitleProvider
 {
     /**
      * @param string $title

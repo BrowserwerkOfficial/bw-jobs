@@ -6,9 +6,9 @@
             <f:if condition="{shouldPaginate}">
                 <f:then>
                     <f:for each="{paginator.paginatedItems}" as="jobPosition" iteration="iterator">
-                        <f:render partial="JobPosition/ListItem" arguments="{jobPosition: jobPosition}"/>
+                        <f:render partial="Frontend/ListItem" arguments="{jobPosition: jobPosition}"/>
                     </f:for>
-                    <f:render partial="JobPosition/Paginator" arguments="{
+                    <f:render partial="Frontend/Paginator" arguments="{
                         pagination: pagination,
                         pages: pages,
                         paginator: paginator
@@ -16,7 +16,7 @@
                 </f:then>
                 <f:else>
                     <f:for each="{jobPositions}" as="jobPosition">
-                        <f:render partial="JobPosition/ListItem" arguments="{jobPosition: jobPosition}"/>
+                        <f:render partial="Frontend/ListItem" arguments="{jobPosition: jobPosition}"/>
                     </f:for>
                 </f:else>
             </f:if>
@@ -25,7 +25,7 @@
     <f:else>
         <div class="bw-jobs-empty bw-jobs-body">
             <p>
-                <f:translate key="{f:if(condition: filtered, then: 'nothing_found', else: 'nothing_posted')}"/>
+                <f:translate key="{f:if(condition: '{filter.locationUid} || {filter.categoryUid}', then: 'nothing_found', else: 'nothing_posted')}"/>
             </p>
         </div>
     </f:else>

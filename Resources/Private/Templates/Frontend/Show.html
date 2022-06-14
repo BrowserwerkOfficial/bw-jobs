@@ -103,18 +103,18 @@
     </f:if>
 
     <section class="bw-jobs-section">
-        <f:render arguments="{jobPosition: jobPosition}" partial="JobPosition/Properties"/>
+        <f:render arguments="{jobPosition: jobPosition}" partial="Frontend/Properties"/>
     </section>
 
     <hr class="bw-jobs-divider">
 
     <f:for as="location" each="{jobPosition.locations}">
         <section class="bw-jobs-section">
-            <f:render arguments="{location: location}" partial="JobPosition/Location"/>
+            <f:render arguments="{location: location}" partial="Frontend/Location"/>
         </section>
         <f:for as="contactPerson" each="{location.contactPersons}">
             <section class="bw-jobs-section">
-                <f:render arguments="{contactPerson: contactPerson, location: location}" partial="JobPosition/Contact"/>
+                <f:render arguments="{contactPerson: contactPerson, location: location}" partial="Frontend/Contact"/>
             </section>
         </f:for>
     </f:for>

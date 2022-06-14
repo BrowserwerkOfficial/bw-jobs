@@ -202,7 +202,6 @@ class JobPosition extends AbstractEntity
      * ogImage
      *
      * @var FileReference
-     * @TYPO3\CMS\Extbase\Annotation\ORM\Cascade("remove")
      */
     protected $ogImage;
 
@@ -231,7 +230,6 @@ class JobPosition extends AbstractEntity
      * twitterImage
      *
      * @var FileReference
-     * @TYPO3\CMS\Extbase\Annotation\ORM\Cascade("remove")
      */
     protected $twitterImage;
 

@@ -4,20 +4,20 @@
 
 <f:section name="Content">
 
-    <section class="bw-jobs-section">
-        <f:render partial="JobPosition/Filter" arguments="{
+    <section class="bw-jobs-section" data-endpoint="{f:uri.action(pluginName: 'Api', controller: 'Api', action: 'listJobPositions', pageType: 1655192624, noCache: 1)}">
+        <f:render partial="Frontend/Filter" arguments="{
             categories: categories,
             locations: locations,
             filter: filter
         }"/>
 
-        <f:render partial="JobPosition/List" arguments="{
+        <f:render partial="Frontend/List" arguments="{
             jobPositions: jobPositions,
             shouldPaginate: shouldPaginate,
             pagination: pagination,
             paginator: paginator,
             pages: pages,
-            filtered: filtered
+            filter: filter
         }"/>
     </section>
 
