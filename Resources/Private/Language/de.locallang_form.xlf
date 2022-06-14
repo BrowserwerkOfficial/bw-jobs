@@ -15,6 +15,10 @@
 				<source>Next step</source>
 				<target>Nächster Schritt</target>
 			</trans-unit>
+			<trans-unit id="jobApplication.element.jobTitle.properties.label" resname="jobApplication.element.jobTitle.properties.label">
+				<source>Job Title</source>
+				<target>Stellenbezeichnung</target>
+			</trans-unit>
 			<trans-unit id="jobApplication.element.salutation.properties.label" resname="jobApplication.element.salutation.properties.label">
 				<source>Salutation</source>
 				<target>Anrede</target>

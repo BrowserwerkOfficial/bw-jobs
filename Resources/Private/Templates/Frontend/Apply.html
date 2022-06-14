@@ -47,7 +47,12 @@
                 },
                 renderables: {
                     0: {
-                        label: jobPosition.title
+                        label: jobPosition.title,
+                        renderables: {
+                            0: {
+                                defaultValue: jobPosition.title
+                            }
+                        }
                     }
                 }
             }"

@@ -12,6 +12,9 @@
 			<trans-unit id="jobApplication.element.page-1.properties.nextButtonLabel" resname="jobApplication.element.page-1.properties.nextButtonLabel">
 				<source>Next step</source>
 			</trans-unit>
+			<trans-unit id="jobApplication.element.jobTitle.properties.label" resname="jobApplication.element.jobTitle.properties.label">
+				<source>Job Title</source>
+			</trans-unit>
 			<trans-unit id="jobApplication.element.salutation.properties.label" resname="jobApplication.element.salutation.properties.label">
 				<source>Salutation</source>
 			</trans-unit>

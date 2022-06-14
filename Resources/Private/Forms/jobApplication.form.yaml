@@ -34,6 +34,10 @@ renderables:
     identifier: page-1
     label: 'Application'
     renderables:
+      - defaultValue: ''
+        type: Hidden
+        identifier: jobTitle
+        label: 'Job Title'
       - properties:
           options:
             mr: Mr.
