@@ -46,13 +46,14 @@ CREATE TABLE tx_bwjobs_domain_model_employmenttype
 
 CREATE TABLE tx_bwjobs_domain_model_contactperson
 (
-	title  varchar(255)     NOT NULL DEFAULT '',
-	gender varchar(255)     NOT NULL DEFAULT '',
-	name   varchar(255)     NOT NULL DEFAULT '',
-	email  varchar(255)     NOT NULL DEFAULT '',
-	phone  varchar(255)     NOT NULL DEFAULT '',
-	fax    varchar(255)     NOT NULL DEFAULT '',
-	image  int(11) unsigned NOT NULL DEFAULT '0'
+	title    varchar(255)     NOT NULL DEFAULT '',
+	gender   varchar(255)     NOT NULL DEFAULT '',
+	name     varchar(255)     NOT NULL DEFAULT '',
+	email    varchar(255)     NOT NULL DEFAULT '',
+	phone    varchar(255)     NOT NULL DEFAULT '',
+	fax      varchar(255)     NOT NULL DEFAULT '',
+	address  varchar(255)     NOT NULL DEFAULT '',
+	image    int(11) unsigned NOT NULL DEFAULT '0'
 );
 
 CREATE TABLE tx_bwjobs_domain_model_category

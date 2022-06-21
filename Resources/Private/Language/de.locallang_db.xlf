@@ -935,6 +935,10 @@
 				<source>Fax</source>
 				<target>Fax</target>
 			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_contactperson.address" resname="tx_bwjobs_domain_model_contactperson.address">
+				<source>Address</source>
+				<target>Adresse</target>
+			</trans-unit>
 			<trans-unit id="tx_bwjobs_domain_model_contactperson.image" resname="tx_bwjobs_domain_model_contactperson.image">
 				<source>Image</source>
 				<target>Bild</target>

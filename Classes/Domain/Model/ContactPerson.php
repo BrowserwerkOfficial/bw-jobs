@@ -64,6 +64,13 @@ class ContactPerson extends AbstractEntity
     protected $fax = '';
 
     /**
+     * address
+     *
+     * @var string
+     */
+    protected $address = '';
+
+    /**
      * image
      *
      * @var FileReference
@@ -188,6 +195,26 @@ class ContactPerson extends AbstractEntity
     public function setFax(string $fax)
     {
         $this->fax = $fax;
+    }
+
+    /**
+     * Returns the address
+     *
+     * @return string $address
+     */
+    public function getAddress()
+    {
+        return $this->address;
+    }
+
+    /**
+     * Sets the address
+     *
+     * @param string $address
+     */
+    public function setAddress(string $address)
+    {
+        $this->address = $address;
     }
 
     /**

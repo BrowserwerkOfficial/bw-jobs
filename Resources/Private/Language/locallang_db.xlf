@@ -702,6 +702,9 @@
 			<trans-unit id="tx_bwjobs_domain_model_contactperson.fax" resname="tx_bwjobs_domain_model_contactperson.fax">
 				<source>Fax</source>
 			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_contactperson.address" resname="tx_bwjobs_domain_model_contactperson.address">
+				<source>Address</source>
+			</trans-unit>
 			<trans-unit id="tx_bwjobs_domain_model_contactperson.image" resname="tx_bwjobs_domain_model_contactperson.image">
 				<source>Image</source>
 			</trans-unit>

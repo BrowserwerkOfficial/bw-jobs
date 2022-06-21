@@ -31,7 +31,7 @@ return [
             'starttime' => 'starttime',
             'endtime' => 'endtime',
         ],
-        'searchFields' => 'title,gender,name,email,phone,fax',
+        'searchFields' => 'title,gender,name,email,phone,fax,address',
         'iconfile' => 'EXT:bw_jobs/Resources/Public/Icons/tx_bwjobs_domain_model_contactperson.jpg',
     ],
     'types' => [
@@ -43,6 +43,7 @@ return [
                 email,
                 phone,
                 fax,
+                address,
                 image,
 
                 --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:language,
@@ -185,6 +186,16 @@ return [
         'fax' => [
             'exclude' => true,
             'label' => 'LLL:EXT:bw_jobs/Resources/Private/Language/locallang_db.xlf:tx_bwjobs_domain_model_contactperson.fax',
+            'config' => [
+                'type' => 'input',
+                'size' => 30,
+                'eval' => 'trim',
+                'default' => '',
+            ],
+        ],
+        'address' => [
+            'exclude' => true,
+            'label' => 'LLL:EXT:bw_jobs/Resources/Private/Language/locallang_db.xlf:tx_bwjobs_domain_model_contactperson.address',
             'config' => [
                 'type' => 'input',
                 'size' => 30,
