@@ -9,16 +9,16 @@
 				<target>Standort</target>
 			</trans-unit>
 			<trans-unit id="location_filter_prepend_option_label" resname="location_filter_prepend_option_label">
-				<source>Please select</source>
-				<target>Bitte wählen</target>
+				<source>Any location</source>
+				<target>Beliebiger Standort</target>
 			</trans-unit>
 			<trans-unit id="category_filter_label" resname="category_filter_label">
 				<source>Category</source>
 				<target>Kategorie</target>
 			</trans-unit>
 			<trans-unit id="category_filter_prepend_option_label" resname="category_filter_prepend_option_label">
-				<source>Please select</source>
-				<target>Bitte wählen</target>
+				<source>Any category</source>
+				<target>Beliebige Kategorie</target>
 			</trans-unit>
 			<trans-unit id="nothing_posted" resname="nothing_posted">
 				<source>We have not yet posted any vacancies at this time.</source>
