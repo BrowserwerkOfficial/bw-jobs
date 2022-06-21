@@ -150,17 +150,17 @@ To override the default fluid templates used by the extension, simply set the fo
 
 ```
 # Detail view
-plugin.tx_bwjobs_detail.view.layoutRootPath = EXT:my_extension/Resources/Private/Templates/
+plugin.tx_bwjobs_detail.view.templateRootPath = EXT:my_extension/Resources/Private/Templates/
 plugin.tx_bwjobs_detail.view.partialRootPath = EXT:my_extension/Resources/Private/Partials/
 plugin.tx_bwjobs_detail.view.layoutRootPath = EXT:my_extension/Resources/Private/Layouts/
 
 # List view
-plugin.tx_bwjobs_list.view.layoutRootPath = EXT:my_extension/Resources/Private/Templates/
+plugin.tx_bwjobs_list.view.templateRootPath = EXT:my_extension/Resources/Private/Templates/
 plugin.tx_bwjobs_list.view.partialRootPath = EXT:my_extension/Resources/Private/Partials/
 plugin.tx_bwjobs_list.view.layoutRootPath = EXT:my_extension/Resources/Private/Layouts/
 
 # Backend module
-module.tx_bwjobs_jobs.view.layoutRootPath = EXT:my_extension/Resources/Private/Backend/Templates/
+module.tx_bwjobs_jobs.view.templateRootPath = EXT:my_extension/Resources/Private/Backend/Templates/
 module.tx_bwjobs_jobs.view.partialRootPath = EXT:my_extension/Resources/Private/Backend/Partials/
 module.tx_bwjobs_jobs.view.layoutRootPath = EXT:my_extension/Resources/Private/Backend/Layouts/
 ```
@@ -182,7 +182,7 @@ The following CSS Custom Properties are available for you to override from your 
 }
 ```
 
-> Please note: Because it is using modern CSS features, the default styling is not compatible with Internet Explorer 11. Supply your own styles if you really have to support this vintage browser.
+> Please note: Because of the usage of modern CSS features, the default styling is not compatible with Internet Explorer 11.
 
 ## Disabling the default styles
 
