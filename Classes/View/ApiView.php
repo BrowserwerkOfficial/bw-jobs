@@ -27,7 +27,7 @@ class ApiView extends JsonView
     protected $configuration = [
         'jobPositions' => [
             '_descendAll' => [
-                '_only' => ['uid', 'title', 'locations', 'employmentTypes'],
+                '_only' => ['uid', 'title', 'locations', 'employmentTypes', 'slug'],
                 '_descend' => [
                     'locations' => [
                         '_descendAll' => [
