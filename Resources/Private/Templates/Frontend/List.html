@@ -12,11 +12,13 @@
         }"/>
 
         <div
-            id="jobs-list"
+            id="bw-jobs-list"
             data-endpoint="{f:uri.action(pluginName: 'Api', controller: 'Api', action: 'listJobPositions', pageType: 1655192624)}"
             data-detail-page-path="{f:uri.page(pageUid: settings.detailPid)}"
         ></div>
     </section>
+
+    <f:asset.script identifier="bw-jobs-list" src="EXT:bw_jobs/Resources/Public/JavaScript/jobs-list.js" type="module" />
 
 </f:section>
 

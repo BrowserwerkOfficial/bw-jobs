@@ -368,5 +368,5 @@ class JobsList {
   }
 }
 
-const jobsList = new JobsList('#jobs-list');
+const jobsList = new JobsList('#bw-jobs-list');
 await jobsList.mount();
