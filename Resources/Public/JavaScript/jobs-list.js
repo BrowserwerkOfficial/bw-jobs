@@ -661,7 +661,8 @@ class JobsList {
     return mountElement;
   }
   get translations() {
-    return JSON.parse(this.mountElement.dataset.translations || "{}");
+    const { translations } = this.mountElement.dataset;
+    return JSON.parse(translations || "{}");
   }
   get endpointUrl() {
     const { endpoint } = this.mountElement.dataset;
@@ -678,8 +679,8 @@ class JobsList {
     return new URL(detailPagePath, window.location.origin);
   }
   listenForLocationFilter() {
-    const selectElement = getElementOrFail(__privateGet(this, _locationFilterSelector));
-    selectElement.addEventListener("change", ({ currentTarget }) => {
+    const selectElement = document.querySelector(__privateGet(this, _locationFilterSelector));
+    selectElement == null ? void 0 : selectElement.addEventListener("change", ({ currentTarget }) => {
       this.data = {
         currentPage: 1,
         filters: {
@@ -691,8 +692,8 @@ class JobsList {
     });
   }
   listenForCategoryFilter() {
-    const selectElement = getElementOrFail(__privateGet(this, _categoryFilterSelector));
-    selectElement.addEventListener("change", ({ currentTarget }) => {
+    const selectElement = document.querySelector(__privateGet(this, _categoryFilterSelector));
+    selectElement == null ? void 0 : selectElement.addEventListener("change", ({ currentTarget }) => {
       this.data = {
         currentPage: 1,
         filters: {

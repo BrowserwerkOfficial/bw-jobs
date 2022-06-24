@@ -490,9 +490,9 @@ class JobsList {
    * @memberof JobsList
    */
   listenForLocationFilter() {
-    const selectElement = getElementOrFail(this.#locationFilterSelector);
+    const selectElement = document.querySelector(this.#locationFilterSelector);
 
-    selectElement.addEventListener('change', ({ currentTarget }) => {
+    selectElement?.addEventListener('change', ({ currentTarget }) => {
       this.data = {
         currentPage: 1,
         filters: {
@@ -513,9 +513,9 @@ class JobsList {
    * @memberof JobsList
    */
   listenForCategoryFilter() {
-    const selectElement = getElementOrFail(this.#categoryFilterSelector);
+    const selectElement = document.querySelector(this.#categoryFilterSelector);
 
-    selectElement.addEventListener('change', ({ currentTarget }) => {
+    selectElement?.addEventListener('change', ({ currentTarget }) => {
       this.data = {
         currentPage: 1,
         filters: {

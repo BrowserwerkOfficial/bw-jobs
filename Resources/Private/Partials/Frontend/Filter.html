@@ -39,6 +39,13 @@
             </f:if>
         </div>
     </form>
+    <f:asset.script identifier="bw-jobs-filter">
+        const jobsFilterForm = document.querySelector('#bw-jobs-filter-form');
+
+        jobsFilterForm?.addEventListener('submit', (event) => {
+            event.preventDefault()
+        });
+    </f:asset.script>
 </f:if>
 
 </html>
