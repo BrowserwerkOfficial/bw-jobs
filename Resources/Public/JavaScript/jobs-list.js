@@ -351,7 +351,7 @@ class JobsList {
       Object.keys(this.data.filters).forEach((filterKey) => {
         if (this.data.filters[filterKey]) {
           endpointUrl.searchParams.append(
-            `tx_bwjobs_api[${filterKey}]`,
+            filterKey,
             this.data.filters[filterKey],
           );
         }

@@ -32,6 +32,11 @@
     gap: 2em;
 }
 
+.bw-jobs-list__loader {
+    text-align: center;
+    padding: 3em 0;
+}
+
 .bw-jobs-list-item {
     padding: 2em;
     color: var(--bw-jobs-color-black);

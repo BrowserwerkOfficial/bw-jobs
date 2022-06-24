@@ -22,13 +22,13 @@ The BW Jobs extension for TYPO3 CMS allows you to manage your open job positions
 2. Include the TypoScript template in the template module
 3. Add the two plugins, Detail View and List View, to two separate pages
 4. Configure the extension to your liking (see below for available constants)
-5. Add this route enhancer to your site configuration for pretty URLs:
+5. Add these route enhancers to your site configuration:
 
 ```yaml
 routeEnhancers:
   JobsDetail:
     type: Extbase
-    limitToPages: [ 000 ] # Change this to the pid containing the detail view plugin
+    limitToPages: [0] # Change this to the pid containing the detail view plugin
     extension: BwJobs
     plugin: Detail
     routes:
@@ -37,16 +37,23 @@ routeEnhancers:
       - routePath: '/{job_position_title}'
         _controller: 'Frontend::show'
         _arguments:
-          job_position_title: 'jobPosition'
+          job_position_title: jobPosition
       - routePath: '/{job_position_title}/apply'
         _controller: 'Frontend::apply'
         _arguments:
-          job_position_title: 'jobPosition'
+          job_position_title: jobPosition
     aspects:
       job_position_title:
         type: PersistedAliasMapper
         tableName: tx_bwjobs_domain_model_jobposition
         routeFieldName: slug
+  JobsApi:
+    type: Extbase
+    extension: BwJobs
+    plugin: Api
+    routes:
+      - routePath: '/api/jobPositions'
+        _controller: 'Api::listJobPositions'
 ```
 
 ## Available TypoScript constants
