@@ -289,11 +289,15 @@
     color: var(--bw-jobs-color--primary);
 }
 
-.bw-jobs-paginator__item-anchor {
-    display: block;
+.bw-jobs-paginator__item-button {
+    display: flex;
+    align-items: center;
+    height: 100%;
     padding: 0.5em 1em;
-    color: inherit !important;
+    color: inherit;
     text-decoration: none;
+    background-color: transparent;
+    border: 0;
 }
 
 .bw-jobs-paginator__item-icon {

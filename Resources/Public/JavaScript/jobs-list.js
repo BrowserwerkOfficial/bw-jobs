@@ -1,4 +1,5 @@
-/* eslint-disable class-methods-use-this */
+/* eslint-disable sonarjs/no-nested-template-literals */
+
 // eslint-disable-next-line import/no-unresolved
 import { html, render, svg } from 'https://unpkg.com/uhtml?module';
 
@@ -26,21 +27,35 @@ import { html, render, svg } from 'https://unpkg.com/uhtml?module';
  *
  * @typedef Filters
  * @type {object}
- * @property {number|undefined} locationUid
- * @property {number|undefined} categoryUid
+ * @property {number|null} locationUid
+ * @property {number|null} categoryUid
  *
  * @typedef Data
  * @type {object}
- * @property {JobPosition[]|undefined} jobPositions
- * @property {Filters|undefined} filters
- * @property {boolean|undefined} isFetching
+ * @property {boolean} isFetching
+ * @property {JobPosition[]} jobPositions
+ * @property {number[]} pages
+ * @property {number} pageNumber
+ * @property {Filters} filters
  */
+
+/**
+ * Join an array of conditional class names.
+ *
+ * @param {unknown[]} classNames
+ *
+ * @return {string}
+ */
+function cx(classNames) {
+  return classNames.filter(Boolean).join(' ');
+}
 
 /**
  * Get an element from the DOM by selector
  * or fail if it does not exist.
  *
  * @param {string} selector
+ *
  * @return {HTMLElement}
  */
 function getElementOrFail(selector) {
@@ -54,19 +69,26 @@ function getElementOrFail(selector) {
 }
 
 /**
- * Spinner component.
+ * Build the request URL for data.
+ * Appends filters as well as the current page as query params.
  *
- * @return {string}
+ * @param {URL} url
+ * @param {Data} data
+ *
+ * @return {URL}
  */
-function Spinner() {
-  return html`
-    <div class="bw-jobs-spinner">
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
-  `;
+function buildRequestUrlForData(url, data) {
+  // Add filter query params to URL
+  Object.entries(data.filters).forEach(([filterKey, filterValue]) => {
+    if (typeof filterValue === 'string') {
+      url.searchParams.append(filterKey, filterValue);
+    }
+  });
+
+  // Add page number query param to URL
+  url.searchParams.append('currentPage', data.currentPage);
+
+  return url;
 }
 
 /**
@@ -121,15 +143,116 @@ function MarkerIcon() {
 }
 
 /**
+ * Spinner component.
+ *
+ * @return {string}
+ */
+function Spinner() {
+  return html`
+    <div class="bw-jobs-spinner">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  `;
+}
+
+/**
+ * Pagination component.
+ *
+ * @param {number[]} pages
+ * @param {number} currentPage
+ * @param {(pageNumber: number) => void} onSelectPage
+ *
+ * @return {string}
+ */
+function Pagination(pages, currentPage, onSelectPage) {
+  if (pages.length < 2) {
+    return '';
+  }
+
+  return html`
+    <ul class="bw-jobs-paginator">
+      <li
+        class=${cx([
+          'bw-jobs-paginator__item bw-jobs-paginator__item--prev',
+          currentPage === 1 && 'bw-jobs-paginator__item--disabled',
+        ])}
+      >
+        <button
+          class="bw-jobs-paginator__item-button"
+          @click=${() => onSelectPage(Math.max(currentPage - 1, 1))}
+        >
+          <svg
+            class="bw-jobs-paginator__item-icon"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M11 19l-7-7 7-7m8 14l-7-7 7-7"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </button>
+      </li>
+      ${pages.map((page) => {
+        return html`<li
+          class=${cx([
+            'bw-jobs-paginator__item',
+            page === currentPage && 'bw-jobs-paginator__item--current',
+          ])}
+        >
+          <button
+            class="bw-jobs-paginator__item-button"
+            @click=${() => onSelectPage(page)}
+          >
+            ${page}
+          </button>
+        </li>`;
+      })}
+      <li
+        class=${cx([
+          'bw-jobs-paginator__item bw-jobs-paginator__item--next',
+          currentPage === pages.length && 'bw-jobs-paginator__item--disabled',
+        ])}
+      >
+        <button
+          class="bw-jobs-paginator__item-button"
+          @click=${() => onSelectPage(Math.max(currentPage + 1, pages.length))}
+        >
+          <svg
+            class="bw-jobs-paginator__item-icon"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M9 5l7 7-7 7"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </button>
+      </li>
+    </ul>
+  `;
+}
+
+/**
  * Employment types component.
  *
  * @param {EmploymentType[]} employmentTypes
  *
- * @return {string|false}
+ * @return {string}
  */
 function EmploymentTypes(employmentTypes) {
   if (!employmentTypes.length) {
-    return false;
+    return '';
   }
 
   return html`<div class="bw-jobs-list-item__column">
@@ -142,11 +265,11 @@ function EmploymentTypes(employmentTypes) {
  *
  * @param {Location[]} locations
  *
- * @return {string|false}
+ * @return {string}
  */
 function Locations(locations) {
   if (!locations.length) {
-    return false;
+    return '';
   }
 
   return html`<div
@@ -195,7 +318,16 @@ class JobsList {
    * @private
    * @memberof JobsList
    */
-  #data = {};
+  #data = {
+    isFetching: true,
+    jobPositions: [],
+    pages: [],
+    currentPage: 1,
+    filters: {
+      locationUid: null,
+      categoryUid: null,
+    },
+  };
 
   /**
    * @type {Data}
@@ -208,7 +340,8 @@ class JobsList {
 
   /**
    * @property {Data} data
-   * @returns {void}
+   *
+   * @return {void}
    *
    * @memberof JobsList
    */
@@ -281,6 +414,8 @@ class JobsList {
    * Constructor
    *
    * @param {string} mountElementSelector
+   *
+   * @memberof JobsList
    */
   constructor(mountElementSelector) {
     if (!mountElementSelector) {
@@ -297,7 +432,7 @@ class JobsList {
    * Listen for changes on the location filter.
    * Note: The filters are rendered from inside TYPO3 Fluid templates.
    *
-   * @returns {void}
+   * @return {void}
    *
    * @memberof JobsList
    */
@@ -306,6 +441,7 @@ class JobsList {
 
     selectElement.addEventListener('change', ({ currentTarget }) => {
       this.data = {
+        currentPage: 1,
         filters: {
           ...this.data.filters,
           locationUid: currentTarget.value,
@@ -319,7 +455,7 @@ class JobsList {
    * Listen for changes on the category filter.
    * Note: The filters are rendered from inside TYPO3 Fluid templates.
    *
-   * @returns {void}
+   * @return {void}
    *
    * @memberof JobsList
    */
@@ -328,6 +464,7 @@ class JobsList {
 
     selectElement.addEventListener('change', ({ currentTarget }) => {
       this.data = {
+        currentPage: 1,
         filters: {
           ...this.data.filters,
           categoryUid: currentTarget.value,
@@ -338,45 +475,42 @@ class JobsList {
   }
 
   /**
-   * @returns {Promise<void>}
+   * @return {Promise<void>}
    *
    * @memberof JobsList
    */
   async fetchData() {
-    const { endpointUrl } = this;
-
     this.data = { isFetching: true };
 
-    if (this.data.filters) {
-      Object.keys(this.data.filters).forEach((filterKey) => {
-        if (this.data.filters[filterKey]) {
-          endpointUrl.searchParams.append(
-            filterKey,
-            this.data.filters[filterKey],
-          );
-        }
-      });
-    }
-
-    const response = await fetch(endpointUrl);
+    const response = await fetch(
+      buildRequestUrlForData(this.endpointUrl, this.data),
+    );
 
     if (!response.ok) {
       throw new Error(response.statusText);
     }
 
-    const jobPositions = await response.json();
+    const { jobPositions, pages } = await response.json();
 
-    this.data = { isFetching: false, jobPositions };
+    this.data = {
+      isFetching: false,
+      jobPositions,
+      pages,
+    };
   }
 
   /**
-   * @returns {Promise<void>}
+   * Render function.
+   * Automatically called on changes to `data`.
+   *
+   * @return {Promise<void>}
    *
    * @memberof JobsList
    */
   async render() {
     const { data } = this;
 
+    // Render loading spinner when fetching
     if (data.isFetching) {
       render(
         this.mountElement,
@@ -390,19 +524,22 @@ class JobsList {
     render(
       this.mountElement,
       html`<div class="bw-jobs-list">
-        ${data.jobPositions?.map((jobPosition) => {
+        ${data.jobPositions.map((jobPosition) => {
           return JobPosition(
             jobPosition,
-            // eslint-disable-next-line sonarjs/no-nested-template-literals
             `${this.detailPageUrl}/${jobPosition.slug}`,
           );
+        })}
+        ${Pagination(data.pages, data.currentPage, (pageNumber) => {
+          this.data = { currentPage: pageNumber };
+          this.fetchData();
         })}
       </div>`,
     );
   }
 
   /**
-   * @returns {Promise<void>}
+   * @return {Promise<void>}
    *
    * @memberof JobsList
    */

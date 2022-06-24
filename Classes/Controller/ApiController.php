@@ -7,6 +7,8 @@ namespace Browserwerk\BwJobs\Controller;
 use Browserwerk\BwJobs\Domain\Repository\JobPositionRepository;
 use Browserwerk\BwJobs\View\ApiView;
 use Psr\Http\Message\ResponseInterface;
+use TYPO3\CMS\Core\Pagination\ArrayPaginator;
+use TYPO3\CMS\Core\Pagination\SimplePagination;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 
 /**
@@ -66,6 +68,7 @@ class ApiController extends ActionController
     public function listJobPositionsAction(): ResponseInterface
     {
         $queryParams = $this->request->getQueryParams();
+
         $jobPositions = $this->jobPositionRepository->findWithFilter(
             [
                 'locationUid' => $queryParams['locationUid'],
@@ -73,10 +76,19 @@ class ApiController extends ActionController
             ]
         );
 
-        $this->view->setVariablesToRender(['jobPositions']);
+        $jobPositionsPaginator = new ArrayPaginator(
+            $jobPositions->toArray(),
+            (int)($queryParams['currentPage'] ?? 1),
+            (int)($this->settings['itemsPerPage'] ?? 10),
+        );
+
+        $jobPositionsPagination = new SimplePagination($jobPositionsPaginator);
+
+        $this->view->setVariablesToRender(['jobPositions', 'pages']);
         $this->view->assignMultiple(
             [
-                'jobPositions' => $jobPositions,
+                'jobPositions' => $jobPositionsPaginator->getPaginatedItems(),
+                'pages' => $jobPositionsPagination->getAllPageNumbers(),
             ],
         );
 
