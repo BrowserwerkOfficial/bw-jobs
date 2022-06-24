@@ -30,13 +30,6 @@ use TYPO3\CMS\Extbase\Http\ForwardResponse;
 class FrontendController extends ActionController
 {
     /**
-     * jobPositionRepository
-     *
-     * @var JobPositionRepository
-     */
-    protected $jobPositionRepository;
-
-    /**
      * locationRepository
      *
      * @var LocationRepository
@@ -56,14 +49,6 @@ class FrontendController extends ActionController
      * @var MetaDataService
      */
     protected $metaDataService;
-
-    /**
-     * @param JobPositionRepository $jobPositionRepository
-     */
-    public function injectJobPositionRepository(JobPositionRepository $jobPositionRepository)
-    {
-        $this->jobPositionRepository = $jobPositionRepository;
-    }
 
     /**
      * @param LocationRepository $locationRepository
