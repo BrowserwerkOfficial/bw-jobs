@@ -142,6 +142,6 @@ plugin.tx_form {
   }
 [global]
 
-# Unset these to remove the default styles
+# CSS: Unset to remove the default styles
 page.includeCSSLibs.bwJobsBootstrap = EXT:bw_jobs/Resources/Public/Css/bootstrap.min.css
 page.includeCSS.bwJobs = EXT:bw_jobs/Resources/Public/Css/jobs.css

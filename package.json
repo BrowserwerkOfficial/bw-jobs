@@ -1,0 +1,13 @@
+{
+	"name": "bw-jobs",
+	"version": "2.1.0",
+	"scripts": {
+		"build": "vite build"
+	},
+	"dependencies": {
+		"uhtml": "^3.0.0"
+	},
+	"devDependencies": {
+		"vite": "^2.9.9"
+	}
+}
