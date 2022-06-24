@@ -61,11 +61,18 @@ class ApiController extends ActionController
     /**
      * action listJobPositions
      *
+     * @param int|null $locationUid
+     * @param int|null $categoryUid
      * @return ResponseInterface
      */
-    public function listJobPositionsAction(): ResponseInterface
+    public function listJobPositionsAction(?int $locationUid = null, ?int $categoryUid = null): ResponseInterface
     {
-        $jobPositions = $this->jobPositionRepository->findAll();
+        $jobPositions = $this->jobPositionRepository->findWithFilter(
+            [
+                'locationUid' => $locationUid,
+                'categoryUid' => $categoryUid,
+            ]
+        );
 
         $this->view->setVariablesToRender(['jobPositions']);
         $this->view->assignMultiple(

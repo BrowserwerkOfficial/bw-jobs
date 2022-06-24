@@ -102,36 +102,17 @@ class FrontendController extends ActionController
     /**
      * action list
      *
-     * @param array $filter
-     * @param int $currentPageNumber
      * @return ResponseInterface
      */
-    public function listAction(array $filter = [], int $currentPageNumber = 1): ResponseInterface
+    public function listAction(): ResponseInterface
     {
         $locations = $this->locationRepository->findAll();
         $categories = $this->categoryRepository->findAll();
-        $jobPositions = $this->jobPositionRepository->findWithFilter($filter);
-
-        $itemsPerPage = (int)($this->settings['itemsPerPage'] ?? 10);
-
-        $arrayPaginator = new ArrayPaginator(
-            $jobPositions->toArray(),
-            $currentPageNumber,
-            $itemsPerPage,
-        );
-
-        $pagination = new SimplePagination($arrayPaginator);
 
         $this->view->assignMultiple(
             [
-                'filter' => $filter,
                 'locations' => $locations,
-                'categories' => $categories,
-                'jobPositions' => $jobPositions,
-                'paginator' => $arrayPaginator,
-                'pagination' => $pagination,
-                'pages' => range(1, $pagination->getLastPageNumber()),
-                'shouldPaginate' => $pagination->getLastPageNumber() > 1,
+                'categories' => $categories
             ],
         );
 

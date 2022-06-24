@@ -23,6 +23,17 @@ import { html, render, svg } from 'https://unpkg.com/uhtml?module';
  * @property {string} title
  * @property {Location[]} locations
  * @property {EmploymentType[]} employmentTypes
+ *
+ * @typedef Filters
+ * @type {object}
+ * @property {number|undefined} locationUid
+ * @property {number|undefined} categoryUid
+ *
+ * @typedef Data
+ * @type {object}
+ * @property {JobPosition[]|undefined} jobPositions
+ * @property {Filters|undefined} filters
+ * @property {boolean|undefined} isFetching
  */
 
 /**
@@ -40,6 +51,22 @@ function getElementOrFail(selector) {
   }
 
   return element;
+}
+
+/**
+ * Spinner component.
+ *
+ * @return {string}
+ */
+function Spinner() {
+  return html`
+    <div class="bw-jobs-spinner">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  `;
 }
 
 /**
@@ -163,23 +190,15 @@ class JobsList {
   #mountElementSelector = null;
 
   /**
-   * @type {boolean}
+   * @type {Data}
    *
    * @private
    * @memberof JobsList
    */
-  #isFetching = true;
+  #data = {};
 
   /**
-   * @type {JobPosition[]|null}
-   *
-   * @private
-   * @memberof JobsList
-   */
-  #data = null;
-
-  /**
-   * @type {JobPosition[]|null}
+   * @type {Data}
    *
    * @memberof JobsList
    */
@@ -188,13 +207,13 @@ class JobsList {
   }
 
   /**
-   * @property {JobPosition[]|null} data
+   * @property {Data} data
    * @returns {void}
    *
    * @memberof JobsList
    */
   set data(data) {
-    this.#data = data;
+    this.#data = { ...this.#data, ...data };
     this.render();
   }
 
@@ -285,9 +304,14 @@ class JobsList {
   listenForLocationFilter() {
     const selectElement = getElementOrFail('#bw-jobs-location-filter');
 
-    selectElement.addEventListener('change', (event) => {
-      // eslint-disable-next-line no-console
-      console.log(event.currentTarget.value);
+    selectElement.addEventListener('change', ({ currentTarget }) => {
+      this.data = {
+        filters: {
+          ...this.data.filters,
+          locationUid: currentTarget.value,
+        },
+      };
+      this.fetchData();
     });
   }
 
@@ -302,9 +326,14 @@ class JobsList {
   listenForCategoryFilter() {
     const selectElement = getElementOrFail('#bw-jobs-category-filter');
 
-    selectElement.addEventListener('change', (event) => {
-      // eslint-disable-next-line no-console
-      console.log(event.currentTarget.value);
+    selectElement.addEventListener('change', ({ currentTarget }) => {
+      this.data = {
+        filters: {
+          ...this.data.filters,
+          categoryUid: currentTarget.value,
+        },
+      };
+      this.fetchData();
     });
   }
 
@@ -314,17 +343,30 @@ class JobsList {
    * @memberof JobsList
    */
   async fetchData() {
-    this.#isFetching = true;
+    const { endpointUrl } = this;
 
-    const response = await fetch(this.endpointUrl);
+    this.data = { isFetching: true };
 
-    this.#isFetching = false;
+    if (this.data.filters) {
+      Object.keys(this.data.filters).forEach((filterKey) => {
+        if (this.data.filters[filterKey]) {
+          endpointUrl.searchParams.append(
+            `tx_bwjobs_api[${filterKey}]`,
+            this.data.filters[filterKey],
+          );
+        }
+      });
+    }
+
+    const response = await fetch(endpointUrl);
 
     if (!response.ok) {
       throw new Error(response.statusText);
     }
 
-    this.data = await response.json();
+    const jobPositions = await response.json();
+
+    this.data = { isFetching: false, jobPositions };
   }
 
   /**
@@ -333,11 +375,13 @@ class JobsList {
    * @memberof JobsList
    */
   async render() {
-    if (this.#isFetching) {
+    const { data } = this;
+
+    if (data.isFetching) {
       render(
         this.mountElement,
         html`<div class="bw-jobs-list">
-          <div class="bw-jobs-list__loader">Loading</div>
+          <div class="bw-jobs-list__loader">${Spinner()}</div>
         </div>`,
       );
       return;
@@ -346,7 +390,7 @@ class JobsList {
     render(
       this.mountElement,
       html`<div class="bw-jobs-list">
-        ${this.data?.map((jobPosition) => {
+        ${data.jobPositions?.map((jobPosition) => {
           return JobPosition(
             jobPosition,
             // eslint-disable-next-line sonarjs/no-nested-template-literals
@@ -364,7 +408,6 @@ class JobsList {
    */
   async mount() {
     this.fetchData();
-    this.render();
   }
 }
 

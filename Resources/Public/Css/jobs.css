@@ -12,6 +12,10 @@
     margin: 0 auto;
 }
 
+.tx-bw-jobs * {
+    box-sizing: border-box;
+}
+
 /* Section */
 .bw-jobs-section {
     margin: 4em 0;
@@ -79,7 +83,7 @@
 .bw-jobs-contact-box {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-areas: 'image' 'content';
+    grid-template-areas: "image" "content";
     font-size: 1.25em;
     margin-block: 2em;
     background-color: var(--bw-jobs-color--light);
@@ -88,7 +92,7 @@
 @media (min-width: 991px) {
     .bw-jobs-contact-box {
         grid-template-columns: 1.5fr 1fr;
-        grid-template-areas: 'content image';
+        grid-template-areas: "content image";
     }
 }
 
@@ -290,4 +294,44 @@
 .bw-jobs-paginator__item-icon {
     inline-size: 1em;
     block-size: 1em;
+}
+
+/* Spinner */
+.bw-jobs-spinner {
+    display: inline-block;
+    position: relative;
+    width: 3em;
+    height: 3em;
+}
+
+.bw-jobs-spinner > div {
+    position: absolute;
+    width: 3em;
+    height: 3em;
+    margin: 1em;
+    border: 2px solid var(--bw-jobs-color--primary);
+    border-radius: 50%;
+    animation: bw-jobs-spinner 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    border-color: var(--bw-jobs-color--primary) transparent transparent transparent;
+}
+
+.bw-jobs-spinner > div:nth-child(1) {
+    animation-delay: -0.45s;
+}
+
+.bw-jobs-spinner > div:nth-child(2) {
+    animation-delay: -0.3s;
+}
+
+.bw-jobs-spinner > div:nth-child(3) {
+    animation-delay: -0.15s;
+}
+
+@keyframes bw-jobs-spinner {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }
