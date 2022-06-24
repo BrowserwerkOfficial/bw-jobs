@@ -313,6 +313,22 @@ class JobsList {
   #mountElementSelector = null;
 
   /**
+   * @type {string|null}
+   *
+   * @private
+   * @memberof JobsList
+   */
+  #locationFilterSelector = null;
+
+  /**
+   * @type {string|null}
+   *
+   * @private
+   * @memberof JobsList
+   */
+  #categoryFilterSelector = null;
+
+  /**
    * @type {Data}
    *
    * @private
@@ -357,7 +373,7 @@ class JobsList {
    * @memberof JobsList
    */
   get mountElement() {
-    const mountElement = document.querySelector(this.#mountElementSelector);
+    const mountElement = getElementOrFail(this.#mountElementSelector);
 
     if (!mountElement) {
       throw new Error(
@@ -414,15 +430,31 @@ class JobsList {
    * Constructor
    *
    * @param {string} mountElementSelector
+   * @param {string} locationFilterSelector
+   * @param {string} categoryFilterSelector
    *
    * @memberof JobsList
    */
-  constructor(mountElementSelector) {
+  constructor(
+    mountElementSelector,
+    locationFilterSelector,
+    categoryFilterSelector,
+  ) {
     if (!mountElementSelector) {
       throw new Error('Missing mountElementSelector');
     }
 
+    if (!locationFilterSelector) {
+      throw new Error('Missing locationFilterSelector');
+    }
+
+    if (!categoryFilterSelector) {
+      throw new Error('Missing categoryFilterSelector');
+    }
+
     this.#mountElementSelector = mountElementSelector;
+    this.#locationFilterSelector = locationFilterSelector;
+    this.#categoryFilterSelector = categoryFilterSelector;
 
     this.listenForLocationFilter();
     this.listenForCategoryFilter();
@@ -437,7 +469,7 @@ class JobsList {
    * @memberof JobsList
    */
   listenForLocationFilter() {
-    const selectElement = getElementOrFail('#bw-jobs-location-filter');
+    const selectElement = getElementOrFail(this.#locationFilterSelector);
 
     selectElement.addEventListener('change', ({ currentTarget }) => {
       this.data = {
@@ -460,7 +492,7 @@ class JobsList {
    * @memberof JobsList
    */
   listenForCategoryFilter() {
-    const selectElement = getElementOrFail('#bw-jobs-category-filter');
+    const selectElement = getElementOrFail(this.#categoryFilterSelector);
 
     selectElement.addEventListener('change', ({ currentTarget }) => {
       this.data = {
@@ -548,5 +580,9 @@ class JobsList {
   }
 }
 
-const jobsList = new JobsList('#bw-jobs-list');
+const jobsList = new JobsList(
+  '#bw-jobs-list',
+  '#bw-jobs-location-filter',
+  '#bw-jobs-category-filter',
+);
 await jobsList.mount();
