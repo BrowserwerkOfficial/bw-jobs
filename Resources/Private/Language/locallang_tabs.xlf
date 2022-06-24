@@ -15,6 +15,9 @@
 			<trans-unit id="seo" resname="seo">
 				<source>SEO</source>
 			</trans-unit>
+			<trans-unit id="visibility" resname="visibility">
+				<source>Visibility</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

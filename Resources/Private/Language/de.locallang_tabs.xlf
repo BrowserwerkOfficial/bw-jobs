@@ -19,6 +19,10 @@
 				<source>SEO</source>
 				<target>SEO</target>
 			</trans-unit>
+			<trans-unit id="visibility" resname="visibility">
+				<source>Visibility</source>
+				<target>Sichtbarkeit</target>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

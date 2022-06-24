@@ -16,16 +16,18 @@
         </div>
     </f:if>
 
-    <div class="bw-jobs-detail-box">
-        <span class="bw-jobs-detail-box__label">
-            <f:translate key="homeoffice_possible"/>
-        </span>
-        <span class="bw-jobs-detail-box__value">
-            <f:translate key="{f:if(condition: jobPosition.homeofficePossible, then: 'yes', else: 'no')}"/>
-        </span>
-    </div>
+    <f:if condition="{jobPosition.homeofficePublic}">
+        <div class="bw-jobs-detail-box">
+            <span class="bw-jobs-detail-box__label">
+                <f:translate key="homeoffice_possible"/>
+            </span>
+            <span class="bw-jobs-detail-box__value">
+                <f:translate key="{f:if(condition: jobPosition.homeofficePossible, then: 'yes', else: 'no')}"/>
+            </span>
+        </div>
+    </f:if>
 
-    <f:if condition="{jobPosition.employmentTypes}">
+    <f:if condition="{jobPosition.employmentTypes} && {jobPosition.employmentTypesPublic}">
         <div class="bw-jobs-detail-box">
             <span class="bw-jobs-detail-box__label">
                 <f:translate key="employment_types"/>
@@ -96,7 +98,7 @@
         </div>
     </f:if>
 
-    <f:if condition="{jobPosition.categories}">
+    <f:if condition="{jobPosition.categories} && {jobPosition.categoriesPublic}">
         <div class="bw-jobs-detail-box">
             <span class="bw-jobs-detail-box__label">
                 <f:translate key="categories"/>

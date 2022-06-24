@@ -122,6 +122,13 @@ class JobPosition extends AbstractEntity
     protected $validThroughDate;
 
     /**
+     * salaryPublic
+     *
+     * @var bool
+     */
+    protected $salaryPublic = false;
+
+    /**
      * salary
      *
      * @var int
@@ -134,13 +141,6 @@ class JobPosition extends AbstractEntity
      * @var bool
      */
     protected $homeofficePossible = false;
-
-    /**
-     * salaryPublic
-     *
-     * @var bool
-     */
-    protected $salaryPublic = false;
 
     /**
      * currency
@@ -206,13 +206,6 @@ class JobPosition extends AbstractEntity
     protected $ogImage;
 
     /**
-     * ogImageAlt
-     *
-     * @var string
-     */
-    protected $ogImageAlt;
-
-    /**
      * twitterTitle
      *
      * @var string
@@ -234,18 +227,18 @@ class JobPosition extends AbstractEntity
     protected $twitterImage;
 
     /**
-     * twitterImageAlt
-     *
-     * @var string
-     */
-    protected $twitterImageAlt;
-
-    /**
      * twitterCard
      *
      * @var string
      */
     protected $twitterCard;
+
+    /**
+     * employmentTypesPublic
+     *
+     * @var bool
+     */
+    protected $employmentTypesPublic = false;
 
     /**
      * employmentTypes
@@ -260,6 +253,13 @@ class JobPosition extends AbstractEntity
      * @var ObjectStorage<Location>
      */
     protected $locations;
+
+    /**
+     * categoriesPublic
+     *
+     * @var bool
+     */
+    protected $categoriesPublic = false;
 
     /**
      * categories
@@ -549,6 +549,36 @@ class JobPosition extends AbstractEntity
     }
 
     /**
+     * Returns the salaryPublic
+     *
+     * @return bool $salaryPublic
+     */
+    public function getSalaryPublic()
+    {
+        return $this->salaryPublic;
+    }
+
+    /**
+     * Returns the boolean state of salaryPublic
+     *
+     * @return bool
+     */
+    public function isSalaryPublic()
+    {
+        return $this->salaryPublic;
+    }
+
+    /**
+     * Sets the salaryPublic
+     *
+     * @param bool $salaryPublic
+     */
+    public function setSalaryPublic(bool $salaryPublic)
+    {
+        $this->salaryPublic = $salaryPublic;
+    }
+
+    /**
      * Returns the salary
      *
      * @return int $salary
@@ -566,6 +596,26 @@ class JobPosition extends AbstractEntity
     public function setSalary(int $salary)
     {
         $this->salary = $salary;
+    }
+
+    /**
+     * Returns the homeofficePublic
+     *
+     * @return bool $homeofficePublic
+     */
+    public function getHomeofficePublic()
+    {
+        return $this->homeofficePublic;
+    }
+
+    /**
+     * Returns the boolean state of homeofficePublic
+     *
+     * @return bool
+     */
+    public function isHomeofficePublic()
+    {
+        return $this->homeofficePublic;
     }
 
     /**
@@ -596,36 +646,6 @@ class JobPosition extends AbstractEntity
     public function setHomeofficePossible(bool $homeofficePossible)
     {
         $this->homeofficePossible = $homeofficePossible;
-    }
-
-    /**
-     * Returns the salaryPublic
-     *
-     * @return bool $salaryPublic
-     */
-    public function getSalaryPublic()
-    {
-        return $this->salaryPublic;
-    }
-
-    /**
-     * Returns the boolean state of salaryPublic
-     *
-     * @return bool
-     */
-    public function isSalaryPublic()
-    {
-        return $this->salaryPublic;
-    }
-
-    /**
-     * Sets the salaryPublic
-     *
-     * @param bool $salaryPublic
-     */
-    public function setSalaryPublic(bool $salaryPublic)
-    {
-        $this->salaryPublic = $salaryPublic;
     }
 
     /**
@@ -809,26 +829,6 @@ class JobPosition extends AbstractEntity
     }
 
     /**
-     * Returns the ogImageAlt
-     *
-     * @return string $ogImageAlt
-     */
-    public function getOgImageAlt()
-    {
-        return $this->ogImageAlt;
-    }
-
-    /**
-     * Sets the ogImageAlt
-     *
-     * @param string $ogImageAlt
-     */
-    public function setOgImageAlt(string $ogImageAlt)
-    {
-        $this->ogImageAlt = $ogImageAlt;
-    }
-
-    /**
      * Returns the twitterTitle
      *
      * @return string $twitterTitle
@@ -889,26 +889,6 @@ class JobPosition extends AbstractEntity
     }
 
     /**
-     * Returns the twitterImageAlt
-     *
-     * @return string $twitterImageAlt
-     */
-    public function getTwitterImageAlt()
-    {
-        return $this->twitterImageAlt;
-    }
-
-    /**
-     * Sets the twitterImageAlt
-     *
-     * @param string $twitterImageAlt
-     */
-    public function setTwitterImageAlt(string $twitterImageAlt)
-    {
-        $this->twitterImageAlt = $twitterImageAlt;
-    }
-
-    /**
      * Returns the twitterCard
      *
      * @return string $twitterCard
@@ -926,6 +906,36 @@ class JobPosition extends AbstractEntity
     public function setTwitterCard(string $twitterCard)
     {
         $this->twitterCard = $twitterCard;
+    }
+
+    /**
+     * Returns the employmentTypesPublic
+     *
+     * @return bool $employmentTypesPublic
+     */
+    public function getEmploymentTypesPublic()
+    {
+        return $this->employmentTypesPublic;
+    }
+
+    /**
+     * Returns the boolean state of employmentTypesPublic
+     *
+     * @return bool
+     */
+    public function isEmploymentTypesPublic()
+    {
+        return $this->employmentTypesPublic;
+    }
+
+    /**
+     * Sets the employmentTypesPublic
+     *
+     * @param bool $employmentTypesPublic
+     */
+    public function setEmploymentTypesPublic(bool $employmentTypesPublic)
+    {
+        $this->employmentTypesPublic = $employmentTypesPublic;
     }
 
     /**
@@ -1026,6 +1036,26 @@ class JobPosition extends AbstractEntity
     public function setLocations(ObjectStorage $locations)
     {
         $this->locations = $locations;
+    }
+
+    /**
+     * Returns the categoriesPublic
+     *
+     * @return bool $categoriesPublic
+     */
+    public function getCategoriesPublic()
+    {
+        return $this->categoriesPublic;
+    }
+
+    /**
+     * Returns the boolean state of categoriesPublic
+     *
+     * @return bool
+     */
+    public function isCategoriesPublic()
+    {
+        return $this->categoriesPublic;
     }
 
     /**

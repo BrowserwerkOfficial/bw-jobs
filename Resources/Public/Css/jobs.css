@@ -63,6 +63,7 @@
     display: flex;
     align-items: center;
     gap: 0.5em;
+    hyphens: auto;
 }
 
 .bw-jobs-list-item__column--title {
@@ -74,7 +75,7 @@
     color: var(--bw-jobs-color--primary);
 }
 
-.bw-jobs-list-item:hover .bw-jobs-list-item__column {
+.bw-jobs-list-item:hover .bw-jobs-list-item__column--locations {
     color: var(--bw-jobs-color-white);
 }
 
@@ -309,14 +310,14 @@
 .bw-jobs-spinner {
     display: inline-block;
     position: relative;
-    width: 3em;
-    height: 3em;
+    inline-size: 3em;
+    block-size: 3em;
 }
 
 .bw-jobs-spinner > div {
     position: absolute;
-    width: 3em;
-    height: 3em;
+    inline-size: 3em;
+    block-size: 3em;
     margin: 1em;
     border: 2px solid var(--bw-jobs-color--primary);
     border-radius: 50%;

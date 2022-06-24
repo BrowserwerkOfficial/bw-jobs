@@ -29,7 +29,7 @@
 			</trans-unit>
 			<trans-unit id="tx_bwjobs_domain_model_jobposition.education_categories" resname="tx_bwjobs_domain_model_jobposition.education_categories">
 				<source>Education Categories</source>
-				<target>Kategorie der Ausbildung</target>
+				<target>Kategorien der Ausbildung</target>
 			</trans-unit>
 			<trans-unit id="tx_bwjobs_domain_model_jobposition.education_categories_high_school" resname="tx_bwjobs_domain_model_jobposition.education_categories_high_school">
 				<source>High School Diploma</source>
@@ -79,9 +79,17 @@
 				<source>Valid Until</source>
 				<target>Gültig bis</target>
 			</trans-unit>
-			<trans-unit id="tx_bwjobs_domain_model_jobposition.salary" resname="tx_bwjobs_domain_model_jobposition.salary">
-				<source>Salary</source>
-				<target>Gehalt</target>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.homeoffice_public" resname="tx_bwjobs_domain_model_jobposition.homeoffice_public">
+				<source>Homeoffice Public</source>
+				<target>Homeoffice öffentlich</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.homeoffice_public_yes" resname="tx_bwjobs_domain_model_jobposition.homeoffice_public_yes">
+				<source>Yes</source>
+				<target>Ja</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.homeoffice_public_no" resname="tx_bwjobs_domain_model_jobposition.homeoffice_public_no">
+				<source>No</source>
+				<target>Nein</target>
 			</trans-unit>
 			<trans-unit id="tx_bwjobs_domain_model_jobposition.homeoffice_possible" resname="tx_bwjobs_domain_model_jobposition.homeoffice_possible">
 				<source>Homeoffice Possible</source>
@@ -98,6 +106,10 @@
 			<trans-unit id="tx_bwjobs_domain_model_jobposition.salary_public_no" resname="tx_bwjobs_domain_model_jobposition.salary_public_no">
 				<source>No</source>
 				<target>Nein</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.salary" resname="tx_bwjobs_domain_model_jobposition.salary">
+				<source>Salary</source>
+				<target>Gehalt</target>
 			</trans-unit>
 			<trans-unit id="tx_bwjobs_domain_model_jobposition.currency" resname="tx_bwjobs_domain_model_jobposition.currency">
 				<source>Currency</source>
@@ -811,10 +823,6 @@
 				<source>Image for Open Graph</source>
 				<target>Bild für Open Graph</target>
 			</trans-unit>
-			<trans-unit id="tx_bwjobs_domain_model_jobposition.og_image_alt" resname="tx_bwjobs_domain_model_jobposition.og_image_alt">
-				<source>Image Alt for Open Graph</source>
-				<target>Bild Alt-Text für Open Graph</target>
-			</trans-unit>
 			<trans-unit id="tx_bwjobs_domain_model_jobposition.twitter_title" resname="tx_bwjobs_domain_model_jobposition.twitter_title">
 				<source>Title for Twitter</source>
 				<target>Titel für Twitter</target>
@@ -827,13 +835,21 @@
 				<source>Image for Twitter</source>
 				<target>Bild für Twitter</target>
 			</trans-unit>
-			<trans-unit id="tx_bwjobs_domain_model_jobposition.twitter_image_alt" resname="tx_bwjobs_domain_model_jobposition.twitter_image_alt">
-				<source>Image Alt for Twitter</source>
-				<target>Bild Alt-Text für Twitter</target>
-			</trans-unit>
 			<trans-unit id="tx_bwjobs_domain_model_jobposition.twitter_card" resname="tx_bwjobs_domain_model_jobposition.twitter_card">
 				<source>Twitter Card Style</source>
-				<target>Style für Twitter Card</target>
+				<target>Stil der Twitter-Card</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.employment_types_public" resname="tx_bwjobs_domain_model_jobposition.employment_types_public">
+				<source>Employment Types Public</source>
+				<target>Beschäftigungsarten öffentlich</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.employment_types_public_yes" resname="tx_bwjobs_domain_model_jobposition.employment_types_public_yes">
+				<source>Yes</source>
+				<target>Ja</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.employment_types_public_no" resname="tx_bwjobs_domain_model_jobposition.employment_types_public_no">
+				<source>No</source>
+				<target>Nein</target>
 			</trans-unit>
 			<trans-unit id="tx_bwjobs_domain_model_jobposition.employment_types" resname="tx_bwjobs_domain_model_jobposition.employment_types">
 				<source>Employment Types</source>
@@ -842,6 +858,18 @@
 			<trans-unit id="tx_bwjobs_domain_model_jobposition.locations" resname="tx_bwjobs_domain_model_jobposition.locations">
 				<source>Locations</source>
 				<target>Standorte</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.categories_public" resname="tx_bwjobs_domain_model_jobposition.categories_public">
+				<source>Categories Public</source>
+				<target>Kategorien öffentlich</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.categories_public_yes" resname="tx_bwjobs_domain_model_jobposition.categories_public_yes">
+				<source>Yes</source>
+				<target>Ja</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.categories_public_no" resname="tx_bwjobs_domain_model_jobposition.categories_public_no">
+				<source>No</source>
+				<target>Nein</target>
 			</trans-unit>
 			<trans-unit id="tx_bwjobs_domain_model_jobposition.categories" resname="tx_bwjobs_domain_model_jobposition.categories">
 				<source>Categories</source>

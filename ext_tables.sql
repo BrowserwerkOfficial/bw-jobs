@@ -14,9 +14,10 @@ CREATE TABLE tx_bwjobs_domain_model_jobposition
 	work_hours                int(11)              NOT NULL DEFAULT '0',
 	start_date                date                          DEFAULT NULL,
 	valid_through_date        date                          DEFAULT NULL,
+	salary_public             smallint(1) unsigned NOT NULL DEFAULT '1',
 	salary                    int(11)              NOT NULL DEFAULT '0',
+	homeoffice_public         smallint(1) unsigned NOT NULL DEFAULT '1',
 	homeoffice_possible       smallint(1) unsigned NOT NULL DEFAULT '0',
-	salary_public             smallint(1) unsigned NOT NULL DEFAULT '0',
 	currency                  varchar(255)         NOT NULL DEFAULT '',
 	payment_cycle             varchar(255)         NOT NULL DEFAULT '',
 	level                     varchar(255)         NOT NULL DEFAULT '',
@@ -26,14 +27,14 @@ CREATE TABLE tx_bwjobs_domain_model_jobposition
 	og_title									varchar(255)  		   NOT NULL DEFAULT '',
 	og_description						varchar(255)  		   NOT NULL DEFAULT '',
 	og_image									int(11) unsigned 		 NOT NULL DEFAULT '0',
-	og_image_alt							varchar(255)  		   NOT NULL DEFAULT '',
 	twitter_title							varchar(255)  		   NOT NULL DEFAULT '',
 	twitter_description				varchar(255)  		   NOT NULL DEFAULT '',
 	twitter_image							int(11) unsigned 		 NOT NULL DEFAULT '0',
-	twitter_image_alt					varchar(255)  		   NOT NULL DEFAULT '',
 	twitter_card							varchar(255) 		 		 NOT NULL DEFAULT '',
+	employment_types_public   smallint(1) unsigned NOT NULL DEFAULT '1',
 	employment_types          int(11) unsigned              DEFAULT '0',
 	locations                 int(11) unsigned              DEFAULT '0',
+	categories_public         smallint(1) unsigned NOT NULL DEFAULT '1',
 	categories                int(11) unsigned              DEFAULT '0'
 );
 

@@ -49,7 +49,6 @@ return [
                 employment_types,
 
                 --div--;LLL:EXT:bw_jobs/Resources/Private/Language/locallang_tabs.xlf:pay,
-                salary_public,
                 salary,
                 currency,
                 payment_cycle,
@@ -69,12 +68,16 @@ return [
                 og_title,
                 og_description,
                 og_image,
-                og_image_alt,
                 twitter_title,
                 twitter_description,
                 twitter_image,
-                twitter_image_alt,
                 twitter_card,
+
+                --div--;LLL:EXT:bw_jobs/Resources/Private/Language/locallang_tabs.xlf:visibility,
+                homeoffice_public,
+                salary_public,
+                employment_types_public,
+                categories_public,
 
                 --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:language,
                 sys_language_uid,
@@ -84,7 +87,7 @@ return [
                 --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:access,
                 hidden,
                 starttime,
-                endtime,
+                endtime
             ',
         ],
     ],
@@ -312,7 +315,7 @@ return [
                 'eval' => 'int',
                 'default' => 40,
                 'range' => [
-                    'lower' => 1,
+                    'lower' => 0,
                     'upper' => 48,
                 ],
             ],
@@ -367,6 +370,23 @@ return [
                 'eval' => 'int',
                 'range' => [
                     'lower' => 0,
+                ],
+                'default' => 0,
+            ],
+        ],
+        'homeoffice_public' => [
+            'exclude' => true,
+            'label' => 'LLL:EXT:bw_jobs/Resources/Private/Language/locallang_db.xlf:tx_bwjobs_domain_model_jobposition.homeoffice_public',
+            'config' => [
+                'type' => 'check',
+                'renderType' => 'checkboxLabeledToggle',
+                'items' => [
+                    [
+                        0 => '',
+                        1 => '',
+                        'labelUnchecked' => 'LLL:EXT:bw_jobs/Resources/Private/Language/locallang_db.xlf:tx_bwjobs_domain_model_jobposition.homeoffice_public_no',
+                        'labelChecked' => 'LLL:EXT:bw_jobs/Resources/Private/Language/locallang_db.xlf:tx_bwjobs_domain_model_jobposition.homeoffice_public_yes',
+                    ],
                 ],
                 'default' => 0,
             ],
@@ -692,16 +712,6 @@ return [
                 $GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext']
             ),
         ],
-        'og_image_alt' => [
-            'exclude' => true,
-            'label' => 'LLL:EXT:bw_jobs/Resources/Private/Language/locallang_db.xlf:tx_bwjobs_domain_model_jobposition.og_image_alt',
-            'config' => [
-                'type' => 'input',
-                'size' => 40,
-                'max' => 255,
-                'eval' => 'trim',
-            ],
-        ],
         'twitter_title' => [
             'exclude' => true,
             'l10n_mode' => 'prefixLangTitle',
@@ -769,16 +779,6 @@ return [
                 $GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext']
             ),
         ],
-        'twitter_image_alt' => [
-            'exclude' => true,
-            'label' => 'LLL:EXT:bw_jobs/Resources/Private/Language/locallang_db.xlf:tx_bwjobs_domain_model_jobposition.twitter_image_alt',
-            'config' => [
-                'type' => 'input',
-                'size' => 40,
-                'max' => 255,
-                'eval' => 'trim',
-            ],
-        ],
         'twitter_card' => [
             'exclude' => true,
             'label' => 'LLL:EXT:bw_jobs/Resources/Private/Language/locallang_db.xlf:tx_bwjobs_domain_model_jobposition.twitter_card',
@@ -790,6 +790,23 @@ return [
                     ['summary_large_image', 'summary_large_image'],
                 ],
                 'eval' => 'required'
+            ],
+        ],
+        'employment_types_public' => [
+            'exclude' => true,
+            'label' => 'LLL:EXT:bw_jobs/Resources/Private/Language/locallang_db.xlf:tx_bwjobs_domain_model_jobposition.employment_types_public',
+            'config' => [
+                'type' => 'check',
+                'renderType' => 'checkboxLabeledToggle',
+                'items' => [
+                    [
+                        0 => '',
+                        1 => '',
+                        'labelUnchecked' => 'LLL:EXT:bw_jobs/Resources/Private/Language/locallang_db.xlf:tx_bwjobs_domain_model_jobposition.employment_types_public_no',
+                        'labelChecked' => 'LLL:EXT:bw_jobs/Resources/Private/Language/locallang_db.xlf:tx_bwjobs_domain_model_jobposition.employment_types_public_yes',
+                    ],
+                ],
+                'default' => 0,
             ],
         ],
         'employment_types' => [
@@ -844,6 +861,23 @@ return [
                         'disabled' => true,
                     ],
                 ],
+            ],
+        ],
+        'categories_public' => [
+            'exclude' => true,
+            'label' => 'LLL:EXT:bw_jobs/Resources/Private/Language/locallang_db.xlf:tx_bwjobs_domain_model_jobposition.categories_public',
+            'config' => [
+                'type' => 'check',
+                'renderType' => 'checkboxLabeledToggle',
+                'items' => [
+                    [
+                        0 => '',
+                        1 => '',
+                        'labelUnchecked' => 'LLL:EXT:bw_jobs/Resources/Private/Language/locallang_db.xlf:tx_bwjobs_domain_model_jobposition.categories_public_no',
+                        'labelChecked' => 'LLL:EXT:bw_jobs/Resources/Private/Language/locallang_db.xlf:tx_bwjobs_domain_model_jobposition.categories_public_yes',
+                    ],
+                ],
+                'default' => 0,
             ],
         ],
         'categories' => [
