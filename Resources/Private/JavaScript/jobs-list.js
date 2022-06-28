@@ -255,7 +255,7 @@ function Pagination(pages, currentPage, onSelectPage) {
       >
         <button
           class="bw-jobs-paginator__item-button"
-          @click=${() => onSelectPage(Math.max(currentPage + 1, pages.length))}
+          @click=${() => onSelectPage(Math.min(currentPage + 1, pages.length))}
         >
           <svg
             class="bw-jobs-paginator__item-icon"
