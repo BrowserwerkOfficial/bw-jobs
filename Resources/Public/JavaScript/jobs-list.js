@@ -307,7 +307,7 @@ class JobsList {
       };
       this.fetchData();
     });
-    const storedValue = retrieveValueFromLocalStorage("jobsFilterLocationUid");
+    const storedValue = retrieveValueFromLocalStorage("jobsFilterCategoryUid");
     if (storedValue) {
       selectElement.value = storedValue;
       selectElement.dispatchEvent(new Event("change"));
