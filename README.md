@@ -28,7 +28,7 @@ The BW Jobs extension for TYPO3 CMS allows you to manage your open job positions
 routeEnhancers:
   JobsDetail:
     type: Extbase
-    limitToPages: [0] # Change this to the pid containing the detail view plugin
+    limitToPages: [000] # Change this to the pid containing the detail view plugin
     extension: BwJobs
     plugin: Detail
     routes:
@@ -126,7 +126,7 @@ plugin.tx_seo {
                         table = tx_bwjobs_domain_model_jobposition
                         sortField = date_posted
                         lastModifiedField = tstamp
-                        pid = 1 # Change this to the pid storing the job positions (same as storagePid)
+                        pid = 000 # Change this to the pid storing the job positions (same as storagePid)
                         url {
                             pageId = 000 # Change this to the pid containing the detail view plugin
                             fieldToParameterMap {
