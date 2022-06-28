@@ -75,7 +75,7 @@ routeEnhancers:
 
 | Constant Name | Default Value | Description |
 | ------ | --- | ----------- |
-| itemsPerPage | 10 | The max number of items per page. |
+| itemsPerPage | 10 | The maximum number of items per page. |
 | templateRootPath | EXT:bw_jobs/Resources/Private/Templates/ | The path Fluid templates are stored in. |
 | partialRootPath | EXT:bw_jobs/Resources/Private/Partials/ | The path Fluid partials are stored in. |
 | layoutRootPath | EXT:bw_jobs/Resources/Private/Layouts/ | The path Fluid layouts are stored in. |
