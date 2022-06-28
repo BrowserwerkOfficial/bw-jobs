@@ -7,7 +7,7 @@
  * (c) 2022 Leon Seipp <l.seipp@browserwerk.de>, Browserwerk GmbH
  *
  * IMPORTANT: Run `npm run build` in the root of this extension to bundle this file
- * and its dependencies into a single file, which is then output to `Resources/Public/JavaScript`.
+ * and its dependencies, which is then output to `Resources/Public/JavaScript`.
  *
  * @typedef Location
  * @type {object}
