@@ -98,6 +98,33 @@ function buildRequestUrlForData(url, data) {
 }
 
 /**
+ * Persist a value to local storage.
+ *
+ * @param {string} key
+ * @param {string} value
+ *
+ * @return {void}
+ */
+function persistValueToLocalStorage(key, value) {
+  if (value) {
+    localStorage.setItem(key, value);
+  } else {
+    localStorage.removeItem(key);
+  }
+}
+
+/**
+ * Retrieve a value from local storage.
+ *
+ * @param {string} key
+ *
+ * @return {string|null}
+ */
+function retrieveValueFromLocalStorage(key) {
+  return localStorage.getItem(key);
+}
+
+/**
  * Clock icon component.
  *
  * @return {string}
@@ -467,22 +494,24 @@ class JobsList {
     this.#locationFilterSelector = locationFilterSelector;
     this.#categoryFilterSelector = categoryFilterSelector;
 
-    this.listenForLocationFilter();
-    this.listenForCategoryFilter();
+    this.initLocationFilter();
+    this.initCategoryFilter();
   }
 
   /**
-   * Listen for changes on the location filter.
+   * Initialize the location filter.
    * Note: The filters are rendered from inside TYPO3 Fluid templates.
    *
    * @return {void}
    *
    * @memberof JobsList
    */
-  listenForLocationFilter() {
+  initLocationFilter() {
     const selectElement = document.querySelector(this.#locationFilterSelector);
 
     selectElement?.addEventListener('change', ({ currentTarget }) => {
+      persistValueToLocalStorage('jobsFilterLocationUid', currentTarget.value);
+
       this.data = {
         currentPage: 1,
         filters: {
@@ -492,20 +521,28 @@ class JobsList {
       };
       this.fetchData();
     });
+
+    const storedValue = retrieveValueFromLocalStorage('jobsFilterLocationUid');
+    if (storedValue) {
+      selectElement.value = storedValue;
+      selectElement.dispatchEvent(new Event('change'));
+    }
   }
 
   /**
-   * Listen for changes on the category filter.
+   * Initialize the category filter.
    * Note: The filters are rendered from inside TYPO3 Fluid templates.
    *
    * @return {void}
    *
    * @memberof JobsList
    */
-  listenForCategoryFilter() {
+  initCategoryFilter() {
     const selectElement = document.querySelector(this.#categoryFilterSelector);
 
     selectElement?.addEventListener('change', ({ currentTarget }) => {
+      persistValueToLocalStorage('jobsFilterCategoryUid', currentTarget.value);
+
       this.data = {
         currentPage: 1,
         filters: {
@@ -515,6 +552,12 @@ class JobsList {
       };
       this.fetchData();
     });
+
+    const storedValue = retrieveValueFromLocalStorage('jobsFilterCategoryUid');
+    if (storedValue) {
+      selectElement.value = storedValue;
+      selectElement.dispatchEvent(new Event('change'));
+    }
   }
 
   /**
