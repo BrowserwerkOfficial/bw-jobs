@@ -382,17 +382,7 @@ class JobsList {
    * @memberof JobsList
    */
   get mountElement() {
-    const mountElement = getElementOrFail(this.#mountElementSelector);
-
-    if (!mountElement) {
-      throw new Error(
-        `Could not mount jobs list as the mount element "${
-          this.#mountElementSelector
-        }" is missing`,
-      );
-    }
-
-    return mountElement;
+    return getElementOrFail(this.#mountElementSelector);
   }
 
   /**

@@ -13,7 +13,6 @@ finishers:
       attachUploads: false
       saveFiles: false
       addHtmlPart: true
-      useFluidEmail: true
       templateName: EmailToApplicant.html
   - identifier: EmailToContactPerson
     options:
@@ -21,7 +20,6 @@ finishers:
       attachUploads: true
       saveFiles: false
       addHtmlPart: true
-      useFluidEmail: true
       templateName: EmailToContactPerson.html
   - identifier: Redirect
     options:

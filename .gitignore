@@ -6,6 +6,7 @@ logs
 .env
 .env.*
 *.log
+node_modules
 
 # Credentials
 .npmrc
