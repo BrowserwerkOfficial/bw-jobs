@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 - Linking to detail view without a job position now redirects to the list view.
 - Fixed label of `work_hours` field in backend view.
+- Composer installation instruction in README.
 
 ### Added
 - The list view now renders via JavaScript, which removes the page reload on changing the filter.

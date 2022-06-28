@@ -16,7 +16,7 @@ The BW Jobs extension for TYPO3 CMS allows you to manage your open job positions
 1. Install the extension with composer:
 
 ```console
-  composer require browserwerk/bw-jobs
+  composer require browserwerk/bw_jobs
 ```
 
 2. Include the TypoScript template in the template module
