@@ -42,7 +42,6 @@
  * @property {Filters} filters
  */
 
-/* eslint-disable sonarjs/no-nested-template-literals */
 import { html, render, svg } from 'uhtml';
 
 /**
