@@ -65,29 +65,29 @@ routeEnhancers:
 | formPersistenceIdentifier | EXT:bw_jobs/Resources/Private/Forms/jobApplication.form.yaml | The path to the form YAML used for rendering the frontend application form. |
 | senderName | BW Jobs Extension | The name of the sender emails should be sent by. |
 | senderAddress | bwjobs@example.com | The address emails should be sent from. |
-| templateRootPath | EXT:bw_jobs/Resources/Private/Templates/ | The path fluid templates are stored in. |
-| partialRootPath | EXT:bw_jobs/Resources/Private/Partials/ | The path fluid partials are stored in. |
-| layoutRootPath | EXT:bw_jobs/Resources/Private/Layouts/ | The path fluid layouts are stored in. |
-| emailTemplateRootPath | EXT:bw_jobs/Resources/Private/Templates/Email/ | The path fluid email templates are stored in. |
-| emailLayoutRootPath | EXT:bw_jobs/Resources/Private/Layouts/Email/ | The path fluid email layouts are stored in. |
+| templateRootPath | EXT:bw_jobs/Resources/Private/Templates/ | The path Fluid templates are stored in. |
+| partialRootPath | EXT:bw_jobs/Resources/Private/Partials/ | The path Fluid partials are stored in. |
+| layoutRootPath | EXT:bw_jobs/Resources/Private/Layouts/ | The path Fluid layouts are stored in. |
+| emailTemplateRootPath | EXT:bw_jobs/Resources/Private/Templates/Email/ | The path Fluid email templates are stored in. |
+| emailLayoutRootPath | EXT:bw_jobs/Resources/Private/Layouts/Email/ | The path Fluid email layouts are stored in. |
 
 **plugin.tx_bwjobs_list.settings**
 
 | Constant Name | Default Value | Description |
 | ------ | --- | ----------- |
 | itemsPerPage | 10 | The max number of items per page. |
-| templateRootPath | EXT:bw_jobs/Resources/Private/Templates/ | The path fluid templates are stored in. |
-| partialRootPath | EXT:bw_jobs/Resources/Private/Partials/ | The path fluid partials are stored in. |
-| layoutRootPath | EXT:bw_jobs/Resources/Private/Layouts/ | The path fluid layouts are stored in. |
+| templateRootPath | EXT:bw_jobs/Resources/Private/Templates/ | The path Fluid templates are stored in. |
+| partialRootPath | EXT:bw_jobs/Resources/Private/Partials/ | The path Fluid partials are stored in. |
+| layoutRootPath | EXT:bw_jobs/Resources/Private/Layouts/ | The path Fluid layouts are stored in. |
 
 **module.tx_bwjobs_jobs.settings**
 
 | Constant Name | Default Value | Description |
 | ------ | --- | ----------- |
 | storagePid | 1 | The pid of the page where entities should be stored on. |
-| templateRootPath | EXT:bw_jobs/Resources/Private/Backend/Templates/ | The path fluid templates are stored in. |
-| partialRootPath | EXT:bw_jobs/Resources/Private/Backend/Partials/ | The path fluid partials are stored in. |
-| layoutRootPath | EXT:bw_jobs/Resources/Private/Backend/Layouts/ | The path fluid layouts are stored in. |
+| templateRootPath | EXT:bw_jobs/Resources/Private/Backend/Templates/ | The path Fluid templates are stored in. |
+| partialRootPath | EXT:bw_jobs/Resources/Private/Backend/Partials/ | The path Fluid partials are stored in. |
+| layoutRootPath | EXT:bw_jobs/Resources/Private/Backend/Layouts/ | The path Fluid layouts are stored in. |
 
 ## Introduction for editors
 
@@ -151,9 +151,9 @@ plugin.tx_seo {
 This extension outputs structured JSON-LD data for job positions.
 If you wish to disable it, override the **Show** template and remove the bw:structuredData ViewHelper at the very bottom of this template.
 
-## Overriding fluid templates
+## Overriding Fluid templates
 
-To override the default fluid templates used by the extension, simply set the following TypoScript constants to the desired paths:
+To override the default Fluid templates used by the extension, simply set the following TypoScript constants to the desired paths:
 
 ```
 # Detail view
@@ -207,8 +207,8 @@ To customize the emails sent by this extension, set the following TypoScript con
 
 | Constant Name | Default Value | Description |
 | ------ | --- | ----------- |
-| emailTemplateRootPath | EXT:bw_jobs/Resources/Private/Templates/Email/ | The path fluid email templates are stored in. |
-| emailLayoutRootPath | EXT:bw_jobs/Resources/Private/Layouts/Email/ | The path fluid email layouts are stored in. |
+| emailTemplateRootPath | EXT:bw_jobs/Resources/Private/Templates/Email/ | The path Fluid email templates are stored in. |
+| emailLayoutRootPath | EXT:bw_jobs/Resources/Private/Layouts/Email/ | The path Fluid email layouts are stored in. |
 
 Make sure these files exist in the new template path:
 
@@ -231,7 +231,7 @@ You can override the default YAML used for rendering the application form by set
 | ------ | --- | ----------- |
 | formPersistenceIdentifier | EXT:bw_jobs/Resources/Private/Forms/jobApplication.form.yaml | The path to the form YAML used for rendering the frontend application form. |
 
-> Make sure to take a look inside the default template in Resources/Private/Templates/Frontend/Apply.html to see which values are set dynamically from inside fluid.
+> Make sure to take a look inside the default template in Resources/Private/Templates/Frontend/Apply.html to see which values are set dynamically from inside Fluid.
 
 ## Found a bug?
 
