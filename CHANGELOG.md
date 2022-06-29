@@ -12,7 +12,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Pagination "next" button.
 
 ### Added
-- Feature to disable the default headlines for job positions details view.
+- Default headlines for a job position can now be hidden in the `Visibility` tab.
 
 ## [2.1.1] - 2022-06-28
 
