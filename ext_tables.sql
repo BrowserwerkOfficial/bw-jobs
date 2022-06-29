@@ -35,7 +35,8 @@ CREATE TABLE tx_bwjobs_domain_model_jobposition
 	employment_types          int(11) unsigned              DEFAULT '0',
 	locations                 int(11) unsigned              DEFAULT '0',
 	categories_public         smallint(1) unsigned NOT NULL DEFAULT '1',
-	categories                int(11) unsigned              DEFAULT '0'
+	categories                int(11) unsigned              DEFAULT '0',
+	headlines_public          smallint(1) unsigned NOT NULL DEFAULT '1'
 );
 
 CREATE TABLE tx_bwjobs_domain_model_employmenttype

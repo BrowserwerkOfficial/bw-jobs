@@ -879,6 +879,18 @@
 				<source>Employment Type</source>
 				<target>Beschäftigungsart</target>
 			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.headlines_public" resname="tx_bwjobs_domain_model_jobposition.headlines_public">
+				<source>Headlines Public</source>
+				<target>Überschriften öffentlich</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.headlines_public_yes" resname="tx_bwjobs_domain_model_jobposition.headlines_public_yes">
+				<source>Yes</source>
+				<target>Ja</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.headlines_public_no" resname="tx_bwjobs_domain_model_jobposition.headlines_public_no">
+				<source>No</source>
+				<target>Nein</target>
+			</trans-unit>
 			<trans-unit id="tx_bwjobs_domain_model_employmenttype.title" resname="tx_bwjobs_domain_model_employmenttype.title">
 				<source>Title</source>
 				<target>Titel</target>

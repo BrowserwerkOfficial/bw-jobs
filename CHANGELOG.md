@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 - Pagination "next" button.
 
+- Feature to disable the headlines for job position informations
 ## [2.1.1] - 2022-06-28
 
 ### Fixed

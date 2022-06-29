@@ -78,6 +78,7 @@ return [
                 salary_public,
                 employment_types_public,
                 categories_public,
+                headlines_public,
 
                 --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:language,
                 sys_language_uid,
@@ -905,6 +906,23 @@ return [
                         'disabled' => true,
                     ],
                 ],
+            ],
+        ],
+        'headlines_public' => [
+            'exclude' => true,
+            'label' => 'LLL:EXT:bw_jobs/Resources/Private/Language/locallang_db.xlf:tx_bwjobs_domain_model_jobposition.headlines_public',
+            'config' => [
+                'type' => 'check',
+                'renderType' => 'checkboxLabeledToggle',
+                'items' => [
+                    [
+                        0 => '',
+                        1 => '',
+                        'labelUnchecked' => 'LLL:EXT:bw_jobs/Resources/Private/Language/locallang_db.xlf:tx_bwjobs_domain_model_jobposition.headlines_public_no',
+                        'labelChecked' => 'LLL:EXT:bw_jobs/Resources/Private/Language/locallang_db.xlf:tx_bwjobs_domain_model_jobposition.headlines_public_yes',
+                    ],
+                ],
+                'default' => 0,
             ],
         ],
     ],
