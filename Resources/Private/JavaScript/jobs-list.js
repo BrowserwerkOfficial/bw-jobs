@@ -321,7 +321,7 @@ function Locations(locations) {
  */
 function JobPosition({ title, employmentTypes, locations }, url) {
   return html`
-    <a class="bw-jobs-list-item" href="${url}" title="Test">
+    <a class="bw-jobs-list-item" href="${url}" title="${title} ">
       <div class="bw-jobs-list-item__inner">
         <div class="bw-jobs-list-item__column bw-jobs-list-item__column--title">
           ${title}

@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 - Pagination "next" button.
+- Fixed title for job positions in the list view
 
 ## [2.1.1] - 2022-06-28
 
