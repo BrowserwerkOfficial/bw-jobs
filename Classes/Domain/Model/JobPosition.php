@@ -1120,7 +1120,7 @@ class JobPosition extends AbstractEntity
      *
      * @return bool $headlinesVisible
      */
-    public function getHeadlinesPublic()
+    public function getHeadlinesVisible()
     {
         return $this->headlinesVisible;
     }
@@ -1130,7 +1130,7 @@ class JobPosition extends AbstractEntity
      *
      * @return bool
      */
-    public function isHeadlinesPublic()
+    public function isHeadlinesVisible()
     {
         return $this->headlinesVisible;
     }
