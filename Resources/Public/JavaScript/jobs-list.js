@@ -445,7 +445,7 @@ var html = tag("html");
 var svg = tag("svg");
 /*! (c) Andrea Giammarchi - ISC */
 function stripLeadingSlash(string) {
-  return string.replace(/^\/+/, "");
+  return string.replace(/^\//, "");
 }
 function stripTrailingSlash(string) {
   return string.replace(/\/$/, "");
