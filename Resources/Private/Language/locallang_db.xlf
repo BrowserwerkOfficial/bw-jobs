@@ -660,13 +660,13 @@
 			<trans-unit id="tx_bwjobs_domain_model_employmenttype" resname="tx_bwjobs_domain_model_employmenttype">
 				<source>Employment Type</source>
 			</trans-unit>
-			<trans-unit id="tx_bwjobs_domain_model_jobposition.headlines_public" resname="tx_bwjobs_domain_model_jobposition.headlines_public">
-				<source>Headlines Public</source>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.headlines_visible" resname="tx_bwjobs_domain_model_jobposition.headlines_visible">
+				<source>Headlines Visible</source>
 			</trans-unit>
-			<trans-unit id="tx_bwjobs_domain_model_jobposition.headlines_public_yes" resname="tx_bwjobs_domain_model_jobposition.headlines_public_yes">
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.headlines_visible_yes" resname="tx_bwjobs_domain_model_jobposition.headlines_visible_yes">
 				<source>Yes</source>
 			</trans-unit>
-			<trans-unit id="tx_bwjobs_domain_model_jobposition.headlines_public_no" resname="tx_bwjobs_domain_model_jobposition.headlines_public_no">
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.headlines_visible_no" resname="tx_bwjobs_domain_model_jobposition.headlines_visible_no">
 				<source>No</source>
 			</trans-unit>
 			<trans-unit id="tx_bwjobs_domain_model_employmenttype.title" resname="tx_bwjobs_domain_model_employmenttype.title">

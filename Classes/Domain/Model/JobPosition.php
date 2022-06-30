@@ -269,11 +269,11 @@ class JobPosition extends AbstractEntity
     protected $categories;
 
     /**
-     * headlinesPublic
+     * headlinesVisible
      *
      * @var bool
      */
-    protected $headlinesPublic = false;
+    protected $headlinesVisible = false;
 
     /**
      * Returns the title
@@ -1116,22 +1116,22 @@ class JobPosition extends AbstractEntity
     }
 
     /**
-     * Returns the headlinesPublic
+     * Returns the headlinesVisible
      *
-     * @return bool $headlinesPublic
+     * @return bool $headlinesVisible
      */
     public function getHeadlinesPublic()
     {
-        return $this->headlinesPublic;
+        return $this->headlinesVisible;
     }
 
     /**
-     * Returns the boolean state of headlinesPublic
+     * Returns the boolean state of headlinesVisible
      *
      * @return bool
      */
     public function isHeadlinesPublic()
     {
-        return $this->headlinesPublic;
+        return $this->headlinesVisible;
     }
 }

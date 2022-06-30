@@ -1,6 +1,6 @@
 # BW Jobs
 
-The BW Jobs extension for TYPO3 CMS allows you to manage your open job positions from inside the TYPO3 backend.
+The BW Jobs extension allows you to manage and present open job positions on your TYPO3 website.
 
 ## Features
 

@@ -879,15 +879,15 @@
 				<source>Employment Type</source>
 				<target>Beschäftigungsart</target>
 			</trans-unit>
-			<trans-unit id="tx_bwjobs_domain_model_jobposition.headlines_public" resname="tx_bwjobs_domain_model_jobposition.headlines_public">
-				<source>Headlines Public</source>
-				<target>Überschriften öffentlich</target>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.headlines_visible" resname="tx_bwjobs_domain_model_jobposition.headlines_visible">
+				<source>Headlines Visible</source>
+				<target>Überschriften sichtbar</target>
 			</trans-unit>
-			<trans-unit id="tx_bwjobs_domain_model_jobposition.headlines_public_yes" resname="tx_bwjobs_domain_model_jobposition.headlines_public_yes">
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.headlines_visible_yes" resname="tx_bwjobs_domain_model_jobposition.headlines_visible_yes">
 				<source>Yes</source>
 				<target>Ja</target>
 			</trans-unit>
-			<trans-unit id="tx_bwjobs_domain_model_jobposition.headlines_public_no" resname="tx_bwjobs_domain_model_jobposition.headlines_public_no">
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.headlines_visible_no" resname="tx_bwjobs_domain_model_jobposition.headlines_visible_no">
 				<source>No</source>
 				<target>Nein</target>
 			</trans-unit>
