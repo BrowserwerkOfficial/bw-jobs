@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Browserwerk\BwJobs\Domain\Repository;
 
-use TYPO3\CMS\Extbase\Persistence\Repository;
 use Browserwerk\BwJobs\Service\ConnectionManagerService;
 
 /**
@@ -19,7 +18,7 @@ use Browserwerk\BwJobs\Service\ConnectionManagerService;
 /**
  * The repository for EmploymentTypes
  */
-class EmploymentTypeRepository extends Repository
+class EmploymentTypeRepository extends BaseRepository
 {
     /**
      * connectionManagerService

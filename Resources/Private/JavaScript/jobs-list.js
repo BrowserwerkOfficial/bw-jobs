@@ -522,7 +522,7 @@ class JobsList {
     });
 
     const storedValue = retrieveValueFromLocalStorage('jobsFilterLocationUid');
-    if (storedValue) {
+    if (storedValue && selectElement) {
       selectElement.value = storedValue;
       selectElement.dispatchEvent(new Event('change'));
     }
@@ -553,7 +553,7 @@ class JobsList {
     });
 
     const storedValue = retrieveValueFromLocalStorage('jobsFilterCategoryUid');
-    if (storedValue) {
+    if (storedValue && selectElement) {
       selectElement.value = storedValue;
       selectElement.dispatchEvent(new Event('change'));
     }

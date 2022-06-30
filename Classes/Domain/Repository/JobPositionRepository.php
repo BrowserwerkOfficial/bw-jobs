@@ -4,8 +4,11 @@ declare(strict_types=1);
 
 namespace Browserwerk\BwJobs\Domain\Repository;
 
-use TYPO3\CMS\Extbase\Persistence\Repository;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Persistence\QueryResultInterface;
+use TYPO3\CMS\Extbase\Persistence\Generic\Typo3QuerySettings;
+use TYPO3\CMS\Extbase\Configuration\ConfigurationManager;
+use TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface;
 use Browserwerk\BwJobs\Domain\Repository\LocationRepository;
 use Browserwerk\BwJobs\Domain\Repository\CategoryRepository;
 
@@ -21,7 +24,7 @@ use Browserwerk\BwJobs\Domain\Repository\CategoryRepository;
 /**
  * The repository for JobPositions
  */
-class JobPositionRepository extends Repository
+class JobPositionRepository extends BaseRepository
 {
     /**
      * locationRepository
@@ -66,22 +69,22 @@ class JobPositionRepository extends Repository
         if (!empty($filter['locationUid'])) {
             array_push(
                 $filterConstraints,
-                $query->in('locations.uid', [$filter['locationUid']])
+                $query->in('locations.uid', [$filter['locationUid']]),
             );
         }
 
         if (!empty($filter['categoryUid'])) {
             array_push(
                 $filterConstraints,
-                $query->in('categories.uid', [$filter['categoryUid']])
+                $query->in('categories.uid', [$filter['categoryUid']]),
             );
         }
 
         if (!empty($filterConstraints)) {
             $query->matching(
                 $query->logicalAnd(
-                    ...$filterConstraints
-                )
+                    ...$filterConstraints,
+                ),
             );
         }
 

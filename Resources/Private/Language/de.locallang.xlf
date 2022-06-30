@@ -21,7 +21,7 @@
 				<target>Beliebige Kategorie</target>
 			</trans-unit>
 			<trans-unit id="nothing_posted" resname="nothing_posted">
-				<source>We have not yet posted any vacancies at this time.</source>
+				<source>We have not yet posted any job positions at this time.</source>
 				<target>Zum aktuellen Zeitpunkt wurden von uns keine Stellenangebote ausgeschrieben.</target>
 			</trans-unit>
 			<trans-unit id="nothing_found" resname="nothing_found">
