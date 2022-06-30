@@ -269,6 +269,13 @@ class JobPosition extends AbstractEntity
     protected $categories;
 
     /**
+     * headlinesVisible
+     *
+     * @var bool
+     */
+    protected $headlinesVisible = false;
+
+    /**
      * Returns the title
      *
      * @return string $title
@@ -1106,5 +1113,25 @@ class JobPosition extends AbstractEntity
     public function setCategories(ObjectStorage $categories)
     {
         $this->categories = $categories;
+    }
+
+    /**
+     * Returns the headlinesVisible
+     *
+     * @return bool $headlinesVisible
+     */
+    public function getHeadlinesVisible()
+    {
+        return $this->headlinesVisible;
+    }
+
+    /**
+     * Returns the boolean state of headlinesVisible
+     *
+     * @return bool
+     */
+    public function isHeadlinesVisible()
+    {
+        return $this->headlinesVisible;
     }
 }
