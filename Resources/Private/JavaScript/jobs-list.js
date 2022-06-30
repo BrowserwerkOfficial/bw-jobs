@@ -460,7 +460,7 @@ class JobsList {
       );
     }
 
-    return new URL(detailPagePath, window.location.origin);
+    return new URL(detailPagePath.replace(/\/+$/, ''), window.location.origin);
   }
 
   /**
@@ -636,12 +636,14 @@ class JobsList {
     render(
       this.mountElement,
       html`<div class="bw-jobs-list">
-        ${data.jobPositions.map((jobPosition) =>
-          JobPosition(
-            jobPosition,
-            `${this.detailPageUrl}/${jobPosition.slug}`.replaceAll('//', '/'),
-          ),
-        )}
+        ${data.jobPositions.map((jobPosition) => {
+          const url = `${this.detailPageUrl}/${jobPosition.slug.replace(
+            /^\/+/,
+            '',
+          )}`;
+
+          return JobPosition(jobPosition, url);
+        })}
         ${Pagination(data.pages, data.currentPage, (pageNumber) => {
           this.data = { currentPage: pageNumber };
           this.fetchData();

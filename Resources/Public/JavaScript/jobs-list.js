@@ -682,7 +682,7 @@ class JobsList {
     if (!detailPagePath) {
       throw new Error(`Missing "data-detail-page-path" attribute on the "${__privateGet(this, _mountElementSelector)}" mount element`);
     }
-    return new URL(detailPagePath, window.location.origin);
+    return new URL(detailPagePath.replace(/\/+$/, ""), window.location.origin);
   }
   initLocationFilter() {
     const selectElement = document.querySelector(__privateGet(this, _locationFilterSelector));
@@ -757,7 +757,10 @@ class JobsList {
       return;
     }
     render(this.mountElement, html`<div class="bw-jobs-list">
-        ${data2.jobPositions.map((jobPosition) => JobPosition(jobPosition, `${this.detailPageUrl}/${jobPosition.slug}`.replaceAll("//", "/")))}
+        ${data2.jobPositions.map((jobPosition) => {
+      const url = `${this.detailPageUrl}/${jobPosition.slug.replace(/^\/+/, "")}`;
+      return JobPosition(jobPosition, url);
+    })}
         ${Pagination(data2.pages, data2.currentPage, (pageNumber) => {
       this.data = { currentPage: pageNumber };
       this.fetchData();
