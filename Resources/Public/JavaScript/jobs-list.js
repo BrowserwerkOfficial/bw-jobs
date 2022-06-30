@@ -757,7 +757,7 @@ class JobsList {
       return;
     }
     render(this.mountElement, html`<div class="bw-jobs-list">
-        ${data2.jobPositions.map((jobPosition) => JobPosition(jobPosition, `${this.detailPageUrl}/${jobPosition.slug.replace(/^\/+/, "")}`))}
+        ${data2.jobPositions.map((jobPosition) => JobPosition(jobPosition, `${this.detailPageUrl}/${jobPosition.slug}`.replaceAll("//", "/")))}
         ${Pagination(data2.pages, data2.currentPage, (pageNumber) => {
       this.data = { currentPage: pageNumber };
       this.fetchData();

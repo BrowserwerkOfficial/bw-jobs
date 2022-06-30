@@ -639,7 +639,7 @@ class JobsList {
         ${data.jobPositions.map((jobPosition) =>
           JobPosition(
             jobPosition,
-            `${this.detailPageUrl}/${jobPosition.slug.replace(/^\/+/, '')}`,
+            `${this.detailPageUrl}/${jobPosition.slug}`.replaceAll('//', '/'),
           ),
         )}
         ${Pagination(data.pages, data.currentPage, (pageNumber) => {
