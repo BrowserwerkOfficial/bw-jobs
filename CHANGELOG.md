@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 - Pagination "next" button.
+- "title" attribute in list view not implemented.
 
 ### Added
 - Headlines shown on the detail pages can now be hidden in the `Visibility` tab.
