@@ -8,7 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [2.1.3] - WIP
 
 ### Fixed
-- List view now works and multilanguage setups.
+- List view now respects the current language.
 
 ## [2.1.2] - 2022-06-30
 

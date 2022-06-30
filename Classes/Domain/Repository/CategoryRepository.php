@@ -4,8 +4,6 @@ declare(strict_types=1);
 
 namespace Browserwerk\BwJobs\Domain\Repository;
 
-use Browserwerk\BwJobs\Service\ConnectionManagerService;
-
 /**
  * This file is part of the "BW Jobs" Extension for TYPO3 CMS.
  *
@@ -20,18 +18,4 @@ use Browserwerk\BwJobs\Service\ConnectionManagerService;
  */
 class CategoryRepository extends BaseRepository
 {
-    /**
-     * connectionManagerService
-     *
-     * @var ConnectionManagerService
-     */
-    protected $connectionManagerService;
-
-    /**
-     * @param ConnectionManagerService $connectionManagerService
-     */
-    public function injectConnectionManagerService(ConnectionManagerService $connectionManagerService)
-    {
-        $this->connectionManagerService = $connectionManagerService;
-    }
 }

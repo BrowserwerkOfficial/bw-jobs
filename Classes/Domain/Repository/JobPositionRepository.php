@@ -4,11 +4,7 @@ declare(strict_types=1);
 
 namespace Browserwerk\BwJobs\Domain\Repository;
 
-use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Persistence\QueryResultInterface;
-use TYPO3\CMS\Extbase\Persistence\Generic\Typo3QuerySettings;
-use TYPO3\CMS\Extbase\Configuration\ConfigurationManager;
-use TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface;
 use Browserwerk\BwJobs\Domain\Repository\LocationRepository;
 use Browserwerk\BwJobs\Domain\Repository\CategoryRepository;
 

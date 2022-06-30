@@ -699,6 +699,9 @@ class JobsList {
     });
     const storedValue = retrieveValueFromLocalStorage("jobsFilterLocationUid");
     if (storedValue && selectElement) {
+      const isValidOption = selectElement.querySelector(`option[value="${storedValue}"]`);
+      if (!isValidOption)
+        return;
       selectElement.value = storedValue;
       selectElement.dispatchEvent(new Event("change"));
     }
@@ -718,6 +721,9 @@ class JobsList {
     });
     const storedValue = retrieveValueFromLocalStorage("jobsFilterCategoryUid");
     if (storedValue && selectElement) {
+      const isValidOption = selectElement.querySelector(`option[value=${storedValue}]`);
+      if (!isValidOption)
+        return;
       selectElement.value = storedValue;
       selectElement.dispatchEvent(new Event("change"));
     }
@@ -751,7 +757,7 @@ class JobsList {
       return;
     }
     render(this.mountElement, html`<div class="bw-jobs-list">
-        ${data2.jobPositions.map((jobPosition) => JobPosition(jobPosition, `${this.detailPageUrl}/${jobPosition.slug}`))}
+        ${data2.jobPositions.map((jobPosition) => JobPosition(jobPosition, `${this.detailPageUrl}/${jobPosition.slug.replace(/^\/+/, "")}`))}
         ${Pagination(data2.pages, data2.currentPage, (pageNumber) => {
       this.data = { currentPage: pageNumber };
       this.fetchData();
