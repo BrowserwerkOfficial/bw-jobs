@@ -30,8 +30,8 @@
  *
  * @typedef Filters
  * @type {object}
- * @property {number|null} locationUid
- * @property {number|null} categoryUid
+ * @property {?number} locationUid
+ * @property {?number} categoryUid
  *
  * @typedef Data
  * @type {object}
@@ -100,7 +100,7 @@ function buildRequestUrlForData(url, data) {
  * Persist a value to local storage.
  *
  * @param {string} key
- * @param {string} value
+ * @param {?string} value
  *
  * @return {void}
  */
@@ -117,7 +117,7 @@ function persistValueToLocalStorage(key, value) {
  *
  * @param {string} key
  *
- * @return {string|null}
+ * @return {?string}
  */
 function retrieveValueFromLocalStorage(key) {
   return localStorage.getItem(key);
@@ -340,7 +340,7 @@ function JobPosition({ title, employmentTypes, locations }, url) {
  */
 class JobsList {
   /**
-   * @type {string|null}
+   * @type {?string}
    *
    * @private
    * @memberof JobsList
@@ -348,7 +348,7 @@ class JobsList {
   #mountElementSelector = null;
 
   /**
-   * @type {string|null}
+   * @type {?string}
    *
    * @private
    * @memberof JobsList
@@ -356,7 +356,7 @@ class JobsList {
   #locationFilterSelector = null;
 
   /**
-   * @type {string|null}
+   * @type {?string}
    *
    * @private
    * @memberof JobsList
@@ -390,7 +390,7 @@ class JobsList {
   }
 
   /**
-   * @property {Data} data
+   * @property {Partial<Data>} data
    *
    * @return {void}
    *
