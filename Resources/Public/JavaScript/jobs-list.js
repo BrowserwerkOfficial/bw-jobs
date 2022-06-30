@@ -444,6 +444,12 @@ var render = (where, what) => {
 var html = tag("html");
 var svg = tag("svg");
 /*! (c) Andrea Giammarchi - ISC */
+function stripLeadingSlash(string) {
+  return string.replace(/^\/+/, "");
+}
+function stripTrailingSlash(string) {
+  return string.replace(/\/$/, "");
+}
 function cx(classNames) {
   return classNames.filter(Boolean).join(" ");
 }
@@ -682,7 +688,7 @@ class JobsList {
     if (!detailPagePath) {
       throw new Error(`Missing "data-detail-page-path" attribute on the "${__privateGet(this, _mountElementSelector)}" mount element`);
     }
-    return new URL(detailPagePath.replace(/\/+$/, ""), window.location.origin);
+    return new URL(stripTrailingSlash(detailPagePath), window.location.origin);
   }
   initLocationFilter() {
     const selectElement = document.querySelector(__privateGet(this, _locationFilterSelector));
@@ -758,7 +764,7 @@ class JobsList {
     }
     render(this.mountElement, html`<div class="bw-jobs-list">
         ${data2.jobPositions.map((jobPosition) => {
-      const url = `${this.detailPageUrl}/${jobPosition.slug.replace(/^\/+/, "")}`;
+      const url = `${this.detailPageUrl}/${stripLeadingSlash(jobPosition.slug)}`;
       return JobPosition(jobPosition, url);
     })}
         ${Pagination(data2.pages, data2.currentPage, (pageNumber) => {

@@ -45,6 +45,28 @@
 import { html, render, svg } from 'uhtml';
 
 /**
+ * Strip a leading slash from a string.
+ *
+ * @param {string} string
+ *
+ * @return {string}
+ */
+function stripLeadingSlash(string) {
+  return string.replace(/^\//, '');
+}
+
+/**
+ * Strip a trailing slash from a string.
+ *
+ * @param {string} string
+ *
+ * @return {string}
+ */
+function stripTrailingSlash(string) {
+  return string.replace(/\/$/, '');
+}
+
+/**
  * Join an array of conditional class names.
  *
  * @param {unknown[]} classNames
@@ -460,7 +482,7 @@ class JobsList {
       );
     }
 
-    return new URL(detailPagePath.replace(/\/+$/, ''), window.location.origin);
+    return new URL(stripTrailingSlash(detailPagePath), window.location.origin);
   }
 
   /**
@@ -637,9 +659,8 @@ class JobsList {
       this.mountElement,
       html`<div class="bw-jobs-list">
         ${data.jobPositions.map((jobPosition) => {
-          const url = `${this.detailPageUrl}/${jobPosition.slug.replace(
-            /^\/+/,
-            '',
+          const url = `${this.detailPageUrl}/${stripLeadingSlash(
+            jobPosition.slug,
           )}`;
 
           return JobPosition(jobPosition, url);
