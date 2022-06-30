@@ -8,12 +8,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [2.1.5] - 2022-06-30
 
 ### Fixed
-- Prevent duplicate slashes.
+- Duplicate slashes in list view URLs.
 
 ## [2.1.5] - 2022-06-30
 
 ### Fixed
-- Prevent duplicate slashes.
+- Duplicate slashes in list view URLs.
 
 ## [2.1.3] - 2022-06-30
 
