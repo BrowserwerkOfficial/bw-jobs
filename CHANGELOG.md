@@ -10,7 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 - Pagination "next" button.
-- Fixed hover title for job positions in the list view.
+- "title" attribute in list view not implemented.
 
 ## [2.1.1] - 2022-06-28
 
