@@ -28,9 +28,6 @@
 			<trans-unit id="homeoffice_possible" resname="homeoffice_possible">
 				<source>Homeoffice possible</source>
 			</trans-unit>
-			<trans-unit id="direct_apply" resname="direct_apply">
-				<source>Direct apply possible</source>
-			</trans-unit>
 			<trans-unit id="yes" resname="yes">
 				<source>Yes</source>
 			</trans-unit>

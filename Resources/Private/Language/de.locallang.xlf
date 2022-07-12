@@ -36,10 +36,6 @@
 				<source>Homeoffice possible</source>
 				<target>Homeoffice möglich</target>
 			</trans-unit>
-			<trans-unit id="direct_apply" resname="direct_apply">
-				<source>Direct apply possible</source>
-				<target>Direktbewerbung möglich</target>
-			</trans-unit>
 			<trans-unit id="yes" resname="yes">
 				<source>Yes</source>
 				<target>Ja</target>
