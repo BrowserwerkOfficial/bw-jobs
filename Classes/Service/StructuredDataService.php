@@ -183,13 +183,10 @@ class StructuredDataService
                 ];
             }
 
-            # TODO: Check if the value is returned correctly
             $result['baseSalary']['value']['value'] = $value;
         }
 
-        $unitText = $this->getUnitTextForPaymentCycle(
-            $jobPosition->getPaymentCycle()
-        );
+        $unitText = $this->getUnitTextForPaymentCycle($jobPosition->getPaymentCycle());
         if (!empty($unitText)) {
             if (!isset($result['baseSalary'])) {
                 $result['baseSalary'] = [
@@ -269,25 +266,10 @@ class StructuredDataService
         }
 
         $experienceRequirements = $jobPosition->getRequiredExperience();
-        if (!empty($experienceRequirements)) {
-            if (!isset($result['experienceRequirements'])) {
-                $result['experienceRequirements'] = [
-                    '@type' => 'OccupationalExperienceRequirements',
-                ];
-            }
-            $result['experienceRequirements'] = $experienceRequirements;
-        } else {
-            $result['experienceRequirements'] = 'no requirements';
-        }
+        $result['experienceRequirements'] = $experienceRequirements || 'no requirements';
 
         $responsibilities = $jobPosition->getRequiredResponsibilities();
         if (!empty($responsibilities)) {
-            if (!isset($result['responsibilities'])) {
-                $result['responsibilities'] = [
-                    '@type' => 'Text',
-                ];
-            }
-
             $result['responsibilities'] = $responsibilities;
         }
 
@@ -302,9 +284,7 @@ class StructuredDataService
         }
 
         $homeofficePossible = $jobPosition->getHomeofficePossible();
-        if (!empty($homeofficePossible)) {
-            $result['jobLocationType'] = $homeofficePossible ? 'TELECOMMUTE' : 'IN_PERSON';
-        }
+        $result['jobLocationType'] = $homeofficePossible ? 'TELECOMMUTE' : 'IN_PERSON';
 
         $result = $this->generateJobLocationData($jobPosition, $result);
         $result = $this->generateHiringOrganizationData($jobPosition, $result);
