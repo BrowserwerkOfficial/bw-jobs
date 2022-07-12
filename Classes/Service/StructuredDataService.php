@@ -100,6 +100,9 @@ class StructuredDataService
             $result['jobLocation']['address']['addressCountry'] = $addressCountry;
         }
 
+        $homeofficePossible = $jobPosition->getHomeofficePossible();
+        $result['jobLocationType'] = $homeofficePossible ? 'TELECOMMUTE' : 'IN_PERSON';
+
         return $result;
     }
 
@@ -284,9 +287,6 @@ class StructuredDataService
         if (!empty($directApply)) {
             $result['directApply'] = $directApply;
         }
-
-        $homeofficePossible = $jobPosition->getHomeofficePossible();
-        $result['jobLocationType'] = $homeofficePossible ? 'TELECOMMUTE' : 'IN_PERSON';
 
         $result = $this->generateJobLocationData($jobPosition, $result);
         $result = $this->generateHiringOrganizationData($jobPosition, $result);
