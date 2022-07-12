@@ -36,6 +36,10 @@
 				<source>Homeoffice possible</source>
 				<target>Homeoffice möglich</target>
 			</trans-unit>
+			<trans-unit id="direct_apply" resname="direct_apply">
+				<source>Direct apply possible</source>
+				<target>Direktbewerbung möglich</target>
+			</trans-unit>
 			<trans-unit id="yes" resname="yes">
 				<source>Yes</source>
 				<target>Ja</target>
@@ -135,6 +139,10 @@
 			<trans-unit id="required_commitments_headline" resname="required_commitments_headline">
 				<source>Required Commitments</source>
 				<target>Erforderliche Verpflichtungen</target>
+			</trans-unit>
+			<trans-unit id="benefits_headline" resname="benefits_headline">
+				<source>Benefits</source>
+				<target>Vorteile</target>
 			</trans-unit>
 			<trans-unit id="apply_cta_title" resname="apply_cta_title">
 				<source>We are looking forward to receiving your application!</source>

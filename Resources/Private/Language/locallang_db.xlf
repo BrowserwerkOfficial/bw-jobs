@@ -51,6 +51,9 @@
 			<trans-unit id="tx_bwjobs_domain_model_jobposition.required_commitments" resname="tx_bwjobs_domain_model_jobposition.required_commitments">
 				<source>Required Commitments</source>
 			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.benefits" resname="tx_bwjobs_domain_model_jobposition.benefits">
+				<source>Benefits</source>
+			</trans-unit>
 			<trans-unit id="tx_bwjobs_domain_model_jobposition.work_hours" resname="tx_bwjobs_domain_model_jobposition.work_hours">
 				<source>Work Hours (weekly)</source>
 			</trans-unit>
@@ -71,6 +74,21 @@
 			</trans-unit>
 			<trans-unit id="tx_bwjobs_domain_model_jobposition.homeoffice_possible" resname="tx_bwjobs_domain_model_jobposition.homeoffice_possible">
 				<source>Homeoffice Possible</source>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.homeoffice_possible_no" resname="tx_bwjobs_domain_model_jobposition.homeoffice_possible_no">
+				<source>No</source>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.homeoffice_possible_yes" resname="tx_bwjobs_domain_model_jobposition.homeoffice_possible_yes">
+				<source>Yes</source>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.direct_apply" resname="tx_bwjobs_domain_model_jobposition.direct_apply">
+				<source>Direct Apply Possible</source>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.direct_apply_no" resname="tx_bwjobs_domain_model_jobposition.direct_apply_no">
+				<source>No</source>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.direct_apply_yes" resname="tx_bwjobs_domain_model_jobposition.direct_apply_yes">
+				<source>Yes</source>
 			</trans-unit>
 			<trans-unit id="tx_bwjobs_domain_model_jobposition.salary_public" resname="tx_bwjobs_domain_model_jobposition.salary_public">
 				<source>Salary Public</source>

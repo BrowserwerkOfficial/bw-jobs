@@ -67,6 +67,10 @@
 				<source>Required Commitments</source>
 				<target>Erforderliche Verpflichtungen</target>
 			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.benefits" resname="tx_bwjobs_domain_model_jobposition.benefits">
+				<source>Benefits</source>
+				<target>Vorteile</target>
+			</trans-unit>
 			<trans-unit id="tx_bwjobs_domain_model_jobposition.work_hours" resname="tx_bwjobs_domain_model_jobposition.work_hours">
 				<source>Work Hours (weekly)</source>
 				<target>Arbeitsstunden (wöchentlich)</target>
@@ -94,6 +98,26 @@
 			<trans-unit id="tx_bwjobs_domain_model_jobposition.homeoffice_possible" resname="tx_bwjobs_domain_model_jobposition.homeoffice_possible">
 				<source>Homeoffice Possible</source>
 				<target>Homeoffice möglich</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.homeoffice_possible_no" resname="tx_bwjobs_domain_model_jobposition.homeoffice_possible_no">
+				<source>No</source>
+				<target>Nein</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.homeoffice_possible_yes" resname="tx_bwjobs_domain_model_jobposition.homeoffice_possible_yes">
+				<source>Yes</source>
+				<target>Ja</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.direct_apply" resname="tx_bwjobs_domain_model_jobposition.direct_apply">
+				<source>Direct Apply Possible</source>
+				<target>Direktbewerbung möglich</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.direct_apply_no" resname="tx_bwjobs_domain_model_jobposition.direct_apply_no">
+				<source>No</source>
+				<target>Nein</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.direct_apply_yes" resname="tx_bwjobs_domain_model_jobposition.direct_apply_yes">
+				<source>Yes</source>
+				<target>Ja</target>
 			</trans-unit>
 			<trans-unit id="tx_bwjobs_domain_model_jobposition.salary_public" resname="tx_bwjobs_domain_model_jobposition.salary_public">
 				<source>Salary Public</source>

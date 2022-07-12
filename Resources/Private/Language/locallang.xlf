@@ -28,6 +28,9 @@
 			<trans-unit id="homeoffice_possible" resname="homeoffice_possible">
 				<source>Homeoffice possible</source>
 			</trans-unit>
+			<trans-unit id="direct_apply" resname="direct_apply">
+				<source>Direct apply possible</source>
+			</trans-unit>
 			<trans-unit id="yes" resname="yes">
 				<source>Yes</source>
 			</trans-unit>
@@ -101,6 +104,9 @@
 				<source>Required Skills</source>
 			</trans-unit>
 			<trans-unit id="required_commitments_headline" resname="required_commitments_headline">
+				<source>Required Commitments</source>
+			</trans-unit>
+			<trans-unit id="benefits_headline" resname="benefits_headline">
 				<source>Required Commitments</source>
 			</trans-unit>
 			<trans-unit id="apply_cta_title" resname="apply_cta_title">

@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Browserwerk\BwJobs\Service;
 
 use Browserwerk\BwJobs\Domain\Model\JobPosition;
+use LDAP\Result;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 /**
@@ -183,6 +184,7 @@ class StructuredDataService
                 ];
             }
 
+            # TODO: Check if the value is returned correctly
             $result['baseSalary']['value']['value'] = $value;
         }
 
@@ -265,6 +267,62 @@ class StructuredDataService
 
                 $result['educationRequirements'][] = $data;
             }
+        }
+
+        $experienceRequirements = $jobPosition->getRequiredExperience();
+        if (!empty($experienceRequirements)) {
+            if (!isset($result['experienceRequirements'])) {
+                $result['experienceRequirements'] = [
+                    '@type' => 'OccupationalExperienceRequirements',
+                ];
+            }
+            $result['experienceRequirements'] = $experienceRequirements;
+        } else {
+            $result['experienceRequirements'] = 'no requirements';
+        }
+
+        $responsibilities = $jobPosition->getRequiredResponsibilities();
+        if (!empty($responsibilities)) {
+            if (!isset($result['responsibilities'])) {
+                $result['responsibilities'] = [
+                    '@type' => 'Text',
+                ];
+            }
+
+            $result['responsibilities'] = $responsibilities;
+        }
+
+        $jobBenefits = $jobPosition->getBenefits();
+        if (!empty($jobBenefits)) {
+            if (!isset($result['jobBenefits'])) {
+                $result['jobBenefits'] = [
+                    '@type' => 'Text',
+                ];
+            }
+
+            $result['jobBenefits'] = $jobBenefits;
+        }
+
+        $directApply = $jobPosition->getDirectApply();
+        if (!empty($directApply)) {
+            if (!isset($result['directApply'])) {
+                $result['directApply'] = [
+                    '@type' => 'Boolean',
+                ];
+            }
+
+            $result['directApply'] = $directApply;
+        }
+
+        $jobLocationType = $jobPosition->getHomeofficePossible();
+        if (!empty($jobLocationType)) {
+            if (!isset($result['jobLocationType'])) {
+                $result['jobLocationType'] = [
+                    '@type' => 'Text',
+                ];
+            }
+
+            $result['jobLocationType'] = $jobLocationType ? 'TELECOMMUTE' : 'IN_PERSON';
         }
 
         $result = $this->generateJobLocationData($jobPosition, $result);
