@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Browserwerk\BwJobs\Service;
 
 use Browserwerk\BwJobs\Domain\Model\JobPosition;
-use LDAP\Result;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 /**
@@ -294,35 +293,17 @@ class StructuredDataService
 
         $jobBenefits = $jobPosition->getBenefits();
         if (!empty($jobBenefits)) {
-            if (!isset($result['jobBenefits'])) {
-                $result['jobBenefits'] = [
-                    '@type' => 'Text',
-                ];
-            }
-
             $result['jobBenefits'] = $jobBenefits;
         }
 
         $directApply = $jobPosition->getDirectApply();
         if (!empty($directApply)) {
-            if (!isset($result['directApply'])) {
-                $result['directApply'] = [
-                    '@type' => 'Boolean',
-                ];
-            }
-
             $result['directApply'] = $directApply;
         }
 
-        $jobLocationType = $jobPosition->getHomeofficePossible();
-        if (!empty($jobLocationType)) {
-            if (!isset($result['jobLocationType'])) {
-                $result['jobLocationType'] = [
-                    '@type' => 'Text',
-                ];
-            }
-
-            $result['jobLocationType'] = $jobLocationType ? 'TELECOMMUTE' : 'IN_PERSON';
+        $homeofficePossible = $jobPosition->getHomeofficePossible();
+        if (!empty($homeofficePossible)) {
+            $result['jobLocationType'] = $homeofficePossible ? 'TELECOMMUTE' : 'IN_PERSON';
         }
 
         $result = $this->generateJobLocationData($jobPosition, $result);

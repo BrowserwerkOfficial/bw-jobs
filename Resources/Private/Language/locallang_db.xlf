@@ -82,7 +82,7 @@
 				<source>Yes</source>
 			</trans-unit>
 			<trans-unit id="tx_bwjobs_domain_model_jobposition.direct_apply" resname="tx_bwjobs_domain_model_jobposition.direct_apply">
-				<source>Direct Apply Possible</source>
+				<source>Direct Application Possible</source>
 			</trans-unit>
 			<trans-unit id="tx_bwjobs_domain_model_jobposition.direct_apply_no" resname="tx_bwjobs_domain_model_jobposition.direct_apply_no">
 				<source>No</source>
