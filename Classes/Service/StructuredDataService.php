@@ -269,7 +269,7 @@ class StructuredDataService
         }
 
         $experienceRequirements = $jobPosition->getRequiredExperience();
-        if (!empty($responsibilities)) {
+        if (!empty($experienceRequirements)) {
             $result['experienceRequirements'] = $experienceRequirements;
         }
 
