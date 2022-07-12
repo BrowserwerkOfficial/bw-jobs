@@ -101,6 +101,13 @@ class JobPosition extends AbstractEntity
     protected $requiredCommitments = '';
 
     /**
+     * benefits
+     *
+     * @var string
+     */
+    protected $benefits = '';
+
+    /**
      * workHours
      *
      * @var int
@@ -141,6 +148,13 @@ class JobPosition extends AbstractEntity
      * @var bool
      */
     protected $homeofficePossible = false;
+
+    /**
+     * directApplicationPossible
+     *
+     * @var bool
+     */
+    protected $directApplicationPossible = false;
 
     /**
      * currency
@@ -496,6 +510,26 @@ class JobPosition extends AbstractEntity
     }
 
     /**
+     * Returns the benefits
+     *
+     * @return string $benefits
+     */
+    public function getBenefits()
+    {
+        return $this->benefits;
+    }
+
+    /**
+     * Sets the benefits
+     *
+     * @param string $benefits
+     */
+    public function setBenefits(string $benefits)
+    {
+        $this->benefits = $benefits;
+    }
+
+    /**
      * Returns the workHours
      *
      * @return int $workHours
@@ -653,6 +687,36 @@ class JobPosition extends AbstractEntity
     public function setHomeofficePossible(bool $homeofficePossible)
     {
         $this->homeofficePossible = $homeofficePossible;
+    }
+
+    /**
+     * Returns the directApplicationPossible
+     *
+     * @return bool $directApplicationPossible
+     */
+    public function getDirectApplicationPossible()
+    {
+        return $this->directApplicationPossible;
+    }
+
+    /**
+     * Returns the boolean state of directApplicationPossible
+     *
+     * @return bool
+     */
+    public function isDirectApplicationPossible()
+    {
+        return $this->directApplicationPossible;
+    }
+
+    /**
+     * Sets the directApplicationPossible
+     *
+     * @param bool $directApplicationPossible
+     */
+    public function setDirectApplicationPossible(bool $directApplicationPossible)
+    {
+        $this->directApplicationPossible = $directApplicationPossible;
     }
 
     /**

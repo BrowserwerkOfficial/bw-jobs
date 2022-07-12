@@ -122,7 +122,7 @@
 			</trans-unit>
 			<trans-unit id="required_qualifications_headline" resname="required_qualifications_headline">
 				<source>Required Qualifications</source>
-				<target>Benötigte Qualifikationen</target>
+				<target>Erforderliche Qualifikationen</target>
 			</trans-unit>
 			<trans-unit id="required_responsibilities_headline" resname="required_responsibilities_headline">
 				<source>Required Responsibilities</source>
@@ -130,11 +130,15 @@
 			</trans-unit>
 			<trans-unit id="required_skills_headline" resname="required_skills_headline">
 				<source>Required Skills</source>
-				<target>Benötigte Fähigkeiten</target>
+				<target>Erforderliche Fähigkeiten</target>
 			</trans-unit>
 			<trans-unit id="required_commitments_headline" resname="required_commitments_headline">
 				<source>Required Commitments</source>
 				<target>Erforderliche Verpflichtungen</target>
+			</trans-unit>
+			<trans-unit id="benefits_headline" resname="benefits_headline">
+				<source>Benefits</source>
+				<target>Vorteile</target>
 			</trans-unit>
 			<trans-unit id="apply_cta_title" resname="apply_cta_title">
 				<source>We are looking forward to receiving your application!</source>

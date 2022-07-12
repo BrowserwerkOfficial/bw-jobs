@@ -53,7 +53,7 @@
 			</trans-unit>
 			<trans-unit id="tx_bwjobs_domain_model_jobposition.required_qualifications" resname="tx_bwjobs_domain_model_jobposition.required_qualifications">
 				<source>Required Qualifications</source>
-				<target>Benötigte Qualifikationen</target>
+				<target>Erforderliche Qualifikationen</target>
 			</trans-unit>
 			<trans-unit id="tx_bwjobs_domain_model_jobposition.required_responsibilities" resname="tx_bwjobs_domain_model_jobposition.required_responsibilities">
 				<source>Required Responsibilities</source>
@@ -61,11 +61,15 @@
 			</trans-unit>
 			<trans-unit id="tx_bwjobs_domain_model_jobposition.required_skills" resname="tx_bwjobs_domain_model_jobposition.required_skills">
 				<source>Required Skills</source>
-				<target>Benötigte Fähigkeiten</target>
+				<target>Erforderliche Fähigkeiten</target>
 			</trans-unit>
 			<trans-unit id="tx_bwjobs_domain_model_jobposition.required_commitments" resname="tx_bwjobs_domain_model_jobposition.required_commitments">
 				<source>Required Commitments</source>
 				<target>Erforderliche Verpflichtungen</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.benefits" resname="tx_bwjobs_domain_model_jobposition.benefits">
+				<source>Benefits</source>
+				<target>Vorteile</target>
 			</trans-unit>
 			<trans-unit id="tx_bwjobs_domain_model_jobposition.work_hours" resname="tx_bwjobs_domain_model_jobposition.work_hours">
 				<source>Work Hours (weekly)</source>
@@ -94,6 +98,26 @@
 			<trans-unit id="tx_bwjobs_domain_model_jobposition.homeoffice_possible" resname="tx_bwjobs_domain_model_jobposition.homeoffice_possible">
 				<source>Homeoffice Possible</source>
 				<target>Homeoffice möglich</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.homeoffice_possible_no" resname="tx_bwjobs_domain_model_jobposition.homeoffice_possible_no">
+				<source>No</source>
+				<target>Nein</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.homeoffice_possible_yes" resname="tx_bwjobs_domain_model_jobposition.homeoffice_possible_yes">
+				<source>Yes</source>
+				<target>Ja</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.direct_application_possible" resname="tx_bwjobs_domain_model_jobposition.direct_application_possible">
+				<source>Direct Application Possible</source>
+				<target>Direktbewerbung möglich</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.direct_application_possible_no" resname="tx_bwjobs_domain_model_jobposition.direct_application_possible_no">
+				<source>No</source>
+				<target>Nein</target>
+			</trans-unit>
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.direct_application_possible_yes" resname="tx_bwjobs_domain_model_jobposition.direct_application_possible_yes">
+				<source>Yes</source>
+				<target>Ja</target>
 			</trans-unit>
 			<trans-unit id="tx_bwjobs_domain_model_jobposition.salary_public" resname="tx_bwjobs_domain_model_jobposition.salary_public">
 				<source>Salary Public</source>

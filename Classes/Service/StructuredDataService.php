@@ -100,6 +100,9 @@ class StructuredDataService
             $result['jobLocation']['address']['addressCountry'] = $addressCountry;
         }
 
+        $homeofficePossible = $jobPosition->getHomeofficePossible();
+        $result['jobLocationType'] = $homeofficePossible ? 'TELECOMMUTE' : 'IN_PERSON';
+
         return $result;
     }
 
@@ -186,9 +189,7 @@ class StructuredDataService
             $result['baseSalary']['value']['value'] = $value;
         }
 
-        $unitText = $this->getUnitTextForPaymentCycle(
-            $jobPosition->getPaymentCycle()
-        );
+        $unitText = $this->getUnitTextForPaymentCycle($jobPosition->getPaymentCycle());
         if (!empty($unitText)) {
             if (!isset($result['baseSalary'])) {
                 $result['baseSalary'] = [
@@ -265,6 +266,26 @@ class StructuredDataService
 
                 $result['educationRequirements'][] = $data;
             }
+        }
+
+        $experienceRequirements = $jobPosition->getRequiredExperience();
+        if (!empty($experienceRequirements)) {
+            $result['experienceRequirements'] = $experienceRequirements;
+        }
+
+        $responsibilities = $jobPosition->getRequiredResponsibilities();
+        if (!empty($responsibilities)) {
+            $result['responsibilities'] = $responsibilities;
+        }
+
+        $jobBenefits = $jobPosition->getBenefits();
+        if (!empty($jobBenefits)) {
+            $result['jobBenefits'] = $jobBenefits;
+        }
+
+        $directApply = $jobPosition->getDirectApplicationPossible();
+        if (!empty($directApply)) {
+            $result['directApply'] = $directApply;
         }
 
         $result = $this->generateJobLocationData($jobPosition, $result);

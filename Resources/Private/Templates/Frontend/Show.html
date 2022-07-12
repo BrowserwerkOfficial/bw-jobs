@@ -116,6 +116,20 @@
         <hr class="bw-jobs-divider">
     </f:if>
 
+    <f:if condition="{jobPosition.benefits}">
+        <section class="bw-jobs-section">
+            <f:if condition="{jobPosition.headlinesVisible}">
+                <h2 class="bw-jobs-headline">
+                    <f:translate key="benefits_headline" />
+                </h2>
+            </f:if>
+            <div class="bw-jobs-body">
+                <f:format.html parseFuncTSPath="lib.parseFunc">{jobPosition.benefits}</f:format.html>
+            </div>
+        </section>
+        <hr class="bw-jobs-divider">
+    </f:if>
+
     <section class="bw-jobs-section">
         <f:render arguments="{jobPosition: jobPosition}" partial="Frontend/Properties"/>
     </section>

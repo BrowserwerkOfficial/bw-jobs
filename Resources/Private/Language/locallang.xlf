@@ -103,6 +103,9 @@
 			<trans-unit id="required_commitments_headline" resname="required_commitments_headline">
 				<source>Required Commitments</source>
 			</trans-unit>
+			<trans-unit id="benefits_headline" resname="benefits_headline">
+				<source>Required Commitments</source>
+			</trans-unit>
 			<trans-unit id="apply_cta_title" resname="apply_cta_title">
 				<source>We are looking forward to receiving your application!</source>
 			</trans-unit>
