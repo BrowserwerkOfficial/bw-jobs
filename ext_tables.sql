@@ -19,7 +19,7 @@ CREATE TABLE tx_bwjobs_domain_model_jobposition
 	salary                    int(11)              NOT NULL DEFAULT '0',
 	homeoffice_public         smallint(1) unsigned NOT NULL DEFAULT '1',
 	homeoffice_possible       smallint(1) unsigned NOT NULL DEFAULT '0',
-	direct_apply 							smallint(1) unsigned NOT NULL DEFAULT '0',
+	direct_application_possible 							smallint(1) unsigned NOT NULL DEFAULT '0',
 	currency                  varchar(255)         NOT NULL DEFAULT '',
 	payment_cycle             varchar(255)         NOT NULL DEFAULT '',
 	level                     varchar(255)         NOT NULL DEFAULT '',

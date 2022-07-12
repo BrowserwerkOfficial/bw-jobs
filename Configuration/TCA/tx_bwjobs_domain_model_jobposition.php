@@ -38,7 +38,7 @@ return [
                 slug,
                 teaser,
                 description,
-                --palette--;;checkboxes,
+                --palette--;;possibilities,
                 level,
                 --palette--;;dates,
                 locations,
@@ -423,9 +423,9 @@ return [
                 'default' => 0,
             ],
         ],
-        'direct_apply' => [
+        'direct_application_possible' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:bw_jobs/Resources/Private/Language/locallang_db.xlf:tx_bwjobs_domain_model_jobposition.direct_apply',
+            'label' => 'LLL:EXT:bw_jobs/Resources/Private/Language/locallang_db.xlf:tx_bwjobs_domain_model_jobposition.direct_application_possible',
             'config' => [
                 'type' => 'check',
                 'renderType' => 'checkboxLabeledToggle',
@@ -433,8 +433,8 @@ return [
                     [
                         0 => '',
                         1 => '',
-                        'labelUnchecked' => 'LLL:EXT:bw_jobs/Resources/Private/Language/locallang_db.xlf:tx_bwjobs_domain_model_jobposition.direct_apply_no',
-                        'labelChecked' => 'LLL:EXT:bw_jobs/Resources/Private/Language/locallang_db.xlf:tx_bwjobs_domain_model_jobposition.direct_apply_yes',
+                        'labelUnchecked' => 'LLL:EXT:bw_jobs/Resources/Private/Language/locallang_db.xlf:tx_bwjobs_domain_model_jobposition.direct_application_possible_no',
+                        'labelChecked' => 'LLL:EXT:bw_jobs/Resources/Private/Language/locallang_db.xlf:tx_bwjobs_domain_model_jobposition.direct_application_possible_yes',
                     ],
                 ],
                 'default' => 0,
@@ -965,10 +965,10 @@ return [
                 valid_through_date;LLL:EXT:bw_jobs/Resources/Private/Language/locallang_db.xlf:tx_bwjobs_domain_model_jobposition.valid_through_date
             ',
         ],
-        'checkboxes' => [
+        'possibilities' => [
             'showitem' => '
                 homeoffice_possible;LLL:EXT:bw_jobs/Resources/Private/Language/locallang_db.xlf:tx_bwjobs_domain_model_jobposition.homeoffice_possible,
-                direct_apply;LLL:EXT:bw_jobs/Resources/Private/Language/locallang_db.xlf:tx_bwjobs_domain_model_jobposition.direct_apply
+                direct_application_possible;LLL:EXT:bw_jobs/Resources/Private/Language/locallang_db.xlf:tx_bwjobs_domain_model_jobposition.direct_application_possible
             ',
         ],
     ],

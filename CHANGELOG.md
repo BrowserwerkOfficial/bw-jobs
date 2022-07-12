@@ -8,9 +8,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [2.1.6] - 2022-07-12
 
 ### Added
-- `direct_apply` option to job positions.
+- `direct_application_possible` option to job positions.
 - `benefits` to job positions.
-- Structured data for `experienceRequirements`, `responsibilities`, `jobBenefits`, `jobLocation` and `directApply`.
+- Structured data for `experienceRequirements`, `responsibilities`, `jobBenefits`, `jobLocation` and `directApplicationPossible`.
 
 ## [2.1.5] - 2022-06-30
 

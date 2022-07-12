@@ -150,11 +150,11 @@ class JobPosition extends AbstractEntity
     protected $homeofficePossible = false;
 
     /**
-     * directApply
+     * directApplicationPossible
      *
      * @var bool
      */
-    protected $directApply = false;
+    protected $directApplicationPossible = false;
 
     /**
      * currency
@@ -690,33 +690,33 @@ class JobPosition extends AbstractEntity
     }
 
     /**
-     * Returns the directApply
+     * Returns the directApplicationPossible
      *
-     * @return bool $directApply
+     * @return bool $directApplicationPossible
      */
-    public function getDirectApply()
+    public function getDirectApplicationPossible()
     {
-        return $this->directApply;
+        return $this->directApplicationPossible;
     }
 
     /**
-     * Returns the boolean state of directApply
+     * Returns the boolean state of directApplicationPossible
      *
      * @return bool
      */
-    public function isDirectApply()
+    public function isDirectApplicationPossible()
     {
-        return $this->directApply;
+        return $this->directApplicationPossible;
     }
 
     /**
-     * Sets the directApply
+     * Sets the directApplicationPossible
      *
-     * @param bool $directApply
+     * @param bool $directApplicationPossible
      */
-    public function setDirectApply(bool $directApply)
+    public function setDirectApplicationPossible(bool $directApplicationPossible)
     {
-        $this->directApply = $directApply;
+        $this->directApplicationPossible = $directApplicationPossible;
     }
 
     /**

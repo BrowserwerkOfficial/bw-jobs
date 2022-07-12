@@ -107,15 +107,15 @@
 				<source>Yes</source>
 				<target>Ja</target>
 			</trans-unit>
-			<trans-unit id="tx_bwjobs_domain_model_jobposition.direct_apply" resname="tx_bwjobs_domain_model_jobposition.direct_apply">
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.direct_application_possible" resname="tx_bwjobs_domain_model_jobposition.direct_application_possible">
 				<source>Direct Application Possible</source>
 				<target>Direktbewerbung möglich</target>
 			</trans-unit>
-			<trans-unit id="tx_bwjobs_domain_model_jobposition.direct_apply_no" resname="tx_bwjobs_domain_model_jobposition.direct_apply_no">
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.direct_application_possible_no" resname="tx_bwjobs_domain_model_jobposition.direct_application_possible_no">
 				<source>No</source>
 				<target>Nein</target>
 			</trans-unit>
-			<trans-unit id="tx_bwjobs_domain_model_jobposition.direct_apply_yes" resname="tx_bwjobs_domain_model_jobposition.direct_apply_yes">
+			<trans-unit id="tx_bwjobs_domain_model_jobposition.direct_application_possible_yes" resname="tx_bwjobs_domain_model_jobposition.direct_application_possible_yes">
 				<source>Yes</source>
 				<target>Ja</target>
 			</trans-unit>

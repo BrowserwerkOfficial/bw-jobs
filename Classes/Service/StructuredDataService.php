@@ -266,7 +266,9 @@ class StructuredDataService
         }
 
         $experienceRequirements = $jobPosition->getRequiredExperience();
-        $result['experienceRequirements'] = $experienceRequirements || 'no requirements';
+        if (!empty($responsibilities)) {
+            $result['experienceRequirements'] = $experienceRequirements;
+        }
 
         $responsibilities = $jobPosition->getRequiredResponsibilities();
         if (!empty($responsibilities)) {
@@ -278,7 +280,7 @@ class StructuredDataService
             $result['jobBenefits'] = $jobBenefits;
         }
 
-        $directApply = $jobPosition->getDirectApply();
+        $directApply = $jobPosition->getDirectApplicationPossible();
         if (!empty($directApply)) {
             $result['directApply'] = $directApply;
         }
