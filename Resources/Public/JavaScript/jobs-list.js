@@ -17,23 +17,24 @@ var __privateSet = (obj, member, value, setter2) => {
   return value;
 };
 var _mountElementSelector, _locationFilterSelector, _categoryFilterSelector, _data;
-var MapSet = class extends Map {
+class MapSet extends Map {
   set(key, value) {
     super.set(key, value);
     return value;
   }
-};
-var WeakMapSet = class extends WeakMap {
+}
+class WeakMapSet extends WeakMap {
   set(key, value) {
     super.set(key, value);
     return value;
   }
-};
-var empty = /^(?:area|base|br|col|embed|hr|img|input|keygen|link|menuitem|meta|param|source|track|wbr)$/i;
-var elements = /<([a-z]+[a-z0-9:._-]*)([^>]*?)(\/?)>/g;
-var attributes = /([^\s\\>"'=]+)\s*=\s*(['"]?)\x01/g;
-var holes = /[\x01\x02]/g;
-var esm_default = (template, prefix2, svg2) => {
+}
+/*! (c) Andrea Giammarchi - ISC */
+const empty = /^(?:area|base|br|col|embed|hr|img|input|keygen|link|menuitem|meta|param|source|track|wbr)$/i;
+const elements = /<([a-z]+[a-z0-9:._-]*)([^>]*?)(\/?)>/g;
+const attributes = /([^\s\\>"'=]+)\s*=\s*(['"]?)\x01/g;
+const holes = /[\x01\x02]/g;
+const instrument = (template, prefix2, svg2) => {
   let i = 0;
   return template.join("").trim().replace(elements, (_, name, attrs, selfClosing) => {
     let ml = name + attrs.replace(attributes, "=$2$1").trimEnd();
@@ -42,17 +43,17 @@ var esm_default = (template, prefix2, svg2) => {
     return "<" + ml + ">";
   }).replace(holes, (hole) => hole === "" ? "<!--" + prefix2 + i++ + "-->" : prefix2 + i++);
 };
-var ELEMENT_NODE = 1;
-var nodeType = 111;
-var remove = ({ firstChild, lastChild }) => {
+const ELEMENT_NODE = 1;
+const nodeType = 111;
+const remove = ({ firstChild, lastChild }) => {
   const range = document.createRange();
   range.setStartAfter(firstChild);
   range.setEndAfter(lastChild);
   range.deleteContents();
   return firstChild;
 };
-var diffable = (node, operation) => node.nodeType === nodeType ? 1 / operation < 0 ? operation ? remove(node) : node.lastChild : operation ? node.valueOf() : node.firstChild : node;
-var persistent = (fragment) => {
+const diffable = (node, operation) => node.nodeType === nodeType ? 1 / operation < 0 ? operation ? remove(node) : node.lastChild : operation ? node.valueOf() : node.firstChild : node;
+const persistent = (fragment) => {
   const { firstChild, lastChild } = fragment;
   if (firstChild === lastChild)
     return lastChild || fragment;
@@ -70,8 +71,8 @@ var persistent = (fragment) => {
     }
   };
 };
-var { isArray } = Array;
-var aria = (node) => (values) => {
+const { isArray: isArray$1 } = Array;
+const aria = (node) => (values) => {
   for (const key in values) {
     const name = key === "role" ? key : `aria-${key}`;
     const value = values[key];
@@ -81,7 +82,7 @@ var aria = (node) => (values) => {
       node.setAttribute(name, value);
   }
 };
-var attribute = (node, name) => {
+const attribute = (node, name) => {
   let oldValue, orphan = true;
   const attributeNode = document.createAttributeNS(null, name);
   return (newValue) => {
@@ -109,7 +110,7 @@ var attribute = (node, name) => {
     }
   };
 };
-var boolean = (node, key, oldValue) => (newValue) => {
+const boolean = (node, key, oldValue) => (newValue) => {
   if (oldValue !== !!newValue) {
     if (oldValue = !!newValue)
       node.setAttribute(key, "");
@@ -117,7 +118,7 @@ var boolean = (node, key, oldValue) => (newValue) => {
       node.removeAttribute(key);
   }
 };
-var data = ({ dataset }) => (values) => {
+const data = ({ dataset }) => (values) => {
   for (const key in values) {
     const value = values[key];
     if (value == null)
@@ -126,12 +127,12 @@ var data = ({ dataset }) => (values) => {
       dataset[key] = value;
   }
 };
-var event = (node, name) => {
+const event = (node, name) => {
   let oldValue, lower, type = name.slice(2);
   if (!(name in node) && (lower = name.toLowerCase()) in node)
     type = lower.slice(2);
   return (newValue) => {
-    const info = isArray(newValue) ? newValue : [newValue, false];
+    const info = isArray$1(newValue) ? newValue : [newValue, false];
     if (oldValue !== info[0]) {
       if (oldValue)
         node.removeEventListener(type, oldValue, info[1]);
@@ -140,7 +141,7 @@ var event = (node, name) => {
     }
   };
 };
-var ref = (node) => {
+const ref = (node) => {
   let oldValue;
   return (value) => {
     if (oldValue !== value) {
@@ -152,10 +153,10 @@ var ref = (node) => {
     }
   };
 };
-var setter = (node, key) => key === "dataset" ? data(node) : (value) => {
+const setter = (node, key) => key === "dataset" ? data(node) : (value) => {
   node[key] = value;
 };
-var text = (node) => {
+const text = (node) => {
   let oldValue;
   return (newValue) => {
     if (oldValue != newValue) {
@@ -164,7 +165,7 @@ var text = (node) => {
     }
   };
 };
-var esm_default2 = (parentNode, a, b, get, before) => {
+const udomdiff = (parentNode, a, b, get, before) => {
   const bLength = b.length;
   let aEnd = a.length;
   let bEnd = bLength;
@@ -222,9 +223,9 @@ var esm_default2 = (parentNode, a, b, get, before) => {
   }
   return b;
 };
-var { isArray: isArray2, prototype } = Array;
-var { indexOf: indexOf2 } = prototype;
-var {
+const { isArray, prototype } = Array;
+const { indexOf } = prototype;
+const {
   createDocumentFragment,
   createElement,
   createElementNS,
@@ -234,13 +235,13 @@ var {
 } = new Proxy(document, {
   get: (target, method) => target[method].bind(target)
 });
-var createHTML = (html2) => {
+const createHTML = (html2) => {
   const template = createElement("template");
   template.innerHTML = html2;
   return template.content;
 };
-var xml;
-var createSVG = (svg2) => {
+let xml;
+const createSVG = (svg2) => {
   if (!xml)
     xml = createElementNS("http://www.w3.org/2000/svg", "svg");
   xml.innerHTML = svg2;
@@ -248,10 +249,10 @@ var createSVG = (svg2) => {
   content.append(...xml.childNodes);
   return content;
 };
-var createContent = (text2, svg2) => svg2 ? createSVG(text2) : createHTML(text2);
-var reducePath = ({ childNodes }, i) => childNodes[i];
-var diff = (comment, oldNodes, newNodes) => esm_default2(comment.parentNode, oldNodes, newNodes, diffable, comment);
-var handleAnything = (comment) => {
+const createContent = (text2, svg2) => svg2 ? createSVG(text2) : createHTML(text2);
+const reducePath = ({ childNodes }, i) => childNodes[i];
+const diff = (comment, oldNodes, newNodes) => udomdiff(comment.parentNode, oldNodes, newNodes, diffable, comment);
+const handleAnything = (comment) => {
   let oldValue, text2, nodes = [];
   const anyContent = (newValue) => {
     switch (typeof newValue) {
@@ -275,7 +276,7 @@ var handleAnything = (comment) => {
           }
           break;
         }
-        if (isArray2(newValue)) {
+        if (isArray(newValue)) {
           oldValue = newValue;
           if (newValue.length === 0)
             nodes = diff(comment, nodes, []);
@@ -297,7 +298,7 @@ var handleAnything = (comment) => {
   };
   return anyContent;
 };
-var handleAttribute = (node, name) => {
+const handleAttribute = (node, name) => {
   switch (name[0]) {
     case "?":
       return boolean(node, name.slice(1), false);
@@ -322,31 +323,31 @@ function handlers(options) {
   const node = path.reduceRight(reducePath, this);
   return type === "node" ? handleAnything(node) : type === "attr" ? handleAttribute(node, options.name) : text(node);
 }
-var createPath = (node) => {
+const createPath = (node) => {
   const path = [];
   let { parentNode } = node;
   while (parentNode) {
-    path.push(indexOf2.call(parentNode.childNodes, node));
+    path.push(indexOf.call(parentNode.childNodes, node));
     node = parentNode;
     ({ parentNode } = node);
   }
   return path;
 };
-var prefix = "is\xB5";
-var cache = new WeakMapSet();
-var textOnly = /^(?:textarea|script|style|title|plaintext|xmp)$/;
-var createCache = () => ({
+const prefix = "is\xB5";
+const cache$1 = new WeakMapSet();
+const textOnly = /^(?:textarea|script|style|title|plaintext|xmp)$/;
+const createCache = () => ({
   stack: [],
   entry: null,
   wire: null
 });
-var createEntry = (type, template) => {
+const createEntry = (type, template) => {
   const { content, updates } = mapUpdates(type, template);
   return { type, template, content, updates, wire: null };
 };
-var mapTemplate = (type, template) => {
+const mapTemplate = (type, template) => {
   const svg2 = type === "svg";
-  const text2 = esm_default(template, prefix, svg2);
+  const text2 = instrument(template, prefix, svg2);
   const content = createContent(text2, svg2);
   const tw = createTreeWalker(content, 1 | 128);
   const nodes = [];
@@ -381,13 +382,13 @@ var mapTemplate = (type, template) => {
   }
   return { content, nodes };
 };
-var mapUpdates = (type, template) => {
-  const { content, nodes } = cache.get(template) || cache.set(template, mapTemplate(type, template));
+const mapUpdates = (type, template) => {
+  const { content, nodes } = cache$1.get(template) || cache$1.set(template, mapTemplate(type, template));
   const fragment = importNode(content, true);
   const updates = nodes.map(handlers, fragment);
   return { content: fragment, updates };
 };
-var unroll = (info, { type, template, values }) => {
+const unroll = (info, { type, template, values }) => {
   const length = unrollValues(info, values);
   let { entry } = info;
   if (!entry || (entry.template !== template || entry.type !== type))
@@ -397,13 +398,13 @@ var unroll = (info, { type, template, values }) => {
     updates[i](values[i]);
   return wire || (entry.wire = persistent(content));
 };
-var unrollValues = ({ stack }, values) => {
+const unrollValues = ({ stack }, values) => {
   const { length } = values;
   for (let i = 0; i < length; i++) {
     const hole = values[i];
     if (hole instanceof Hole)
       values[i] = unroll(stack[i] || (stack[i] = createCache()), hole);
-    else if (isArray2(hole))
+    else if (isArray(hole))
       unrollValues(stack[i] || (stack[i] = createCache()), hole);
     else
       stack[i] = null;
@@ -412,16 +413,16 @@ var unrollValues = ({ stack }, values) => {
     stack.splice(length);
   return length;
 };
-var Hole = class {
+class Hole {
   constructor(type, template, values) {
     this.type = type;
     this.template = template;
     this.values = values;
   }
-};
-var tag = (type) => {
+}
+const tag = (type) => {
   const keyed = new WeakMapSet();
-  const fixed = (cache3) => (template, ...values) => unroll(cache3, { type, template, values });
+  const fixed = (cache2) => (template, ...values) => unroll(cache2, { type, template, values });
   return Object.assign((template, ...values) => new Hole(type, template, values), {
     for(ref2, id) {
       const memo = keyed.get(ref2) || keyed.set(ref2, new MapSet());
@@ -430,10 +431,10 @@ var tag = (type) => {
     node: (template, ...values) => unroll(createCache(), new Hole(type, template, values)).valueOf()
   });
 };
-var cache2 = new WeakMapSet();
-var render = (where, what) => {
+const cache = new WeakMapSet();
+const render = (where, what) => {
   const hole = typeof what === "function" ? what() : what;
-  const info = cache2.get(where) || cache2.set(where, createCache());
+  const info = cache.get(where) || cache.set(where, createCache());
   const wire = hole instanceof Hole ? unroll(info, hole) : hole;
   if (wire !== info.wire) {
     info.wire = wire;
@@ -441,9 +442,8 @@ var render = (where, what) => {
   }
   return where;
 };
-var html = tag("html");
-var svg = tag("svg");
-/*! (c) Andrea Giammarchi - ISC */
+const html = tag("html");
+const svg = tag("svg");
 function stripLeadingSlash(string) {
   return string.replace(/^\//, "");
 }
