@@ -264,11 +264,11 @@ class StructuredDataService
             foreach (explode(',', $educationCategories) as $educationCategory) {
                 $data = [
                     '@type' => 'EducationalOccupationalCredential',
-                    'credentialCategory' => $educationCategory
+                    'credentialCategory' => $educationCategory,
                 ];
 
                 if (!empty($requiredEducation)) {
-                    $data['educationalLevel'] = $requiredEducation;
+                    $data['competencyRequired'] = $requiredEducation;
                 }
 
                 $result['educationRequirements'][] = $data;
