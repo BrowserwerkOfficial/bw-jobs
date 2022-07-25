@@ -28,7 +28,6 @@ class StructuredDataService
      */
     public function generateJobLocationData(JobPosition $jobPosition, array $result)
     {
-        // Variables
         $location = $jobPosition->getFirstLocation();
         $streetAddress = $location->getStreet();
         $addressLocality = $location->getCity();
@@ -115,7 +114,6 @@ class StructuredDataService
      */
     public function generateHiringOrganizationData(JobPosition $jobPosition, array $result)
     {
-        // Variables
         $location = $jobPosition->getFirstLocation();
         $siteUrl = GeneralUtility::getIndpEnv('TYPO3_SITE_URL');
         $name = $location->getOrganization();
@@ -164,7 +162,6 @@ class StructuredDataService
      */
     public function generateSalaryData(JobPosition $jobPosition, array $result)
     {
-        // Variables
         $currency = $jobPosition->getCurrency();
         $value = $jobPosition->getSalary();
         $unitText = $this->getUnitTextForPaymentCycle($jobPosition->getPaymentCycle());
@@ -220,11 +217,11 @@ class StructuredDataService
      */
     public function generateForJobPosition(JobPosition $jobPosition): array
     {
-        // Variables
         $title = $jobPosition->getTitle();
         $description = $jobPosition->getDescription();
         $datePosted = $jobPosition->getDatePosted();
         $validThrough = $jobPosition->getValidThroughDate();
+        $jobBenefits = $jobPosition->getBenefits();
         $employmentType = $jobPosition->getFirstEmploymentType();
         $educationCategories = $jobPosition->getEducationCategories();
         $experienceRequirements = $jobPosition->getRequiredExperience();
@@ -257,7 +254,6 @@ class StructuredDataService
 
         if (!empty($employmentType)) {
             $result['employmentType'] = $employmentType->getType();
-            $jobBenefits = $jobPosition->getBenefits();
         }
 
         if (!empty($educationCategories)) {
@@ -276,7 +272,6 @@ class StructuredDataService
                 }
 
                 $result['educationRequirements'][] = $data;
-                $result['description'] .= ' ' . $data;
             }
         }
 

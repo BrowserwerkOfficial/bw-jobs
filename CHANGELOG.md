@@ -7,12 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [2.2.1] - 2022-07-25
 
-### Changed
-- Hoisted functions for structured data service
-- Controller for SEO additionalGetParameters in README.md
+### Fixed
+- Wrong controller name in TypoScript config for `tx_seo`
 
 ### Added
-- `educationCategory`, `experienceRequirements`, `responsibilities` and `jobBenefits` to the `description`
+- `experienceRequirements`, `responsibilities` and `jobBenefits` to the `description` in JSON-LD structured data
 
 ## [2.2.0] - 2022-07-12
 
