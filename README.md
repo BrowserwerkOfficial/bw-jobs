@@ -133,7 +133,7 @@ plugin.tx_seo {
                                 uid = tx_bwjobs_detail[jobPosition]
                             }
                             additionalGetParameters {
-                                tx_bwjobs_detail.controller = JobPosition
+                                tx_bwjobs_detail.controller = Frontend
                                 tx_bwjobs_detail.action = show
                             }
                             useCacheHash = 1
