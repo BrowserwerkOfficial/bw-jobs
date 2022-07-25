@@ -29,8 +29,14 @@ class StructuredDataService
     public function generateJobLocationData(JobPosition $jobPosition, array $result)
     {
         $location = $jobPosition->getFirstLocation();
-
         $streetAddress = $location->getStreet();
+        $addressLocality = $location->getCity();
+        $addressRegion = $location->getRegion();
+        $postalCode = $location->getZip();
+        $addressCountry = $location->getCountryZone();
+        $homeofficePossible = $jobPosition->getHomeofficePossible();
+
+
         if (!empty($streetAddress)) {
             if (!isset($result['jobLocation'])) {
                 $result['jobLocation'] = [
@@ -44,7 +50,6 @@ class StructuredDataService
             $result['jobLocation']['address']['streetAddress'] = $streetAddress;
         }
 
-        $addressLocality = $location->getCity();
         if (!empty($addressLocality)) {
             if (!isset($result['jobLocation'])) {
                 $result['jobLocation'] = [
@@ -58,7 +63,6 @@ class StructuredDataService
             $result['jobLocation']['address']['addressLocality'] = $addressLocality;
         }
 
-        $addressRegion = $location->getRegion();
         if (!empty($addressRegion)) {
             if (!isset($result['jobLocation'])) {
                 $result['jobLocation'] = [
@@ -72,7 +76,6 @@ class StructuredDataService
             $result['jobLocation']['address']['addressRegion'] = $addressRegion;
         }
 
-        $postalCode = $location->getZip();
         if (!empty($postalCode)) {
             if (!isset($result['jobLocation'])) {
                 $result['jobLocation'] = [
@@ -86,7 +89,6 @@ class StructuredDataService
             $result['jobLocation']['address']['postalCode'] = $postalCode;
         }
 
-        $addressCountry = $location->getCountryZone();
         if (!empty($addressCountry)) {
             if (!isset($result['jobLocation'])) {
                 $result['jobLocation'] = [
@@ -100,7 +102,6 @@ class StructuredDataService
             $result['jobLocation']['address']['addressCountry'] = $addressCountry;
         }
 
-        $homeofficePossible = $jobPosition->getHomeofficePossible();
         $result['jobLocationType'] = $homeofficePossible ? 'TELECOMMUTE' : 'IN_PERSON';
 
         return $result;
@@ -115,8 +116,10 @@ class StructuredDataService
     {
         $location = $jobPosition->getFirstLocation();
         $siteUrl = GeneralUtility::getIndpEnv('TYPO3_SITE_URL');
-
         $name = $location->getOrganization();
+        $sameAs = $siteUrl;
+        $logo = $location->getImage();
+
         if (!empty($name)) {
             if (!isset($result['hiringOrganization'])) {
                 $result['hiringOrganization'] = [
@@ -127,7 +130,6 @@ class StructuredDataService
             $result['hiringOrganization']['name'] = $name;
         }
 
-        $sameAs = $siteUrl;
         if (!empty($sameAs)) {
             if (!isset($result['hiringOrganization'])) {
                 $result['hiringOrganization'] = [
@@ -138,7 +140,6 @@ class StructuredDataService
             $result['hiringOrganization']['sameAs'] = $sameAs;
         }
 
-        $logo = $location->getImage();
         if (!empty($logo)) {
             if (!isset($result['hiringOrganization'])) {
                 $result['hiringOrganization'] = [
@@ -162,6 +163,9 @@ class StructuredDataService
     public function generateSalaryData(JobPosition $jobPosition, array $result)
     {
         $currency = $jobPosition->getCurrency();
+        $value = $jobPosition->getSalary();
+        $unitText = $this->getUnitTextForPaymentCycle($jobPosition->getPaymentCycle());
+
         if (!empty($currency)) {
             if (!isset($result['baseSalary'])) {
                 $result['baseSalary'] = [
@@ -172,7 +176,6 @@ class StructuredDataService
             $result['baseSalary']['currency'] = $currency;
         }
 
-        $value = $jobPosition->getSalary();
         if (!empty($value)) {
             if (!isset($result['baseSalary'])) {
                 $result['baseSalary'] = [
@@ -189,7 +192,6 @@ class StructuredDataService
             $result['baseSalary']['value']['value'] = $value;
         }
 
-        $unitText = $this->getUnitTextForPaymentCycle($jobPosition->getPaymentCycle());
         if (!empty($unitText)) {
             if (!isset($result['baseSalary'])) {
                 $result['baseSalary'] = [
@@ -215,40 +217,45 @@ class StructuredDataService
      */
     public function generateForJobPosition(JobPosition $jobPosition): array
     {
+        $title = $jobPosition->getTitle();
+        $description = $jobPosition->getDescription();
+        $datePosted = $jobPosition->getDatePosted();
+        $validThrough = $jobPosition->getValidThroughDate();
+        $jobBenefits = $jobPosition->getBenefits();
+        $employmentType = $jobPosition->getFirstEmploymentType();
+        $educationCategories = $jobPosition->getEducationCategories();
+        $experienceRequirements = $jobPosition->getRequiredExperience();
+        $responsibilities = $jobPosition->getRequiredResponsibilities();
+        $requiredEducation = $jobPosition->getRequiredEducation();
+        $directApply = $jobPosition->getDirectApplicationPossible();
+
         $result = [
             '@context' => 'http://schema.org',
             '@type' => 'JobPosting',
         ];
 
-        $title = $jobPosition->getTitle();
         if (!empty($title)) {
             $result['title'] = $title;
         }
 
-        $description = $jobPosition->getDescription();
         if (!empty($description)) {
             $result['description'] = $description;
         }
 
-        $datePosted = $jobPosition->getDatePosted();
         if (!empty($datePosted)) {
             $result['datePosted'] = $datePosted->format('Y-m-d');
         }
 
-        $validThrough = $jobPosition->getValidThroughDate();
         if (!empty($validThrough)) {
             $result['validThrough'] = $validThrough->format('Y-m-d');
         } else {
             $result['validThrough'] = (new \DateTime())->modify('+1 year')->format('Y-m-d');
         }
 
-        $employmentType = $jobPosition->getFirstEmploymentType();
         if (!empty($employmentType)) {
             $result['employmentType'] = $employmentType->getType();
         }
 
-        $educationCategories = $jobPosition->getEducationCategories();
-        $requiredEducation = $jobPosition->getRequiredEducation();
         if (!empty($educationCategories)) {
             if (!isset($result['educationRequirements'])) {
                 $result['educationRequirements'] = [];
@@ -268,22 +275,21 @@ class StructuredDataService
             }
         }
 
-        $experienceRequirements = $jobPosition->getRequiredExperience();
         if (!empty($experienceRequirements)) {
             $result['experienceRequirements'] = $experienceRequirements;
+            $result['description'] .= '<br /><br />' . $experienceRequirements;
         }
 
-        $responsibilities = $jobPosition->getRequiredResponsibilities();
         if (!empty($responsibilities)) {
             $result['responsibilities'] = $responsibilities;
+            $result['description'] .= '<br /><br />' . $responsibilities;
         }
 
-        $jobBenefits = $jobPosition->getBenefits();
         if (!empty($jobBenefits)) {
             $result['jobBenefits'] = $jobBenefits;
+            $result['description'] .= '<br /><br />' . $jobBenefits;
         }
 
-        $directApply = $jobPosition->getDirectApplicationPossible();
         if (!empty($directApply)) {
             $result['directApply'] = $directApply;
         }
