@@ -170,6 +170,48 @@
 				<source>Categories</source>
 				<target>Kategorien</target>
 			</trans-unit>
+
+			<!-- Disclaimer -->
+			<trans-unit id="disclaimer_headline" resname="disclaimer_headline">
+				<source>Developed by</source>
+				<target>Entwickelt von</target>
+			</trans-unit>
+			<trans-unit id="disclaimer_latest_changes_title" resname="disclaimer_latest_changes_title">
+				<source>Latest Changes</source>
+				<target>Letzte Änderungen</target>
+			</trans-unit>
+			<trans-unit id="disclaimer_latest_changes_text" resname="disclaimer_latest_changes_text">
+				<source>Keep up to date with the latest improvements and changes to the bw-jobs extension.</source>
+				<target>Erfahren Sie mehr über die neuesten Verbesserungen und Änderungen an der bw-jobs Erweiterung.</target>
+			</trans-unit>
+			<trans-unit id="disclaimer_latest_changes_button" resname="disclaimer_latest_changes_button">
+				<source>View Changelog</source>
+				<target>Changelog ansehen</target>
+			</trans-unit>
+			<trans-unit id="disclaimer_report_issue_title" resname="disclaimer_report_issue_title">
+				<source>Report An Issue</source>
+				<target>Ein Anliegen Melden</target>
+			</trans-unit>
+			<trans-unit id="disclaimer_report_issue_text" resname="disclaimer_report_issue_text">
+				<source>Found a bug? Have an idea? Tell us about it so we can further improve the extension.</source>
+				<target>Sie haben einen Fehler gefunden oder eine Idee? Teilen Sie uns diese mit, damit wir die Erweiterung weiter verbessern können.</target>
+			</trans-unit>
+			<trans-unit id="disclaimer_report_issue_button" resname="disclaimer_report_issue_button">
+				<source>Report An Issue</source>
+				<target>Ein Anliegen Melden</target>
+			</trans-unit>
+			<trans-unit id="disclaimer_become_sponsor_title" resname="disclaimer_become_sponsor_title">
+				<source>Become A Sponsor</source>
+				<target>Sponsor werden</target>
+			</trans-unit>
+			<trans-unit id="disclaimer_become_sponsor_text" resname="disclaimer_become_sponsor_text">
+				<source>Do you like what we do? Become a sponsor and help us keep the extension up-to-date!</source>
+				<target>Gefällt Ihnen, was wir tun? Werden Sie Sponsor und helfen Sie uns, die Erweiterung aktuell zu halten!</target>
+			</trans-unit>
+			<trans-unit id="disclaimer_become_sponsor_button" resname="disclaimer_become_sponsor_button">
+				<source>Become A Sponsor</source>
+				<target>Sponsor werden</target>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

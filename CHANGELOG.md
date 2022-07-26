@@ -10,6 +10,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 - Definition of `EducationalOccupationalCredential` in structured data
 
+### Added
+- Disclaimer in backend modules
+
 ## [2.2.1] - 2022-07-25
 
 ### Fixed

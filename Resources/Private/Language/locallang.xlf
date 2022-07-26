@@ -129,6 +129,38 @@
 			<trans-unit id="categories_title" resname="categories_title">
 				<source>Categories</source>
 			</trans-unit>
+
+			<!-- Disclaimer -->
+			<trans-unit id="disclaimer_headline" resname="disclaimer_headline">
+				<source>Developed by</source>
+			</trans-unit>
+			<trans-unit id="disclaimer_latest_changes_title" resname="disclaimer_latest_changes_title">
+				<source>Latest Changes</source>
+			</trans-unit>
+			<trans-unit id="disclaimer_latest_changes_text" resname="disclaimer_latest_changes_text">
+				<source>Keep up to date with the latest improvements and changes to the bw-jobs extension.</source>
+			</trans-unit>
+			<trans-unit id="disclaimer_latest_changes_button" resname="disclaimer_latest_changes_button">
+				<source>View Changelog</source>
+			</trans-unit>
+			<trans-unit id="disclaimer_report_issue_title" resname="disclaimer_report_issue_title">
+				<source>Report An Issue</source>
+			</trans-unit>
+			<trans-unit id="disclaimer_report_issue_text" resname="disclaimer_report_issue_text">
+				<source>Found a bug? Have an idea? Tell us about it so we can further improve the extension.</source>
+			</trans-unit>
+			<trans-unit id="disclaimer_report_issue_button" resname="disclaimer_report_issue_button">
+				<source>Report An Issue</source>
+			</trans-unit>
+			<trans-unit id="disclaimer_become_sponsor_title" resname="disclaimer_become_sponsor_title">
+				<source>Become A Sponsor</source>
+			</trans-unit>
+			<trans-unit id="disclaimer_become_sponsor_text" resname="disclaimer_become_sponsor_text">
+				<source>Do you like what we do? Become a sponsor and help us keep the extension up-to-date!</source>
+			</trans-unit>
+			<trans-unit id="disclaimer_become_sponsor_button" resname="disclaimer_become_sponsor_button">
+				<source>Become A Sponsor</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>
