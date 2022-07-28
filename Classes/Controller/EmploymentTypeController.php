@@ -106,6 +106,11 @@ class EmploymentTypeController extends ActionController
      */
     public function administrationAction(): ResponseInterface
     {
+        // See https://stackoverflow.com/questions/69780363/typo3-v11-5-1578950324-runtimeexception-the-given-page-record-is-invalid-mis
+        if (TYPO3_MODE == 'BE' && !empty($this->settings['storagePid'])) {
+            $_POST['id'] = (int)$this->settings['storagePid'];
+        }
+
         $moduleTemplate = $this->initializeModuleTemplate(
             $this->moduleTemplateFactory->create($this->request)
         );
