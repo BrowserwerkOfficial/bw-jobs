@@ -1,6 +1,6 @@
 {
 	"name": "bw-jobs",
-	"version": "2.2.3",
+	"version": "2.2.4",
 	"scripts": {
 		"build": "vite build"
 	},
