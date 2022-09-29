@@ -5,9 +5,9 @@
 		"build": "vite build"
 	},
 	"dependencies": {
-		"uhtml": "^3.0.0"
+		"uhtml": "^3.1.0"
 	},
 	"devDependencies": {
-		"vite": "^3.0.4"
+		"vite": "^3.1.4"
 	}
 }

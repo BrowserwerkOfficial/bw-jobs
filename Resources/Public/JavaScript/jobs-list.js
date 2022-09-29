@@ -36,12 +36,18 @@ const attributes = /([^\s\\>"'=]+)\s*=\s*(['"]?)\x01/g;
 const holes = /[\x01\x02]/g;
 const instrument = (template, prefix2, svg2) => {
   let i = 0;
-  return template.join("").trim().replace(elements, (_, name, attrs, selfClosing) => {
-    let ml = name + attrs.replace(attributes, "=$2$1").trimEnd();
-    if (selfClosing.length)
-      ml += svg2 || empty.test(name) ? " /" : "></" + name;
-    return "<" + ml + ">";
-  }).replace(holes, (hole) => hole === "" ? "<!--" + prefix2 + i++ + "-->" : prefix2 + i++);
+  return template.join("").trim().replace(
+    elements,
+    (_, name, attrs, selfClosing) => {
+      let ml = name + attrs.replace(attributes, "=$2$1").trimEnd();
+      if (selfClosing.length)
+        ml += svg2 || empty.test(name) ? " /" : "></" + name;
+      return "<" + ml + ">";
+    }
+  ).replace(
+    holes,
+    (hole) => hole === "" ? "<!--" + prefix2 + i++ + "-->" : prefix2 + i++
+  );
 };
 const ELEMENT_NODE = 1;
 const nodeType = 111;
@@ -82,37 +88,32 @@ const aria = (node) => (values) => {
       node.setAttribute(name, value);
   }
 };
+const getValue = (value) => value == null ? value : value.valueOf();
 const attribute = (node, name) => {
   let oldValue, orphan = true;
   const attributeNode = document.createAttributeNS(null, name);
   return (newValue) => {
-    if (oldValue !== newValue) {
-      oldValue = newValue;
-      if (oldValue == null) {
+    const value = getValue(newValue);
+    if (oldValue !== value) {
+      if ((oldValue = value) == null) {
         if (!orphan) {
           node.removeAttributeNode(attributeNode);
           orphan = true;
         }
       } else {
-        const value = newValue;
-        if (value == null) {
-          if (!orphan)
-            node.removeAttributeNode(attributeNode);
-          orphan = true;
-        } else {
-          attributeNode.value = value;
-          if (orphan) {
-            node.setAttributeNodeNS(attributeNode);
-            orphan = false;
-          }
+        attributeNode.value = value;
+        if (orphan) {
+          node.setAttributeNodeNS(attributeNode);
+          orphan = false;
         }
       }
     }
   };
 };
 const boolean = (node, key, oldValue) => (newValue) => {
-  if (oldValue !== !!newValue) {
-    if (oldValue = !!newValue)
+  const value = !!getValue(newValue);
+  if (oldValue !== value) {
+    if (oldValue = value)
       node.setAttribute(key, "");
     else
       node.removeAttribute(key);
@@ -159,9 +160,10 @@ const setter = (node, key) => key === "dataset" ? data(node) : (value) => {
 const text = (node) => {
   let oldValue;
   return (newValue) => {
-    if (oldValue != newValue) {
-      oldValue = newValue;
-      node.textContent = newValue == null ? "" : newValue;
+    const value = getValue(newValue);
+    if (oldValue != value) {
+      oldValue = value;
+      node.textContent = value == null ? "" : value;
     }
   };
 };
@@ -191,7 +193,10 @@ const udomdiff = (parentNode, a, b, get, before) => {
       bEnd--;
     } else if (a[aStart] === b[bEnd - 1] && b[bStart] === a[aEnd - 1]) {
       const node = get(a[--aEnd], -1).nextSibling;
-      parentNode.insertBefore(get(b[bStart++], 1), get(a[aStart++], -1).nextSibling);
+      parentNode.insertBefore(
+        get(b[bStart++], 1),
+        get(a[aStart++], -1).nextSibling
+      );
       parentNode.insertBefore(get(b[--bEnd], 1), node);
       a[aEnd] = b[bEnd];
     } else {
@@ -213,7 +218,10 @@ const udomdiff = (parentNode, a, b, get, before) => {
             while (bStart < index)
               parentNode.insertBefore(get(b[bStart++], 1), node);
           } else {
-            parentNode.replaceChild(get(b[bStart++], 1), get(a[aStart++], -1));
+            parentNode.replaceChild(
+              get(b[bStart++], 1),
+              get(a[aStart++], -1)
+            );
           }
         } else
           aStart++;
@@ -251,7 +259,13 @@ const createSVG = (svg2) => {
 };
 const createContent = (text2, svg2) => svg2 ? createSVG(text2) : createHTML(text2);
 const reducePath = ({ childNodes }, i) => childNodes[i];
-const diff = (comment, oldNodes, newNodes) => udomdiff(comment.parentNode, oldNodes, newNodes, diffable, comment);
+const diff = (comment, oldNodes, newNodes) => udomdiff(
+  comment.parentNode,
+  oldNodes,
+  newNodes,
+  diffable,
+  comment
+);
 const handleAnything = (comment) => {
   let oldValue, text2, nodes = [];
   const anyContent = (newValue) => {
@@ -286,9 +300,19 @@ const handleAnything = (comment) => {
             anyContent(String(newValue));
           break;
         }
-        if (oldValue !== newValue && "ELEMENT_NODE" in newValue) {
-          oldValue = newValue;
-          nodes = diff(comment, nodes, newValue.nodeType === 11 ? [...newValue.childNodes] : [newValue]);
+        if (oldValue !== newValue) {
+          if ("ELEMENT_NODE" in newValue) {
+            oldValue = newValue;
+            nodes = diff(
+              comment,
+              nodes,
+              newValue.nodeType === 11 ? [...newValue.childNodes] : [newValue]
+            );
+          } else {
+            const value = newValue.valueOf();
+            if (value !== newValue)
+              anyContent(value);
+          }
         }
         break;
       case "function":
@@ -403,7 +427,10 @@ const unrollValues = ({ stack }, values) => {
   for (let i = 0; i < length; i++) {
     const hole = values[i];
     if (hole instanceof Hole)
-      values[i] = unroll(stack[i] || (stack[i] = createCache()), hole);
+      values[i] = unroll(
+        stack[i] || (stack[i] = createCache()),
+        hole
+      );
     else if (isArray(hole))
       unrollValues(stack[i] || (stack[i] = createCache()), hole);
     else
@@ -422,14 +449,20 @@ class Hole {
 }
 const tag = (type) => {
   const keyed = new WeakMapSet();
-  const fixed = (cache2) => (template, ...values) => unroll(cache2, { type, template, values });
-  return Object.assign((template, ...values) => new Hole(type, template, values), {
-    for(ref2, id) {
-      const memo = keyed.get(ref2) || keyed.set(ref2, new MapSet());
-      return memo.get(id) || memo.set(id, fixed(createCache()));
-    },
-    node: (template, ...values) => unroll(createCache(), new Hole(type, template, values)).valueOf()
-  });
+  const fixed = (cache2) => (template, ...values) => unroll(
+    cache2,
+    { type, template, values }
+  );
+  return Object.assign(
+    (template, ...values) => new Hole(type, template, values),
+    {
+      for(ref2, id) {
+        const memo = keyed.get(ref2) || keyed.set(ref2, new MapSet());
+        return memo.get(id) || memo.set(id, fixed(createCache()));
+      },
+      node: (template, ...values) => unroll(createCache(), new Hole(type, template, values)).valueOf()
+    }
+  );
 };
 const cache = new WeakMapSet();
 const render = (where, what) => {
@@ -679,14 +712,18 @@ class JobsList {
   get endpointUrl() {
     const { endpoint } = this.mountElement.dataset;
     if (!endpoint) {
-      throw new Error(`Missing "data-endpoint" attribute on the "${__privateGet(this, _mountElementSelector)}" mount element`);
+      throw new Error(
+        `Missing "data-endpoint" attribute on the "${__privateGet(this, _mountElementSelector)}" mount element`
+      );
     }
     return new URL(endpoint, window.location.origin);
   }
   get detailPageUrl() {
     const { detailPagePath } = this.mountElement.dataset;
     if (!detailPagePath) {
-      throw new Error(`Missing "data-detail-page-path" attribute on the "${__privateGet(this, _mountElementSelector)}" mount element`);
+      throw new Error(
+        `Missing "data-detail-page-path" attribute on the "${__privateGet(this, _mountElementSelector)}" mount element`
+      );
     }
     return new URL(stripTrailingSlash(detailPagePath), window.location.origin);
   }
@@ -705,7 +742,9 @@ class JobsList {
     });
     const storedValue = retrieveValueFromLocalStorage("jobsFilterLocationUid");
     if (storedValue && selectElement) {
-      const isValidOption = selectElement.querySelector(`option[value="${storedValue}"]`);
+      const isValidOption = selectElement.querySelector(
+        `option[value="${storedValue}"]`
+      );
       if (!isValidOption)
         return;
       selectElement.value = storedValue;
@@ -727,7 +766,9 @@ class JobsList {
     });
     const storedValue = retrieveValueFromLocalStorage("jobsFilterCategoryUid");
     if (storedValue && selectElement) {
-      const isValidOption = selectElement.querySelector(`option[value=${storedValue}]`);
+      const isValidOption = selectElement.querySelector(
+        `option[value=${storedValue}]`
+      );
       if (!isValidOption)
         return;
       selectElement.value = storedValue;
@@ -736,7 +777,9 @@ class JobsList {
   }
   async fetchData() {
     this.data = { isFetching: true };
-    const response = await fetch(buildRequestUrlForData(this.endpointUrl, this.data));
+    const response = await fetch(
+      buildRequestUrlForData(this.endpointUrl, this.data)
+    );
     if (!response.ok) {
       throw new Error(response.statusText);
     }
@@ -750,28 +793,39 @@ class JobsList {
   async render() {
     const { data: data2 } = this;
     if (data2.isFetching) {
-      render(this.mountElement, html`<div class="bw-jobs-list">
+      render(
+        this.mountElement,
+        html`<div class="bw-jobs-list">
           <div class="bw-jobs-list__loader">${Spinner()}</div>
-        </div>`);
+        </div>`
+      );
       return;
     }
     if (!data2.jobPositions.length) {
       const isFiltered = !!(data2.filters.locationUid || data2.filters.categoryUid);
-      render(this.mountElement, html`<div class="bw-jobs-empty bw-jobs-body">
+      render(
+        this.mountElement,
+        html`<div class="bw-jobs-empty bw-jobs-body">
           ${this.translations[isFiltered ? "nothingFound" : "nothingPosted"]}
-        </div>`);
+        </div>`
+      );
       return;
     }
-    render(this.mountElement, html`<div class="bw-jobs-list">
+    render(
+      this.mountElement,
+      html`<div class="bw-jobs-list">
         ${data2.jobPositions.map((jobPosition) => {
-      const url = `${this.detailPageUrl}/${stripLeadingSlash(jobPosition.slug)}`;
-      return JobPosition(jobPosition, url);
-    })}
+        const url = `${this.detailPageUrl}/${stripLeadingSlash(
+          jobPosition.slug
+        )}`;
+        return JobPosition(jobPosition, url);
+      })}
         ${Pagination(data2.pages, data2.currentPage, (pageNumber) => {
-      this.data = { currentPage: pageNumber };
-      this.fetchData();
-    })}
-      </div>`);
+        this.data = { currentPage: pageNumber };
+        this.fetchData();
+      })}
+      </div>`
+    );
   }
   async mount() {
     this.fetchData();
@@ -781,5 +835,9 @@ _mountElementSelector = new WeakMap();
 _locationFilterSelector = new WeakMap();
 _categoryFilterSelector = new WeakMap();
 _data = new WeakMap();
-const jobsList = new JobsList("#bw-jobs-list", "#bw-jobs-location-filter", "#bw-jobs-category-filter");
+const jobsList = new JobsList(
+  "#bw-jobs-list",
+  "#bw-jobs-location-filter",
+  "#bw-jobs-category-filter"
+);
 jobsList.mount();
