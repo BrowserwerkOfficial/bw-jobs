@@ -3,7 +3,7 @@
 All notable changes to this project will be documented in this file.
 
 
-## [23.0] - 2023-06-27
+## [2.3.0] - 2023-06-27
 
 ### Changed
 - Set applicantLocationRequirements in JSON-LD structured data when homeoffice is enabled.
