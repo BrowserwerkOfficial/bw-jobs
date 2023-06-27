@@ -147,7 +147,7 @@
         </f:for>
     </f:for>
 
-    <f:if condition="{settings.useApplicationForm} || {firstContactPerson}">
+    <f:if condition="{jobPosition.directApplicationPossible} && ({settings.useApplicationForm} || {firstContactPerson})">
         <hr class="bw-jobs-divider">
         <section class="bw-jobs-section">
             <div class="bw-jobs-cta">
