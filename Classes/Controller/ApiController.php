@@ -71,8 +71,8 @@ class ApiController extends ActionController
 
         $jobPositions = $this->jobPositionRepository->findWithFilter(
             [
-                'locationUid' => $queryParams['locationUid'],
-                'categoryUid' => $queryParams['categoryUid'],
+                'locationUid' => $queryParams['locationUid'] ?? null,
+                'categoryUid' => $queryParams['categoryUid'] ?? null,
             ]
         );
 
