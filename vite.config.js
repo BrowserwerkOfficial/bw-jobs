@@ -5,7 +5,7 @@ export default defineConfig({
   build: {
     outDir: './Resources/Public/JavaScript',
     emptyOutDir: true,
-    minify: false,
+    minify: true,
     rollupOptions: {
       input: ['./Resources/Private/JavaScript/jobs-list.js'],
       output: {
