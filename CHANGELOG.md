@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+
+## [23.0] - 2023-06-27
+
+### Changed
+- Set applicantLocationRequirements in JSON-LD structured data when homeoffice is enabled.
+- Updated dependencies.
+
 ## [2.2.4] - 2022-09-29
 
 ### Changed
@@ -10,24 +17,24 @@ All notable changes to this project will be documented in this file.
 ## [2.2.3] - 2022-08-08
 
 ### Added
-- Sponsoring details in the footer of the backend modules and the repository
+- Sponsoring details in the footer of the backend modules and the repository.
 
 ## [2.2.2] - 2022-07-28
 
 ### Fixed
-- Definition of `EducationalOccupationalCredential` in structured data
-- "missing storage uid" error with restricted users
+- Definition of `EducationalOccupationalCredential` in structured data.
+- "missing storage uid" error with restricted users.
 
 ### Added
-- Footer in backend modules
+- Footer in backend modules.
 
 ## [2.2.1] - 2022-07-25
 
 ### Fixed
-- Wrong controller name in TypoScript config for `tx_seo`
+- Wrong controller name in TypoScript config for `tx_seo`.
 
 ### Added
-- `experienceRequirements`, `responsibilities` and `jobBenefits` to the `description` in JSON-LD structured data
+- `experienceRequirements`, `responsibilities` and `jobBenefits` to the `description` in JSON-LD structured data.
 
 ## [2.2.0] - 2022-07-12
 

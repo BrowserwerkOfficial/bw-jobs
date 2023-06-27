@@ -36,7 +36,6 @@ class StructuredDataService
         $addressCountry = $location->getCountryZone();
         $homeofficePossible = $jobPosition->getHomeofficePossible();
 
-
         if (!empty($streetAddress)) {
             if (!isset($result['jobLocation'])) {
                 $result['jobLocation'] = [
@@ -102,7 +101,17 @@ class StructuredDataService
             $result['jobLocation']['address']['addressCountry'] = $addressCountry;
         }
 
-        $result['jobLocationType'] = $homeofficePossible ? 'TELECOMMUTE' : 'IN_PERSON';
+        if ($homeofficePossible) {
+            $result['jobLocationType'] = 'TELECOMMUTE';
+            if (!empty($addressCountry)) {
+                $result['applicantLocationRequirements'] = [
+                    '@type' => 'Country',
+                    'name' => $addressCountry,
+                ];
+            }
+        } else {
+            $result['jobLocationType'] = 'IN_PERSON';
+        }
 
         return $result;
     }

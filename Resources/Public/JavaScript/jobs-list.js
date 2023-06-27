@@ -240,8 +240,8 @@ const {
   createTextNode,
   createTreeWalker,
   importNode
-} = new Proxy(document, {
-  get: (target, method) => target[method].bind(target)
+} = new Proxy({}, {
+  get: (_, method) => document[method].bind(document)
 });
 const createHTML = (html2) => {
   const template = createElement("template");
@@ -261,6 +261,21 @@ const createContent = (text2, svg2) => svg2 ? createSVG(text2) : createHTML(text
 const reducePath = ({ childNodes }, i) => childNodes[i];
 const diff = (comment, oldNodes, newNodes) => udomdiff(
   comment.parentNode,
+  // TODO: there is a possible edge case where a node has been
+  //       removed manually, or it was a keyed one, attached
+  //       to a shared reference between renders.
+  //       In this case udomdiff might fail at removing such node
+  //       as its parent won't be the expected one.
+  //       The best way to avoid this issue is to filter oldNodes
+  //       in search of those not live, or not in the current parent
+  //       anymore, but this would require both a change to uwire,
+  //       exposing a parentNode from the firstChild, as example,
+  //       but also a filter per each diff that should exclude nodes
+  //       that are not in there, penalizing performance quite a lot.
+  //       As this has been also a potential issue with domdiff,
+  //       and both lighterhtml and hyperHTML might fail with this
+  //       very specific edge case, I might as well document this possible
+  //       "diffing shenanigan" and call it a day.
   oldNodes,
   newNodes,
   diffable,
@@ -340,12 +355,20 @@ const handleAttribute = (node, name) => {
     case "aria":
       return aria(node);
   }
-  return attribute(node, name);
+  return attribute(
+    node,
+    name
+    /*, svg*/
+  );
 };
 function handlers(options) {
   const { type, path } = options;
   const node = path.reduceRight(reducePath, this);
-  return type === "node" ? handleAnything(node) : type === "attr" ? handleAttribute(node, options.name) : text(node);
+  return type === "node" ? handleAnything(node) : type === "attr" ? handleAttribute(
+    node,
+    options.name
+    /*, options.svg*/
+  ) : text(node);
 }
 const createPath = (node) => {
   const path = [];
@@ -357,13 +380,25 @@ const createPath = (node) => {
   }
   return path;
 };
-const prefix = "is\xB5";
+const prefix = "isµ";
 const cache$1 = new WeakMapSet();
 const textOnly = /^(?:textarea|script|style|title|plaintext|xmp)$/;
 const createCache = () => ({
   stack: [],
+  // each template gets a stack for each interpolation "hole"
   entry: null,
+  // each entry contains details, such as:
+  //  * the template that is representing
+  //  * the type of node it represents (html or svg)
+  //  * the content fragment with all nodes
+  //  * the list of updates per each node (template holes)
+  //  * the "wired" node or fragment that will get updates
+  // if the template or type are different from the previous one
+  // the entry gets re-created each time
   wire: null
+  // each rendered node represent some wired content and
+  // this reference to the latest one. If different, the node
+  // will be cleaned up and the new "wire" will be appended
 });
 const createEntry = (type, template) => {
   const { content, updates } = mapUpdates(type, template);
@@ -454,12 +489,21 @@ const tag = (type) => {
     { type, template, values }
   );
   return Object.assign(
+    // non keyed operations are recognized as instance of Hole
+    // during the "unroll", recursively resolved and updated
     (template, ...values) => new Hole(type, template, values),
     {
+      // keyed operations need a reference object, usually the parent node
+      // which is showing keyed results, and optionally a unique id per each
+      // related node, handy with JSON results and mutable list of objects
+      // that usually carry a unique identifier
       for(ref2, id) {
         const memo = keyed.get(ref2) || keyed.set(ref2, new MapSet());
         return memo.get(id) || memo.set(id, fixed(createCache()));
       },
+      // it is possible to create one-off content out of the box via node tag
+      // this might return the single created node, or a fragment with all
+      // nodes present at the root level and, of course, their child nodes
       node: (template, ...values) => unroll(createCache(), new Hole(type, template, values)).valueOf()
     }
   );
@@ -666,10 +710,43 @@ function JobPosition({ title, employmentTypes, locations }, url) {
   `;
 }
 class JobsList {
+  /**
+   * Constructor
+   *
+   * @param {string} mountElementSelector
+   * @param {string} locationFilterSelector
+   * @param {string} categoryFilterSelector
+   *
+   * @memberof JobsList
+   */
   constructor(mountElementSelector, locationFilterSelector, categoryFilterSelector) {
+    /**
+     * @type {?string}
+     *
+     * @private
+     * @memberof JobsList
+     */
     __privateAdd(this, _mountElementSelector, null);
+    /**
+     * @type {?string}
+     *
+     * @private
+     * @memberof JobsList
+     */
     __privateAdd(this, _locationFilterSelector, null);
+    /**
+     * @type {?string}
+     *
+     * @private
+     * @memberof JobsList
+     */
     __privateAdd(this, _categoryFilterSelector, null);
+    /**
+     * @type {Data}
+     *
+     * @private
+     * @memberof JobsList
+     */
     __privateAdd(this, _data, {
       isFetching: true,
       jobPositions: [],
@@ -695,20 +772,50 @@ class JobsList {
     this.initLocationFilter();
     this.initCategoryFilter();
   }
+  /**
+   * @type {Data}
+   *
+   * @memberof JobsList
+   */
   get data() {
     return __privateGet(this, _data);
   }
+  /**
+   * @property {Partial<Data>} data
+   *
+   * @return {void}
+   *
+   * @memberof JobsList
+   */
   set data(data2) {
     __privateSet(this, _data, { ...__privateGet(this, _data), ...data2 });
     this.render();
   }
+  /**
+   * @type {HTMLElement}
+   *
+   * @readonly
+   * @memberof JobsList
+   */
   get mountElement() {
     return getElementOrFail(__privateGet(this, _mountElementSelector));
   }
+  /**
+   * @type {Record<string, string>}
+   *
+   * @readonly
+   * @memberof JobsList
+   */
   get translations() {
     const { translations } = this.mountElement.dataset;
     return JSON.parse(translations || "{}");
   }
+  /**
+   * @type {URL}
+   *
+   * @readonly
+   * @memberof JobsList
+   */
   get endpointUrl() {
     const { endpoint } = this.mountElement.dataset;
     if (!endpoint) {
@@ -718,6 +825,12 @@ class JobsList {
     }
     return new URL(endpoint, window.location.origin);
   }
+  /**
+   * @type {URL}
+   *
+   * @readonly
+   * @memberof JobsList
+   */
   get detailPageUrl() {
     const { detailPagePath } = this.mountElement.dataset;
     if (!detailPagePath) {
@@ -727,6 +840,14 @@ class JobsList {
     }
     return new URL(stripTrailingSlash(detailPagePath), window.location.origin);
   }
+  /**
+   * Initialize the location filter.
+   * Note: The filters are rendered from inside TYPO3 Fluid templates.
+   *
+   * @return {void}
+   *
+   * @memberof JobsList
+   */
   initLocationFilter() {
     const selectElement = document.querySelector(__privateGet(this, _locationFilterSelector));
     selectElement == null ? void 0 : selectElement.addEventListener("change", ({ currentTarget }) => {
@@ -751,6 +872,14 @@ class JobsList {
       selectElement.dispatchEvent(new Event("change"));
     }
   }
+  /**
+   * Initialize the category filter.
+   * Note: The filters are rendered from inside TYPO3 Fluid templates.
+   *
+   * @return {void}
+   *
+   * @memberof JobsList
+   */
   initCategoryFilter() {
     const selectElement = document.querySelector(__privateGet(this, _categoryFilterSelector));
     selectElement == null ? void 0 : selectElement.addEventListener("change", ({ currentTarget }) => {
@@ -775,6 +904,11 @@ class JobsList {
       selectElement.dispatchEvent(new Event("change"));
     }
   }
+  /**
+   * @return {Promise<void>}
+   *
+   * @memberof JobsList
+   */
   async fetchData() {
     this.data = { isFetching: true };
     const response = await fetch(
@@ -790,6 +924,14 @@ class JobsList {
       pages
     };
   }
+  /**
+   * The render function.
+   * Automatically called on changes to `data`.
+   *
+   * @return {Promise<void>}
+   *
+   * @memberof JobsList
+   */
   async render() {
     const { data: data2 } = this;
     if (data2.isFetching) {
@@ -827,6 +969,11 @@ class JobsList {
       </div>`
     );
   }
+  /**
+   * @return {Promise<void>}
+   *
+   * @memberof JobsList
+   */
   async mount() {
     this.fetchData();
   }
