@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.3.2] - 2023-06-27
+
+### Fixed
+- Missing homeofficePublic property in JobPosition model class.
 
 ## [2.3.0] - 2023-06-27
 

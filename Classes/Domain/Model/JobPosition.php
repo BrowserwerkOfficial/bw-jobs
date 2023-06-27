@@ -143,6 +143,13 @@ class JobPosition extends AbstractEntity
     protected $salary = 0;
 
     /**
+     * homeofficePublic
+     *
+     * @var bool
+     */
+    protected $homeofficePublic = false;
+
+    /**
      * homeofficePossible
      *
      * @var bool
