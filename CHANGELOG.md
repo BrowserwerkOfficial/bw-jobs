@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.3.3] - 2023-06-27
+
+### Added
+- TypoScript constant for configuring date format in detail view.
+
+### Changed
+- Updated Bootstrap.
+
 ## [2.3.2] - 2023-06-27
 
 ### Changed

@@ -20,6 +20,7 @@ plugin.tx_bwjobs_detail {
     senderAddress = {$plugin.tx_bwjobs_detail.settings.senderAddress}
     emailTemplateRootPath = {$plugin.tx_bwjobs_detail.settings.emailTemplateRootPath}
     emailLayoutRootPath = {$plugin.tx_bwjobs_detail.settings.emailLayoutRootPath}
+    dateFormat = %d. %B %Y
   }
 
   features {

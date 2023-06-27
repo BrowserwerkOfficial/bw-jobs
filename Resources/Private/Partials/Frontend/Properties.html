@@ -71,7 +71,7 @@
                 <f:translate key="start_date"/>
             </span>
             <span class="bw-jobs-detail-box__value">
-                <f:format.date format="%d. %B %Y">{jobPosition.startDate}</f:format.date>
+                <f:format.date format="{settings.dateFormat}">{jobPosition.startDate}</f:format.date>
             </span>
         </div>
     </f:if>
@@ -82,7 +82,7 @@
                 <f:translate key="date_posted"/>
             </span>
             <span class="bw-jobs-detail-box__value">
-                <f:format.date format="%d. %B %Y">{jobPosition.datePosted}</f:format.date>
+                <f:format.date format="{settings.dateFormat}">{jobPosition.datePosted}</f:format.date>
             </span>
         </div>
     </f:if>
@@ -93,7 +93,7 @@
                 <f:translate key="valid_through_date"/>
             </span>
             <span class="bw-jobs-detail-box__value">
-                <f:format.date format="%d. %B %Y">{jobPosition.validThroughDate}</f:format.date>
+                <f:format.date format="{settings.dateFormat}">{jobPosition.validThroughDate}</f:format.date>
             </span>
         </div>
     </f:if>
