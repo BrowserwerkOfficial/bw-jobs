@@ -206,8 +206,8 @@ return [
         'image' => [
             'exclude' => true,
             'label' => 'LLL:EXT:bw_jobs/Resources/Private/Language/locallang_db.xlf:tx_bwjobs_domain_model_contactperson.image',
-            'config' => ExtensionManagementUtility::getFileFieldTCAConfig(
-                'image',
+            'config' => [
+                'type' => 'file',
                 [
                     'appearance' => [
                         'createNewRelationLinkTitle' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:images.addFileReference',
@@ -251,8 +251,8 @@ return [
                     ],
                     'maxitems' => 1,
                 ],
-                $GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext']
-            ),
+                'allowed' => 'common-image-types'
+            ],
         ],
     ],
 ];

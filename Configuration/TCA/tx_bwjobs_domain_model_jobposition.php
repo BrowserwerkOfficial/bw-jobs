@@ -351,12 +351,11 @@ return [
             'exclude' => true,
             'label' => 'LLL:EXT:bw_jobs/Resources/Private/Language/locallang_db.xlf:tx_bwjobs_domain_model_jobposition.valid_through_date',
             'config' => [
-                'dbType' => 'date',
-                'type' => 'input',
-                'renderType' => 'inputDateTime',
+                'type' => 'datetime',
+                'format' => 'date',
                 'size' => 7,
                 'eval' => 'date',
-                'default' => null,
+                'default' => 0,
             ],
         ],
         'salary_public' => [

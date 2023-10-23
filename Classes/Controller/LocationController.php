@@ -14,7 +14,7 @@ use TYPO3\CMS\Core\Imaging\Icon;
 use TYPO3\CMS\Core\Imaging\IconFactory;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 use TYPO3\CMS\Extbase\Utility\LocalizationUtility;
-
+use TYPO3\CMS\Core\Http\ApplicationType;
 /**
  * This file is part of the "BW Jobs" Extension for TYPO3 CMS.
  *
@@ -107,7 +107,7 @@ class LocationController extends ActionController
     public function administrationAction(): ResponseInterface
     {
         // See https://stackoverflow.com/questions/69780363/typo3-v11-5-1578950324-runtimeexception-the-given-page-record-is-invalid-mis
-        if (TYPO3_MODE == 'BE' && !empty($this->settings['storagePid'])) {
+        if (ApplicationType::fromRequest($GLOBALS['TYPO3_REQUEST'])->isBackend()  && !empty($this->settings['storagePid'])) {
             $_POST['id'] = (int)$this->settings['storagePid'];
         }
 

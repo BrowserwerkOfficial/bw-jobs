@@ -26,4 +26,24 @@ return [
         'provider' => SvgIconProvider::class,
         'source' => 'EXT:bw_jobs/Resources/Public/Icons/user_mod_jobs.svg',
     ],
+    'bw_jobs-modulegroup-locations' => [
+        'provider' => SvgIconProvider::class,
+        'source' => 'EXT:bw_jobs/Resources/Public/Icons/user_mod_locations.svg',
+    ],
+    'bw_jobs-modulegroup-jobpositions' => [
+        'provider' => SvgIconProvider::class,
+        'source' => 'EXT:bw_jobs/Resources/Public/Icons/user_mod_jobpositions.svg',
+    ],
+    'bw_jobs-modulegroup-employmenttypes' => [
+        'provider' => SvgIconProvider::class,
+        'source' => 'EXT:bw_jobs/Resources/Public/Icons/user_mod_employmenttypes.svg',
+    ],
+    'bw_jobs-modulegroup-contactpersons' => [
+        'provider' => SvgIconProvider::class,
+        'source' => 'EXT:bw_jobs/Resources/Public/Icons/user_mod_contactpersons.svg',
+    ],
+    'bw_jobs-modulegroup-categories' => [
+        'provider' => SvgIconProvider::class,
+        'source' => 'EXT:bw_jobs/Resources/Public/Icons/user_mod_categories.svg',
+    ]
 ];
