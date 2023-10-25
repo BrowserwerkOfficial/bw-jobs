@@ -6,8 +6,12 @@ All notable changes to this project will be documented in this file.
 
 ### Changed
 - Support TYPO3 12.
-- Removed template constants in `module.tx_bwjobs_jobs.view`.
-- Renamed constants `module.tx_bwjobs_jobs` to `module.tx_bwjobs`.
+- Removed `view` constants in `module.tx_bwjobs_jobs.view`.
+- Renamed constants group `module.tx_bwjobs_jobs` to `module.tx_bwjobs`.
+- Moved `storagePid` constant from `persistence` to `settings` group.
+
+## Added
+- Option to hide footer in backend modules.
 
 ## [2.3.3] - 2023-06-27
 

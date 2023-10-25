@@ -10,11 +10,11 @@ plugin.tx_bwjobs_detail {
   }
 
   persistence {
-    storagePid = {$module.tx_bwjobs.persistence.storagePid}
+    storagePid = {$module.tx_bwjobs.settings.storagePid}
   }
 
   settings {
-    storagePid = {$module.tx_bwjobs.persistence.storagePid}
+    storagePid = {$module.tx_bwjobs.settings.storagePid}
     formPersistenceIdentifier = {$plugin.tx_bwjobs_detail.settings.formPersistenceIdentifier}
     senderName = {$plugin.tx_bwjobs_detail.settings.senderName}
     senderAddress = {$plugin.tx_bwjobs_detail.settings.senderAddress}
@@ -47,11 +47,11 @@ plugin.tx_bwjobs_list {
   }
 
   persistence {
-    storagePid = {$module.tx_bwjobs.persistence.storagePid}
+    storagePid = {$module.tx_bwjobs.settings.storagePid}
   }
 
   settings {
-    storagePid = {$module.tx_bwjobs.persistence.storagePid}
+    storagePid = {$module.tx_bwjobs.settings.storagePid}
     itemsPerPage = {$plugin.tx_bwjobs_list.settings.itemsPerPage}
   }
 
@@ -76,11 +76,12 @@ plugin.tx_bwjobs_api {
 # BwJobs Module
 module.tx_bwjobs {
   persistence {
-    storagePid = {$module.tx_bwjobs.persistence.storagePid}
+    storagePid = {$module.tx_bwjobs.settings.storagePid}
   }
 
   settings {
-    storagePid = {$module.tx_bwjobs.persistence.storagePid}
+    storagePid = {$module.tx_bwjobs.settings.storagePid}
+    hideFooter = {$module.tx_bwjobs.settings.hideFooter}
   }
 }
 
@@ -102,7 +103,7 @@ module.tx_form {
   }
 }
 
-# API Page
+# BwJobs API Page
 bwjobs_api = PAGE
 bwjobs_api {
   typeNum = 1655192624

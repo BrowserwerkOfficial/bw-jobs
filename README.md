@@ -85,6 +85,7 @@ routeEnhancers:
 | Constant Name | Default Value | Description |
 | ------ | --- | ----------- |
 | storagePid | 1 | The pid of the page where entities should be stored on. |
+| hideFooter | 0 | Whether the footer in backend modules should be hidden. |
 
 ## Introduction for editors
 

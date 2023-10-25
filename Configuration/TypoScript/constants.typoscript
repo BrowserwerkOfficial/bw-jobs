@@ -47,8 +47,10 @@ plugin.tx_bwjobs_list {
 }
 
 module.tx_bwjobs {
-  persistence {
+  settings {
     # cat=module.tx_bwjobs; type=string; label=Default storage PID
     storagePid = 1
+    # cat=module.tx_bwjobs; type=boolean; label=Hide the footer in backend modules
+    hideFooter = 0
   }
 }

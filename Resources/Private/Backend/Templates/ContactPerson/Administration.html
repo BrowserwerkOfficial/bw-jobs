@@ -26,7 +26,9 @@
         tableName="tx_bwjobs_domain_model_contactperson"
     />
 
-    <f:render partial="Footer"/>
+    <f:if condition="{settings.hideFooter} != 1">
+        <f:render partial="Footer"/>
+    </f:if>
 </f:section>
 
 </html>

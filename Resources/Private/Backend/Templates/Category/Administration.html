@@ -10,7 +10,7 @@
     </h1>
 
     <f:be.tableList
-        storagePid="{storagePid}"
+        storagePid="{settings.storagePid}"
         clickTitleMode="edit"
         enableClickMenu="true"
         enableControlPanels="true"
@@ -21,7 +21,9 @@
         tableName="tx_bwjobs_domain_model_category"
     />
 
-    <f:render partial="Footer"/>
+    <f:if condition="{settings.hideFooter} != 1">
+        <f:render partial="Footer"/>
+    </f:if>
 </f:section>
 
 </html>
