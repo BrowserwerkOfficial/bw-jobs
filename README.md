@@ -80,14 +80,11 @@ routeEnhancers:
 | partialRootPath | EXT:bw_jobs/Resources/Private/Partials/ | The path Fluid partials are stored in. |
 | layoutRootPath | EXT:bw_jobs/Resources/Private/Layouts/ | The path Fluid layouts are stored in. |
 
-**module.tx_bwjobs_jobs.settings**
+**module.tx_bwjobs.settings**
 
 | Constant Name | Default Value | Description |
 | ------ | --- | ----------- |
 | storagePid | 1 | The pid of the page where entities should be stored on. |
-| templateRootPath | EXT:bw_jobs/Resources/Private/Backend/Templates/ | The path Fluid templates are stored in. |
-| partialRootPath | EXT:bw_jobs/Resources/Private/Backend/Partials/ | The path Fluid partials are stored in. |
-| layoutRootPath | EXT:bw_jobs/Resources/Private/Backend/Layouts/ | The path Fluid layouts are stored in. |
 
 ## Introduction for editors
 
@@ -165,14 +162,9 @@ plugin.tx_bwjobs_detail.view.layoutRootPath = EXT:my_extension/Resources/Private
 plugin.tx_bwjobs_list.view.templateRootPath = EXT:my_extension/Resources/Private/Templates/
 plugin.tx_bwjobs_list.view.partialRootPath = EXT:my_extension/Resources/Private/Partials/
 plugin.tx_bwjobs_list.view.layoutRootPath = EXT:my_extension/Resources/Private/Layouts/
-
-# Backend module
-module.tx_bwjobs_jobs.view.templateRootPath = EXT:my_extension/Resources/Private/Backend/Templates/
-module.tx_bwjobs_jobs.view.partialRootPath = EXT:my_extension/Resources/Private/Backend/Partials/
-module.tx_bwjobs_jobs.view.layoutRootPath = EXT:my_extension/Resources/Private/Backend/Layouts/
 ```
 
-> This will not completely disable the default templates, it just allows you to override them from your own extension. If you wish to add more than just one additional path, use the TypoScript setup for *plugin.tx_bwjobs_detail.view*, *plugin.tx_bwjobs_list.view* and *module.tx_bwjobs_jobs.view* instead.
+> This will not completely disable the default templates, it just allows you to override them from your own extension. If you wish to add more than just one additional path, use the TypoScript setup for *plugin.tx_bwjobs_detail.view* and *plugin.tx_bwjobs_list.view* instead.
 
 ## Customizing the default styles
 

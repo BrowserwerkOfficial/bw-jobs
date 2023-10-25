@@ -1,4 +1,5 @@
 <?php
+
 $EM_CONF[$_EXTKEY] = [
     'title' => 'BW Jobs',
     'description' => 'A job board extension for TYPO3 CMS.',
@@ -8,14 +9,10 @@ $EM_CONF[$_EXTKEY] = [
     'author_company' => 'Browserwerk GmbH',
     'state' => 'stable',
     'clearCacheOnLoad' => 1,
-    'version' => '2.3.3',
+    'version' => '3.0.0',
     'constraints' => [
         'depends' => [
-            'typo3' => '11.5.0-11.99.99',
-        ],
-        'conflicts' => [
-        ],
-        'suggests' => [
+            'typo3' => '12.4.0-12.99.99',
         ],
     ],
 ];

@@ -2,7 +2,7 @@
 	"name": "browserwerk/bw-jobs",
 	"type": "typo3-cms-extension",
 	"description": "A job board extension for TYPO3 CMS.",
-	"version": "2.3.3",
+	"version": "3.0.0",
 	"authors": [
 		{
 			"name": "Leon Seipp",
@@ -18,19 +18,11 @@
 	},
 	"license": "GPL-2.0-or-later",
 	"require": {
-		"typo3/cms-core": "^12.4.4"
-	},
-	"require-dev": {
-		"typo3/testing-framework": "^8.0.5"
+		"typo3/cms-core": "^12.4.0"
 	},
 	"autoload": {
 		"psr-4": {
 			"Browserwerk\\BwJobs\\": "Classes"
-		}
-	},
-	"autoload-dev": {
-		"psr-4": {
-			"Browserwerk\\BwJobs\\Tests\\": "Tests"
 		}
 	},
 	"replace": {

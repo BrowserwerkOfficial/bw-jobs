@@ -2,7 +2,7 @@
     data-namespace-typo3-fluid="true"
     xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
 
-<f:layout name="Default"/>
+<f:layout name="Module"/>
 
 <f:section name="Content">
     <h1>
@@ -10,8 +10,8 @@
     </h1>
 
     <f:be.tableList
-        storagePid="{settings.storagePid}"
-        clickTitleMode="info"
+        storagePid="{storagePid}"
+        clickTitleMode="edit"
         enableClickMenu="true"
         enableControlPanels="true"
         fieldList="{
@@ -27,7 +27,7 @@
         tableName="tx_bwjobs_domain_model_location"
     />
 
-    <f:flashMessages/>
+    <f:render partial="Footer"/>
 </f:section>
 
 </html>

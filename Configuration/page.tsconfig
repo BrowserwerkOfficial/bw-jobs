@@ -1,0 +1,27 @@
+mod {
+  wizards.newContentElement.wizardItems.plugins {
+    elements {
+      detail {
+        iconIdentifier = bwjobs-plugin-detail
+        title = LLL:EXT:bw_jobs/Resources/Private/Language/locallang_plugin_detail.xlf:title
+        description = LLL:EXT:bw_jobs/Resources/Private/Language/locallang_plugin_detail.xlf:description
+        tt_content_defValues {
+          CType = list
+          list_type = bwjobs_detail
+        }
+      }
+      list {
+        iconIdentifier = bwjobs-plugin-list
+        title = LLL:EXT:bw_jobs/Resources/Private/Language/locallang_plugin_list.xlf:title
+        description = LLL:EXT:bw_jobs/Resources/Private/Language/locallang_plugin_list.xlf:description
+        tt_content_defValues {
+          CType = list
+          list_type = bwjobs_list
+        }
+      }
+    }
+    show = *
+  }
+}
+
+templates.browserwerk/bw-jobs.1 = browserwerk/bw-jobs:Resources/Private/Backend

@@ -1,12 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
+use Browserwerk\BwJobs\Controller\CategoryController;
 use Browserwerk\BwJobs\Controller\ContactPersonController;
 use Browserwerk\BwJobs\Controller\EmploymentTypeController;
 use Browserwerk\BwJobs\Controller\JobPositionController;
 use Browserwerk\BwJobs\Controller\LocationController;
-use Browserwerk\BwJobs\Controller\CategoryController;
-use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
-use TYPO3\CMS\Extbase\Utility\ExtensionUtility;
 
 /**
  * This file is part of the "BW Jobs" Extension for TYPO3 CMS.
@@ -14,25 +14,24 @@ use TYPO3\CMS\Extbase\Utility\ExtensionUtility;
  * For the full copyright and license information, please read the
  * LICENSE.txt file that was distributed with this source code.
  *
- * (c) 2022 Leon Seipp <l.seipp@browserwerk.de>, Browserwerk GmbH
+ * (c) 2023 Leon Seipp <l.seipp@browserwerk.de>, Browserwerk GmbH
  */
 
 return [
-    'jobs_BwJobs' => [
+    'bwjobs' => [
         'parent' => '',
         'position' => ['after' => 'web'],
         'access' => 'user,group',
-        'iconIdentifier' => 'bw_jobs-modulegroup-jobs',
-        'path' => '/module/web/BwJobs',
+        'iconIdentifier' => 'bwjobs',
         'labels' => 'LLL:EXT:bw_jobs/Resources/Private/Language/locallang_mod.xlf',
         'extensionName' => 'BwJobs',
     ],
-    'jobs_BwJobsJobpositions' => [
-        'parent' => 'jobs_BwJobs',
-        'position' => ['before' => '*'],
+    'bwjobs_jobpositions' => [
+        'parent' => 'bwjobs',
+        'standalone' => true,
         'access' => 'user,group',
-        'iconIdentifier' => 'bw_jobs-modulegroup-jobpositions',
-        'path' => 'module/BwJobsJobs/BwJobsJobpositions',
+        'iconIdentifier' => 'bwjobs-jobpositions',
+        'path' => 'module/bwjobs/jobpositions',
         'labels' => 'LLL:EXT:bw_jobs/Resources/Private/Language/locallang_mod_jobpositions.xlf',
         'extensionName' => 'BwJobs',
         'controllerActions' => [
@@ -41,62 +40,60 @@ return [
             ],
         ],
     ],
-    'jobs_BwJobsEmploymentTypes' => [
-        'parent' => 'jobs_BwJobs',
-        'position' => ['before' => '*'],
+    'bwjobs_employmenttypes' => [
+        'parent' => 'bwjobs',
+        'standalone' => true,
         'access' => 'user,group',
-        'iconIdentifier' => 'bw_jobs-modulegroup-employmenttypes',
-        'path' => 'module/BwJobsJobs/BwJobsEmploymentTypes',
+        'iconIdentifier' => 'bwjobs-employmenttypes',
+        'path' => 'module/bwjobs/employmenttypes',
         'labels' => 'LLL:EXT:bw_jobs/Resources/Private/Language/locallang_mod_employmenttypes.xlf',
         'extensionName' => 'BwJobs',
         'controllerActions' => [
             EmploymentTypeController::class => [
                 'administration',
-                ],
             ],
+        ],
     ],
-    'jobs_BwJobsContactPersons' => [
-        'parent' => 'jobs_BwJobs',
-        'position' => ['before' => '*'],
+    'bwjobs_contactpersons' => [
+        'parent' => 'bwjobs',
+        'standalone' => true,
         'access' => 'user,group',
-        'iconIdentifier' => 'bw_jobs-modulegroup-contactpersons',
-        'path' => 'module/BwJobsJobs/BwJobsContactPersons',
+        'iconIdentifier' => 'bwjobs-contactpersons',
+        'path' => 'module/bwjobs/contactpersons',
         'labels' => 'LLL:EXT:bw_jobs/Resources/Private/Language/locallang_mod_contactpersons.xlf',
         'extensionName' => 'BwJobs',
         'controllerActions' => [
-        ContactPersonController::class => [
+            ContactPersonController::class => [
                 'administration',
             ],
         ],
     ],
-    'jobs_BwJobsLocations' => [
-        'parent' => 'jobs_BwJobs',
-        'position' => ['before' => '*'],
+    'bwjobs_locations' => [
+        'parent' => 'bwjobs',
+        'standalone' => true,
         'access' => 'user,group',
-        'iconIdentifier' => 'bw_jobs-modulegroup-locations',
-        'path' => 'module/BwJobsJobs/BwJobsLocations',
+        'iconIdentifier' => 'bwjobs-locations',
+        'path' => 'module/bwjobs/locations',
         'labels' => 'LLL:EXT:bw_jobs/Resources/Private/Language/locallang_mod_locations.xlf',
         'extensionName' => 'BwJobs',
         'controllerActions' => [
-        LocationController::class => [
+            LocationController::class => [
                 'administration',
             ],
         ],
     ],
-    'jobs_BwJobsCategories' => [
-        'parent' => 'jobs_BwJobs',
-        'position' => ['before' => '*'],
+    'bwjobs_categories' => [
+        'parent' => 'bwjobs',
+        'standalone' => true,
         'access' => 'user,group',
-        'iconIdentifier' => 'bw_jobs-modulegroup-categories',
-        'path' => 'module/BwJobsJobs/BwJobsCategories',
+        'iconIdentifier' => 'bwjobs-categories',
+        'path' => 'module/bwjobs/categories',
         'labels' => 'LLL:EXT:bw_jobs/Resources/Private/Language/locallang_mod_categories.xlf',
         'extensionName' => 'BwJobs',
         'controllerActions' => [
-        CategoryController::class => [
+            CategoryController::class => [
                 'administration',
             ],
         ],
     ],
 ];
-
-

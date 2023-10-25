@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [3.0.0] - 2023-10-25
+
+### Changed
+- Support TYPO3 12.
+- Removed template constants in `module.tx_bwjobs_jobs.view`.
+- Renamed constants `module.tx_bwjobs_jobs` to `module.tx_bwjobs`.
+
 ## [2.3.3] - 2023-06-27
 
 ### Added
