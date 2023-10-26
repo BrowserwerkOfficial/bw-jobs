@@ -145,6 +145,7 @@ return [
             'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.starttime',
             'config' => [
                 'type' => 'datetime',
+                'format' => 'date',
                 'default' => 0,
             ],
             'l10n_mode' => 'exclude',
@@ -155,6 +156,7 @@ return [
             'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.endtime',
             'config' => [
                 'type' => 'datetime',
+                'format' => 'date',
                 'default' => 0,
                 'range' => [
                     'upper' => mktime(0, 0, 0, 1, 1, 2038),
@@ -168,7 +170,6 @@ return [
             'label' => 'LLL:EXT:bw_jobs/Resources/Private/Language/locallang_db.xlf:tx_bwjobs_domain_model_jobposition.title',
             'config' => [
                 'type' => 'input',
-                'size' => 30,
                 'eval' => 'trim,uniqueInPid',
                 'required' => true,
                 'default' => '',
@@ -338,7 +339,6 @@ return [
             'label' => 'LLL:EXT:bw_jobs/Resources/Private/Language/locallang_db.xlf:tx_bwjobs_domain_model_jobposition.work_hours',
             'config' => [
                 'type' => 'number',
-                'size' => 4,
                 'default' => 40,
                 'range' => [
                     'lower' => 0,
@@ -384,7 +384,6 @@ return [
             'label' => 'LLL:EXT:bw_jobs/Resources/Private/Language/locallang_db.xlf:tx_bwjobs_domain_model_jobposition.salary',
             'config' => [
                 'type' => 'number',
-                'size' => 4,
                 'range' => [
                     'lower' => 0,
                 ],
@@ -648,6 +647,7 @@ return [
             'label' => 'LLL:EXT:bw_jobs/Resources/Private/Language/locallang_db.xlf:tx_bwjobs_domain_model_jobposition.date_posted',
             'config' => [
                 'type' => 'datetime',
+                'format' => 'date',
                 'required' => true,
                 'default' => time(),
             ],
@@ -658,7 +658,6 @@ return [
             'label' => 'LLL:EXT:bw_jobs/Resources/Private/Language/locallang_db.xlf:tx_bwjobs_domain_model_jobposition.seo_title',
             'config' => [
                 'type' => 'input',
-                'size' => 40,
                 'max' => 255,
                 'eval' => 'trim',
             ],
@@ -679,7 +678,6 @@ return [
             'label' => 'LLL:EXT:bw_jobs/Resources/Private/Language/locallang_db.xlf:tx_bwjobs_domain_model_jobposition.og_title',
             'config' => [
                 'type' => 'input',
-                'size' => 40,
                 'max' => 255,
                 'eval' => 'trim',
             ],
@@ -709,7 +707,6 @@ return [
             'label' => 'LLL:EXT:bw_jobs/Resources/Private/Language/locallang_db.xlf:tx_bwjobs_domain_model_jobposition.twitter_title',
             'config' => [
                 'type' => 'input',
-                'size' => 40,
                 'max' => 255,
                 'eval' => 'trim',
             ],
@@ -771,8 +768,6 @@ return [
                 'foreign_table' => 'tx_bwjobs_domain_model_employmenttype',
                 'foreign_table_where' => ' AND tx_bwjobs_domain_model_employmenttype.sys_language_uid = ###REC_FIELD_sys_language_uid###',
                 'MM' => 'tx_bwjobs_jobposition_employmenttype_mm',
-                'size' => 10,
-                'autoSizeMax' => 30,
                 'minitems' => 1,
                 'maxitems' => 9999,
                 'multiple' => 0,
@@ -798,8 +793,6 @@ return [
                 'foreign_table' => 'tx_bwjobs_domain_model_location',
                 'foreign_table_where' => ' AND tx_bwjobs_domain_model_location.sys_language_uid = ###REC_FIELD_sys_language_uid###',
                 'MM' => 'tx_bwjobs_jobposition_location_mm',
-                'size' => 10,
-                'autoSizeMax' => 30,
                 'minitems' => 1,
                 'maxitems' => 9999,
                 'multiple' => 0,
@@ -841,8 +834,6 @@ return [
                 'foreign_table' => 'tx_bwjobs_domain_model_category',
                 'foreign_table_where' => ' AND tx_bwjobs_domain_model_category.sys_language_uid = ###REC_FIELD_sys_language_uid###',
                 'MM' => 'tx_bwjobs_jobposition_category_mm',
-                'size' => 10,
-                'autoSizeMax' => 30,
                 'minitems' => 0,
                 'maxitems' => 9999,
                 'multiple' => 0,

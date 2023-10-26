@@ -27,63 +27,63 @@ class Location extends AbstractEntity
      *
      * @var string
      */
-    protected $title = '';
+    protected $title;
 
     /**
      * organization
      *
      * @var string
      */
-    protected $organization = '';
+    protected $organization;
 
     /**
      * description
      *
      * @var string
      */
-    protected $description = '';
+    protected $description;
 
     /**
      * street
      *
      * @var string
      */
-    protected $street = '';
+    protected $street;
 
     /**
      * city
      *
      * @var string
      */
-    protected $city = '';
+    protected $city;
 
     /**
      * zip
      *
      * @var string
      */
-    protected $zip = '';
+    protected $zip;
 
     /**
      * region
      *
      * @var string
      */
-    protected $region = '';
+    protected $region;
 
     /**
      * country
      *
      * @var string
      */
-    protected $country = '';
+    protected $country;
 
     /**
      * countryZone
      *
      * @var string
      */
-    protected $countryZone = '';
+    protected $countryZone;
 
     /**
      * image

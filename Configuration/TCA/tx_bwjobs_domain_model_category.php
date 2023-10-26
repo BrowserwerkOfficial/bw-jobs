@@ -123,7 +123,6 @@ return [
             'label' => 'LLL:EXT:bw_jobs/Resources/Private/Language/locallang_db.xlf:tx_bwjobs_domain_model_category.title',
             'config' => [
                 'type' => 'input',
-                'size' => 30,
                 'eval' => 'trim,uniqueInPid',
                 'required' => true,
                 'default' => '',

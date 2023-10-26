@@ -25,21 +25,21 @@ class EmploymentType extends AbstractEntity
      *
      * @var string
      */
-    protected $title = '';
+    protected $title;
 
     /**
      * description
      *
      * @var string
      */
-    protected $description = '';
+    protected $description;
 
     /**
      * type
      *
      * @var string
      */
-    protected $type = '';
+    protected $type;
 
     /**
      * Returns the title

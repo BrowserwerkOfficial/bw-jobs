@@ -28,91 +28,91 @@ class JobPosition extends AbstractEntity
      *
      * @var string
      */
-    protected $title = '';
+    protected $title;
 
     /**
      * slug
      *
      * @var string
      */
-    protected $slug = '';
+    protected $slug;
 
     /**
      * teaser
      *
      * @var string
      */
-    protected $teaser = '';
+    protected $teaser;
 
     /**
      * description
      *
      * @var string
      */
-    protected $description = '';
+    protected $description;
 
     /**
      * requiredEducation
      *
      * @var string
      */
-    protected $requiredEducation = '';
+    protected $requiredEducation;
 
     /**
      * educationCategories
      *
      * @var string
      */
-    protected $educationCategories = '';
+    protected $educationCategories;
 
     /**
      * requiredExperience
      *
      * @var string
      */
-    protected $requiredExperience = '';
+    protected $requiredExperience;
 
     /**
      * requiredQualifications
      *
      * @var string
      */
-    protected $requiredQualifications = '';
+    protected $requiredQualifications;
 
     /**
      * requiredResponsibilities
      *
      * @var string
      */
-    protected $requiredResponsibilities = '';
+    protected $requiredResponsibilities;
 
     /**
      * requiredSkills
      *
      * @var string
      */
-    protected $requiredSkills = '';
+    protected $requiredSkills;
 
     /**
      * requiredCommitments
      *
      * @var string
      */
-    protected $requiredCommitments = '';
+    protected $requiredCommitments;
 
     /**
      * benefits
      *
      * @var string
      */
-    protected $benefits = '';
+    protected $benefits;
 
     /**
      * workHours
      *
      * @var int
      */
-    protected $workHours = 0;
+    protected $workHours;
 
     /**
      * startDate
@@ -133,56 +133,56 @@ class JobPosition extends AbstractEntity
      *
      * @var bool
      */
-    protected $salaryPublic = false;
+    protected $salaryPublic;
 
     /**
      * salary
      *
      * @var int
      */
-    protected $salary = 0;
+    protected $salary;
 
     /**
      * homeofficePublic
      *
      * @var bool
      */
-    protected $homeofficePublic = false;
+    protected $homeofficePublic;
 
     /**
      * homeofficePossible
      *
      * @var bool
      */
-    protected $homeofficePossible = false;
+    protected $homeofficePossible;
 
     /**
      * directApplicationPossible
      *
      * @var bool
      */
-    protected $directApplicationPossible = false;
+    protected $directApplicationPossible;
 
     /**
      * currency
      *
      * @var string
      */
-    protected $currency = '';
+    protected $currency;
 
     /**
      * paymentCycle
      *
      * @var string
      */
-    protected $paymentCycle = '';
+    protected $paymentCycle;
 
     /**
      * level
      *
      * @var string
      */
-    protected $level = '';
+    protected $level;
 
     /**
      * datePosted
@@ -259,7 +259,7 @@ class JobPosition extends AbstractEntity
      *
      * @var bool
      */
-    protected $employmentTypesPublic = false;
+    protected $employmentTypesPublic;
 
     /**
      * employmentTypes
@@ -280,7 +280,7 @@ class JobPosition extends AbstractEntity
      *
      * @var bool
      */
-    protected $categoriesPublic = false;
+    protected $categoriesPublic;
 
     /**
      * categories
@@ -294,7 +294,7 @@ class JobPosition extends AbstractEntity
      *
      * @var bool
      */
-    protected $headlinesVisible = false;
+    protected $headlinesVisible;
 
     /**
      * Returns the title

@@ -26,49 +26,49 @@ class ContactPerson extends AbstractEntity
      *
      * @var string
      */
-    protected $title = '';
+    protected $title;
 
     /**
      * gender
      *
      * @var string
      */
-    protected $gender = '';
+    protected $gender;
 
     /**
      * name
      *
      * @var string
      */
-    protected $name = '';
+    protected $name;
 
     /**
      * email
      *
      * @var string
      */
-    protected $email = '';
+    protected $email;
 
     /**
      * phone
      *
      * @var string
      */
-    protected $phone = '';
+    protected $phone;
 
     /**
      * fax
      *
      * @var string
      */
-    protected $fax = '';
+    protected $fax;
 
     /**
      * address
      *
      * @var string
      */
-    protected $address = '';
+    protected $address;
 
     /**
      * image

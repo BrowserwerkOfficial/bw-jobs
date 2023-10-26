@@ -131,7 +131,6 @@ return [
             'label' => 'LLL:EXT:bw_jobs/Resources/Private/Language/locallang_db.xlf:tx_bwjobs_domain_model_location.title',
             'config' => [
                 'type' => 'input',
-                'size' => 30,
                 'eval' => 'trim,uniqueInPid',
                 'required' => true,
                 'default' => '',
@@ -142,7 +141,6 @@ return [
             'label' => 'LLL:EXT:bw_jobs/Resources/Private/Language/locallang_db.xlf:tx_bwjobs_domain_model_location.organization',
             'config' => [
                 'type' => 'input',
-                'size' => 30,
                 'eval' => 'trim',
                 'default' => '',
             ],
@@ -165,7 +163,6 @@ return [
             'label' => 'LLL:EXT:bw_jobs/Resources/Private/Language/locallang_db.xlf:tx_bwjobs_domain_model_location.street',
             'config' => [
                 'type' => 'input',
-                'size' => 30,
                 'eval' => 'trim',
                 'required' => true,
                 'default' => '',
@@ -176,7 +173,6 @@ return [
             'label' => 'LLL:EXT:bw_jobs/Resources/Private/Language/locallang_db.xlf:tx_bwjobs_domain_model_location.city',
             'config' => [
                 'type' => 'input',
-                'size' => 30,
                 'eval' => 'trim',
                 'required' => true,
                 'default' => '',
@@ -187,7 +183,6 @@ return [
             'label' => 'LLL:EXT:bw_jobs/Resources/Private/Language/locallang_db.xlf:tx_bwjobs_domain_model_location.zip',
             'config' => [
                 'type' => 'input',
-                'size' => 30,
                 'eval' => 'trim',
                 'required' => true,
                 'default' => '',
@@ -229,7 +224,6 @@ return [
             'label' => 'LLL:EXT:bw_jobs/Resources/Private/Language/locallang_db.xlf:tx_bwjobs_domain_model_location.country',
             'config' => [
                 'type' => 'input',
-                'size' => 30,
                 'eval' => 'trim',
                 'required' => true,
                 'default' => '',
@@ -514,8 +508,6 @@ return [
                 'foreign_table' => 'tx_bwjobs_domain_model_contactperson',
                 'foreign_table_where' => ' AND tx_bwjobs_domain_model_contactperson.sys_language_uid = ###REC_FIELD_sys_language_uid###',
                 'MM' => 'tx_bwjobs_location_contactperson_mm',
-                'size' => 10,
-                'autoSizeMax' => 30,
                 'maxitems' => 9999,
                 'multiple' => 0,
                 'fieldControl' => [

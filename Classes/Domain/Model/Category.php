@@ -25,7 +25,7 @@ class Category extends AbstractEntity
      *
      * @var string
      */
-    protected $title = '';
+    protected $title;
 
     /**
      * Returns the title

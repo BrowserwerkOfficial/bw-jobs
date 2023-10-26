@@ -130,7 +130,6 @@ return [
             'label' => 'LLL:EXT:bw_jobs/Resources/Private/Language/locallang_db.xlf:tx_bwjobs_domain_model_contactperson.title',
             'config' => [
                 'type' => 'input',
-                'size' => 30,
                 'eval' => 'trim,uniqueInPid',
                 'required' => true,
                 'default' => '',
@@ -164,7 +163,6 @@ return [
             'label' => 'LLL:EXT:bw_jobs/Resources/Private/Language/locallang_db.xlf:tx_bwjobs_domain_model_contactperson.name',
             'config' => [
                 'type' => 'input',
-                'size' => 30,
                 'eval' => 'trim',
                 'required' => true,
                 'default' => '',
@@ -175,7 +173,6 @@ return [
             'label' => 'LLL:EXT:bw_jobs/Resources/Private/Language/locallang_db.xlf:tx_bwjobs_domain_model_contactperson.email',
             'config' => [
                 'type' => 'email',
-                'size' => 30,
                 'eval' => 'trim',
                 'default' => '',
             ],
@@ -185,7 +182,6 @@ return [
             'label' => 'LLL:EXT:bw_jobs/Resources/Private/Language/locallang_db.xlf:tx_bwjobs_domain_model_contactperson.phone',
             'config' => [
                 'type' => 'input',
-                'size' => 30,
                 'eval' => 'trim',
                 'default' => '',
             ],
@@ -195,7 +191,6 @@ return [
             'label' => 'LLL:EXT:bw_jobs/Resources/Private/Language/locallang_db.xlf:tx_bwjobs_domain_model_contactperson.fax',
             'config' => [
                 'type' => 'input',
-                'size' => 30,
                 'eval' => 'trim',
                 'default' => '',
             ],
@@ -205,7 +200,6 @@ return [
             'label' => 'LLL:EXT:bw_jobs/Resources/Private/Language/locallang_db.xlf:tx_bwjobs_domain_model_contactperson.address',
             'config' => [
                 'type' => 'input',
-                'size' => 30,
                 'eval' => 'trim',
                 'default' => '',
             ],
