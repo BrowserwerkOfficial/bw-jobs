@@ -627,7 +627,7 @@ return [
                     ['label' => 'LLL:EXT:bw_jobs/Resources/Private/Language/locallang_db.xlf:tx_bwjobs_domain_model_jobposition.payment_cycle_hourly', 'value' => 'HOURLY'],
                     ['label' => 'LLL:EXT:bw_jobs/Resources/Private/Language/locallang_db.xlf:tx_bwjobs_domain_model_jobposition.payment_cycle_daily', 'value' => 'DAILY'],
                     ['label' => 'LLL:EXT:bw_jobs/Resources/Private/Language/locallang_db.xlf:tx_bwjobs_domain_model_jobposition.payment_cycle_monthly', 'value' => 'MONTHLY'],
-                    ['label' => 'LLL:EXT:bw_jobs/Resources/Private/Language/locallang_db.xlf:tx_bwjobs_domain_model_jobposition.payment_cycle_yearly', 'value' =>'YEARLY'],
+                    ['label' => 'LLL:EXT:bw_jobs/Resources/Private/Language/locallang_db.xlf:tx_bwjobs_domain_model_jobposition.payment_cycle_yearly', 'value' => 'YEARLY'],
                 ],
                 'required' => true,
                 'default' => 'MONTHLY',
