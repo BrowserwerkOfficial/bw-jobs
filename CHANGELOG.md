@@ -2,10 +2,10 @@
 
 All notable changes to this project will be documented in this file.
 
-## [3.0.0] - 2023-10-25
+## [3.0.0] - 2023-10-31
 
 ### Changed
-- Support TYPO3 12.
+- Added support for TYPO3 12, dropped support for TYPO3 11.
 - Removed `view` constants in `module.tx_bwjobs_jobs.view`.
 - Renamed constants group `module.tx_bwjobs_jobs` to `module.tx_bwjobs`.
 - Moved `storagePid` constant from `persistence` to `settings` group.
