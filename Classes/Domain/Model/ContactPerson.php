@@ -13,7 +13,7 @@ use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
  * For the full copyright and license information, please read the
  * LICENSE.txt file that was distributed with this source code.
  *
- * (c) 2022 Leon Seipp <l.seipp@browserwerk.de>, Browserwerk GmbH
+ * (c) 2023 Leon Seipp <l.seipp@browserwerk.de>, Browserwerk GmbH
  */
 
 /**
@@ -26,49 +26,49 @@ class ContactPerson extends AbstractEntity
      *
      * @var string
      */
-    protected $title = '';
+    protected $title;
 
     /**
      * gender
      *
      * @var string
      */
-    protected $gender = '';
+    protected $gender;
 
     /**
      * name
      *
      * @var string
      */
-    protected $name = '';
+    protected $name;
 
     /**
      * email
      *
      * @var string
      */
-    protected $email = '';
+    protected $email;
 
     /**
      * phone
      *
      * @var string
      */
-    protected $phone = '';
+    protected $phone;
 
     /**
      * fax
      *
      * @var string
      */
-    protected $fax = '';
+    protected $fax;
 
     /**
      * address
      *
      * @var string
      */
-    protected $address = '';
+    protected $address;
 
     /**
      * image

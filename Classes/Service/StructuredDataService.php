@@ -13,7 +13,7 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
  * For the full copyright and license information, please read the
  * LICENSE.txt file that was distributed with this source code.
  *
- * (c) 2022 Leon Seipp <l.seipp@browserwerk.de>, Browserwerk GmbH
+ * (c) 2023 Leon Seipp <l.seipp@browserwerk.de>, Browserwerk GmbH
  */
 
 /**
@@ -35,7 +35,6 @@ class StructuredDataService
         $postalCode = $location->getZip();
         $addressCountry = $location->getCountryZone();
         $homeofficePossible = $jobPosition->getHomeofficePossible();
-
 
         if (!empty($streetAddress)) {
             if (!isset($result['jobLocation'])) {
@@ -102,7 +101,17 @@ class StructuredDataService
             $result['jobLocation']['address']['addressCountry'] = $addressCountry;
         }
 
-        $result['jobLocationType'] = $homeofficePossible ? 'TELECOMMUTE' : 'IN_PERSON';
+        if ($homeofficePossible) {
+            $result['jobLocationType'] = 'TELECOMMUTE';
+            if (!empty($addressCountry)) {
+                $result['applicantLocationRequirements'] = [
+                    '@type' => 'Country',
+                    'name' => $addressCountry,
+                ];
+            }
+        } else {
+            $result['jobLocationType'] = 'IN_PERSON';
+        }
 
         return $result;
     }

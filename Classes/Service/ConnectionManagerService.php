@@ -13,7 +13,7 @@ use TYPO3\CMS\Core\Database\Query\QueryBuilder;
  * For the full copyright and license information, please read the
  * LICENSE.txt file that was distributed with this source code.
  *
- * (c) 2022 Leon Seipp <l.seipp@browserwerk.de>, Browserwerk GmbH
+ * (c) 2023 Leon Seipp <l.seipp@browserwerk.de>, Browserwerk GmbH
  */
 
 /**
@@ -24,47 +24,47 @@ class ConnectionManagerService
     /**
      * @var string
      */
-    const JOB_POSITIONS_TABLE = 'tx_bwjobs_domain_model_jobposition';
+    public const JOB_POSITIONS_TABLE = 'tx_bwjobs_domain_model_jobposition';
 
     /**
      * @var string
      */
-    const EMPLOYMENT_TYPES_TABLE = 'tx_bwjobs_domain_model_employmenttype';
+    public const EMPLOYMENT_TYPES_TABLE = 'tx_bwjobs_domain_model_employmenttype';
 
     /**
      * @var string
      */
-    const CONTACT_PERSONS_TABLE = 'tx_bwjobs_domain_model_contactperson';
+    public const CONTACT_PERSONS_TABLE = 'tx_bwjobs_domain_model_contactperson';
 
     /**
      * @var string
      */
-    const CATEGORIES_TABLE = 'tx_bwjobs_domain_model_category';
+    public const CATEGORIES_TABLE = 'tx_bwjobs_domain_model_category';
 
     /**
      * @var string
      */
-    const LOCATIONS_TABLE = 'tx_bwjobs_domain_model_location';
+    public const LOCATIONS_TABLE = 'tx_bwjobs_domain_model_location';
 
     /**
      * @var string
      */
-    const JOB_POSITION_EMPLOYMENT_TYPE_MM_TABLE = 'tx_bwjobs_jobposition_employmenttype_mm';
+    public const JOB_POSITION_EMPLOYMENT_TYPE_MM_TABLE = 'tx_bwjobs_jobposition_employmenttype_mm';
 
     /**
      * @var string
      */
-    const JOB_POSITION_LOCATION_MM_TABLE = 'tx_bwjobs_jobposition_location_mm';
+    public const JOB_POSITION_LOCATION_MM_TABLE = 'tx_bwjobs_jobposition_location_mm';
 
     /**
      * @var string
      */
-    const JOB_POSITION_CATEGORY_MM_TABLE = 'tx_bwjobs_jobposition_category_mm';
+    public const JOB_POSITION_CATEGORY_MM_TABLE = 'tx_bwjobs_jobposition_category_mm';
 
     /**
      * @var string
      */
-    const LOCATION_CONTACT_PERSON_MM_TABLE = 'tx_bwjobs_location_contactperson_mm';
+    public const LOCATION_CONTACT_PERSON_MM_TABLE = 'tx_bwjobs_location_contactperson_mm';
 
     /**
      * connectionPool

@@ -10,20 +10,40 @@ use TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider;
  * For the full copyright and license information, please read the
  * LICENSE.txt file that was distributed with this source code.
  *
- * (c) 2022 Leon Seipp <l.seipp@browserwerk.de>, Browserwerk GmbH
+ * (c) 2023 Leon Seipp <l.seipp@browserwerk.de>, Browserwerk GmbH
  */
 
 return [
-    'bw_jobs-plugin-detail' => [
+    'bwjobs-plugin-detail' => [
         'provider' => SvgIconProvider::class,
-        'source' => 'EXT:bw_jobs/Resources/Public/Icons/user_plugin_detail.svg',
+        'source' => 'EXT:bw_jobs/Resources/Public/Icons/plugin_detail.svg',
     ],
-    'bw_jobs-plugin-list' => [
+    'bwjobs-plugin-list' => [
         'provider' => SvgIconProvider::class,
-        'source' => 'EXT:bw_jobs/Resources/Public/Icons/user_plugin_list.svg',
+        'source' => 'EXT:bw_jobs/Resources/Public/Icons/plugin_list.svg',
     ],
-    'bw_jobs-modulegroup-jobs' => [
+    'bwjobs' => [
         'provider' => SvgIconProvider::class,
-        'source' => 'EXT:bw_jobs/Resources/Public/Icons/user_mod_jobs.svg',
+        'source' => 'EXT:bw_jobs/Resources/Public/Icons/mod.svg',
+    ],
+    'bwjobs-locations' => [
+        'provider' => SvgIconProvider::class,
+        'source' => 'EXT:bw_jobs/Resources/Public/Icons/mod_locations.svg',
+    ],
+    'bwjobs-jobpositions' => [
+        'provider' => SvgIconProvider::class,
+        'source' => 'EXT:bw_jobs/Resources/Public/Icons/mod_jobpositions.svg',
+    ],
+    'bwjobs-employmenttypes' => [
+        'provider' => SvgIconProvider::class,
+        'source' => 'EXT:bw_jobs/Resources/Public/Icons/mod_employmenttypes.svg',
+    ],
+    'bwjobs-contactpersons' => [
+        'provider' => SvgIconProvider::class,
+        'source' => 'EXT:bw_jobs/Resources/Public/Icons/mod_contactpersons.svg',
+    ],
+    'bwjobs-categories' => [
+        'provider' => SvgIconProvider::class,
+        'source' => 'EXT:bw_jobs/Resources/Public/Icons/mod_categories.svg',
     ],
 ];

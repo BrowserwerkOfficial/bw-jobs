@@ -2,29 +2,66 @@
 
 All notable changes to this project will be documented in this file.
 
-The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
-and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+## [3.0.0] - 2023-10-25
+
+### Changed
+- Support TYPO3 12.
+- Removed `view` constants in `module.tx_bwjobs_jobs.view`.
+- Renamed constants group `module.tx_bwjobs_jobs` to `module.tx_bwjobs`.
+- Moved `storagePid` constant from `persistence` to `settings` group.
+- Changed the database column type for date fields from `date` to `int(11)`.
+
+## Added
+- Option to hide footer in backend modules.
+
+## [2.3.3] - 2023-06-27
+
+### Added
+- TypoScript constant for configuring date format in detail view.
+
+### Changed
+- Updated Bootstrap.
+
+## [2.3.2] - 2023-06-27
+
+### Changed
+- Hide job application call-to-action when `direct_application_possible` is false.
+
+### Fixed
+- Missing homeofficePublic property in JobPosition model class.
+
+## [2.3.0] - 2023-06-27
+
+### Changed
+- Set applicantLocationRequirements in JSON-LD structured data when homeoffice is enabled.
+- Updated dependencies.
+
+## [2.2.4] - 2022-09-29
+
+### Changed
+- Updated dependencies.
 
 ## [2.2.3] - 2022-08-08
+
 ### Added
-- Sponsoring details in the footer of the backend modules and the repository
+- Sponsoring details in the footer of the backend modules and the repository.
 
 ## [2.2.2] - 2022-07-28
 
 ### Fixed
-- Definition of `EducationalOccupationalCredential` in structured data
-- "missing storage uid" error with restricted users
+- Definition of `EducationalOccupationalCredential` in structured data.
+- "missing storage uid" error with restricted users.
 
 ### Added
-- Footer in backend modules
+- Footer in backend modules.
 
 ## [2.2.1] - 2022-07-25
 
 ### Fixed
-- Wrong controller name in TypoScript config for `tx_seo`
+- Wrong controller name in TypoScript config for `tx_seo`.
 
 ### Added
-- `experienceRequirements`, `responsibilities` and `jobBenefits` to the `description` in JSON-LD structured data
+- `experienceRequirements`, `responsibilities` and `jobBenefits` to the `description` in JSON-LD structured data.
 
 ## [2.2.0] - 2022-07-12
 

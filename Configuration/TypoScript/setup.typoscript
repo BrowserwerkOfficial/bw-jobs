@@ -1,4 +1,4 @@
-# Detail Plugin
+# BwJobs Detail Plugin
 plugin.tx_bwjobs_detail {
   view {
     templateRootPaths.0 = EXT:bw_jobs/Resources/Private/Templates/
@@ -10,16 +10,17 @@ plugin.tx_bwjobs_detail {
   }
 
   persistence {
-    storagePid = {$module.tx_bwjobs_jobs.persistence.storagePid}
+    storagePid = {$module.tx_bwjobs.settings.storagePid}
   }
 
   settings {
-    storagePid = {$module.tx_bwjobs_jobs.persistence.storagePid}
+    storagePid = {$module.tx_bwjobs.settings.storagePid}
     formPersistenceIdentifier = {$plugin.tx_bwjobs_detail.settings.formPersistenceIdentifier}
     senderName = {$plugin.tx_bwjobs_detail.settings.senderName}
     senderAddress = {$plugin.tx_bwjobs_detail.settings.senderAddress}
     emailTemplateRootPath = {$plugin.tx_bwjobs_detail.settings.emailTemplateRootPath}
     emailLayoutRootPath = {$plugin.tx_bwjobs_detail.settings.emailLayoutRootPath}
+    dateFormat = %d. %B %Y
   }
 
   features {
@@ -34,7 +35,7 @@ plugin.tx_bwjobs_detail {
   }
 }
 
-# List Plugin
+# BwJobs List Plugin
 plugin.tx_bwjobs_list {
   view {
     templateRootPaths.0 = EXT:bw_jobs/Resources/Private/Templates/
@@ -46,11 +47,11 @@ plugin.tx_bwjobs_list {
   }
 
   persistence {
-    storagePid = {$module.tx_bwjobs_jobs.persistence.storagePid}
+    storagePid = {$module.tx_bwjobs.settings.storagePid}
   }
 
   settings {
-    storagePid = {$module.tx_bwjobs_jobs.persistence.storagePid}
+    storagePid = {$module.tx_bwjobs.settings.storagePid}
     itemsPerPage = {$plugin.tx_bwjobs_list.settings.itemsPerPage}
   }
 
@@ -66,13 +67,46 @@ plugin.tx_bwjobs_list {
   }
 }
 
-# API Plugin
+# BwJobs API Plugin
 plugin.tx_bwjobs_api {
   persistence < plugin.tx_bwjobs_list.persistence
   settings < plugin.tx_bwjobs_list.settings
+  features {
+    requireCHashArgumentForActionArguments = 0
+  }
 }
 
-# API Page
+# BwJobs Module
+module.tx_bwjobs {
+  persistence {
+    storagePid = {$module.tx_bwjobs.settings.storagePid}
+  }
+
+  settings {
+    storagePid = {$module.tx_bwjobs.settings.storagePid}
+    hideFooter = {$module.tx_bwjobs.settings.hideFooter}
+  }
+}
+
+# Form Plugin
+plugin.tx_form {
+  settings {
+    yamlConfigurations {
+      1647521698445 = EXT:bw_jobs/Configuration/Form/Setup.yaml
+    }
+  }
+}
+
+# Form Module
+module.tx_form {
+  settings {
+    yamlConfigurations {
+      1647521698445 = EXT:bw_jobs/Configuration/Form/Setup.yaml
+    }
+  }
+}
+
+# BwJobs API Page
 bwjobs_api = PAGE
 bwjobs_api {
   typeNum = 1655192624
@@ -91,44 +125,7 @@ bwjobs_api {
     extensionName = BwJobs
     pluginName = Api
     vendorName = Browserwerk
-  }
-}
-
-# BwJobs Module
-module.tx_bwjobs {
-  view {
-    templateRootPaths.0 = EXT:bw_jobs/Resources/Private/Backend/Templates/
-    templateRootPaths.1 = {$module.tx_bwjobs_jobs.view.templateRootPath}
-    partialRootPaths.0 = EXT:bw_jobs/Resources/Private/Backend/Partials/
-    partialRootPaths.1 = {$module.tx_bwjobs_jobs.view.partialRootPath}
-    layoutRootPaths.0 = EXT:bw_jobs/Resources/Private/Backend/Layouts/
-    layoutRootPaths.1 = {$module.tx_bwjobs_jobs.view.layoutRootPath}
-  }
-
-  persistence {
-    storagePid = {$module.tx_bwjobs_jobs.persistence.storagePid}
-  }
-
-  settings {
-    storagePid = {$module.tx_bwjobs_jobs.persistence.storagePid}
-  }
-}
-
-# Form Module
-module.tx_form {
-  settings {
-    yamlConfigurations {
-      1647521698445 = EXT:bw_jobs/Configuration/Form/Setup.yaml
-    }
-  }
-}
-
-# Form Plugin
-plugin.tx_form {
-  settings {
-    yamlConfigurations {
-      1647521698445 = EXT:bw_jobs/Configuration/Form/Setup.yaml
-    }
+    action = listJobPositions
   }
 }
 

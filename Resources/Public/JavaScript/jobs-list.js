@@ -1,486 +1,4 @@
-var __accessCheck = (obj, member, msg) => {
-  if (!member.has(obj))
-    throw TypeError("Cannot " + msg);
-};
-var __privateGet = (obj, member, getter) => {
-  __accessCheck(obj, member, "read from private field");
-  return getter ? getter.call(obj) : member.get(obj);
-};
-var __privateAdd = (obj, member, value) => {
-  if (member.has(obj))
-    throw TypeError("Cannot add the same private member more than once");
-  member instanceof WeakSet ? member.add(obj) : member.set(obj, value);
-};
-var __privateSet = (obj, member, value, setter2) => {
-  __accessCheck(obj, member, "write to private field");
-  setter2 ? setter2.call(obj, value) : member.set(obj, value);
-  return value;
-};
-var _mountElementSelector, _locationFilterSelector, _categoryFilterSelector, _data;
-class MapSet extends Map {
-  set(key, value) {
-    super.set(key, value);
-    return value;
-  }
-}
-class WeakMapSet extends WeakMap {
-  set(key, value) {
-    super.set(key, value);
-    return value;
-  }
-}
-/*! (c) Andrea Giammarchi - ISC */
-const empty = /^(?:area|base|br|col|embed|hr|img|input|keygen|link|menuitem|meta|param|source|track|wbr)$/i;
-const elements = /<([a-z]+[a-z0-9:._-]*)([^>]*?)(\/?)>/g;
-const attributes = /([^\s\\>"'=]+)\s*=\s*(['"]?)\x01/g;
-const holes = /[\x01\x02]/g;
-const instrument = (template, prefix2, svg2) => {
-  let i = 0;
-  return template.join("").trim().replace(elements, (_, name, attrs, selfClosing) => {
-    let ml = name + attrs.replace(attributes, "=$2$1").trimEnd();
-    if (selfClosing.length)
-      ml += svg2 || empty.test(name) ? " /" : "></" + name;
-    return "<" + ml + ">";
-  }).replace(holes, (hole) => hole === "" ? "<!--" + prefix2 + i++ + "-->" : prefix2 + i++);
-};
-const ELEMENT_NODE = 1;
-const nodeType = 111;
-const remove = ({ firstChild, lastChild }) => {
-  const range = document.createRange();
-  range.setStartAfter(firstChild);
-  range.setEndAfter(lastChild);
-  range.deleteContents();
-  return firstChild;
-};
-const diffable = (node, operation) => node.nodeType === nodeType ? 1 / operation < 0 ? operation ? remove(node) : node.lastChild : operation ? node.valueOf() : node.firstChild : node;
-const persistent = (fragment) => {
-  const { firstChild, lastChild } = fragment;
-  if (firstChild === lastChild)
-    return lastChild || fragment;
-  const { childNodes } = fragment;
-  const nodes = [...childNodes];
-  return {
-    ELEMENT_NODE,
-    nodeType,
-    firstChild,
-    lastChild,
-    valueOf() {
-      if (childNodes.length !== nodes.length)
-        fragment.append(...nodes);
-      return fragment;
-    }
-  };
-};
-const { isArray: isArray$1 } = Array;
-const aria = (node) => (values) => {
-  for (const key in values) {
-    const name = key === "role" ? key : `aria-${key}`;
-    const value = values[key];
-    if (value == null)
-      node.removeAttribute(name);
-    else
-      node.setAttribute(name, value);
-  }
-};
-const attribute = (node, name) => {
-  let oldValue, orphan = true;
-  const attributeNode = document.createAttributeNS(null, name);
-  return (newValue) => {
-    if (oldValue !== newValue) {
-      oldValue = newValue;
-      if (oldValue == null) {
-        if (!orphan) {
-          node.removeAttributeNode(attributeNode);
-          orphan = true;
-        }
-      } else {
-        const value = newValue;
-        if (value == null) {
-          if (!orphan)
-            node.removeAttributeNode(attributeNode);
-          orphan = true;
-        } else {
-          attributeNode.value = value;
-          if (orphan) {
-            node.setAttributeNodeNS(attributeNode);
-            orphan = false;
-          }
-        }
-      }
-    }
-  };
-};
-const boolean = (node, key, oldValue) => (newValue) => {
-  if (oldValue !== !!newValue) {
-    if (oldValue = !!newValue)
-      node.setAttribute(key, "");
-    else
-      node.removeAttribute(key);
-  }
-};
-const data = ({ dataset }) => (values) => {
-  for (const key in values) {
-    const value = values[key];
-    if (value == null)
-      delete dataset[key];
-    else
-      dataset[key] = value;
-  }
-};
-const event = (node, name) => {
-  let oldValue, lower, type = name.slice(2);
-  if (!(name in node) && (lower = name.toLowerCase()) in node)
-    type = lower.slice(2);
-  return (newValue) => {
-    const info = isArray$1(newValue) ? newValue : [newValue, false];
-    if (oldValue !== info[0]) {
-      if (oldValue)
-        node.removeEventListener(type, oldValue, info[1]);
-      if (oldValue = info[0])
-        node.addEventListener(type, oldValue, info[1]);
-    }
-  };
-};
-const ref = (node) => {
-  let oldValue;
-  return (value) => {
-    if (oldValue !== value) {
-      oldValue = value;
-      if (typeof value === "function")
-        value(node);
-      else
-        value.current = node;
-    }
-  };
-};
-const setter = (node, key) => key === "dataset" ? data(node) : (value) => {
-  node[key] = value;
-};
-const text = (node) => {
-  let oldValue;
-  return (newValue) => {
-    if (oldValue != newValue) {
-      oldValue = newValue;
-      node.textContent = newValue == null ? "" : newValue;
-    }
-  };
-};
-const udomdiff = (parentNode, a, b, get, before) => {
-  const bLength = b.length;
-  let aEnd = a.length;
-  let bEnd = bLength;
-  let aStart = 0;
-  let bStart = 0;
-  let map = null;
-  while (aStart < aEnd || bStart < bEnd) {
-    if (aEnd === aStart) {
-      const node = bEnd < bLength ? bStart ? get(b[bStart - 1], -0).nextSibling : get(b[bEnd - bStart], 0) : before;
-      while (bStart < bEnd)
-        parentNode.insertBefore(get(b[bStart++], 1), node);
-    } else if (bEnd === bStart) {
-      while (aStart < aEnd) {
-        if (!map || !map.has(a[aStart]))
-          parentNode.removeChild(get(a[aStart], -1));
-        aStart++;
-      }
-    } else if (a[aStart] === b[bStart]) {
-      aStart++;
-      bStart++;
-    } else if (a[aEnd - 1] === b[bEnd - 1]) {
-      aEnd--;
-      bEnd--;
-    } else if (a[aStart] === b[bEnd - 1] && b[bStart] === a[aEnd - 1]) {
-      const node = get(a[--aEnd], -1).nextSibling;
-      parentNode.insertBefore(get(b[bStart++], 1), get(a[aStart++], -1).nextSibling);
-      parentNode.insertBefore(get(b[--bEnd], 1), node);
-      a[aEnd] = b[bEnd];
-    } else {
-      if (!map) {
-        map = /* @__PURE__ */ new Map();
-        let i = bStart;
-        while (i < bEnd)
-          map.set(b[i], i++);
-      }
-      if (map.has(a[aStart])) {
-        const index = map.get(a[aStart]);
-        if (bStart < index && index < bEnd) {
-          let i = aStart;
-          let sequence = 1;
-          while (++i < aEnd && i < bEnd && map.get(a[i]) === index + sequence)
-            sequence++;
-          if (sequence > index - bStart) {
-            const node = get(a[aStart], 0);
-            while (bStart < index)
-              parentNode.insertBefore(get(b[bStart++], 1), node);
-          } else {
-            parentNode.replaceChild(get(b[bStart++], 1), get(a[aStart++], -1));
-          }
-        } else
-          aStart++;
-      } else
-        parentNode.removeChild(get(a[aStart++], -1));
-    }
-  }
-  return b;
-};
-const { isArray, prototype } = Array;
-const { indexOf } = prototype;
-const {
-  createDocumentFragment,
-  createElement,
-  createElementNS,
-  createTextNode,
-  createTreeWalker,
-  importNode
-} = new Proxy(document, {
-  get: (target, method) => target[method].bind(target)
-});
-const createHTML = (html2) => {
-  const template = createElement("template");
-  template.innerHTML = html2;
-  return template.content;
-};
-let xml;
-const createSVG = (svg2) => {
-  if (!xml)
-    xml = createElementNS("http://www.w3.org/2000/svg", "svg");
-  xml.innerHTML = svg2;
-  const content = createDocumentFragment();
-  content.append(...xml.childNodes);
-  return content;
-};
-const createContent = (text2, svg2) => svg2 ? createSVG(text2) : createHTML(text2);
-const reducePath = ({ childNodes }, i) => childNodes[i];
-const diff = (comment, oldNodes, newNodes) => udomdiff(comment.parentNode, oldNodes, newNodes, diffable, comment);
-const handleAnything = (comment) => {
-  let oldValue, text2, nodes = [];
-  const anyContent = (newValue) => {
-    switch (typeof newValue) {
-      case "string":
-      case "number":
-      case "boolean":
-        if (oldValue !== newValue) {
-          oldValue = newValue;
-          if (!text2)
-            text2 = createTextNode("");
-          text2.data = newValue;
-          nodes = diff(comment, nodes, [text2]);
-        }
-        break;
-      case "object":
-      case "undefined":
-        if (newValue == null) {
-          if (oldValue != newValue) {
-            oldValue = newValue;
-            nodes = diff(comment, nodes, []);
-          }
-          break;
-        }
-        if (isArray(newValue)) {
-          oldValue = newValue;
-          if (newValue.length === 0)
-            nodes = diff(comment, nodes, []);
-          else if (typeof newValue[0] === "object")
-            nodes = diff(comment, nodes, newValue);
-          else
-            anyContent(String(newValue));
-          break;
-        }
-        if (oldValue !== newValue && "ELEMENT_NODE" in newValue) {
-          oldValue = newValue;
-          nodes = diff(comment, nodes, newValue.nodeType === 11 ? [...newValue.childNodes] : [newValue]);
-        }
-        break;
-      case "function":
-        anyContent(newValue(comment));
-        break;
-    }
-  };
-  return anyContent;
-};
-const handleAttribute = (node, name) => {
-  switch (name[0]) {
-    case "?":
-      return boolean(node, name.slice(1), false);
-    case ".":
-      return setter(node, name.slice(1));
-    case "@":
-      return event(node, "on" + name.slice(1));
-    case "o":
-      if (name[1] === "n")
-        return event(node, name);
-  }
-  switch (name) {
-    case "ref":
-      return ref(node);
-    case "aria":
-      return aria(node);
-  }
-  return attribute(node, name);
-};
-function handlers(options) {
-  const { type, path } = options;
-  const node = path.reduceRight(reducePath, this);
-  return type === "node" ? handleAnything(node) : type === "attr" ? handleAttribute(node, options.name) : text(node);
-}
-const createPath = (node) => {
-  const path = [];
-  let { parentNode } = node;
-  while (parentNode) {
-    path.push(indexOf.call(parentNode.childNodes, node));
-    node = parentNode;
-    ({ parentNode } = node);
-  }
-  return path;
-};
-const prefix = "is\xB5";
-const cache$1 = new WeakMapSet();
-const textOnly = /^(?:textarea|script|style|title|plaintext|xmp)$/;
-const createCache = () => ({
-  stack: [],
-  entry: null,
-  wire: null
-});
-const createEntry = (type, template) => {
-  const { content, updates } = mapUpdates(type, template);
-  return { type, template, content, updates, wire: null };
-};
-const mapTemplate = (type, template) => {
-  const svg2 = type === "svg";
-  const text2 = instrument(template, prefix, svg2);
-  const content = createContent(text2, svg2);
-  const tw = createTreeWalker(content, 1 | 128);
-  const nodes = [];
-  const length = template.length - 1;
-  let i = 0;
-  let search = `${prefix}${i}`;
-  while (i < length) {
-    const node = tw.nextNode();
-    if (!node)
-      throw `bad template: ${text2}`;
-    if (node.nodeType === 8) {
-      if (node.data === search) {
-        nodes.push({ type: "node", path: createPath(node) });
-        search = `${prefix}${++i}`;
-      }
-    } else {
-      while (node.hasAttribute(search)) {
-        nodes.push({
-          type: "attr",
-          path: createPath(node),
-          name: node.getAttribute(search)
-        });
-        node.removeAttribute(search);
-        search = `${prefix}${++i}`;
-      }
-      if (textOnly.test(node.localName) && node.textContent.trim() === `<!--${search}-->`) {
-        node.textContent = "";
-        nodes.push({ type: "text", path: createPath(node) });
-        search = `${prefix}${++i}`;
-      }
-    }
-  }
-  return { content, nodes };
-};
-const mapUpdates = (type, template) => {
-  const { content, nodes } = cache$1.get(template) || cache$1.set(template, mapTemplate(type, template));
-  const fragment = importNode(content, true);
-  const updates = nodes.map(handlers, fragment);
-  return { content: fragment, updates };
-};
-const unroll = (info, { type, template, values }) => {
-  const length = unrollValues(info, values);
-  let { entry } = info;
-  if (!entry || (entry.template !== template || entry.type !== type))
-    info.entry = entry = createEntry(type, template);
-  const { content, updates, wire } = entry;
-  for (let i = 0; i < length; i++)
-    updates[i](values[i]);
-  return wire || (entry.wire = persistent(content));
-};
-const unrollValues = ({ stack }, values) => {
-  const { length } = values;
-  for (let i = 0; i < length; i++) {
-    const hole = values[i];
-    if (hole instanceof Hole)
-      values[i] = unroll(stack[i] || (stack[i] = createCache()), hole);
-    else if (isArray(hole))
-      unrollValues(stack[i] || (stack[i] = createCache()), hole);
-    else
-      stack[i] = null;
-  }
-  if (length < stack.length)
-    stack.splice(length);
-  return length;
-};
-class Hole {
-  constructor(type, template, values) {
-    this.type = type;
-    this.template = template;
-    this.values = values;
-  }
-}
-const tag = (type) => {
-  const keyed = new WeakMapSet();
-  const fixed = (cache2) => (template, ...values) => unroll(cache2, { type, template, values });
-  return Object.assign((template, ...values) => new Hole(type, template, values), {
-    for(ref2, id) {
-      const memo = keyed.get(ref2) || keyed.set(ref2, new MapSet());
-      return memo.get(id) || memo.set(id, fixed(createCache()));
-    },
-    node: (template, ...values) => unroll(createCache(), new Hole(type, template, values)).valueOf()
-  });
-};
-const cache = new WeakMapSet();
-const render = (where, what) => {
-  const hole = typeof what === "function" ? what() : what;
-  const info = cache.get(where) || cache.set(where, createCache());
-  const wire = hole instanceof Hole ? unroll(info, hole) : hole;
-  if (wire !== info.wire) {
-    info.wire = wire;
-    where.replaceChildren(wire.valueOf());
-  }
-  return where;
-};
-const html = tag("html");
-const svg = tag("svg");
-function stripLeadingSlash(string) {
-  return string.replace(/^\//, "");
-}
-function stripTrailingSlash(string) {
-  return string.replace(/\/$/, "");
-}
-function cx(classNames) {
-  return classNames.filter(Boolean).join(" ");
-}
-function getElementOrFail(selector) {
-  const element = document.querySelector(selector);
-  if (!element) {
-    throw new Error(`Missing element "${selector}"`);
-  }
-  return element;
-}
-function buildRequestUrlForData(url, data2) {
-  Object.entries(data2.filters).forEach(([filterKey, filterValue]) => {
-    if (typeof filterValue === "string") {
-      url.searchParams.append(filterKey, filterValue);
-    }
-  });
-  url.searchParams.append("currentPage", data2.currentPage);
-  return url;
-}
-function persistValueToLocalStorage(key, value) {
-  if (value) {
-    localStorage.setItem(key, value);
-  } else {
-    localStorage.removeItem(key);
-  }
-}
-function retrieveValueFromLocalStorage(key) {
-  return localStorage.getItem(key);
-}
-function ClockIcon() {
-  return svg`
+var O=(e,t,n)=>{if(!t.has(e))throw TypeError("Cannot "+n)};var f=(e,t,n)=>(O(e,t,"read from private field"),n?n.call(e):t.get(e)),g=(e,t,n)=>{if(t.has(e))throw TypeError("Cannot add the same private member more than once");t instanceof WeakSet?t.add(e):t.set(e,n)},m=(e,t,n,i)=>(O(e,t,"write to private field"),i?i.call(e,n):t.set(e,n),n);class J extends Map{set(t,n){return super.set(t,n),n}}class F extends WeakMap{set(t,n){return super.set(t,n),n}}/*! (c) Andrea Giammarchi - ISC */const W=/^(?:area|base|br|col|embed|hr|img|input|keygen|link|menuitem|meta|param|source|track|wbr)$/i,G=/<([a-z]+[a-z0-9:._-]*)([^>]*?)(\/?)>/g,K=/([^\s\\>"'=]+)\s*=\s*(['"]?)\x01/g,Q=/[\x01\x02]/g,X=(e,t,n)=>{let i=0;return e.join("").trim().replace(G,(s,o,l,u)=>{let c=o+l.replace(K,"=$2$1").trimEnd();return u.length&&(c+=n||W.test(o)?" /":"></"+o),"<"+c+">"}).replace(Q,s=>s===""?"<!--"+t+i+++"-->":t+i++)},Y=1,D=111,Z=({firstChild:e,lastChild:t})=>{const n=document.createRange();return n.setStartAfter(e),n.setEndAfter(t),n.deleteContents(),e},V=(e,t)=>e.nodeType===D?1/t<0?t?Z(e):e.lastChild:t?e.valueOf():e.firstChild:e,tt=e=>{const{firstChild:t,lastChild:n}=e;if(t===n)return n||e;const{childNodes:i}=e,s=[...i];return{ELEMENT_NODE:Y,nodeType:D,firstChild:t,lastChild:n,valueOf(){return i.length!==s.length&&e.append(...s),e}}},{isArray:et}=Array,nt=e=>t=>{for(const n in t){const i=n==="role"?n:`aria-${n}`,s=t[n];s==null?e.removeAttribute(i):e.setAttribute(i,s)}},A=e=>e==null?e:e.valueOf(),it=(e,t)=>{let n,i=!0;const s=document.createAttributeNS(null,t);return o=>{const l=A(o);n!==l&&((n=l)==null?i||(e.removeAttributeNode(s),i=!0):(s.value=l,i&&(e.setAttributeNodeNS(s),i=!1)))}},st=(e,t,n)=>i=>{const s=!!A(i);n!==s&&((n=s)?e.setAttribute(t,""):e.removeAttribute(t))},ot=({dataset:e})=>t=>{for(const n in t){const i=t[n];i==null?delete e[n]:e[n]=i}},U=(e,t)=>{let n,i,s=t.slice(2);return!(t in e)&&(i=t.toLowerCase())in e&&(s=i.slice(2)),o=>{const l=et(o)?o:[o,!1];n!==l[0]&&(n&&e.removeEventListener(s,n,l[1]),(n=l[0])&&e.addEventListener(s,n,l[1]))}},rt=e=>{let t;return n=>{t!==n&&(t=n,typeof n=="function"?n(e):n.current=e)}},lt=(e,t)=>t==="dataset"?ot(e):n=>{e[t]=n},ct=e=>{let t;return n=>{const i=A(n);t!=i&&(t=i,e.textContent=i??"")}},at=(e,t,n,i,s)=>{const o=n.length;let l=t.length,u=o,c=0,r=0,a=null;for(;c<l||r<u;)if(l===c){const d=u<o?r?i(n[r-1],-0).nextSibling:i(n[u-r],0):s;for(;r<u;)e.insertBefore(i(n[r++],1),d)}else if(u===r)for(;c<l;)(!a||!a.has(t[c]))&&e.removeChild(i(t[c],-1)),c++;else if(t[c]===n[r])c++,r++;else if(t[l-1]===n[u-1])l--,u--;else if(t[c]===n[u-1]&&n[r]===t[l-1]){const d=i(t[--l],-1).nextSibling;e.insertBefore(i(n[r++],1),i(t[c++],-1).nextSibling),e.insertBefore(i(n[--u],1),d),t[l]=n[u]}else{if(!a){a=new Map;let d=r;for(;d<u;)a.set(n[d],d++)}if(a.has(t[c])){const d=a.get(t[c]);if(r<d&&d<u){let k=c,S=1;for(;++k<l&&k<u&&a.get(t[k])===d+S;)S++;if(S>d-r){const H=i(t[c],0);for(;r<d;)e.insertBefore(i(n[r++],1),H)}else e.replaceChild(i(n[r++],1),i(t[c++],-1))}else c++}else e.removeChild(i(t[c++],-1))}return n},{isArray:q,prototype:ut}=Array,{indexOf:dt}=ut,{createDocumentFragment:ht,createElement:ft,createElementNS:bt,createTextNode:pt,createTreeWalker:gt,importNode:mt}=new Proxy({},{get:(e,t)=>document[t].bind(document)}),vt=e=>{const t=ft("template");return t.innerHTML=e,t.content};let $;const wt=e=>{$||($=bt("http://www.w3.org/2000/svg","svg")),$.innerHTML=e;const t=ht();return t.append(...$.childNodes),t},jt=(e,t)=>t?wt(e):vt(e),_t=({childNodes:e},t)=>e[t],v=(e,t,n)=>at(e.parentNode,t,n,V,e),yt=e=>{let t,n,i=[];const s=o=>{switch(typeof o){case"string":case"number":case"boolean":t!==o&&(t=o,n||(n=pt("")),n.data=o,i=v(e,i,[n]));break;case"object":case"undefined":if(o==null){t!=o&&(t=o,i=v(e,i,[]));break}if(q(o)){t=o,o.length===0?i=v(e,i,[]):typeof o[0]=="object"?i=v(e,i,o):s(String(o));break}if(t!==o)if("ELEMENT_NODE"in o)t=o,i=v(e,i,o.nodeType===11?[...o.childNodes]:[o]);else{const l=o.valueOf();l!==o&&s(l)}break;case"function":s(o(e));break}};return s},$t=(e,t)=>{switch(t[0]){case"?":return st(e,t.slice(1),!1);case".":return lt(e,t.slice(1));case"@":return U(e,"on"+t.slice(1));case"o":if(t[1]==="n")return U(e,t)}switch(t){case"ref":return rt(e);case"aria":return nt(e)}return it(e,t)};function Et(e){const{type:t,path:n}=e,i=n.reduceRight(_t,this);return t==="node"?yt(i):t==="attr"?$t(i,e.name):ct(i)}const C=e=>{const t=[];let{parentNode:n}=e;for(;n;)t.push(dt.call(n.childNodes,e)),e=n,{parentNode:n}=e;return t},w="isµ",P=new F,xt=/^(?:textarea|script|style|title|plaintext|xmp)$/,j=()=>({stack:[],entry:null,wire:null}),kt=(e,t)=>{const{content:n,updates:i}=Ct(e,t);return{type:e,template:t,content:n,updates:i,wire:null}},St=(e,t)=>{const n=e==="svg",i=X(t,w,n),s=jt(i,n),o=gt(s,129),l=[],u=t.length-1;let c=0,r=`${w}${c}`;for(;c<u;){const a=o.nextNode();if(!a)throw`bad template: ${i}`;if(a.nodeType===8)a.data===r&&(l.push({type:"node",path:C(a)}),r=`${w}${++c}`);else{for(;a.hasAttribute(r);)l.push({type:"attr",path:C(a),name:a.getAttribute(r)}),a.removeAttribute(r),r=`${w}${++c}`;xt.test(a.localName)&&a.textContent.trim()===`<!--${r}-->`&&(a.textContent="",l.push({type:"text",path:C(a)}),r=`${w}${++c}`)}}return{content:s,nodes:l}},Ct=(e,t)=>{const{content:n,nodes:i}=P.get(t)||P.set(t,St(e,t)),s=mt(n,!0),o=i.map(Et,s);return{content:s,updates:o}},E=(e,{type:t,template:n,values:i})=>{const s=z(e,i);let{entry:o}=e;(!o||o.template!==n||o.type!==t)&&(e.entry=o=kt(t,n));const{content:l,updates:u,wire:c}=o;for(let r=0;r<s;r++)u[r](i[r]);return c||(o.wire=tt(l))},z=({stack:e},t)=>{const{length:n}=t;for(let i=0;i<n;i++){const s=t[i];s instanceof x?t[i]=E(e[i]||(e[i]=j()),s):q(s)?z(e[i]||(e[i]=j()),s):e[i]=null}return n<e.length&&e.splice(n),n};class x{constructor(t,n,i){this.type=t,this.template=n,this.values=i}}const I=e=>{const t=new F,n=i=>(s,...o)=>E(i,{type:e,template:s,values:o});return Object.assign((i,...s)=>new x(e,i,s),{for(i,s){const o=t.get(i)||t.set(i,new J);return o.get(s)||o.set(s,n(j()))},node:(i,...s)=>E(j(),new x(e,i,s)).valueOf()})},N=new F,L=(e,t)=>{const n=typeof t=="function"?t():t,i=N.get(e)||N.set(e,j()),s=n instanceof x?E(i,n):n;return s!==i.wire&&(i.wire=s,e.replaceChildren(s.valueOf())),e},h=I("html"),R=I("svg");function Lt(e){return e.replace(/^\//,"")}function Mt(e){return e.replace(/\/$/,"")}function M(e){return e.filter(Boolean).join(" ")}function Ft(e){const t=document.querySelector(e);if(!t)throw new Error(`Missing element "${e}"`);return t}function At(e,t){return Object.entries(t.filters).forEach(([n,i])=>{typeof i=="string"&&e.searchParams.append(n,i)}),e.searchParams.append("currentPage",t.currentPage),e}function T(e,t){t?localStorage.setItem(e,t):localStorage.removeItem(e)}function B(e){return localStorage.getItem(e)}function Ot(){return R`
     <svg
       class="bw-jobs-list-item__icon"
       fill="none"
@@ -494,10 +12,7 @@ function ClockIcon() {
         stroke-linejoin="round"
       />
     </svg>
-  `;
-}
-function MarkerIcon() {
-  return svg`
+  `}function Ut(){return R`
     <svg
       class="bw-jobs-list-item__icon"
       fill="none"
@@ -516,33 +31,21 @@ function MarkerIcon() {
         stroke-linejoin="round"
       />
     </svg>
-  `;
-}
-function Spinner() {
-  return html`
+  `}function Pt(){return h`
     <div class="bw-jobs-spinner">
       <div></div>
       <div></div>
       <div></div>
       <div></div>
     </div>
-  `;
-}
-function Pagination(pages, currentPage, onSelectPage) {
-  if (pages.length < 2) {
-    return "";
-  }
-  return html`
+  `}function Nt(e,t,n){return e.length<2?"":h`
     <ul class="bw-jobs-paginator">
       <li
-        class=${cx([
-    "bw-jobs-paginator__item bw-jobs-paginator__item--prev",
-    currentPage === 1 && "bw-jobs-paginator__item--disabled"
-  ])}
+        class=${M(["bw-jobs-paginator__item bw-jobs-paginator__item--prev",t===1&&"bw-jobs-paginator__item--disabled"])}
       >
         <button
           class="bw-jobs-paginator__item-button"
-          @click=${() => onSelectPage(Math.max(currentPage - 1, 1))}
+          @click=${()=>n(Math.max(t-1,1))}
         >
           <svg
             class="bw-jobs-paginator__item-icon"
@@ -559,30 +62,22 @@ function Pagination(pages, currentPage, onSelectPage) {
           </svg>
         </button>
       </li>
-      ${pages.map((page) => {
-    return html`<li
-          class=${cx([
-      "bw-jobs-paginator__item",
-      page === currentPage && "bw-jobs-paginator__item--current"
-    ])}
+      ${e.map(i=>h`<li
+          class=${M(["bw-jobs-paginator__item",i===t&&"bw-jobs-paginator__item--current"])}
         >
           <button
             class="bw-jobs-paginator__item-button"
-            @click=${() => onSelectPage(page)}
+            @click=${()=>n(i)}
           >
-            ${page}
+            ${i}
           </button>
-        </li>`;
-  })}
+        </li>`)}
       <li
-        class=${cx([
-    "bw-jobs-paginator__item bw-jobs-paginator__item--next",
-    currentPage === pages.length && "bw-jobs-paginator__item--disabled"
-  ])}
+        class=${M(["bw-jobs-paginator__item bw-jobs-paginator__item--next",t===e.length&&"bw-jobs-paginator__item--disabled"])}
       >
         <button
           class="bw-jobs-paginator__item-button"
-          @click=${() => onSelectPage(Math.min(currentPage + 1, pages.length))}
+          @click=${()=>n(Math.min(t+1,e.length))}
         >
           <svg
             class="bw-jobs-paginator__item-icon"
@@ -600,186 +95,26 @@ function Pagination(pages, currentPage, onSelectPage) {
         </button>
       </li>
     </ul>
-  `;
-}
-function EmploymentTypes(employmentTypes) {
-  if (!employmentTypes.length) {
-    return "";
-  }
-  return html`<div class="bw-jobs-list-item__column">
-    ${ClockIcon()} ${employmentTypes[0].title}
-  </div>`;
-}
-function Locations(locations) {
-  if (!locations.length) {
-    return "";
-  }
-  return html`<div
+  `}function Tt(e){return e.length?h`<div class="bw-jobs-list-item__column">
+    ${Ot()} ${e[0].title}
+  </div>`:""}function Bt(e){return e.length?h`<div
     class="bw-jobs-list-item__column bw-jobs-list-item__column--locations"
   >
-    ${MarkerIcon()} ${locations.map((location) => location.title).join(", ")}
-  </div>`;
-}
-function JobPosition({ title, employmentTypes, locations }, url) {
-  return html`
-    <a class="bw-jobs-list-item" href="${url}" title="${title}">
+    ${Ut()} ${e.map(t=>t.title).join(", ")}
+  </div>`:""}function Dt({title:e,employmentTypes:t,locations:n},i){return h`
+    <a class="bw-jobs-list-item" href="${i}" title="${e}">
       <div class="bw-jobs-list-item__inner">
         <div class="bw-jobs-list-item__column bw-jobs-list-item__column--title">
-          ${title}
+          ${e}
         </div>
-        ${EmploymentTypes(employmentTypes)} ${Locations(locations)}
+        ${Tt(t)} ${Bt(n)}
       </div>
     </a>
-  `;
-}
-class JobsList {
-  constructor(mountElementSelector, locationFilterSelector, categoryFilterSelector) {
-    __privateAdd(this, _mountElementSelector, null);
-    __privateAdd(this, _locationFilterSelector, null);
-    __privateAdd(this, _categoryFilterSelector, null);
-    __privateAdd(this, _data, {
-      isFetching: true,
-      jobPositions: [],
-      pages: [],
-      currentPage: 1,
-      filters: {
-        locationUid: null,
-        categoryUid: null
-      }
-    });
-    if (!mountElementSelector) {
-      throw new Error("Missing mountElementSelector");
-    }
-    if (!locationFilterSelector) {
-      throw new Error("Missing locationFilterSelector");
-    }
-    if (!categoryFilterSelector) {
-      throw new Error("Missing categoryFilterSelector");
-    }
-    __privateSet(this, _mountElementSelector, mountElementSelector);
-    __privateSet(this, _locationFilterSelector, locationFilterSelector);
-    __privateSet(this, _categoryFilterSelector, categoryFilterSelector);
-    this.initLocationFilter();
-    this.initCategoryFilter();
-  }
-  get data() {
-    return __privateGet(this, _data);
-  }
-  set data(data2) {
-    __privateSet(this, _data, { ...__privateGet(this, _data), ...data2 });
-    this.render();
-  }
-  get mountElement() {
-    return getElementOrFail(__privateGet(this, _mountElementSelector));
-  }
-  get translations() {
-    const { translations } = this.mountElement.dataset;
-    return JSON.parse(translations || "{}");
-  }
-  get endpointUrl() {
-    const { endpoint } = this.mountElement.dataset;
-    if (!endpoint) {
-      throw new Error(`Missing "data-endpoint" attribute on the "${__privateGet(this, _mountElementSelector)}" mount element`);
-    }
-    return new URL(endpoint, window.location.origin);
-  }
-  get detailPageUrl() {
-    const { detailPagePath } = this.mountElement.dataset;
-    if (!detailPagePath) {
-      throw new Error(`Missing "data-detail-page-path" attribute on the "${__privateGet(this, _mountElementSelector)}" mount element`);
-    }
-    return new URL(stripTrailingSlash(detailPagePath), window.location.origin);
-  }
-  initLocationFilter() {
-    const selectElement = document.querySelector(__privateGet(this, _locationFilterSelector));
-    selectElement == null ? void 0 : selectElement.addEventListener("change", ({ currentTarget }) => {
-      persistValueToLocalStorage("jobsFilterLocationUid", currentTarget.value);
-      this.data = {
-        currentPage: 1,
-        filters: {
-          ...this.data.filters,
-          locationUid: currentTarget.value
-        }
-      };
-      this.fetchData();
-    });
-    const storedValue = retrieveValueFromLocalStorage("jobsFilterLocationUid");
-    if (storedValue && selectElement) {
-      const isValidOption = selectElement.querySelector(`option[value="${storedValue}"]`);
-      if (!isValidOption)
-        return;
-      selectElement.value = storedValue;
-      selectElement.dispatchEvent(new Event("change"));
-    }
-  }
-  initCategoryFilter() {
-    const selectElement = document.querySelector(__privateGet(this, _categoryFilterSelector));
-    selectElement == null ? void 0 : selectElement.addEventListener("change", ({ currentTarget }) => {
-      persistValueToLocalStorage("jobsFilterCategoryUid", currentTarget.value);
-      this.data = {
-        currentPage: 1,
-        filters: {
-          ...this.data.filters,
-          categoryUid: currentTarget.value
-        }
-      };
-      this.fetchData();
-    });
-    const storedValue = retrieveValueFromLocalStorage("jobsFilterCategoryUid");
-    if (storedValue && selectElement) {
-      const isValidOption = selectElement.querySelector(`option[value=${storedValue}]`);
-      if (!isValidOption)
-        return;
-      selectElement.value = storedValue;
-      selectElement.dispatchEvent(new Event("change"));
-    }
-  }
-  async fetchData() {
-    this.data = { isFetching: true };
-    const response = await fetch(buildRequestUrlForData(this.endpointUrl, this.data));
-    if (!response.ok) {
-      throw new Error(response.statusText);
-    }
-    const { jobPositions, pages } = await response.json();
-    this.data = {
-      isFetching: false,
-      jobPositions,
-      pages
-    };
-  }
-  async render() {
-    const { data: data2 } = this;
-    if (data2.isFetching) {
-      render(this.mountElement, html`<div class="bw-jobs-list">
-          <div class="bw-jobs-list__loader">${Spinner()}</div>
-        </div>`);
-      return;
-    }
-    if (!data2.jobPositions.length) {
-      const isFiltered = !!(data2.filters.locationUid || data2.filters.categoryUid);
-      render(this.mountElement, html`<div class="bw-jobs-empty bw-jobs-body">
-          ${this.translations[isFiltered ? "nothingFound" : "nothingPosted"]}
-        </div>`);
-      return;
-    }
-    render(this.mountElement, html`<div class="bw-jobs-list">
-        ${data2.jobPositions.map((jobPosition) => {
-      const url = `${this.detailPageUrl}/${stripLeadingSlash(jobPosition.slug)}`;
-      return JobPosition(jobPosition, url);
-    })}
-        ${Pagination(data2.pages, data2.currentPage, (pageNumber) => {
-      this.data = { currentPage: pageNumber };
-      this.fetchData();
-    })}
-      </div>`);
-  }
-  async mount() {
-    this.fetchData();
-  }
-}
-_mountElementSelector = new WeakMap();
-_locationFilterSelector = new WeakMap();
-_categoryFilterSelector = new WeakMap();
-_data = new WeakMap();
-const jobsList = new JobsList("#bw-jobs-list", "#bw-jobs-location-filter", "#bw-jobs-category-filter");
-jobsList.mount();
+  `}var b,_,y,p;class qt{constructor(t,n,i){g(this,b,null);g(this,_,null);g(this,y,null);g(this,p,{isFetching:!0,jobPositions:[],pages:[],currentPage:1,filters:{locationUid:null,categoryUid:null}});if(!t)throw new Error("Missing mountElementSelector");if(!n)throw new Error("Missing locationFilterSelector");if(!i)throw new Error("Missing categoryFilterSelector");m(this,b,t),m(this,_,n),m(this,y,i),this.initLocationFilter(),this.initCategoryFilter()}get data(){return f(this,p)}set data(t){m(this,p,{...f(this,p),...t}),this.render()}get mountElement(){return Ft(f(this,b))}get translations(){const{translations:t}=this.mountElement.dataset;return JSON.parse(t||"{}")}get endpointUrl(){const{endpoint:t}=this.mountElement.dataset;if(!t)throw new Error(`Missing "data-endpoint" attribute on the "${f(this,b)}" mount element`);return new URL(t,window.location.origin)}get detailPageUrl(){const{detailPagePath:t}=this.mountElement.dataset;if(!t)throw new Error(`Missing "data-detail-page-path" attribute on the "${f(this,b)}" mount element`);return new URL(Mt(t),window.location.origin)}initLocationFilter(){const t=document.querySelector(f(this,_));t==null||t.addEventListener("change",({currentTarget:i})=>{T("jobsFilterLocationUid",i.value),this.data={currentPage:1,filters:{...this.data.filters,locationUid:i.value}},this.fetchData()});const n=B("jobsFilterLocationUid");if(n&&t){if(!t.querySelector(`option[value="${n}"]`))return;t.value=n,t.dispatchEvent(new Event("change"))}}initCategoryFilter(){const t=document.querySelector(f(this,y));t==null||t.addEventListener("change",({currentTarget:i})=>{T("jobsFilterCategoryUid",i.value),this.data={currentPage:1,filters:{...this.data.filters,categoryUid:i.value}},this.fetchData()});const n=B("jobsFilterCategoryUid");if(n&&t){if(!t.querySelector(`option[value=${n}]`))return;t.value=n,t.dispatchEvent(new Event("change"))}}async fetchData(){this.data={isFetching:!0};const t=await fetch(At(this.endpointUrl,this.data));if(!t.ok)throw new Error(t.statusText);const{jobPositions:n,pages:i}=await t.json();this.data={isFetching:!1,jobPositions:n,pages:i}}async render(){const{data:t}=this;if(t.isFetching){L(this.mountElement,h`<div class="bw-jobs-list">
+          <div class="bw-jobs-list__loader">${Pt()}</div>
+        </div>`);return}if(!t.jobPositions.length){const n=!!(t.filters.locationUid||t.filters.categoryUid);L(this.mountElement,h`<div class="bw-jobs-empty bw-jobs-body">
+          ${this.translations[n?"nothingFound":"nothingPosted"]}
+        </div>`);return}L(this.mountElement,h`<div class="bw-jobs-list">
+        ${t.jobPositions.map(n=>{const i=`${this.detailPageUrl}/${Lt(n.slug)}`;return Dt(n,i)})}
+        ${Nt(t.pages,t.currentPage,n=>{this.data={currentPage:n},this.fetchData()})}
+      </div>`)}async mount(){this.fetchData()}}b=new WeakMap,_=new WeakMap,y=new WeakMap,p=new WeakMap;const zt=new qt("#bw-jobs-list","#bw-jobs-location-filter","#bw-jobs-category-filter");zt.mount();

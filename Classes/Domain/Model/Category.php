@@ -12,7 +12,7 @@ use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
  * For the full copyright and license information, please read the
  * LICENSE.txt file that was distributed with this source code.
  *
- * (c) 2022 Leon Seipp <l.seipp@browserwerk.de>, Browserwerk GmbH
+ * (c) 2023 Leon Seipp <l.seipp@browserwerk.de>, Browserwerk GmbH
  */
 
 /**
@@ -25,7 +25,7 @@ class Category extends AbstractEntity
      *
      * @var string
      */
-    protected $title = '';
+    protected $title;
 
     /**
      * Returns the title

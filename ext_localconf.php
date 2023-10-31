@@ -1,8 +1,7 @@
 <?php
 
-use Browserwerk\BwJobs\Controller\FrontendController;
 use Browserwerk\BwJobs\Controller\ApiController;
-use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
+use Browserwerk\BwJobs\Controller\FrontendController;
 use TYPO3\CMS\Extbase\Utility\ExtensionUtility;
 
 /**
@@ -11,12 +10,19 @@ use TYPO3\CMS\Extbase\Utility\ExtensionUtility;
  * For the full copyright and license information, please read the
  * LICENSE.txt file that was distributed with this source code.
  *
- * (c) 2022 Leon Seipp <l.seipp@browserwerk.de>, Browserwerk GmbH
+ * (c) 2023 Leon Seipp <l.seipp@browserwerk.de>, Browserwerk GmbH
  */
-
-defined('TYPO3') || die();
-
 (static function () {
+    // Fixes some possible bug, which causes a cHash error with custom query parameters.
+    $GLOBALS['TYPO3_CONF_VARS']['FE']['cacheHash']['excludedParameters'] = array_merge(
+        $GLOBALS['TYPO3_CONF_VARS']['FE']['cacheHash']['excludedParameters'],
+        [
+            'currentPage',
+            'locationUid',
+            'categoryUid',
+        ],
+    );
+
     ExtensionUtility::configurePlugin(
         'BwJobs',
         'Detail',
@@ -48,33 +54,5 @@ defined('TYPO3') || die();
         [
             ApiController::class => 'listJobPositions',
         ],
-    );
-
-    ExtensionManagementUtility::addPageTSConfig(
-        'mod {
-            wizards.newContentElement.wizardItems.plugins {
-                elements {
-                    detail {
-                        iconIdentifier = bw_jobs-plugin-detail
-                        title = LLL:EXT:bw_jobs/Resources/Private/Language/locallang_plugin_detail.xlf:title
-                        description = LLL:EXT:bw_jobs/Resources/Private/Language/locallang_plugin_detail.xlf:description
-                        tt_content_defValues {
-                            CType = list
-                            list_type = bwjobs_detail
-                        }
-                    }
-                    list {
-                        iconIdentifier = bw_jobs-plugin-list
-                        title = LLL:EXT:bw_jobs/Resources/Private/Language/locallang_plugin_list.xlf:title
-                        description = LLL:EXT:bw_jobs/Resources/Private/Language/locallang_plugin_list.xlf:description
-                        tt_content_defValues {
-                            CType = list
-                            list_type = bwjobs_list
-                        }
-                    }
-                }
-                show = *
-            }
-       }'
     );
 })();

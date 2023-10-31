@@ -6,3 +6,6 @@ services:
 
   Browserwerk\BwJobs\:
     resource: '../Classes/*'
+
+  Browserwerk\BwJobs\View\ApiView:
+    public: true

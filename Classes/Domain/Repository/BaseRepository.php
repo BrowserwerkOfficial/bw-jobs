@@ -5,10 +5,10 @@ declare(strict_types=1);
 namespace Browserwerk\BwJobs\Domain\Repository;
 
 use TYPO3\CMS\Core\Utility\GeneralUtility;
-use TYPO3\CMS\Extbase\Persistence\Repository;
-use TYPO3\CMS\Extbase\Persistence\Generic\Typo3QuerySettings;
 use TYPO3\CMS\Extbase\Configuration\ConfigurationManager;
 use TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface;
+use TYPO3\CMS\Extbase\Persistence\Generic\Typo3QuerySettings;
+use TYPO3\CMS\Extbase\Persistence\Repository;
 
 /**
  * This file is part of the "BW Jobs" Extension for TYPO3 CMS.
@@ -16,7 +16,7 @@ use TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface;
  * For the full copyright and license information, please read the
  * LICENSE.txt file that was distributed with this source code.
  *
- * (c) 2022 Leon Seipp <l.seipp@browserwerk.de>, Browserwerk GmbH
+ * (c) 2023 Leon Seipp <l.seipp@browserwerk.de>, Browserwerk GmbH
  */
 
 /**
@@ -27,12 +27,12 @@ class BaseRepository extends Repository
     /**
      * @var string
      */
-    const EXTENSION_KEY = 'bw_jobs';
+    public const EXTENSION_KEY = 'bw_jobs';
 
     /**
      * @var int
      */
-    const DEFAULT_STORAGE_PID = 1;
+    public const DEFAULT_STORAGE_PID = 1;
 
     /**
      * configurationManager
@@ -52,7 +52,8 @@ class BaseRepository extends Repository
     /**
      * @return array
      */
-    protected function getStoragePids(): array {
+    protected function getStoragePids(): array
+    {
         $configuration = $this->configurationManager->getConfiguration(
             ConfigurationManagerInterface::CONFIGURATION_TYPE_FULL_TYPOSCRIPT,
             self::EXTENSION_KEY,
@@ -70,7 +71,8 @@ class BaseRepository extends Repository
     /**
      * Initialize
      */
-    public function initializeObject() {
+    public function initializeObject()
+    {
         /** @var Typo3QuerySettings $querySettings */
         $querySettings = GeneralUtility::makeInstance(Typo3QuerySettings::class);
 

@@ -1,65 +1,56 @@
 plugin.tx_bwjobs_detail {
   view {
-    # cat=plugin.tx_bwjobs_detail/file; type=string; label=Path to template root (FE)
+    # cat=plugin.tx_bwjobs_detail; type=string; label=Path to templates (FE)
     templateRootPath = EXT:bw_jobs/Resources/Private/Templates/
 
-    # cat=plugin.tx_bwjobs_detail/file; type=string; label=Path to template partials (FE)
+    # cat=plugin.tx_bwjobs_detail; type=string; label=Path to partials (FE)
     partialRootPath = EXT:bw_jobs/Resources/Private/Partials/
 
-    # cat=plugin.tx_bwjobs_detail/file; type=string; label=Path to template layouts (FE)
+    # cat=plugin.tx_bwjobs_detail; type=string; label=Path to layouts (FE)
     layoutRootPath = EXT:bw_jobs/Resources/Private/Layouts/
   }
 
   settings {
-    # cat=plugin.tx_bwjobs_detail//a; type=string; label=The path to the application form definition
+    # cat=plugin.tx_bwjobs_detail; type=string; label=The path to the application form definition
     formPersistenceIdentifier = EXT:bw_jobs/Resources/Private/Forms/jobApplication.form.yaml
 
-    # cat=plugin.tx_bwjobs_detail//a; type=string; label=The name under which emails will be sent
+    # cat=plugin.tx_bwjobs_detail; type=string; label=The name under which emails will be sent
     senderName = BW Jobs Extension
 
-    # cat=plugin.tx_bwjobs_detail//a; type=string; label=The address from which emails will be sent
+    # cat=plugin.tx_bwjobs_detail; type=string; label=The address from which emails will be sent
     senderAddress = bwjobs@example.com
 
-    # cat=plugin.tx_bwjobs_detail//a; type=string; label=Path to email template root
+    # cat=plugin.tx_bwjobs_detail; type=string; label=Path to email templates
     emailTemplateRootPath = EXT:bw_jobs/Resources/Private/Templates/Email/
 
-    # cat=plugin.tx_bwjobs_detail//a; type=string; label=Path to email template layouts
+    # cat=plugin.tx_bwjobs_detail; type=string; label=Path to email layouts
     emailLayoutRootPath = EXT:bw_jobs/Resources/Private/Layouts/Email/
   }
 }
 
 plugin.tx_bwjobs_list {
   view {
-    # cat=plugin.tx_bwjobs_list/file; type=string; label=Path to template root (FE)
+    # cat=plugin.tx_bwjobs_list; type=string; label=Path to templates (FE)
     templateRootPath = EXT:bw_jobs/Resources/Private/Templates/
 
-    # cat=plugin.tx_bwjobs_list/file; type=string; label=Path to template partials (FE)
+    # cat=plugin.tx_bwjobs_list; type=string; label=Path to partials (FE)
     partialRootPath = EXT:bw_jobs/Resources/Private/Partials/
 
-    # cat=plugin.tx_bwjobs_list/file; type=string; label=Path to template layouts (FE)
+    # cat=plugin.tx_bwjobs_list; type=string; label=Path to layouts (FE)
     layoutRootPath = EXT:bw_jobs/Resources/Private/Layouts/
   }
 
   settings {
-    # cat=plugin.tx_bwjobs_list//a; type=string; label=The maximum amount of items output per page
+    # cat=plugin.tx_bwjobs_list; type=string; label=The maximum amount of items output per page
     itemsPerPage = 10
   }
 }
 
-module.tx_bwjobs_jobs {
-  view {
-    # cat=module.tx_bwjobs_jobs/file; type=string; label=Path to template root (BE)
-    templateRootPath = EXT:bw_jobs/Resources/Private/Backend/Templates/
-
-    # cat=module.tx_bwjobs_jobs/file; type=string; label=Path to template partials (BE)
-    partialRootPath = EXT:bw_jobs/Resources/Private/Backend/Partials/
-
-    # cat=module.tx_bwjobs_jobs/file; type=string; label=Path to template layouts (BE)
-    layoutRootPath = EXT:bw_jobs/Resources/Private/Backend/Layouts/
-  }
-
-  persistence {
-    # cat=module.tx_bwjobs_jobs//a; type=string; label=Default storage PID
+module.tx_bwjobs {
+  settings {
+    # cat=module.tx_bwjobs; type=string; label=Default storage PID
     storagePid = 1
+    # cat=module.tx_bwjobs; type=boolean; label=Hide the footer in backend modules
+    hideFooter = 0
   }
 }
