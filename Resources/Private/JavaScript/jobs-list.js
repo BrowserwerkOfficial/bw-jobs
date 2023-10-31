@@ -4,7 +4,7 @@
  * For the full copyright and license information, please read the
  * LICENSE.txt file that was distributed with this source code.
  *
- * (c) 2022 Leon Seipp <l.seipp@browserwerk.de>, Browserwerk GmbH
+ * (c) 2023 Leon Seipp <l.seipp@browserwerk.de>, Browserwerk GmbH
  *
  * IMPORTANT: Run `npm run build` in the root of this extension to bundle this file
  * and its dependencies, which is then output to `Resources/Public/JavaScript`.

@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file.
 
+## [3.0.0] - 2023-10-31
+
+### Changed
+- Added support for TYPO3 12, dropped support for TYPO3 11.
+- Removed `view` constants in `module.tx_bwjobs_jobs.view`.
+- Renamed constants group `module.tx_bwjobs_jobs` to `module.tx_bwjobs`.
+- Moved `storagePid` constant from `persistence` to `settings` group.
+- Changed the database column type for date fields from `date` to `int(11)`.
+
+## Added
+- Option to hide footer in backend modules.
+
 ## [2.3.3] - 2023-06-27
 
 ### Added

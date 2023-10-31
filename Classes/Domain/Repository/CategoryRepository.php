@@ -10,12 +10,10 @@ namespace Browserwerk\BwJobs\Domain\Repository;
  * For the full copyright and license information, please read the
  * LICENSE.txt file that was distributed with this source code.
  *
- * (c) 2022 Leon Seipp <l.seipp@browserwerk.de>, Browserwerk GmbH
+ * (c) 2023 Leon Seipp <l.seipp@browserwerk.de>, Browserwerk GmbH
  */
 
 /**
  * The repository for Categories
  */
-class CategoryRepository extends BaseRepository
-{
-}
+class CategoryRepository extends BaseRepository {}

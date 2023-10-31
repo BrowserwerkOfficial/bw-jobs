@@ -14,7 +14,7 @@ use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
  * For the full copyright and license information, please read the
  * LICENSE.txt file that was distributed with this source code.
  *
- * (c) 2022 Leon Seipp <l.seipp@browserwerk.de>, Browserwerk GmbH
+ * (c) 2023 Leon Seipp <l.seipp@browserwerk.de>, Browserwerk GmbH
  */
 
 /**
@@ -27,63 +27,63 @@ class Location extends AbstractEntity
      *
      * @var string
      */
-    protected $title = '';
+    protected $title;
 
     /**
      * organization
      *
      * @var string
      */
-    protected $organization = '';
+    protected $organization;
 
     /**
      * description
      *
      * @var string
      */
-    protected $description = '';
+    protected $description;
 
     /**
      * street
      *
      * @var string
      */
-    protected $street = '';
+    protected $street;
 
     /**
      * city
      *
      * @var string
      */
-    protected $city = '';
+    protected $city;
 
     /**
      * zip
      *
      * @var string
      */
-    protected $zip = '';
+    protected $zip;
 
     /**
      * region
      *
      * @var string
      */
-    protected $region = '';
+    protected $region;
 
     /**
      * country
      *
      * @var string
      */
-    protected $country = '';
+    protected $country;
 
     /**
      * countryZone
      *
      * @var string
      */
-    protected $countryZone = '';
+    protected $countryZone;
 
     /**
      * image

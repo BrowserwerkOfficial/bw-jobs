@@ -8,7 +8,7 @@ declare(strict_types=1);
  * For the full copyright and license information, please read the
  * LICENSE.txt file that was distributed with this source code.
  *
- * (c) 2022 Leon Seipp <l.seipp@browserwerk.de>, Browserwerk GmbH
+ * (c) 2023 Leon Seipp <l.seipp@browserwerk.de>, Browserwerk GmbH
  */
 
 return [
@@ -17,12 +17,14 @@ return [
         'label' => 'title',
         'tstamp' => 'tstamp',
         'crdate' => 'crdate',
-        'cruser_id' => 'cruser_id',
         'versioningWS' => true,
         'languageField' => 'sys_language_uid',
         'transOrigPointerField' => 'l10n_parent',
         'transOrigDiffSourceField' => 'l10n_diffsource',
         'delete' => 'deleted',
+        'security' => [
+            'ignorePageTypeRestriction' => true,
+        ],
         'enablecolumns' => [
             'disabled' => 'hidden',
             'starttime' => 'starttime',
@@ -66,7 +68,10 @@ return [
                 'renderType' => 'selectSingle',
                 'default' => 0,
                 'items' => [
-                    ['', 0],
+                    [
+                        'label' => '',
+                        'value' => 0,
+                    ],
                 ],
                 'foreign_table' => 'tx_bwjobs_domain_model_employmenttype',
                 'foreign_table_where' => 'AND {#tx_bwjobs_domain_model_employmenttype}.{#pid}=###CURRENT_PID### AND {#tx_bwjobs_domain_model_employmenttype}.{#sys_language_uid} IN (-1,0)',
@@ -83,11 +88,11 @@ return [
             'config' => [
                 'type' => 'check',
                 'renderType' => 'checkboxToggle',
+                'default' => 0,
                 'items' => [
                     [
-                        0 => '',
-                        1 => '',
-                        'invertStateDisplay' => true,
+                        'label' => '',
+                        'value' => 'invertStateDisplay',
                     ],
                 ],
             ],
@@ -96,38 +101,32 @@ return [
             'exclude' => true,
             'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.starttime',
             'config' => [
-                'type' => 'input',
-                'renderType' => 'inputDateTime',
-                'eval' => 'datetime,int',
+                'type' => 'datetime',
                 'default' => 0,
-                'behaviour' => [
-                    'allowLanguageSynchronization' => true,
-                ],
             ],
+            'l10n_mode' => 'exclude',
+            'l10n_display' => 'defaultAsReadonly',
         ],
         'endtime' => [
             'exclude' => true,
             'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.endtime',
             'config' => [
-                'type' => 'input',
-                'renderType' => 'inputDateTime',
-                'eval' => 'datetime,int',
+                'type' => 'datetime',
                 'default' => 0,
                 'range' => [
                     'upper' => mktime(0, 0, 0, 1, 1, 2038),
                 ],
-                'behaviour' => [
-                    'allowLanguageSynchronization' => true,
-                ],
             ],
+            'l10n_mode' => 'exclude',
+            'l10n_display' => 'defaultAsReadonly',
         ],
         'title' => [
             'exclude' => true,
             'label' => 'LLL:EXT:bw_jobs/Resources/Private/Language/locallang_db.xlf:tx_bwjobs_domain_model_employmenttype.title',
             'config' => [
                 'type' => 'input',
-                'size' => 30,
-                'eval' => 'required,trim,uniqueInPid',
+                'eval' => 'trim,uniqueInPid',
+                'required' => true,
                 'default' => '',
             ],
         ],
@@ -148,16 +147,40 @@ return [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
                 'items' => [
-                    ['LLL:EXT:bw_jobs/Resources/Private/Language/locallang_db.xlf:tx_bwjobs_domain_model_employmenttype.type_full_time', 'FULL_TIME'],
-                    ['LLL:EXT:bw_jobs/Resources/Private/Language/locallang_db.xlf:tx_bwjobs_domain_model_employmenttype.type_part_time', 'PART_TIME'],
-                    ['LLL:EXT:bw_jobs/Resources/Private/Language/locallang_db.xlf:tx_bwjobs_domain_model_employmenttype.type_contractor', 'CONTRACTOR'],
-                    ['LLL:EXT:bw_jobs/Resources/Private/Language/locallang_db.xlf:tx_bwjobs_domain_model_employmenttype.type_intern', 'INTERN'],
-                    ['LLL:EXT:bw_jobs/Resources/Private/Language/locallang_db.xlf:tx_bwjobs_domain_model_employmenttype.type_volunteer', 'VOLUNTEER'],
-                    ['LLL:EXT:bw_jobs/Resources/Private/Language/locallang_db.xlf:tx_bwjobs_domain_model_employmenttype.type_per_diem', 'PER_DIEM'],
-                    ['LLL:EXT:bw_jobs/Resources/Private/Language/locallang_db.xlf:tx_bwjobs_domain_model_employmenttype.type_temporary', 'TEMPORARY'],
-                    ['LLL:EXT:bw_jobs/Resources/Private/Language/locallang_db.xlf:tx_bwjobs_domain_model_employmenttype.type_other', 'OTHER'],
+                    [
+                        'label' => 'LLL:EXT:bw_jobs/Resources/Private/Language/locallang_db.xlf:tx_bwjobs_domain_model_employmenttype.type_full_time',
+                        'value' => 'FULL_TIME',
+                    ],
+                    [
+                        'label' => 'LLL:EXT:bw_jobs/Resources/Private/Language/locallang_db.xlf:tx_bwjobs_domain_model_employmenttype.type_part_time',
+                        'value' => 'PART_TIME',
+                    ],
+                    [
+                        'label' => 'LLL:EXT:bw_jobs/Resources/Private/Language/locallang_db.xlf:tx_bwjobs_domain_model_employmenttype.type_contractor',
+                        'value' => 'CONTRACTOR',
+                    ],
+                    [
+                        'label' => 'LLL:EXT:bw_jobs/Resources/Private/Language/locallang_db.xlf:tx_bwjobs_domain_model_employmenttype.type_intern',
+                        'value' => 'INTERN',
+                    ],
+                    [
+                        'label' => 'LLL:EXT:bw_jobs/Resources/Private/Language/locallang_db.xlf:tx_bwjobs_domain_model_employmenttype.type_volunteer',
+                        'value' => 'VOLUNTEER',
+                    ],
+                    [
+                        'label' => 'LLL:EXT:bw_jobs/Resources/Private/Language/locallang_db.xlf:tx_bwjobs_domain_model_employmenttype.type_per_diem',
+                        'value' => 'PER_DIEM',
+                    ],
+                    [
+                        'label' => 'LLL:EXT:bw_jobs/Resources/Private/Language/locallang_db.xlf:tx_bwjobs_domain_model_employmenttype.type_temporary',
+                        'value' => 'TEMPORARY',
+                    ],
+                    [
+                        'label' => 'LLL:EXT:bw_jobs/Resources/Private/Language/locallang_db.xlf:tx_bwjobs_domain_model_employmenttype.type_other',
+                        'value' => 'OTHER',
+                    ],
                 ],
-                'eval' => 'required',
+                'required' => true,
             ],
         ],
     ],

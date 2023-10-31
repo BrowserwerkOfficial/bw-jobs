@@ -5,15 +5,12 @@ declare(strict_types=1);
 namespace Browserwerk\BwJobs\Controller;
 
 use Browserwerk\BwJobs\Domain\Model\JobPosition;
-use Browserwerk\BwJobs\Domain\Repository\JobPositionRepository;
-use Browserwerk\BwJobs\Domain\Repository\LocationRepository;
 use Browserwerk\BwJobs\Domain\Repository\CategoryRepository;
+use Browserwerk\BwJobs\Domain\Repository\LocationRepository;
 use Browserwerk\BwJobs\Service\MetaDataService;
 use Psr\Http\Message\ResponseInterface;
-use TYPO3\CMS\Core\Pagination\ArrayPaginator;
-use TYPO3\CMS\Core\Pagination\SimplePagination;
-use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 use TYPO3\CMS\Extbase\Http\ForwardResponse;
+use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 
 /**
  * This file is part of the "BW Jobs" Extension for TYPO3 CMS.
@@ -21,7 +18,7 @@ use TYPO3\CMS\Extbase\Http\ForwardResponse;
  * For the full copyright and license information, please read the
  * LICENSE.txt file that was distributed with this source code.
  *
- * (c) 2022 Leon Seipp <l.seipp@browserwerk.de>, Browserwerk GmbH
+ * (c) 2023 Leon Seipp <l.seipp@browserwerk.de>, Browserwerk GmbH
  */
 
 /**
@@ -97,7 +94,7 @@ class FrontendController extends ActionController
         $this->view->assignMultiple(
             [
                 'locations' => $locations,
-                'categories' => $categories
+                'categories' => $categories,
             ],
         );
 
