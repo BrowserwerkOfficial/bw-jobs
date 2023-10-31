@@ -71,6 +71,9 @@ plugin.tx_bwjobs_list {
 plugin.tx_bwjobs_api {
   persistence < plugin.tx_bwjobs_list.persistence
   settings < plugin.tx_bwjobs_list.settings
+  features {
+    requireCHashArgumentForActionArguments = 0
+  }
 }
 
 # BwJobs Module
@@ -122,6 +125,7 @@ bwjobs_api {
     extensionName = BwJobs
     pluginName = Api
     vendorName = Browserwerk
+    action = listJobPositions
   }
 }
 

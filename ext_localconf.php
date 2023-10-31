@@ -13,6 +13,16 @@ use TYPO3\CMS\Extbase\Utility\ExtensionUtility;
  * (c) 2023 Leon Seipp <l.seipp@browserwerk.de>, Browserwerk GmbH
  */
 (static function () {
+    // Fixes some possible bug, which causes a cHash error with custom query parameters.
+    $GLOBALS['TYPO3_CONF_VARS']['FE']['cacheHash']['excludedParameters'] = array_merge(
+        $GLOBALS['TYPO3_CONF_VARS']['FE']['cacheHash']['excludedParameters'],
+        [
+            'currentPage',
+            'locationUid',
+            'categoryUid',
+        ],
+    );
+
     ExtensionUtility::configurePlugin(
         'BwJobs',
         'Detail',

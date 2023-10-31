@@ -73,7 +73,7 @@ class ApiController extends ActionController
             [
                 'locationUid' => $queryParams['locationUid'] ?? null,
                 'categoryUid' => $queryParams['categoryUid'] ?? null,
-            ]
+            ],
         );
 
         $jobPositionsPaginator = new ArrayPaginator(

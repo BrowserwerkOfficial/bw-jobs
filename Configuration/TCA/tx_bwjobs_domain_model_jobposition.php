@@ -354,6 +354,8 @@ return [
                 'required' => true,
                 'default' => time(),
             ],
+            'l10n_mode' => 'exclude',
+            'l10n_display' => 'defaultAsReadonly',
         ],
         'valid_through_date' => [
             'exclude' => true,
@@ -362,6 +364,8 @@ return [
                 'type' => 'datetime',
                 'default' => 0,
             ],
+            'l10n_mode' => 'exclude',
+            'l10n_display' => 'defaultAsReadonly',
         ],
         'salary_public' => [
             'exclude' => true,
@@ -651,6 +655,8 @@ return [
                 'required' => true,
                 'default' => time(),
             ],
+            'l10n_mode' => 'exclude',
+            'l10n_display' => 'defaultAsReadonly',
         ],
         'seo_title' => [
             'exclude' => true,

@@ -9,6 +9,7 @@ All notable changes to this project will be documented in this file.
 - Removed `view` constants in `module.tx_bwjobs_jobs.view`.
 - Renamed constants group `module.tx_bwjobs_jobs` to `module.tx_bwjobs`.
 - Moved `storagePid` constant from `persistence` to `settings` group.
+- Changed the database column type for date fields from `date` to `int(11)`.
 
 ## Added
 - Option to hide footer in backend modules.
