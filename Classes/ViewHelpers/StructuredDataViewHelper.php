@@ -14,7 +14,7 @@ use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractTagBasedViewHelper;
  * For the full copyright and license information, please read the
  * LICENSE.txt file that was distributed with this source code.
  *
- * (c) 2023 Leon Seipp <l.seipp@browserwerk.de>, Browserwerk GmbH
+ * (c) 2024 Leon Seipp <l.seipp@browserwerk.de>, Browserwerk GmbH
  */
 
 /**

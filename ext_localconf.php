@@ -10,7 +10,7 @@ use TYPO3\CMS\Extbase\Utility\ExtensionUtility;
  * For the full copyright and license information, please read the
  * LICENSE.txt file that was distributed with this source code.
  *
- * (c) 2023 Leon Seipp <l.seipp@browserwerk.de>, Browserwerk GmbH
+ * (c) 2024 Leon Seipp <l.seipp@browserwerk.de>, Browserwerk GmbH
  */
 (static function () {
     // Fixes some possible bug, which causes a cHash error with custom query parameters.
