@@ -1,3 +1,5 @@
+// @ts-check
+
 /**
  * This file is part of the "BW Jobs" Extension for TYPO3 CMS.
  *
@@ -42,7 +44,7 @@
  * @property {Filters} filters
  */
 
-import { html, render, svg } from 'uhtml';
+import { html, render, svg, Hole } from "uhtml";
 
 /**
  * Strip a leading slash from a string.
@@ -52,7 +54,7 @@ import { html, render, svg } from 'uhtml';
  * @return {string}
  */
 function stripLeadingSlash(string) {
-  return string.replace(/^\//, '');
+  return string.replace(/^\//, "");
 }
 
 /**
@@ -63,7 +65,7 @@ function stripLeadingSlash(string) {
  * @return {string}
  */
 function stripTrailingSlash(string) {
-  return string.replace(/\/$/, '');
+  return string.replace(/\/$/, "");
 }
 
 /**
@@ -74,19 +76,25 @@ function stripTrailingSlash(string) {
  * @return {string}
  */
 function cx(classNames) {
-  return classNames.filter(Boolean).join(' ');
+  return classNames.filter(Boolean).join(" ");
 }
 
 /**
  * Get an element from the DOM by selector
  * or fail if it does not exist.
  *
- * @param {string} selector
+ * @param {string|null} selector
  *
  * @return {HTMLElement}
  */
 function getElementOrFail(selector) {
-  const element = document.querySelector(selector);
+  if (!selector) {
+    throw new Error("Missing selector");
+  }
+
+  const element = /** @type {HTMLElement|null} */ (
+    document.querySelector(selector)
+  );
 
   if (!element) {
     throw new Error(`Missing element "${selector}"`);
@@ -107,13 +115,13 @@ function getElementOrFail(selector) {
 function buildRequestUrlForData(url, data) {
   // Add filter query params to URL
   Object.entries(data.filters).forEach(([filterKey, filterValue]) => {
-    if (typeof filterValue === 'string') {
+    if (typeof filterValue === "string") {
       url.searchParams.append(filterKey, filterValue);
     }
   });
 
   // Add page number query param to URL
-  url.searchParams.append('currentPage', data.currentPage);
+  url.searchParams.append("currentPage", `${data.currentPage}`);
 
   return url;
 }
@@ -148,7 +156,7 @@ function retrieveValueFromLocalStorage(key) {
 /**
  * Clock icon component.
  *
- * @return {string}
+ * @return {Hole}
  */
 function ClockIcon() {
   return svg`
@@ -171,7 +179,7 @@ function ClockIcon() {
 /**
  * Marker icon component.
  *
- * @return {string}
+ * @return {Hole}
  */
 function MarkerIcon() {
   return svg`
@@ -199,7 +207,7 @@ function MarkerIcon() {
 /**
  * Spinner component.
  *
- * @return {string}
+ * @return {Hole}
  */
 function Spinner() {
   return html`
@@ -219,19 +227,19 @@ function Spinner() {
  * @param {number} currentPage
  * @param {(pageNumber: number) => void} onSelectPage
  *
- * @return {string}
+ * @return {Hole}
  */
 function Pagination(pages, currentPage, onSelectPage) {
   if (pages.length < 2) {
-    return '';
+    return html``;
   }
 
   return html`
     <ul class="bw-jobs-paginator">
       <li
         class=${cx([
-          'bw-jobs-paginator__item bw-jobs-paginator__item--prev',
-          currentPage === 1 && 'bw-jobs-paginator__item--disabled',
+          "bw-jobs-paginator__item bw-jobs-paginator__item--prev",
+          currentPage === 1 && "bw-jobs-paginator__item--disabled",
         ])}
       >
         <button
@@ -256,8 +264,8 @@ function Pagination(pages, currentPage, onSelectPage) {
       ${pages.map((page) => {
         return html`<li
           class=${cx([
-            'bw-jobs-paginator__item',
-            page === currentPage && 'bw-jobs-paginator__item--current',
+            "bw-jobs-paginator__item",
+            page === currentPage && "bw-jobs-paginator__item--current",
           ])}
         >
           <button
@@ -270,8 +278,8 @@ function Pagination(pages, currentPage, onSelectPage) {
       })}
       <li
         class=${cx([
-          'bw-jobs-paginator__item bw-jobs-paginator__item--next',
-          currentPage === pages.length && 'bw-jobs-paginator__item--disabled',
+          "bw-jobs-paginator__item bw-jobs-paginator__item--next",
+          currentPage === pages.length && "bw-jobs-paginator__item--disabled",
         ])}
       >
         <button
@@ -302,11 +310,11 @@ function Pagination(pages, currentPage, onSelectPage) {
  *
  * @param {EmploymentType[]} employmentTypes
  *
- * @return {string}
+ * @return {Hole}
  */
 function EmploymentTypes(employmentTypes) {
   if (!employmentTypes.length) {
-    return '';
+    return html``;
   }
 
   return html`<div class="bw-jobs-list-item__column">
@@ -319,17 +327,17 @@ function EmploymentTypes(employmentTypes) {
  *
  * @param {Location[]} locations
  *
- * @return {string}
+ * @return {Hole}
  */
 function Locations(locations) {
   if (!locations.length) {
-    return '';
+    return html``;
   }
 
   return html`<div
     class="bw-jobs-list-item__column bw-jobs-list-item__column--locations"
   >
-    ${MarkerIcon()} ${locations.map((location) => location.title).join(', ')}
+    ${MarkerIcon()} ${locations.map((location) => location.title).join(", ")}
   </div>`;
 }
 
@@ -339,7 +347,7 @@ function Locations(locations) {
  * @param {JobPosition} jobPosition
  * @param {string} url
  *
- * @return {string}
+ * @return {Hole}
  */
 function JobPosition({ title, employmentTypes, locations }, url) {
   return html`
@@ -362,33 +370,29 @@ function JobPosition({ title, employmentTypes, locations }, url) {
  */
 class JobsList {
   /**
-   * @type {?string}
+   * @type {string}
    *
-   * @private
    * @memberof JobsList
    */
-  #mountElementSelector = null;
+  #mountElementSelector;
 
   /**
-   * @type {?string}
+   * @type {string}
    *
-   * @private
    * @memberof JobsList
    */
-  #locationFilterSelector = null;
+  #locationFilterSelector;
 
   /**
-   * @type {?string}
+   * @type {string}
    *
-   * @private
    * @memberof JobsList
    */
-  #categoryFilterSelector = null;
+  #categoryFilterSelector;
 
   /**
    * @type {Data}
    *
-   * @private
    * @memberof JobsList
    */
   #data = {
@@ -442,7 +446,7 @@ class JobsList {
   get translations() {
     const { translations } = this.mountElement.dataset;
 
-    return JSON.parse(translations || '{}');
+    return JSON.parse(translations || "{}");
   }
 
   /**
@@ -458,7 +462,7 @@ class JobsList {
       throw new Error(
         `Missing "data-endpoint" attribute on the "${
           this.#mountElementSelector
-        }" mount element`,
+        }" mount element`
       );
     }
 
@@ -478,7 +482,7 @@ class JobsList {
       throw new Error(
         `Missing "data-detail-page-path" attribute on the "${
           this.#mountElementSelector
-        }" mount element`,
+        }" mount element`
       );
     }
 
@@ -497,18 +501,18 @@ class JobsList {
   constructor(
     mountElementSelector,
     locationFilterSelector,
-    categoryFilterSelector,
+    categoryFilterSelector
   ) {
     if (!mountElementSelector) {
-      throw new Error('Missing mountElementSelector');
+      throw new Error("Missing mountElementSelector");
     }
 
     if (!locationFilterSelector) {
-      throw new Error('Missing locationFilterSelector');
+      throw new Error("Missing locationFilterSelector");
     }
 
     if (!categoryFilterSelector) {
-      throw new Error('Missing categoryFilterSelector');
+      throw new Error("Missing categoryFilterSelector");
     }
 
     this.#mountElementSelector = mountElementSelector;
@@ -528,32 +532,50 @@ class JobsList {
    * @memberof JobsList
    */
   initLocationFilter() {
-    const selectElement = document.querySelector(this.#locationFilterSelector);
+    const selectElement = /** @type {HTMLSelectElement|null} */ (
+      document.querySelector(this.#locationFilterSelector)
+    );
 
-    selectElement?.addEventListener('change', ({ currentTarget }) => {
-      persistValueToLocalStorage('jobsFilterLocationUid', currentTarget.value);
+    if (!selectElement) {
+      return;
+    }
+
+    selectElement.addEventListener("change", (event) => {
+      const currentTarget = /** @type {HTMLSelectElement} */ (
+        event.currentTarget
+      );
+
+      persistValueToLocalStorage("jobsFilterLocationUid", currentTarget.value);
 
       this.data = {
+        ...this.data,
         currentPage: 1,
         filters: {
           ...this.data.filters,
-          locationUid: currentTarget.value,
+          locationUid: currentTarget.value
+            ? parseInt(currentTarget.value)
+            : null,
         },
       };
       this.fetchData();
     });
 
-    const storedValue = retrieveValueFromLocalStorage('jobsFilterLocationUid');
-    if (storedValue && selectElement) {
-      const isValidOption = selectElement.querySelector(
-        `option[value="${storedValue}"]`,
-      );
+    const storedValue = retrieveValueFromLocalStorage("jobsFilterLocationUid");
 
-      if (!isValidOption) return;
-
-      selectElement.value = storedValue;
-      selectElement.dispatchEvent(new Event('change'));
+    if (!storedValue) {
+      return;
     }
+
+    const isValidOption = selectElement.querySelector(
+      `option[value="${storedValue}"]`
+    );
+
+    if (!isValidOption) {
+      return;
+    }
+
+    selectElement.value = storedValue;
+    selectElement.dispatchEvent(new Event("change"));
   }
 
   /**
@@ -565,32 +587,49 @@ class JobsList {
    * @memberof JobsList
    */
   initCategoryFilter() {
-    const selectElement = document.querySelector(this.#categoryFilterSelector);
+    const selectElement = /** @type {HTMLSelectElement|null} */ (
+      document.querySelector(this.#categoryFilterSelector)
+    );
 
-    selectElement?.addEventListener('change', ({ currentTarget }) => {
-      persistValueToLocalStorage('jobsFilterCategoryUid', currentTarget.value);
+    if (!selectElement) {
+      return;
+    }
+
+    selectElement.addEventListener("change", (event) => {
+      const currentTarget = /** @type {HTMLSelectElement} */ (
+        event.currentTarget
+      );
+
+      persistValueToLocalStorage("jobsFilterCategoryUid", currentTarget.value);
 
       this.data = {
+        ...this.data,
         currentPage: 1,
         filters: {
           ...this.data.filters,
-          categoryUid: currentTarget.value,
+          categoryUid: currentTarget.value
+            ? parseInt(currentTarget.value)
+            : null,
         },
       };
       this.fetchData();
     });
 
-    const storedValue = retrieveValueFromLocalStorage('jobsFilterCategoryUid');
-    if (storedValue && selectElement) {
-      const isValidOption = selectElement.querySelector(
-        `option[value=${storedValue}]`,
-      );
-
-      if (!isValidOption) return;
-
-      selectElement.value = storedValue;
-      selectElement.dispatchEvent(new Event('change'));
+    const storedValue = retrieveValueFromLocalStorage("jobsFilterCategoryUid");
+    if (!storedValue) {
+      return;
     }
+
+    const isValidOption = selectElement.querySelector(
+      `option[value=${storedValue}]`
+    );
+
+    if (!isValidOption) {
+      return;
+    }
+
+    selectElement.value = storedValue;
+    selectElement.dispatchEvent(new Event("change"));
   }
 
   /**
@@ -599,10 +638,10 @@ class JobsList {
    * @memberof JobsList
    */
   async fetchData() {
-    this.data = { isFetching: true };
+    this.data = { ...this.data, isFetching: true };
 
     const response = await fetch(
-      buildRequestUrlForData(this.endpointUrl, this.data),
+      buildRequestUrlForData(this.endpointUrl, this.data)
     );
 
     if (!response.ok) {
@@ -612,6 +651,7 @@ class JobsList {
     const { jobPositions, pages } = await response.json();
 
     this.data = {
+      ...this.data,
       isFetching: false,
       jobPositions,
       pages,
@@ -635,7 +675,7 @@ class JobsList {
         this.mountElement,
         html`<div class="bw-jobs-list">
           <div class="bw-jobs-list__loader">${Spinner()}</div>
-        </div>`,
+        </div>`
       );
       return;
     }
@@ -649,8 +689,8 @@ class JobsList {
       render(
         this.mountElement,
         html`<div class="bw-jobs-empty bw-jobs-body">
-          ${this.translations[isFiltered ? 'nothingFound' : 'nothingPosted']}
-        </div>`,
+          ${this.translations[isFiltered ? "nothingFound" : "nothingPosted"]}
+        </div>`
       );
       return;
     }
@@ -660,16 +700,16 @@ class JobsList {
       html`<div class="bw-jobs-list">
         ${data.jobPositions.map((jobPosition) => {
           const url = `${this.detailPageUrl}/${stripLeadingSlash(
-            jobPosition.slug,
+            jobPosition.slug
           )}`;
 
           return JobPosition(jobPosition, url);
         })}
         ${Pagination(data.pages, data.currentPage, (pageNumber) => {
-          this.data = { currentPage: pageNumber };
+          this.data = { ...this.data, currentPage: pageNumber };
           this.fetchData();
         })}
-      </div>`,
+      </div>`
     );
   }
 
@@ -684,8 +724,8 @@ class JobsList {
 }
 
 const jobsList = new JobsList(
-  '#bw-jobs-list',
-  '#bw-jobs-location-filter',
-  '#bw-jobs-category-filter',
+  "#bw-jobs-list",
+  "#bw-jobs-location-filter",
+  "#bw-jobs-category-filter"
 );
 jobsList.mount();
