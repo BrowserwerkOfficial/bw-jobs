@@ -123,33 +123,6 @@ function buildRequestUrlForData(url, data) {
 }
 
 /**
- * Persist a value to local storage.
- *
- * @param {string} key
- * @param {?string} value
- *
- * @return {void}
- */
-function persistValueToLocalStorage(key, value) {
-  if (value) {
-    localStorage.setItem(key, value);
-  } else {
-    localStorage.removeItem(key);
-  }
-}
-
-/**
- * Retrieve a value from local storage.
- *
- * @param {string} key
- *
- * @return {?string}
- */
-function retrieveValueFromLocalStorage(key) {
-  return localStorage.getItem(key);
-}
-
-/**
  * Clock icon component.
  *
  * @return {Hole}
@@ -541,8 +514,6 @@ class JobsList {
         event.currentTarget
       );
 
-      persistValueToLocalStorage("jobsFilterLocationUid", currentTarget.value);
-
       this.data = {
         ...this.data,
         currentPage: 1,
@@ -555,23 +526,6 @@ class JobsList {
       };
       this.fetchData();
     });
-
-    const storedValue = retrieveValueFromLocalStorage("jobsFilterLocationUid");
-
-    if (!storedValue) {
-      return;
-    }
-
-    const isValidOption = selectElement.querySelector(
-      `option[value="${storedValue}"]`
-    );
-
-    if (!isValidOption) {
-      return;
-    }
-
-    selectElement.value = storedValue;
-    selectElement.dispatchEvent(new Event("change"));
   }
 
   /**
@@ -596,8 +550,6 @@ class JobsList {
         event.currentTarget
       );
 
-      persistValueToLocalStorage("jobsFilterCategoryUid", currentTarget.value);
-
       this.data = {
         ...this.data,
         currentPage: 1,
@@ -610,22 +562,6 @@ class JobsList {
       };
       this.fetchData();
     });
-
-    const storedValue = retrieveValueFromLocalStorage("jobsFilterCategoryUid");
-    if (!storedValue) {
-      return;
-    }
-
-    const isValidOption = selectElement.querySelector(
-      `option[value=${storedValue}]`
-    );
-
-    if (!isValidOption) {
-      return;
-    }
-
-    selectElement.value = storedValue;
-    selectElement.dispatchEvent(new Event("change"));
   }
 
   /**
