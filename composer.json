@@ -2,7 +2,7 @@
 	"name": "browserwerk/bw-jobs",
 	"type": "typo3-cms-extension",
 	"description": "A job board extension for TYPO3 CMS.",
-	"version": "3.0.1",
+	"version": "3.0.2",
 	"authors": [
 		{
 			"name": "Leon Seipp",
