@@ -202,19 +202,6 @@
 				<source>Report An Issue</source>
 				<target>Ein Anliegen melden</target>
 			</trans-unit>
-
-			<trans-unit id="footer_become_sponsor_title" resname="footer_become_sponsor_title">
-				<source>Become A Sponsor</source>
-				<target>Sponsor werden</target>
-			</trans-unit>
-			<trans-unit id="footer_become_sponsor_text" resname="footer_become_sponsor_text">
-				<source>Do you like what we do? Become a sponsor and help us keep the extension up-to-date!</source>
-				<target>Gefällt Ihnen, was wir tun? Werden Sie Sponsor und helfen Sie uns, die Erweiterung aktuell zu halten!</target>
-			</trans-unit>
-			<trans-unit id="footer_become_sponsor_button" resname="footer_become_sponsor_button">
-				<source>Become A Sponsor</source>
-				<target>Sponsor werden</target>
-			</trans-unit>
 		</body>
 	</file>
 </xliff>

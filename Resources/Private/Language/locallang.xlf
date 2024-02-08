@@ -154,16 +154,6 @@
 			<trans-unit id="footer_report_issue_button" resname="footer_report_issue_button">
 				<source>Report An Issue</source>
 			</trans-unit>
-
-			<trans-unit id="footer_become_sponsor_title" resname="footer_become_sponsor_title">
-				<source>Become A Sponsor</source>
-			</trans-unit>
-			<trans-unit id="footer_become_sponsor_text" resname="footer_become_sponsor_text">
-				<source>Do you like what we do? Become a sponsor and help us keep the extension up-to-date!</source>
-			</trans-unit>
-			<trans-unit id="footer_become_sponsor_button" resname="footer_become_sponsor_button">
-				<source>Become A Sponsor</source>
-			</trans-unit>
 		</body>
 	</file>
 </xliff>

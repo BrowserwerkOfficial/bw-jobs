@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file.
 
+## [3.0.1] - 2024-02-08
+
+### Changed
+- Removed sponsoring
+
 ## [3.0.0] - 2023-10-31
 
 ### Changed
