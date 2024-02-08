@@ -83,15 +83,11 @@ function cx(classNames) {
  * Get an element from the DOM by selector
  * or fail if it does not exist.
  *
- * @param {string|null} selector
+ * @param {string} selector
  *
  * @return {HTMLElement}
  */
 function getElementOrFail(selector) {
-  if (!selector) {
-    throw new Error("Missing selector");
-  }
-
   const element = /** @type {HTMLElement|null} */ (
     document.querySelector(selector)
   );
