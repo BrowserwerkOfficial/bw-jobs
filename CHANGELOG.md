@@ -2,16 +2,21 @@
 
 All notable changes to this project will be documented in this file.
 
+## [3.1.0] - 2024-02-12
+
+### Changed
+- Changed eval of field "slug" from "uniqueInSite" to "unique".
+
 ## [3.0.2] - 2024-02-08
 
 ### Changed
-- Do not persist filter in local storage
-- Update "uhtml" library
+- Do not persist filter in local storage.
+- Update "uhtml" library.
 
 ## [3.0.1] - 2024-02-08
 
 ### Changed
-- Removed sponsoring
+- Removed sponsoring.
 
 ## [3.0.0] - 2023-10-31
 
