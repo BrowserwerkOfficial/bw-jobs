@@ -111,8 +111,8 @@ function getElementOrFail(selector) {
 function buildRequestUrlForData(url, data) {
   // Add filter query params to URL
   Object.entries(data.filters).forEach(([filterKey, filterValue]) => {
-    if (typeof filterValue === "string") {
-      url.searchParams.append(filterKey, filterValue);
+    if (typeof filterValue === "number") {
+      url.searchParams.append(filterKey, `${filterValue}`);
     }
   });
 
