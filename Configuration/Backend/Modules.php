@@ -29,7 +29,7 @@ return [
     'bwjobs_jobpositions' => [
         'parent' => 'bwjobs',
         'standalone' => true,
-        'access' => 'user,group',
+        'access' => 'user',
         'iconIdentifier' => 'bwjobs-jobpositions',
         'path' => 'module/bwjobs/jobpositions',
         'labels' => 'LLL:EXT:bw_jobs/Resources/Private/Language/locallang_mod_jobpositions.xlf',
@@ -43,7 +43,7 @@ return [
     'bwjobs_employmenttypes' => [
         'parent' => 'bwjobs',
         'standalone' => true,
-        'access' => 'user,group',
+        'access' => 'user',
         'iconIdentifier' => 'bwjobs-employmenttypes',
         'path' => 'module/bwjobs/employmenttypes',
         'labels' => 'LLL:EXT:bw_jobs/Resources/Private/Language/locallang_mod_employmenttypes.xlf',
@@ -57,7 +57,7 @@ return [
     'bwjobs_contactpersons' => [
         'parent' => 'bwjobs',
         'standalone' => true,
-        'access' => 'user,group',
+        'access' => 'user',
         'iconIdentifier' => 'bwjobs-contactpersons',
         'path' => 'module/bwjobs/contactpersons',
         'labels' => 'LLL:EXT:bw_jobs/Resources/Private/Language/locallang_mod_contactpersons.xlf',
@@ -71,7 +71,7 @@ return [
     'bwjobs_locations' => [
         'parent' => 'bwjobs',
         'standalone' => true,
-        'access' => 'user,group',
+        'access' => 'user',
         'iconIdentifier' => 'bwjobs-locations',
         'path' => 'module/bwjobs/locations',
         'labels' => 'LLL:EXT:bw_jobs/Resources/Private/Language/locallang_mod_locations.xlf',
@@ -85,7 +85,7 @@ return [
     'bwjobs_categories' => [
         'parent' => 'bwjobs',
         'standalone' => true,
-        'access' => 'user,group',
+        'access' => 'user',
         'iconIdentifier' => 'bwjobs-categories',
         'path' => 'module/bwjobs/categories',
         'labels' => 'LLL:EXT:bw_jobs/Resources/Private/Language/locallang_mod_categories.xlf',
